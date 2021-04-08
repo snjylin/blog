@@ -1,0 +1,58 @@
+{% extends '_layout.swig' %}
+{% import '_macro/post.swig' as post_template %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
+
+{% block title %}{{ config.title }}{% if theme.index_with_subtitle and config.subtitle %} - {{config.subtitle }}{% endif %}{% endblock %}
+
+{% block page_class %}
+  {% if is_home() %}page-home{% endif -%}
+{% endblock %}
+
+{% block content %}
+
+  {################}
+  {### CATEGORY ###}
+  {################}
+  {#
+  <div class="category-all-page">
+    <div class="category-all">
+      {{ list_categories() }}
+    </div>
+    <div class="category-all-title">
+        {{ _p('counter.categories', site.categories.length) }}
+    </div>
+  </div>
+  #}
+  {################}
+  {### CATEGORY ###}
+  {################}
+
+  {############}
+  {### TAGS ###}
+  {############}
+  {#
+  <div class="tag-cloud">
+    <div class="tag-cloud-tags">
+      {{ tagcloud({min_font: 14, max_font: 14}) }}
+    </div>
+    <div class="tag-cloud-title">
+        {{ _p('counter.tag_cloud', site.tags.length) }}
+    </div>
+  </div>
+  #}
+  {############}
+  {### TAGS ###}
+  {############}
+
+  <section id="posts" class="posts-expand">
+    {% for post in page.posts %}
+      {{ post_template.render(post, true) }}
+    {% endfor %}
+  </section>
+
+  {% include '_partials/pagination.swig' %}
+{% endblock %}
+
+{% block sidebar %}
+  {{ sidebar_template.render(false) }}
+{% endblock %}
