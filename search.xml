@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[hexo部署报错]]></title>
     <url>%2Fhexo%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99.html</url>
-    <content type="text"><![CDATA[hexo部署 执行hexo d 出现 TypeError [ERR_INVALID_ARG_TYPE]: The “mode” argument must be integer. Recei 错误 环境：MacOS Catalina 版本 10.15.7 node版本过高，我之前是v15.14.0，降级到v12.14.0版本后，部署成功 检查node版本 -v```1234node版本管理全局安装n模块```npm install -g n 安装指定版本v12.14.0```12执行到这一步时遇到报错```Error: sudo required (or change ownership, or define N_PREFIX) 尝试使用sudo运行命令n v12.14.0```12选取已安装的版本```n 回车，然后上下键盘选择已安装版本并回车确认]]></content>
+    <content type="text"><![CDATA[问题hexo部署 执行hexo d 出现 TypeError [ERR_INVALID_ARG_TYPE]: The “mode” argument must be integer. Recei 错误 背景环境：MacOS Catalina 版本 10.15.7 node版本过高，我之前是v15.14.0，降级到v12.14.0版本后，部署成功 检查node版本node -v node版本管理 全局安装n模块 npm install -g n 安装指定版本 n v12.14.0 执行到这一步时遇到报错 Error: sudo required (or change ownership, or define N_PREFIX) 尝试使用sudo运行命令 sudo n v12.14.0 选取已安装的版本 n 回车，然后上下键盘选择已安装版本并回车确认]]></content>
       <categories>
         <category>学习笔记</category>
         <category>技术</category>

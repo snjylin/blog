@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="hexo部署 执行hexo d 出现 TypeError [ERR_INVALID_ARG_TYPE]: The “mode” argument must be integer. Recei 错误 环境：MacOS Catalina  版本 10.15.7 node版本过高，我之前是v15.14.0，降级到v12.14.0版本后，部署成功 检查node版本 -v```1234node版本管理全局安">
+<meta name="description" content="问题hexo部署 执行hexo d 出现 TypeError [ERR_INVALID_ARG_TYPE]: The “mode” argument must be integer. Recei 错误 背景环境：MacOS Catalina  版本 10.15.7 node版本过高，我之前是v15.14.0，降级到v12.14.0版本后，部署成功 检查node版本node -v node版本管理">
 <meta name="keywords" content="hexo,建站">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo部署报错">
 <meta property="og:url" content="http://www.secretbase.vip/hexo部署报错.html">
 <meta property="og:site_name" content="慢时光小栈">
-<meta property="og:description" content="hexo部署 执行hexo d 出现 TypeError [ERR_INVALID_ARG_TYPE]: The “mode” argument must be integer. Recei 错误 环境：MacOS Catalina  版本 10.15.7 node版本过高，我之前是v15.14.0，降级到v12.14.0版本后，部署成功 检查node版本 -v```1234node版本管理全局安">
+<meta property="og:description" content="问题hexo部署 执行hexo d 出现 TypeError [ERR_INVALID_ARG_TYPE]: The “mode” argument must be integer. Recei 错误 背景环境：MacOS Catalina  版本 10.15.7 node版本过高，我之前是v15.14.0，降级到v12.14.0版本后，部署成功 检查node版本node -v node版本管理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-23T14:40:10.438Z">
+<meta property="og:updated_time" content="2022-05-23T14:45:45.640Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo部署报错">
-<meta name="twitter:description" content="hexo部署 执行hexo d 出现 TypeError [ERR_INVALID_ARG_TYPE]: The “mode” argument must be integer. Recei 错误 环境：MacOS Catalina  版本 10.15.7 node版本过高，我之前是v15.14.0，降级到v12.14.0版本后，部署成功 检查node版本 -v```1234node版本管理全局安">
+<meta name="twitter:description" content="问题hexo部署 执行hexo d 出现 TypeError [ERR_INVALID_ARG_TYPE]: The “mode” argument must be integer. Recei 错误 背景环境：MacOS Catalina  版本 10.15.7 node版本过高，我之前是v15.14.0，降级到v12.14.0版本后，部署成功 检查node版本node -v node版本管理">
 
 
 
@@ -418,14 +418,28 @@
       
 
       
-        <p>hexo部署</p>
-<p>执行hexo d 出现 TypeError [ERR_INVALID_ARG_TYPE]: The “mode” argument must be integer. Recei 错误</p>
-<p>环境：MacOS Catalina  版本 10.15.7</p>
+        <h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>hexo部署 执行hexo d 出现 TypeError [ERR_INVALID_ARG_TYPE]: The “mode” argument must be integer. Recei 错误</p>
+<h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><p>环境：MacOS Catalina  版本 10.15.7</p>
 <p>node版本过高，我之前是v15.14.0，降级到v12.14.0版本后，部署成功</p>
-<p>检查node版本</p>
-<figure class="highlight plain"><figcaption><span>-v```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">node版本管理</span><br><span class="line">全局安装n模块</span><br><span class="line">```npm install -g n</span><br></pre></td></tr></table></figure>
-<p>安装指定版本<br><figure class="highlight plain"><figcaption><span>v12.14.0```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">执行到这一步时遇到报错</span><br><span class="line">```Error: sudo required (or change ownership, or define N_PREFIX)</span><br></pre></td></tr></table></figure></p>
-<p>尝试使用sudo运行命令<br><figure class="highlight plain"><figcaption><span>n v12.14.0```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">选取已安装的版本</span><br><span class="line">```n</span><br></pre></td></tr></table></figure></p>
+<h4 id="检查node版本"><a href="#检查node版本" class="headerlink" title="检查node版本"></a>检查node版本</h4><p><code>node -v</code></p>
+<h4 id="node版本管理"><a href="#node版本管理" class="headerlink" title="node版本管理"></a>node版本管理</h4><ul>
+<li>全局安装n模块</li>
+</ul>
+<p><code>npm install -g n</code></p>
+<ul>
+<li>安装指定版本</li>
+</ul>
+<p><code>n v12.14.0</code></p>
+<p>执行到这一步时遇到报错</p>
+<p><code>Error: sudo required (or change ownership, or define N_PREFIX)</code></p>
+<ul>
+<li>尝试使用sudo运行命令</li>
+</ul>
+<p><code>sudo n v12.14.0</code></p>
+<ul>
+<li>选取已安装的版本</li>
+</ul>
+<p><code>n</code></p>
 <p>回车，然后上下键盘选择已安装版本并回车确认</p>
 
       
@@ -582,8 +596,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -662,6 +685,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#背景"><span class="nav-number">2.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#检查node版本"><span class="nav-number">3.</span> <span class="nav-text">检查node版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#node版本管理"><span class="nav-number">4.</span> <span class="nav-text">node版本管理</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

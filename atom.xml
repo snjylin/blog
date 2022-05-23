@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.secretbase.vip/"/>
-  <updated>2022-05-23T14:40:10.438Z</updated>
+  <updated>2022-05-23T14:45:45.640Z</updated>
   <id>http://www.secretbase.vip/</id>
   
   <author>
@@ -21,17 +21,15 @@
     <link href="http://www.secretbase.vip/hexo%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99.html"/>
     <id>http://www.secretbase.vip/hexo部署报错.html</id>
     <published>2022-05-23T14:01:05.000Z</published>
-    <updated>2022-05-23T14:40:10.438Z</updated>
+    <updated>2022-05-23T14:45:45.640Z</updated>
     
-    <content type="html"><![CDATA[<p>hexo部署</p><p>执行hexo d 出现 TypeError [ERR_INVALID_ARG_TYPE]: The “mode” argument must be integer. Recei 错误</p><p>环境：MacOS Catalina  版本 10.15.7</p><p>node版本过高，我之前是v15.14.0，降级到v12.14.0版本后，部署成功</p><p>检查node版本</p><figure class="highlight plain"><figcaption><span>-v```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">node版本管理</span><br><span class="line">全局安装n模块</span><br><span class="line">```npm install -g n</span><br></pre></td></tr></table></figure><p>安装指定版本<br><figure class="highlight plain"><figcaption><span>v12.14.0```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">执行到这一步时遇到报错</span><br><span class="line">```Error: sudo required (or change ownership, or define N_PREFIX)</span><br></pre></td></tr></table></figure></p><p>尝试使用sudo运行命令<br><figure class="highlight plain"><figcaption><span>n v12.14.0```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">选取已安装的版本</span><br><span class="line">```n</span><br></pre></td></tr></table></figure></p><p>回车，然后上下键盘选择已安装版本并回车确认</p>]]></content>
+    <content type="html"><![CDATA[<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>hexo部署 执行hexo d 出现 TypeError [ERR_INVALID_ARG_TYPE]: The “mode” argument must be integer. Recei 错误</p><h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><p>环境：MacOS Catalina  版本 10.15.7</p><p>node版本过高，我之前是v15.14.0，降级到v12.14.0版本后，部署成功</p><h4 id="检查node版本"><a href="#检查node版本" class="headerlink" title="检查node版本"></a>检查node版本</h4><p><code>node -v</code></p><h4 id="node版本管理"><a href="#node版本管理" class="headerlink" title="node版本管理"></a>node版本管理</h4><ul><li>全局安装n模块</li></ul><p><code>npm install -g n</code></p><ul><li>安装指定版本</li></ul><p><code>n v12.14.0</code></p><p>执行到这一步时遇到报错</p><p><code>Error: sudo required (or change ownership, or define N_PREFIX)</code></p><ul><li>尝试使用sudo运行命令</li></ul><p><code>sudo n v12.14.0</code></p><ul><li>选取已安装的版本</li></ul><p><code>n</code></p><p>回车，然后上下键盘选择已安装版本并回车确认</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;hexo部署&lt;/p&gt;
-&lt;p&gt;执行hexo d 出现 TypeError [ERR_INVALID_ARG_TYPE]: The “mode” argument must be integer. Recei 错误&lt;/p&gt;
-&lt;p&gt;环境：MacOS Catalina  版本 10
+        &lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h4&gt;&lt;p&gt;hexo部署 执行hexo d 出现 TypeError [ERR_INVALID_ARG_TYPE]: The “mode” argume
       
     
     </summary>
