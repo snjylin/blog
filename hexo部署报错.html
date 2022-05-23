@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="慢时光小栈">
 <meta property="og:description" content="问题hexo部署 执行hexo d 出现 TypeError [ERR_INVALID_ARG_TYPE]: The “mode” argument must be integer. Recei 错误 背景环境：MacOS Catalina  版本 10.15.7 node版本过高，我之前是v15.14.0，降级到v12.14.0版本后，部署成功 检查node版本node -v node版本管理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-23T14:45:45.640Z">
+<meta property="og:updated_time" content="2022-05-23T14:48:33.511Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo部署报错">
 <meta name="twitter:description" content="问题hexo部署 执行hexo d 出现 TypeError [ERR_INVALID_ARG_TYPE]: The “mode” argument must be integer. Recei 错误 背景环境：MacOS Catalina  版本 10.15.7 node版本过高，我之前是v15.14.0，降级到v12.14.0版本后，部署成功 检查node版本node -v node版本管理">
@@ -423,24 +423,22 @@
 <p>node版本过高，我之前是v15.14.0，降级到v12.14.0版本后，部署成功</p>
 <h4 id="检查node版本"><a href="#检查node版本" class="headerlink" title="检查node版本"></a>检查node版本</h4><p><code>node -v</code></p>
 <h4 id="node版本管理"><a href="#node版本管理" class="headerlink" title="node版本管理"></a>node版本管理</h4><ul>
-<li>全局安装n模块</li>
-</ul>
+<li><p>全局安装n模块</p>
 <p><code>npm install -g n</code></p>
-<ul>
-<li>安装指定版本</li>
-</ul>
+</li>
+<li><p>安装指定版本</p>
 <p><code>n v12.14.0</code></p>
 <p>执行到这一步时遇到报错</p>
 <p><code>Error: sudo required (or change ownership, or define N_PREFIX)</code></p>
-<ul>
-<li>尝试使用sudo运行命令</li>
-</ul>
+</li>
+<li><p>尝试使用sudo运行命令</p>
 <p><code>sudo n v12.14.0</code></p>
-<ul>
-<li>选取已安装的版本</li>
-</ul>
+</li>
+<li><p>选取已安装的版本</p>
 <p><code>n</code></p>
 <p>回车，然后上下键盘选择已安装版本并回车确认</p>
+</li>
+</ul>
 
       
     </div>
