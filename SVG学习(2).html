@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="前端,svg,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="慢时光小栈" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="SVG中的坐标系统与坐标变换SVG的世界、视野、视窗的概念视野与世界 世界是无穷大的 视野是观察世界的一个矩形区域 viewbox  width,height - 控制视窗  SVG代码 - 定义世界 viewBox,preserveAspectRatio - 控制视野  123456&amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot;	widt">
+<meta name="keywords" content="前端,svg">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SVG学习(2)">
+<meta property="og:url" content="http://www.secretbase.vip/SVG学习(2).html">
+<meta property="og:site_name" content="慢时光小栈">
+<meta property="og:description" content="SVG中的坐标系统与坐标变换SVG的世界、视野、视窗的概念视野与世界 世界是无穷大的 视野是观察世界的一个矩形区域 viewbox  width,height - 控制视窗  SVG代码 - 定义世界 viewBox,preserveAspectRatio - 控制视野  123456&amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot;	widt">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-04-08T07:44:58.141Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SVG学习(2)">
+<meta name="twitter:description" content="SVG中的坐标系统与坐标变换SVG的世界、视野、视窗的概念视野与世界 世界是无穷大的 视野是观察世界的一个矩形区域 viewbox  width,height - 控制视窗  SVG代码 - 定义世界 viewBox,preserveAspectRatio - 控制视野  123456&amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot;	widt">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.secretbase.vip/SVG学习(2).html">
+
+
+
+
+
+  <title>SVG学习(2) | 慢时光小栈</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?94f8e2c0b5db960885a3e827e179f0bd";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-9799888289628155",
+        enable_page_level_ads: true
+    });
+</script>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">慢时光小栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">盛年不重来，一日难再晨。及时当勉励，岁月不待人。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.secretbase.vip/SVG学习(2).html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="简兮">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="慢时光小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SVG学习(2)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-08T22:04:00+08:00">
+                2018-08-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/技术/svg/" itemprop="url" rel="index">
+                    <span itemprop="name">svg</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/SVG学习(2).html" class="leancloud_visitors" data-flag-title="SVG学习(2)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="SVG中的坐标系统与坐标变换"><a href="#SVG中的坐标系统与坐标变换" class="headerlink" title="SVG中的坐标系统与坐标变换"></a>SVG中的坐标系统与坐标变换</h1><h2 id="SVG的世界、视野、视窗的概念"><a href="#SVG的世界、视野、视窗的概念" class="headerlink" title="SVG的世界、视野、视窗的概念"></a>SVG的世界、视野、视窗的概念</h2><h4 id="视野与世界"><a href="#视野与世界" class="headerlink" title="视野与世界"></a>视野与世界</h4><ul>
+<li>世界是无穷大的</li>
+<li><p>视野是观察世界的一个矩形区域 viewbox</p>
+</li>
+<li><p>width,height - 控制视窗</p>
+</li>
+<li>SVG代码 - 定义世界</li>
+<li>viewBox,preserveAspectRatio - 控制视野</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot;</span><br><span class="line">	width=&quot;800px&quot; height=&quot;400px&quot;</span><br><span class="line">	viewBox=&quot;0 0 400 300&quot;</span><br><span class="line">	preserveAspectRatio=&quot;xMidYMid meet&quot;&gt;</span><br><span class="line">	&lt;!--SVG content--&gt;</span><br><span class="line">&lt;/svg&gt;</span><br></pre></td></tr></table></figure>
+<p>世界是客观的，视野是可以改变的，svg中提供了viewbox控制视野的范围<br><code>&lt;svg&gt;</code>标签中可以指定宽高属性，表示svg文件渲染的区域大小，也可以使用样式表定义，这个区域就是浏览器中的视窗<br>视窗是指浏览器开辟的用来渲染svg内容的区域，是根据样式上下文来进行，可能改变；视野是svg文件的编写者定义的要以多大的视野来观察定义的世界，理想的情况下视野和世界尺寸相同，如果定义的视野和视窗的大小不一致，如何进行填充，用preserveAspectRatio属性进行指定</p>
+<h2 id="SVG中的图形分组"><a href="#SVG中的图形分组" class="headerlink" title="SVG中的图形分组"></a>SVG中的图形分组</h2><ul>
+<li><code>&lt;g&gt;</code>标签来创建分组 (可以对分组进行整体操作)</li>
+<li>属性继承</li>
+<li>transform属性定义坐标变换</li>
+<li>可以嵌套使用</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;300&quot; height=&quot;200&quot;&gt;</span><br><span class="line">	&lt;g stroke=&quot;green&quot; fill=&quot;none&quot; transform=&quot;translate(150,0)&quot;&gt;</span><br><span class="line">		&lt;rect x=&quot;100&quot; y=&quot;50&quot; width=&quot;100&quot; height=&quot;50&quot;&gt;</span><br><span class="line">		&lt;/rect&gt;</span><br><span class="line">		&lt;rect x=&quot;140&quot; y=&quot;100&quot; width=&quot;20&quot; height=&quot;120&quot;&gt;</span><br><span class="line">		&lt;/rect&gt;</span><br><span class="line">	&lt;/g&gt;</span><br><span class="line">	&lt;g&gt;</span><br><span class="line">		&lt;polygon points=&quot;100,10 40,180 190,60 10,60 160,180&quot; style=&quot;fill:red;stroke:blue;stroke-width:3;fill-rule:evenodd;&quot;&gt;</span><br><span class="line">	&lt;/g&gt;</span><br><span class="line">&lt;/svg&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="坐标系统概述"><a href="#坐标系统概述" class="headerlink" title="坐标系统概述"></a>坐标系统概述</h2><ul>
+<li>笛卡尔直角坐标系</li>
+<li>原点</li>
+<li>互相垂直的两条数轴</li>
+<li>角度定义</li>
+</ul>
+<p>坐标系统的作用是为图形提供一个基本的定位基准<br>基于原点和数轴的定义又可以定义角度，数学上，x轴方向水平向右，y轴方向水平向上，角度的正方向是逆时针方向，由于svg的阅读媒介一般都是屏幕，出于对人的阅读习惯的考虑和大多数浏览器上其他动元素的坐标的习惯，svg使用的坐标系是y轴方向水平向下的，角度的正方向是顺时针的<br>角度的正方向是笛卡尔坐标系中从x轴正方向到y轴正方向旋转的方向</p>
+<h2 id="四个坐标系"><a href="#四个坐标系" class="headerlink" title="四个坐标系"></a>四个坐标系</h2><h4 id="用户坐标系（User-Coordinate）"><a href="#用户坐标系（User-Coordinate）" class="headerlink" title="用户坐标系（User Coordinate）"></a>用户坐标系（User Coordinate）</h4><p>世界的坐标系</p>
+<p>viewBox视野大小就是观察用户坐标系中的区域，用户坐标系是最原始的坐标系，即svg标签的坐标系，其他的坐标系都是从用户坐标系产生的，也被称为原始坐标系</p>
+<h4 id="自身坐标系（Current-Coordinate）"><a href="#自身坐标系（Current-Coordinate）" class="headerlink" title="自身坐标系（Current Coordinate）"></a>自身坐标系（Current Coordinate）</h4><p>每个图形元素或分组独立与生俱来</p>
+<h4 id="前驱坐标系（Previous-Coordinate）"><a href="#前驱坐标系（Previous-Coordinate）" class="headerlink" title="前驱坐标系（Previous Coordinate）"></a>前驱坐标系（Previous Coordinate）</h4><p>父容器的坐标系</p>
+<p>坐标变换就是前驱坐标系经过了元素变换之后得到的自身坐标系</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg&gt;</span><br><span class="line">	&lt;rect id=&quot;a&quot;</span><br><span class="line">	x=&quot;0&quot;</span><br><span class="line">	y=&quot;0&quot;</span><br><span class="line">	width=&quot;100&quot;</span><br><span class="line">	height=&quot;50&quot;</span><br><span class="line">	transform=&quot;translate(50,50)&quot;&gt;</span><br><span class="line">	&lt;/rect&gt;</span><br><span class="line">&lt;/svg&gt;</span><br></pre></td></tr></table></figure>
+<p>自身坐标系和前驱坐标系.例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg id=&quot;A&quot; xmlns=&quot;...&quot;&gt;</span><br><span class="line">	&lt;g id=&quot;B&quot; transform=&quot;translate(0,50)&quot;&gt;</span><br><span class="line">		&lt;rect id=&quot;C&quot; x=&quot;100&quot; y=&quot;50&quot; width=&quot;100&quot; height=&quot;50&quot;&gt;</span><br><span class="line">		&lt;/rect&gt;</span><br><span class="line">		&lt;rect id=&quot;D&quot; x=&quot;140&quot; y=&quot;100&quot; width=&quot;20&quot; height=&quot;120&quot;&gt;</span><br><span class="line">		&lt;/rect&gt;</span><br><span class="line">	&lt;/g&gt;</span><br><span class="line">&lt;/svg&gt;</span><br></pre></td></tr></table></figure>
+<p>分别定义对应的坐标系OA、OB、OC、OD<br>世界坐标系 OA</p>
+<p>#B的前驱坐标系 用户坐标系 OA</p>
+<p>#C和#D的图形定义是基于坐标系 OC和OD （所有的图形，关于它自身图形描述的属性都是基于它自己的自身坐标系来进行定义）</p>
+<p>#C和#D的前驱坐标系 OB<br>分组#B的自身坐标系 OB<br>分组#B上的transform属性表示分组#B的自身坐标系OB是从它的前驱坐标系OA经过transform变换来的<br>OB、OC、OD坐标系重合了，因为OB是OC和OD的前驱坐标系，而#C和#D都没有定义transform属性，#C和#D的自身坐标系和前驱坐标系重合</p>
+<h4 id="参考坐标系（Reference-Coordinate）"><a href="#参考坐标系（Reference-Coordinate）" class="headerlink" title="参考坐标系（Reference Coordinate）"></a>参考坐标系（Reference Coordinate）</h4><p>使用其他坐标系来考究自身的情况下使用</p>
+<h2 id="坐标变换"><a href="#坐标变换" class="headerlink" title="坐标变换"></a>坐标变换</h2><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><ul>
+<li>数学上，坐标变换是采用一定的数学方法将一个坐标系的坐标变换为另一个坐标系的坐标的过程</li>
+<li>SVG中，坐标变换是对一个坐标系到另一个坐标系的变换的描述</li>
+</ul>
+<h4 id="线性变换"><a href="#线性变换" class="headerlink" title="线性变换"></a>线性变换</h4><ul>
+<li>线性变换方程<br>X‘ = aX + cY + e<br>Y‘ = bX + dY + f</li>
+<li>变换矩阵，记为M<br>「a c e<br>b d f<br>0 0 1」</li>
+</ul>
+<p>原坐标系中的每个点经过线性运算之后得到新坐标系中的每个点</p>
+<p>平移<br>「1 0 10<br>  0 1 10<br>  0 0 1」<br>X’ = 1<em>X + 0</em>Y + 10 = X + 10<br>Y’ = 0<em>X + 1</em>Y + 10 = Y + 10</p>
+<p>旋转</p>
+<ul>
+<li>使用极坐标求变换矩阵<br>极坐标方程:<br>X = r<em>cos(α)<br>Y = r</em>sin(α)<br>旋转θ度后:<br>X’ = r<em>cos(α+θ)<br>Y’ = r</em>sin(α+θ)<br>展开:<br>X’ = r<em>cos(α)cos(θ) - r</em>sin(α)sin(θ) = cos(θ)X - sin(θ)Y + 0<br>Y’ = r<em>cos(α)sin(θ) + r</em>sin(α)cos(θ) = sin(θ)X + cos(θ)Y + 0<br>「cos(30o) -sin(30o) 0<br>sin(30o) cos(30o) 0<br>0    0    1」</li>
+</ul>
+<p>缩放</p>
+<ul>
+<li>a和c直观控制缩放<br>「2 0 0<br>0 2 0<br>0 0 1」</li>
+</ul>
+<h4 id="线性变换列表"><a href="#线性变换列表" class="headerlink" title="线性变换列表"></a>线性变换列表</h4><ul>
+<li>表示一系列的变换，结果为变换的矩阵的乘积<br>M = Mn <em> Mn-1 </em> … <em> M2 </em> M1 * M0</li>
+<li>后面的变换乘在前面<br>「1 0 10            「cos(30o) -sin(30o) 0<br>0 1 10    <em>      sin(30o) cos(30o) 0<br>0 0 1」          0    0    1」<br>Mtranslate </em> Mrotate</li>
+</ul>
+<h4 id="transform属性"><a href="#transform属性" class="headerlink" title="transform属性"></a>transform属性</h4><ul>
+<li>前驱坐标系：父容器的坐标系</li>
+<li>transform属性：定义前驱坐标系到自身坐标系到线性变换</li>
+<li>语法：<br>ratate(<deg>)<em><br>translate(<x>,<y>)</y></x></em><br>scale(<sx>,<sy>)<em><br>matrix(<a>,<b>,<c>,<d>,<e>,<f>)</f></e></d></c></b></a></em></sy></sx></deg></li>
+</ul>
+<ul>
+<li>demo<br>viewBox加0.5的偏移，之后的坐标是对齐到整数的话(画线?)会比较锐利  浏览器渲染svg的1像素偏差</li>
+</ul>
+<p>根据<a href="https://www.imooc.com/video/2612" target="_blank" rel="noopener">慕课网课程</a>整理</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    简兮
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.secretbase.vip/SVG学习(2).html" title="SVG学习(2)">http://www.secretbase.vip/SVG学习(2).html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
+          
+            <a href="/tags/svg/" rel="tag"><i class="fa fa-tag"></i> svg</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/SVG学习(1).html" rel="next" title="SVG学习(1)">
+                <i class="fa fa-chevron-left"></i> SVG学习(1)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/SVG学习(3).html" rel="prev" title="SVG学习(3)">
+                SVG学习(3) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  /*with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];*/
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//baidushare.secretbase.vip/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="简兮">
+            
+              <p class="site-author-name" itemprop="name">简兮</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">113</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/2453639861" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SVG中的坐标系统与坐标变换"><span class="nav-number">1.</span> <span class="nav-text">SVG中的坐标系统与坐标变换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SVG的世界、视野、视窗的概念"><span class="nav-number">1.1.</span> <span class="nav-text">SVG的世界、视野、视窗的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#视野与世界"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">视野与世界</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVG中的图形分组"><span class="nav-number">1.2.</span> <span class="nav-text">SVG中的图形分组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#坐标系统概述"><span class="nav-number">1.3.</span> <span class="nav-text">坐标系统概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四个坐标系"><span class="nav-number">1.4.</span> <span class="nav-text">四个坐标系</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用户坐标系（User-Coordinate）"><span class="nav-number">1.4.0.1.</span> <span class="nav-text">用户坐标系（User Coordinate）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自身坐标系（Current-Coordinate）"><span class="nav-number">1.4.0.2.</span> <span class="nav-text">自身坐标系（Current Coordinate）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#前驱坐标系（Previous-Coordinate）"><span class="nav-number">1.4.0.3.</span> <span class="nav-text">前驱坐标系（Previous Coordinate）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考坐标系（Reference-Coordinate）"><span class="nav-number">1.4.0.4.</span> <span class="nav-text">参考坐标系（Reference Coordinate）</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#坐标变换"><span class="nav-number">1.5.</span> <span class="nav-text">坐标变换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义"><span class="nav-number">1.5.0.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线性变换"><span class="nav-number">1.5.0.2.</span> <span class="nav-text">线性变换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线性变换列表"><span class="nav-number">1.5.0.3.</span> <span class="nav-text">线性变换列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#transform属性"><span class="nav-number">1.5.0.4.</span> <span class="nav-text">transform属性</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-id-card"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">简兮</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+  
+  
+
+  
+  
+  <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1277956429'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1277956429%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+        
+        <script src="/js/src/gitment.js?v=5.1.4"></script>
+    
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitment({
+            id: '1533737040000', // 可选。默认为 window.location.pathname
+            owner: 'snjylin',
+            repo: 'BlogDiscuss',
+            
+            oauth: {
+            
+            
+                client_secret: 'df75edcae04fd93529fdd4eacb76f7c87e8039e6',
+            
+                client_id: '276d657a8e6523b983c0'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("JxHIeTr8jpm7BWSgO4NORUPs-gzGzoHsz", "6m0c5RXehtfXzk1WzdNgoNaz");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  
+  <div class="guide">
+      <embed src="/images/guide.svg" type="image/svg+xml">
+  </div>
+  
+
+</body>
+</html>

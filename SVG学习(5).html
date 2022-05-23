@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="前端,svg,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="慢时光小栈" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="SVG文本&amp;lt;text&amp;gt;和&amp;lt;tspan&amp;gt;创建文本 x和y属性 - 定位标准 dx和dy属性 - 字形偏移 style属性 - 设置样式  123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263&amp;lt">
+<meta name="keywords" content="前端,svg">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SVG学习(5)">
+<meta property="og:url" content="http://www.secretbase.vip/SVG学习(5).html">
+<meta property="og:site_name" content="慢时光小栈">
+<meta property="og:description" content="SVG文本&amp;lt;text&amp;gt;和&amp;lt;tspan&amp;gt;创建文本 x和y属性 - 定位标准 dx和dy属性 - 字形偏移 style属性 - 设置样式  123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263&amp;lt">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-04-08T07:44:58.142Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SVG学习(5)">
+<meta name="twitter:description" content="SVG文本&amp;lt;text&amp;gt;和&amp;lt;tspan&amp;gt;创建文本 x和y属性 - 定位标准 dx和dy属性 - 字形偏移 style属性 - 设置样式  123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263&amp;lt">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.secretbase.vip/SVG学习(5).html">
+
+
+
+
+
+  <title>SVG学习(5) | 慢时光小栈</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?94f8e2c0b5db960885a3e827e179f0bd";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-9799888289628155",
+        enable_page_level_ads: true
+    });
+</script>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">慢时光小栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">盛年不重来，一日难再晨。及时当勉励，岁月不待人。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.secretbase.vip/SVG学习(5).html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="简兮">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="慢时光小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SVG学习(5)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-09T18:56:20+08:00">
+                2018-08-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/技术/svg/" itemprop="url" rel="index">
+                    <span itemprop="name">svg</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/SVG学习(5).html" class="leancloud_visitors" data-flag-title="SVG学习(5)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="SVG文本"><a href="#SVG文本" class="headerlink" title="SVG文本"></a>SVG文本</h1><h2 id="lt-text-gt-和-lt-tspan-gt-创建文本"><a href="#lt-text-gt-和-lt-tspan-gt-创建文本" class="headerlink" title="&lt;text&gt;和&lt;tspan&gt;创建文本"></a><code>&lt;text&gt;</code>和<code>&lt;tspan&gt;</code>创建文本</h2><ul>
+<li>x和y属性 - 定位标准</li>
+<li>dx和dy属性 - 字形偏移</li>
+<li>style属性 - 设置样式</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100%&quot; height=&quot;100%&quot;&gt;</span><br><span class="line">	&lt;defs&gt;</span><br><span class="line">		&lt;pattern id=&quot;grid&quot; x=&quot;0&quot; y=&quot;0&quot; width=&quot;20&quot; height=&quot;20&quot; patternUnits=&quot;userSpaceOnUse&quot;&gt;</span><br><span class="line">			&lt;path stroke=&quot;#F0F0F0&quot;  fill=&quot;none&quot; d=&quot;M0,0H20V20&quot;&gt;&lt;/path&gt;</span><br><span class="line">		&lt;/pattern&gt;</span><br><span class="line">	&lt;/defs&gt;</span><br><span class="line">	&lt;rect   width=&quot;1200&quot; height=&quot;1000&quot; fill=&quot;url(#grid)&quot;&gt;&lt;/rect&gt;</span><br><span class="line">	&lt;text id=&quot;sintext&quot; x=&quot;100&quot; y=&quot;150&quot;&gt;&lt;/text&gt;</span><br><span class="line">	&lt;text x=&quot;100&quot; y=&quot;150&quot;&gt;</span><br><span class="line">		&lt;tspan fill=&quot;red&quot; dy=&quot;-20 20&quot;&gt;AB&lt;/tspan&gt;</span><br><span class="line">		&lt;tspan stroke=&quot;green&quot; fill=&quot;none&quot; dy=&quot;-40 20&quot;&gt;CDE&lt;/tspan&gt;</span><br><span class="line">	&lt;/text&gt;</span><br><span class="line">	&lt;path d=&quot;M100,0V200M0,100H200&quot; stroke=&quot;red&quot; fill=&quot;none&quot;&gt;&lt;/path&gt;</span><br><span class="line">&lt;/svg&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	// y = s * sin(w * x + t)</span><br><span class="line">	// x = [20, 20, 20...]</span><br><span class="line"></span><br><span class="line">	var NS = &apos;http://www.w3.org/2000/svg&apos;;</span><br><span class="line">	var text = &apos;ABCDEFGHIJKLMNOPQRSTUVWXYZ&apos;;</span><br><span class="line">	var n = text.length;</span><br><span class="line">	var x = [];</span><br><span class="line">	var y = null;</span><br><span class="line">	var i = n;</span><br><span class="line">	var s = 100;</span><br><span class="line">	var w = 0.02;</span><br><span class="line">	var t = 0;</span><br><span class="line"></span><br><span class="line">	while(i--) &#123;</span><br><span class="line">		x.push(10);</span><br><span class="line">		var tspan = document.createElementNS(NS, &apos;tspan&apos;);</span><br><span class="line">		tspan.textContent = text[n - i - 1];</span><br><span class="line">		sintext.appendChild(tspan);</span><br><span class="line">		var h = Math.round(360 / 26 * i);</span><br><span class="line">		tspan.setAttribute(&apos;fill&apos;, &apos;hsl(&apos; + h + &apos;, 100%, 80%)&apos;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function arrange(t)&#123;</span><br><span class="line">		y = [];</span><br><span class="line">		var ly = 0, cy;</span><br><span class="line">		for(var i = 0; i &lt; n; ++i)&#123;</span><br><span class="line">			cy = -s * Math.sin(w * i * 20 + t);</span><br><span class="line">			y.push(cy - ly);</span><br><span class="line">			ly = cy;</span><br><span class="line">		&#125;</span><br><span class="line">		// y = x.map(function(x)&#123;</span><br><span class="line">		// 	return s * Math.sin(w * x + t);</span><br><span class="line">		// &#125;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function render()&#123;</span><br><span class="line">		sintext.setAttribute(&quot;dx&quot;, x.join(&apos; &apos;));</span><br><span class="line">		sintext.setAttribute(&quot;dy&quot;, y.join(&apos; &apos;));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function frame()&#123;</span><br><span class="line">		t += 0.01;</span><br><span class="line">		arrange(t);</span><br><span class="line">		render();</span><br><span class="line">		requestAnimationFrame(frame);</span><br><span class="line">	&#125;</span><br><span class="line">	frame();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><code>&lt;tspan&gt;</code>中dy是向下传递的<br>text和tspan中同时设置dy时，text中的dy属性会被覆盖</p>
+<h2 id="垂直居中问题"><a href="#垂直居中问题" class="headerlink" title="垂直居中问题"></a>垂直居中问题</h2><ul>
+<li>text-anchor - 水平居中属性</li>
+<li>dominant-baseline 属性(<a href="http://www.w3.org/TR/SVG/text.html#DomainantBaselineProperty" target="_blank" rel="noopener">http://www.w3.org/TR/SVG/text.html#DomainantBaselineProperty</a>)</li>
+<li>自己模拟</li>
+</ul>
+<p>模拟<br>var box = text.getBBox(); 渲染的盒子<br>顶线: box.y<br>中线: box.y + box.height / 2<br>底线: box.y + box.height<br>文本基线: y</p>
+<h2 id="lt-textPath-gt-让文本在指定路径上排列"><a href="#lt-textPath-gt-让文本在指定路径上排列" class="headerlink" title="&lt;textPath&gt; 让文本在指定路径上排列"></a><code>&lt;textPath&gt;</code> 让文本在指定路径上排列</h2><h4 id="路径文本"><a href="#路径文本" class="headerlink" title="路径文本"></a>路径文本</h4><ul>
+<li>使用方法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;path id=&quot;path1&quot; d=&quot;M 100 200 Q 200 100 300 200 T 500 200&quot; stroke=&quot;rgb(0,255,0)&quot; fill=&quot;none&quot; /&gt;</span><br><span class="line">&lt;text style=&quot;font-size: 24px;&quot;&gt;</span><br><span class="line">	&lt;textPath xlink:href=&quot;#path1&quot;&gt;</span><br><span class="line">		这个文字先上去，又下来了。Upside down in english!</span><br><span class="line">	&lt;/textPath&gt;</span><br><span class="line">&lt;/text&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>布局原理</li>
+</ul>
+<p>渲染原理<br>浏览器会把字符从字体表中查到这个字符要占的宽度charWidth，然后从路径最开始的位置找到了一个点，根据这个宽度，在这个路径经过多少长度之后找到另一个点，这两个点将作为计算的基点，通过这两个基点算出来一个点是这个点到这两个基点的位置在路径上的长度都是一样的，最终算出中间的点将会作一条切线以及法线，在这条法线上会把这个文字对齐到文字中央并且把文字的基线位置对齐到切线的位置，这样就完成了第一个文字的排列。上一个文字排列的时候算出来的三个点中的最后一个点会作为下一次计算的开始的点。</p>
+<ul>
+<li>定位属性 x,y,dx,dy的作用</li>
+</ul>
+<p>x、text-anchor和startOffset属性</p>
+<pre><code>- 确定排列起始位置
+</code></pre><p>dx、dy属性</p>
+<pre><code>- 切线和法线方向的偏移
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;path id=&quot;path1&quot; d=&quot;M 100 200 Q 200 100 300 200 T 500 200&quot; stroke=&quot;rgb(0,255,0)&quot; fill=&quot;none&quot; /&gt;</span><br><span class="line">&lt;text style=&quot;font-size: 24px;&quot;&gt;</span><br><span class="line">	&lt;textPath xlink:href=&quot;#path1&quot;&gt;</span><br><span class="line">        &lt;tspan&gt;这个文字先&lt;/tspan&gt;</span><br><span class="line">        &lt;tspan fill=&quot;blue&quot; dy=&quot;-30&quot;&gt;上去&lt;/tspan&gt;</span><br><span class="line">        &lt;tspan dy=&quot;30&quot;&gt;，又&lt;/tspan&gt;</span><br><span class="line">        &lt;tspan fill=&quot;red&quot; dy=&quot;30&quot;&gt;下来&lt;/tspan&gt;</span><br><span class="line">        &lt;tspan dy=&quot;-30&quot;&gt;了。Upside down in english!&lt;/tspan&gt;</span><br><span class="line">	&lt;/textPath&gt;</span><br><span class="line">&lt;/text&gt;</span><br></pre></td></tr></table></figure>
+<p>示例：<a href="https://demo.secretbase.vip/view/SVG%E7%BB%83%E4%B9%A01.html" target="_blank" rel="noopener">点击查看</a></p>
+<ul>
+<li>脚本控制<br>  setAttributeNS()方法设置xlink:href属性<br>  把文本节点替换为<textpath>节点</textpath></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">&lt;form&gt;</span><br><span class="line">	&lt;label&gt;Path:&lt;/label&gt;</span><br><span class="line">	&lt;select id=&quot;text-path-select&quot;&gt;</span><br><span class="line">		&lt;option value=&quot;none&quot;&gt;none&lt;/option&gt;</span><br><span class="line">		&lt;option value=&quot;#path1&quot;&gt;path1&lt;/option&gt;</span><br><span class="line">		&lt;option value=&quot;#path2&quot;&gt;path2&lt;/option&gt;</span><br><span class="line">		&lt;option value=&quot;#path3&quot;&gt;path3&lt;/option&gt;</span><br><span class="line">	&lt;/select&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;800&quot; height=&quot;600&quot;&gt;</span><br><span class="line">	&lt;path id=&quot;path1&quot; d=&quot;M 100 200 Q 200 100 300 200 T 500 200&quot; stroke=&quot;rgb(0,255,0)&quot; fill=&quot;none&quot; /&gt;</span><br><span class="line">	&lt;path id=&quot;path2&quot; d=&quot;M100,300l100-50,200,100,100,-50&quot; stroke=&quot;rgb(255,0,0)&quot; fill=&quot;none&quot; /&gt;</span><br><span class="line">	&lt;path id=&quot;path3&quot; d=&quot;M100,400A400,300,0,0,0,500,400&quot; stroke=&quot;blue&quot; fill=&quot;none&quot; /&gt;</span><br><span class="line">	&lt;text id=&quot;text&quot; x=&quot;100&quot; y=&quot;100&quot; style=&quot;font-size: 20px;&quot;&gt;</span><br><span class="line">		Text path scripting.&lt;tspan id=&quot;tspan&quot;&gt;动态使用路径文本&lt;/tspan&gt;</span><br><span class="line">	&lt;/text&gt;</span><br><span class="line">&lt;/svg&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	var SVG_NS = &apos;http://www.w3.org/2000/svg&apos;;</span><br><span class="line">	var XLINK_NS = &apos;http://www.w3.org/1999/xlink&apos;;</span><br><span class="line"></span><br><span class="line">	var select = document.getElementById(&apos;text-path-select&apos;);</span><br><span class="line">	var text = document.getElementById(&apos;text&apos;);</span><br><span class="line">	var tspan = document.getElementById(&apos;tspan&apos;);</span><br><span class="line"></span><br><span class="line">	function addTextPath() &#123;</span><br><span class="line">		var textPath = document.createElementNS(SVG_NS, &apos;textPath&apos;);</span><br><span class="line">		while (text.firstChild) &#123;</span><br><span class="line">			textPath.appendChild(text.firstChild);</span><br><span class="line">		&#125;</span><br><span class="line">		text.appendChild(textPath);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function setTextPath(path) &#123;</span><br><span class="line">		var textPath = text.firstChild;</span><br><span class="line">		textPath.setAttributeNS(XLINK_NS, &apos;xlink:href&apos;, path);</span><br><span class="line"></span><br><span class="line">		var pathElement = document.querySelector(path);</span><br><span class="line">		tspan.setAttribute(&apos;fill&apos;, pathElement.getAttribute(&apos;stroke&apos;));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function removeTextPath() &#123;</span><br><span class="line">		var textPath = text.firstChild;</span><br><span class="line">		while (textPath.firstChild) &#123;</span><br><span class="line">			text.appendChild(textPath.firstChild);</span><br><span class="line">		&#125;</span><br><span class="line">		text.removeChild(textPath);</span><br><span class="line">		tspan.removeAttribute(&apos;fill&apos;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    select.addEventListener(&apos;input&apos;, function() &#123;</span><br><span class="line">        var value = select.value;</span><br><span class="line">        if (text.firstChild.tagName &amp;&amp; text.firstChild.tagName.toLowerCase() == &apos;textpath&apos;) &#123;</span><br><span class="line">            if (value == &apos;none&apos;) &#123;</span><br><span class="line">            	removeTextPath();</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">            	removeTextPath();</span><br><span class="line">                addTextPath();</span><br><span class="line">                setTextPath(value);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            if (value != &apos;none&apos;) &#123;</span><br><span class="line">                addTextPath();</span><br><span class="line">                setTextPath(value);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>示例：<a href="https://demo.secretbase.vip/view/SVG%E7%BB%83%E4%B9%A02.html" target="_blank" rel="noopener">点击查看</a></p>
+<h2 id="lt-a-gt-插入超链接"><a href="#lt-a-gt-插入超链接" class="headerlink" title="&lt;a&gt;插入超链接"></a><code>&lt;a&gt;</code>插入超链接</h2><ul>
+<li>可以添加到任意的图形上</li>
+<li>xlink:href 指定链接地址</li>
+<li>xlink:title 指定链接提示</li>
+<li>target 指定打开目标</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;800&quot; height=&quot;600&quot;&gt;</span><br><span class="line">	&lt;a xlink:href=&quot;http://baike.baidu.com/search/word?word=正方形&quot; xlink:title=&quot;正方形&quot; target=&quot;_blank&quot;&gt;</span><br><span class="line">		&lt;rect x=&quot;100&quot; y=&quot;100&quot; width=&quot;100&quot; height=&quot;100&quot; fill=&quot;rgba(255,0,0,.5)&quot; stroke=&quot;rgb(200,0,0)&quot; stroke-width=&quot;2&quot;&gt;&lt;/rect&gt;</span><br><span class="line">	&lt;/a&gt;</span><br><span class="line">	&lt;a xlink:href=&quot;http://baike.baidu.com/search/word?word=圆形&quot; xlink:title=&quot;圆形&quot; target=&quot;_blank&quot;&gt;</span><br><span class="line">		&lt;circle cx=&quot;300&quot; cy=&quot;150&quot; r=&quot;50&quot; fill=&quot;rgba(0,255,0,.5)&quot; stroke=&quot;rgb(200,0,0)&quot; stroke-width=&quot;2&quot;&gt;&lt;/circle&gt;</span><br><span class="line">	&lt;/a&gt;</span><br><span class="line">	&lt;a xlink:href=&quot;http://baike.baidu.com/search/word?word=三角形&quot; xlink:title=&quot;三角形&quot; target=&quot;_blank&quot;&gt;</span><br><span class="line">		&lt;polygon points=&quot;150 250 200 350 100 350&quot; fill=&quot;rgba(0,0,255,.5)&quot; stroke=&quot;rgb(200,0,0)&quot; stroke-width=&quot;2&quot;&gt;&lt;/polygon&gt;</span><br><span class="line">	&lt;/a&gt;</span><br><span class="line">	&lt;a xlink:href=&quot;http://baike.baidu.com/search/word?word=平行四边形&quot; xlink:title=&quot;平行四边形&quot; target=&quot;_blank&quot;&gt;</span><br><span class="line">		&lt;polygon points=&quot;300 250 350 250 300 350 250 350&quot; fill=&quot;rgba(255,255,0,.5)&quot; stroke=&quot;rgb(200,0,0)&quot; stroke-width=&quot;2&quot;&gt;&lt;/polygon&gt;</span><br><span class="line">	&lt;/a&gt;</span><br><span class="line">&lt;/svg&gt;</span><br></pre></td></tr></table></figure>
+<p>示例：<a href="https://demo.secretbase.vip/view/SVG%E7%BB%83%E4%B9%A03.html" target="_blank" rel="noopener">点击查看</a></p>
+<p>根据<a href="https://www.imooc.com/video/2612" target="_blank" rel="noopener">慕课网课程</a>整理</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    简兮
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.secretbase.vip/SVG学习(5).html" title="SVG学习(5)">http://www.secretbase.vip/SVG学习(5).html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
+          
+            <a href="/tags/svg/" rel="tag"><i class="fa fa-tag"></i> svg</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/SVG学习(4).html" rel="next" title="SVG学习(4)">
+                <i class="fa fa-chevron-left"></i> SVG学习(4)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/SVG学习(6).html" rel="prev" title="SVG学习(6)">
+                SVG学习(6) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  /*with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];*/
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//baidushare.secretbase.vip/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="简兮">
+            
+              <p class="site-author-name" itemprop="name">简兮</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">113</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/2453639861" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SVG文本"><span class="nav-number">1.</span> <span class="nav-text">SVG文本</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-text-gt-和-lt-tspan-gt-创建文本"><span class="nav-number">1.1.</span> <span class="nav-text">&lt;text&gt;和&lt;tspan&gt;创建文本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#垂直居中问题"><span class="nav-number">1.2.</span> <span class="nav-text">垂直居中问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-textPath-gt-让文本在指定路径上排列"><span class="nav-number">1.3.</span> <span class="nav-text">&lt;textPath&gt; 让文本在指定路径上排列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#路径文本"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">路径文本</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-a-gt-插入超链接"><span class="nav-number">1.4.</span> <span class="nav-text">&lt;a&gt;插入超链接</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-id-card"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">简兮</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+  
+  
+
+  
+  
+  <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1277956429'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1277956429%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+        
+        <script src="/js/src/gitment.js?v=5.1.4"></script>
+    
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitment({
+            id: '1533812180000', // 可选。默认为 window.location.pathname
+            owner: 'snjylin',
+            repo: 'BlogDiscuss',
+            
+            oauth: {
+            
+            
+                client_secret: 'df75edcae04fd93529fdd4eacb76f7c87e8039e6',
+            
+                client_id: '276d657a8e6523b983c0'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("JxHIeTr8jpm7BWSgO4NORUPs-gzGzoHsz", "6m0c5RXehtfXzk1WzdNgoNaz");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  
+  <div class="guide">
+      <embed src="/images/guide.svg" type="image/svg+xml">
+  </div>
+  
+
+</body>
+</html>

@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="技术,前端,html,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="慢时光小栈" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="行间样式表1&amp;lt;div style=&amp;quot;...&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; 内部样式表1&amp;lt;style&amp;gt;...&amp;lt;/style&amp;gt; 外部样式表1&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;...&amp;quot; /&amp;gt; 常见样式边框的语法规则、边框的单一方向/条件设置边框组成:边框粗细、边框样式、边框颜">
+<meta name="keywords" content="技术,前端,html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html5基础">
+<meta property="og:url" content="http://www.secretbase.vip/html5基础.html">
+<meta property="og:site_name" content="慢时光小栈">
+<meta property="og:description" content="行间样式表1&amp;lt;div style=&amp;quot;...&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; 内部样式表1&amp;lt;style&amp;gt;...&amp;lt;/style&amp;gt; 外部样式表1&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;...&amp;quot; /&amp;gt; 常见样式边框的语法规则、边框的单一方向/条件设置边框组成:边框粗细、边框样式、边框颜">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-04-08T07:44:58.147Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="html5基础">
+<meta name="twitter:description" content="行间样式表1&amp;lt;div style=&amp;quot;...&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; 内部样式表1&amp;lt;style&amp;gt;...&amp;lt;/style&amp;gt; 外部样式表1&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;...&amp;quot; /&amp;gt; 常见样式边框的语法规则、边框的单一方向/条件设置边框组成:边框粗细、边框样式、边框颜">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.secretbase.vip/html5基础.html">
+
+
+
+
+
+  <title>html5基础 | 慢时光小栈</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?94f8e2c0b5db960885a3e827e179f0bd";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-9799888289628155",
+        enable_page_level_ads: true
+    });
+</script>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">慢时光小栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">盛年不重来，一日难再晨。及时当勉励，岁月不待人。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.secretbase.vip/html5基础.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="简兮">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="慢时光小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">html5基础</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-29T23:53:27+08:00">
+                2018-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/技术/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/html5基础.html" class="leancloud_visitors" data-flag-title="html5基础">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>行间样式表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;...&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>内部样式表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;...&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>外部样式表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;...&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="常见样式"><a href="#常见样式" class="headerlink" title="常见样式"></a>常见样式</h4><p>边框的语法规则、边框的单一方向/条件设置<br>边框组成:边框粗细、边框样式、边框颜色</p>
+<ul>
+<li>border-width</li>
+<li>border-style<br>  solid 实线 | dashed 虚线 | dotted 点线（IE6不兼容）</li>
+<li>border-color<br>边框的方向:top right bottom left</li>
+<li>border-top<br>  border-top-width | border-top-style | border-top-color</li>
+<li>border-right<br>  border-right-width | border-right-style | border-right-color</li>
+<li>border-bottom<br>  border-bottom-width | border-bottom-style | border-bottom-color</li>
+<li>border-left<br>  border-left-width | border-left-style | border-left-color</li>
+</ul>
+<h4 id="边框的特性、使用边框实现三角形"><a href="#边框的特性、使用边框实现三角形" class="headerlink" title="边框的特性、使用边框实现三角形"></a>边框的特性、使用边框实现三角形</h4><ul>
+<li>边框的特征:<br>  边框的形状:非矩形</li>
+<li>边框三角形<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">width:0;</span><br><span class="line">height:0;</span><br><span class="line">border:10px solid #fff;</span><br><span class="line">border-top-color:#ccc;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>边框练习的步骤及要求<br>1.先分析设计图的结构<br>2.根据所分析的结构，进行结构编码<br>3.根据所书写的结构，进行css编码<br>4.利用ps工具，对设计图上的模块进行测量以及颜色的拾取<br>5.样式添加</p>
+<h4 id="background"><a href="#background" class="headerlink" title="background"></a>background</h4><p>内容是会撑开容器宽高，背景不会占用容器宽高，默认铺满整个容器大小</p>
+<ul>
+<li>background-color 背景颜色<br>颜色英文关键字 rgb 十六进制</li>
+<li>background-image 背景图片</li>
+<li>background-repeat 背景图是否重复</li>
+<li>no-repeat 不重复 repeat-x x轴重复 repeat-y y轴重复 repeat x/y都重复</li>
+<li>background-position 背景图位置<br>1）具体数值<br>2）方向关键字<ul>
+<li>left right center</li>
+<li>top bottom center<br>当第二个属性没有填写，默认居中。</li>
+</ul>
+</li>
+<li>background-attachment 背景是否滚动<br>fixed 固定在浏览器可视区域<br>scroll 跟随滚动条滚动</li>
+<li>background复合样式 不分属性值书写顺序</li>
+</ul>
+<p>背景练习的要求<br>1.头部区域（第一个块）直接切一张完整的图片<br>2.内容区域里的每一个小块需要有ico并且还有背景颜色</p>
+<p>文字着重、文字倾斜、文字大小、字体、行高</p>
+<ul>
+<li>font-wight 文字着重</li>
+<li>blod 加粗 normal 正常</li>
+<li>font-style 文字样式</li>
+<li>italic 斜体</li>
+<li>font-size 文字大小</li>
+<li>font-family 字体</li>
+<li>line-height 行高 文字在一行里面所占用的位置<pre><code>注意：line-height 为奇数时，上面比下面少一像素
+</code></pre></li>
+<li>font-variant 设置小型大写字母的字体显示文本</li>
+<li>small-caps 浏览器会显示小型大写字母的字体. normal 默认值 标准字体 css3属性</li>
+</ul>
+<h4 id="行高的特性、行高的测量方式"><a href="#行高的特性、行高的测量方式" class="headerlink" title="行高的特性、行高的测量方式"></a>行高的特性、行高的测量方式</h4><p>当行高的值与容器高度一致时，文字会垂直居中显示<br>多行文字测量行高的方法:</p>
+<ul>
+<li>1.确认文字大小</li>
+<li>2.确认两行文字之间的 空隙大小</li>
+<li>3.空隙大小除以2，得出来的值就是每行文字的上下的空隙大小<br>  3.1 当行高为奇数时，那么文字的上方要比下方少一个像素<br>  3.2 当行高为偶数时，那么文字上下空隙值一致</li>
+<li>4.通过辅助线测量多行文字的行高</li>
+<li>font复合样式 需要注意书写顺序<br>font:font-style | font-variant（设置小型大写字母的字体显示文本） | font-weight | font-size/line-height | font-family;</li>
+</ul>
+<h4 id="文本设置-文字颜色、文本对齐方式、首行缩进、文本修饰、字母间距、单词间距"><a href="#文本设置-文字颜色、文本对齐方式、首行缩进、文本修饰、字母间距、单词间距" class="headerlink" title="文本设置 文字颜色、文本对齐方式、首行缩进、文本修饰、字母间距、单词间距"></a>文本设置 文字颜色、文本对齐方式、首行缩进、文本修饰、字母间距、单词间距</h4><ul>
+<li>color 文字颜色</li>
+<li>text-align 文字对齐（显示）方式 left right center</li>
+<li>text-indent 首行缩进</li>
+<li>使用em单位 em是根据字体大小来进行计算的 1em=当前字体大小</li>
+<li>text-decoration 文本修饰</li>
+<li>underline 下划线  none</li>
+<li>letter-spacing 字母间距</li>
+<li>word-spacing 单词间距（以空格为解析单位）<br>强制不换行、空格大小的测量</li>
+<li>white-space 强制不换行</li>
+<li>nowarp 不换行 normal 正常<br>（text无复合样式）<br>一个空格有多大？<br>空格的大小:宋体字体下文字大小的一半;字体格式不一样时，空格大小也不一样。<br>文字其实是一张张的图片，并非刚好是正正方方的，每个文字的右侧会留有一个间隙<br>测量文字大小时，最好是使用从上到下的方式去测量文字大小，从左到右不确定文字之间留有的间隙大小</li>
+</ul>
+<p>文本（font）属性练习 要求<br>1.模块、单词间距、文字行高要与设计图统一<br>2.思考题:每一行的前方粉色带三角的区域该如何实现？</p>
+<h4 id="padding-内填充"><a href="#padding-内填充" class="headerlink" title="padding 内填充"></a>padding 内填充</h4><h4 id="margin-外边距"><a href="#margin-外边距" class="headerlink" title="margin 外边距"></a>margin 外边距</h4><p>标签与标签之间的间隔（距离）<br>margin的问题</p>
+<ul>
+<li>1.margin-top传递 :父子级包含的时候子级的margin-top会传递给父级<br>解决方法:仅用已学知识点可以使用border解决（父级加边框）</li>
+<li>2.margin上下叠压:上下边距会叠压（相邻元素）<br>解决技巧:<br>  1.还是使用margin，可以将某一个元素方向设置成预想的值。margin叠压会取最大的margin值。<br>  2.如果元素没有特殊特征，也可以用padding代替。</li>
+</ul>
+<h4 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h4><ul>
+<li>盒模型大小:<br>border + padding + width/height</li>
+<li>盒模型的宽度:<br>border-left-width + padding-left + width + padding-right + border-right-width</li>
+<li>盒模型的高度:<br>border-top-width + padding-top + height + padding-bottom + border-bottom-width</li>
+</ul>
+<p>常见复合属性:</p>
+<ul>
+<li>background</li>
+<li>border</li>
+<li>padding</li>
+<li>margin</li>
+<li>font:font-style|font-weight|font-size/line-height|font-family;</li>
+</ul>
+<p>盒模型线框图（marign_padding）练习<br>1.两个线框图都得做<br>2.利用margin完成<br>3.利用padding完成<br>4.混合使用margin和padding同时完成<br>注意:不管是结构还是样式的编码 从外往里（从大往小）进行编码</p>
+<p>网易产品模块练习<br>1.利用第一章所学的所有知识点完成<br>2.思考:能否统一对该模块所有的文字进行行高统一的设置？</p>
+<h4 id="常见标签"><a href="#常见标签" class="headerlink" title="常见标签"></a>常见标签</h4><p>a标签，超链接，伪类是什么，a标签的伪类，伪类的顺序<br>a 超链接<br>伪类 给元素添加特殊的效果<br>link 未访问过的链接初始颜色<br>visited 访问过后的链接颜色<br>hover 鼠标移入（悬停）<br>active 鼠标按下时链接的颜色</p>
+<h4 id="css-reset"><a href="#css-reset" class="headerlink" title="css reset"></a>css reset</h4><p>原则<br>但凡是浏览器默认的样式，都不要使用。因为每个浏览器下标签的默认样式可能会出现不一致的情况。</p>
+<p>人为的将所有样式全部统一（清除），再根据实际情况（设计稿）进行设置。<br>哪些样式是需要重置的？<br>与盒模型相关的样式<br>border | margin | padding<br>标签特有的样式<br>il&gt;li<br>ol&gt;li<br>书写原则</p>
+<ul>
+<li>用到什么标签就清除所用标签的默认样式</li>
+<li>建议不要直接将所有标签全部加上。</li>
+<li>不要将所有标签全部统一设置一致的reset，需根据标签默认样式特征来分类设置。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">body,h1,h2,h3,h4,h5,h6,p,dl,dd｛margin:0;｝</span><br><span class="line">ul，ol｛margin:0;padding:0;list-style:none;｝</span><br><span class="line">img｛border:none;vertacial-align:top;｝/*当a标签包裹img时，IE6下会有缝隙和蓝边*/</span><br><span class="line">a｛text-decoration:none;｝</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="常用选择器"><a href="#常用选择器" class="headerlink" title="常用选择器"></a>常用选择器</h4><ul>
+<li>id选择器 当前页面唯一的</li>
+<li>类选择器 可以是多个class加在同一个元素上<br>.class名称</li>
+<li>标签选择器 当前页面上所有标签名为xxx的元素</li>
+<li>群组选择器 用逗号分隔，被逗号分隔的元素（选择器）全部执行统一的代码片段</li>
+<li>包含选择器<br>目标父级元素 目标元素<br>空格-代表下一级（语法）</li>
+<li><ul>
+<li>通配符 找到页面上符合规则的所有元素</li>
+</ul>
+</li>
+</ul>
+<p>！！！不建议使用通配符</p>
+<h4 id="选择器优先级"><a href="#选择器优先级" class="headerlink" title="选择器优先级"></a>选择器优先级</h4><p>优先级 代码执行生效的顺序<br>行间样式 &gt; id选择器 &gt; 类选择器 &gt; 标签选择器<br>行间样式 1000<br>id选择器 100<br>类选择器 10<br>标签选择器 1</p>
+<h4 id="块元素和内联元素"><a href="#块元素和内联元素" class="headerlink" title="块元素和内联元素"></a>块元素和内联元素</h4><p>块元素的特征</p>
+<ul>
+<li>1.默认独占一行</li>
+<li>2.没有宽度时，默认撑满一行</li>
+<li>3.支持所有css命令<br>内联（内嵌、行内）元素的特征</li>
+<li>1.同排可以继续跟同类的标签</li>
+<li>2.内容撑开宽度</li>
+<li>3.不支持宽高</li>
+<li>4.不支持上下的margin</li>
+<li>5.代码换行被解析</li>
+</ul>
+<p>display:inline 显示为内联<br>使行块属性标签具备内联元素的特性<br>display:block 显示为块<br>使内联元素具备块属性标签的特性</p>
+<p>display是将标签转换为页面中显示的类型<br>display不会改变标签本质</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    简兮
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.secretbase.vip/html5基础.html" title="html5基础">http://www.secretbase.vip/html5基础.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/技术/" rel="tag"><i class="fa fa-tag"></i> 技术</a>
+          
+            <a href="/tags/前端/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
+          
+            <a href="/tags/html/" rel="tag"><i class="fa fa-tag"></i> html</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/svg动画遇到的问题.html" rel="next" title="svg动画遇到的问题">
+                <i class="fa fa-chevron-left"></i> svg动画遇到的问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/公爵之吻.html" rel="prev" title="公爵之吻">
+                公爵之吻 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  /*with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];*/
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//baidushare.secretbase.vip/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="简兮">
+            
+              <p class="site-author-name" itemprop="name">简兮</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">113</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/2453639861" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#常见样式"><span class="nav-number">1.</span> <span class="nav-text">常见样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#边框的特性、使用边框实现三角形"><span class="nav-number">2.</span> <span class="nav-text">边框的特性、使用边框实现三角形</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#background"><span class="nav-number">3.</span> <span class="nav-text">background</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#行高的特性、行高的测量方式"><span class="nav-number">4.</span> <span class="nav-text">行高的特性、行高的测量方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文本设置-文字颜色、文本对齐方式、首行缩进、文本修饰、字母间距、单词间距"><span class="nav-number">5.</span> <span class="nav-text">文本设置 文字颜色、文本对齐方式、首行缩进、文本修饰、字母间距、单词间距</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#padding-内填充"><span class="nav-number">6.</span> <span class="nav-text">padding 内填充</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#margin-外边距"><span class="nav-number">7.</span> <span class="nav-text">margin 外边距</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#盒模型"><span class="nav-number">8.</span> <span class="nav-text">盒模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见标签"><span class="nav-number">9.</span> <span class="nav-text">常见标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css-reset"><span class="nav-number">10.</span> <span class="nav-text">css reset</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用选择器"><span class="nav-number">11.</span> <span class="nav-text">常用选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择器优先级"><span class="nav-number">12.</span> <span class="nav-text">选择器优先级</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#块元素和内联元素"><span class="nav-number">13.</span> <span class="nav-text">块元素和内联元素</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-id-card"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">简兮</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+  
+  
+
+  
+  
+  <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1277956429'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1277956429%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+        
+        <script src="/js/src/gitment.js?v=5.1.4"></script>
+    
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitment({
+            id: '1530287607000', // 可选。默认为 window.location.pathname
+            owner: 'snjylin',
+            repo: 'BlogDiscuss',
+            
+            oauth: {
+            
+            
+                client_secret: 'df75edcae04fd93529fdd4eacb76f7c87e8039e6',
+            
+                client_id: '276d657a8e6523b983c0'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("JxHIeTr8jpm7BWSgO4NORUPs-gzGzoHsz", "6m0c5RXehtfXzk1WzdNgoNaz");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  
+  <div class="guide">
+      <embed src="/images/guide.svg" type="image/svg+xml">
+  </div>
+  
+
+</body>
+</html>
