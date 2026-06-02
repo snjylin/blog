@@ -134,7 +134,10 @@
             if (keyword === '') return;
             showModal('<p>正在搜索...</p>');
 
-            fetch('/search.xml')
+            // fetch('/search.xml')
+            var searchPath = typeof SEARCH_PATH !== 'undefined' ? SEARCH_PATH : '/search.xml';
+            fetch(searchPath)
+            // fetch(SEARCH_PATH)   // 使用全局变量
                 .then(function (res) { return res.text(); })
                 .then(function (xmlString) {
                     var parser = new DOMParser();
