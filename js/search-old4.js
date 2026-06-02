@@ -134,26 +134,7 @@
             if (keyword === '') return;
             showModal('<p>正在搜索...</p>');
 
-            // fetch('/search.xml')
-            // 获取当前部署的根路径（例如 /blog/ 或 /）
-            function getSiteRoot() {
-              var path = window.location.pathname;
-              // 如果当前路径以 /blog/ 开头，则根路径为 /blog/
-              if (path.match(/^\/blog\//)) {
-                return '/blog/';
-              }
-              // 如果当前路径是 /blog 或 /blog/index.html 等
-              if (path === '/blog' || path === '/blog/') {
-                return '/blog/';
-              }
-              // 否则默认为根目录
-              return '/';
-            }
-
-            // 在 performSearch 中，将 fetch('/search.xml') 替换为：
-            var searchPath = getSiteRoot() + 'search.xml';
-            fetch(searchPath)
-              // ... 其余代码不变
+            fetch('/search.xml')
                 .then(function (res) { return res.text(); })
                 .then(function (xmlString) {
                     var parser = new DOMParser();
