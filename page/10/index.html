@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>一半在街头，一半在云端</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="一半在街头，一半在云端">
+<meta property="og:url" content="http://example.com/page/10/index.html">
+<meta property="og:site_name" content="一半在街头，一半在云端">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="阿寻">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="一半在街头，一半在云端" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+
+  <!-- 在 head.ejs 中引入 CSS -->
+  <link rel="stylesheet" href="/share/css/share.min.css">
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">一半在街头，一半在云端</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">我是阿寻。一个INFP-T → INTP-A的田野调查者。一半在街头收集人间，一半在云端放牧想象。这里是我的赤脚漫游指南。所有笨拙，都是过程。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅" target="_blank"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-SVG学习-3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/08/09/SVG%E5%AD%A6%E4%B9%A0-3/" class="article-date">
+  <time class="dt-published" datetime="2018-08-09T07:22:48.000Z" itemprop="datePublished">2018-08-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/svg/">svg</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/08/09/SVG%E5%AD%A6%E4%B9%A0-3/">SVG学习(3)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="颜色、渐变和画刷"><a href="#颜色、渐变和画刷" class="headerlink" title="颜色、渐变和画刷"></a>颜色、渐变和画刷</h1><h2 id="认识RGB和HSL"><a href="#认识RGB和HSL" class="headerlink" title="认识RGB和HSL"></a>认识RGB和HSL</h2><p>都是css3支持的颜色表示方法<br>互相转换的原理</p>
+<h4 id="RGB"><a href="#RGB" class="headerlink" title="RGB"></a>RGB</h4><ul>
+<li>红色、绿色、蓝色三个分量</li>
+<li>表示方式：rgb(r,g,b)或#rrggbb</li>
+<li>每个分量取值范围:[0,255]</li>
+<li>优势：显示器容易解析</li>
+<li>劣势：不符合人类描述颜色的习惯</li>
+</ul>
+<p>R(255,0,0)	red<br>G(0,255,0)	green<br>B(0,0,255)	blue</p>
+<p>rgb(214,32,0)–亮一点–&gt;rgb(255,103,77)–淡一点–&gt;rgb(234,118,97)–偏黄一点–&gt;rgb(234,157,97)<br>使用rgb修改颜色很困难，很难把直观的修改变成三个分量的修改，这种情况建议使用HSL表示颜色</p>
+<h4 id="HSL"><a href="#HSL" class="headerlink" title="HSL"></a>HSL</h4><ul>
+<li>三个分量分别表示颜色、饱和度和亮度</li>
+<li>格式：hsl(h,s%,l%)</li>
+<li>取值范围<br>h:[0,359]<br>s,l:[0,100]</li>
+<li>优势：符合人类描述颜色的习惯<br>H:表示颜色在色环上的度数<br>S:表示色彩饱和度，100%的时候完全饱和，此时颜色最鲜艳，0%的时候完全不饱和，此时颜色是灰度的<br>L:表示亮度，即明暗程度，0%的时候是暗的，此时为黑色，100%的时候是亮的，此时为白色</li>
+</ul>
+<p>hsl(9,100%,42%)–亮一点–&gt;hsl(9,100%,65%)–淡一点–&gt;hsl(9,77%,65%)–偏黄一点–&gt;hsl(26,77%,65%)<br>对于需要调色的场景，每次只需要修改一个分量</p>
+<p>应用示例：<a target="_blank" rel="noopener" href="http://paletton.com/">http://paletton.com/</a></p>
+<h4 id="透明度"><a href="#透明度" class="headerlink" title="透明度"></a>透明度</h4><ul>
+<li>rgba(r,g,b,a)和hsla(h,s%,l%,a)表示带透明度的颜色</li>
+<li>opacity属性表示元素的透明度</li>
+<li>a和opacity的取值范围:[0,1]</li>
+</ul>
+<h4 id="在SVG中应用颜色"><a href="#在SVG中应用颜色" class="headerlink" title="在SVG中应用颜色"></a>在SVG中应用颜色</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;rect fill=&quot;rgb(255,0,0)&quot; opacity=&quot;0.5&quot; /&gt;</span><br><span class="line">&lt;rect stroke=&quot;hsla(0,50%,60%,0.5)&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="线性渐变和径向渐变"><a href="#线性渐变和径向渐变" class="headerlink" title="线性渐变和径向渐变"></a>线性渐变和径向渐变</h2><h4 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h4><ul>
+<li>让图形更丰满</li>
+<li>线性渐变和径向渐变</li>
+</ul>
+<h4 id="线性渐变"><a href="#线性渐变" class="headerlink" title="线性渐变"></a>线性渐变</h4><ul>
+<li><code>&lt;linearGradient&gt;</code>和<code>&lt;stop&gt;</code></li>
+<li>定义方向</li>
+<li>关键点位置及颜色</li>
+<li>grandientUnits<br>objectBoundingBox 默认值，是以图形的包围的盒子描述的两个端点的坐标<br>userSpaceOnUse 使用世界坐标系</li>
+</ul>
+<p>线性渐变使用linearGradient标签来定义，渐变的方向由两个坐标的点来决定，这两个点所用的坐标系是由grandientUnits来选择的，默认情况下是基于图形的百分比来决定的坐标系，渐变上每个位置的颜色由stop标签来定的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;</span><br><span class="line">	&lt;defs&gt;</span><br><span class="line">		&lt;linearGradient id=&quot;grad1&quot; gradientUnits=&quot;objectBoundingBox&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;1&quot; y2=&quot;1&quot;&gt;</span><br><span class="line">			&lt;stop offset=&quot;0&quot; stop-color=&quot;#1497FC&quot; /&gt;</span><br><span class="line">			&lt;stop offset=&quot;0.5&quot; stop-color=&quot;#A469BE&quot; /&gt;</span><br><span class="line">			&lt;stop offset=&quot;1&quot; stop-color=&quot;#FF8C00&quot; /&gt;</span><br><span class="line">		&lt;/linearGradient&gt;</span><br><span class="line">	&lt;/defs&gt;</span><br><span class="line">	&lt;rect x=&quot;100&quot; y=&quot;100&quot; fill=&quot;url(#grad1)&quot; width=&quot;200&quot; height=&quot;150&quot;&gt;&lt;/rect&gt;</span><br><span class="line">&lt;/svg&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="径向渐变"><a href="#径向渐变" class="headerlink" title="径向渐变"></a>径向渐变</h4><ul>
+<li><code>&lt;radialGraeient&gt;</code>和<code>&lt;stop&gt;</code></li>
+<li>定义方向</li>
+<li>关键点位置及颜色</li>
+<li>gradientUnits</li>
+<li>焦点位置<br>需要多定义参数r,fx,fy<br>fx,fy表示焦点位置</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;</span><br><span class="line">	&lt;defs&gt;</span><br><span class="line">		&lt;radialGradient id=&quot;grad2&quot; gradientUnits=&quot;objectBoundingBox&quot; cx=&quot;0.5&quot; cy=&quot;0.5&quot; r=&quot;0.5&quot; fx=&quot;0.6&quot; fy=&quot;0.3&quot;&gt;</span><br><span class="line">			&lt;stop offset=&quot;0&quot; stop-color=&quot;rgb(20,151,252)&quot; /&gt;</span><br><span class="line">			&lt;stop offset=&quot;0.5&quot; stop-color=&quot;rgb(164,105,190)&quot; /&gt;</span><br><span class="line">			&lt;stop offset=&quot;1&quot; stop-color=&quot;rgh(255,140,0)&quot; /&gt;</span><br><span class="line">		&lt;/radialGradient&gt;</span><br><span class="line">	&lt;/defs&gt;</span><br><span class="line">	&lt;rect x=&quot;100&quot; y=&quot;100&quot; width=&quot;200&quot; height=&quot;150&quot; fill=&quot;url(#grad2)&quot;&gt;&lt;/rect&gt;</span><br><span class="line">&lt;/svg&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用笔刷"><a href="#使用笔刷" class="headerlink" title="使用笔刷"></a>使用笔刷</h2><ul>
+<li>绘制纹理</li>
+<li><code>&lt;pattern&gt;</code>标签</li>
+<li>patternUnits和patternContentUnits<br>patternUnits：objectBoundingBox 默认，基于绘制图形的包围盒的百分比<br>patternUnits：userSpaceOnUse 世界坐标系<br>patternContentUnits：userSpaceOnUse 默认，世界坐标系<br>patternContentUnits：objectBoundingBox，内部元素的单位都是基于绘制图形的包围盒的百分比</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;</span><br><span class="line">	&lt;defs&gt;</span><br><span class="line">		&lt;pattern id=&quot;p1&quot; x=&quot;0&quot; y=&quot;0&quot; width=&quot;0.2&quot; height=&quot;0.2&quot;&gt;</span><br><span class="line">			&lt;circle cx=&quot;10&quot; cy=&quot;10&quot; r=&quot;5&quot; fill=&quot;red&quot;&gt;&lt;/circle&gt;</span><br><span class="line">			&lt;polygen points=&quot;30 10 60 50 0 50&quot; fill=&quot;green&quot;&gt;&lt;/polygen&gt;</span><br><span class="line">		&lt;/pattern&gt;</span><br><span class="line">	&lt;/defs&gt;</span><br><span class="line">	&lt;rect x=&quot;100&quot; y=&quot;100&quot; width=&quot;800&quot; height=&quot;300&quot; fill=&quot;url(#p1)&quot; stroke=&quot;blue&quot;&gt;&lt;/rect&gt;</span><br><span class="line">&lt;/svg&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>根据<a target="_blank" rel="noopener" href="https://www.imooc.com/video/2612">慕课网课程</a>整理</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/08/09/SVG%E5%AD%A6%E4%B9%A0-3/" data-id="cuidW-16uJ906dbhAVOzyGjGS" data-title="SVG学习(3)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/svg/" rel="tag">svg</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-SVG学习-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/08/08/SVG%E5%AD%A6%E4%B9%A0-2/" class="article-date">
+  <time class="dt-published" datetime="2018-08-08T14:04:00.000Z" itemprop="datePublished">2018-08-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/svg/">svg</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/08/08/SVG%E5%AD%A6%E4%B9%A0-2/">SVG学习(2)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="SVG中的坐标系统与坐标变换"><a href="#SVG中的坐标系统与坐标变换" class="headerlink" title="SVG中的坐标系统与坐标变换"></a>SVG中的坐标系统与坐标变换</h1><h2 id="SVG的世界、视野、视窗的概念"><a href="#SVG的世界、视野、视窗的概念" class="headerlink" title="SVG的世界、视野、视窗的概念"></a>SVG的世界、视野、视窗的概念</h2><h4 id="视野与世界"><a href="#视野与世界" class="headerlink" title="视野与世界"></a>视野与世界</h4><ul>
+<li><p>世界是无穷大的</p>
+</li>
+<li><p>视野是观察世界的一个矩形区域 viewbox</p>
+</li>
+<li><p>width,height - 控制视窗</p>
+</li>
+<li><p>SVG代码 - 定义世界</p>
+</li>
+<li><p>viewBox,preserveAspectRatio - 控制视野</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot;</span><br><span class="line">	width=&quot;800px&quot; height=&quot;400px&quot;</span><br><span class="line">	viewBox=&quot;0 0 400 300&quot;</span><br><span class="line">	preserveAspectRatio=&quot;xMidYMid meet&quot;&gt;</span><br><span class="line">	&lt;!--SVG content--&gt;</span><br><span class="line">&lt;/svg&gt;</span><br></pre></td></tr></table></figure>
+
+<p>世界是客观的，视野是可以改变的，svg中提供了viewbox控制视野的范围<br><code>&lt;svg&gt;</code>标签中可以指定宽高属性，表示svg文件渲染的区域大小，也可以使用样式表定义，这个区域就是浏览器中的视窗<br>视窗是指浏览器开辟的用来渲染svg内容的区域，是根据样式上下文来进行，可能改变；视野是svg文件的编写者定义的要以多大的视野来观察定义的世界，理想的情况下视野和世界尺寸相同，如果定义的视野和视窗的大小不一致，如何进行填充，用preserveAspectRatio属性进行指定</p>
+<h2 id="SVG中的图形分组"><a href="#SVG中的图形分组" class="headerlink" title="SVG中的图形分组"></a>SVG中的图形分组</h2><ul>
+<li><code>&lt;g&gt;</code>标签来创建分组 (可以对分组进行整体操作)</li>
+<li>属性继承</li>
+<li>transform属性定义坐标变换</li>
+<li>可以嵌套使用</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;300&quot; height=&quot;200&quot;&gt;</span><br><span class="line">	&lt;g stroke=&quot;green&quot; fill=&quot;none&quot; transform=&quot;translate(150,0)&quot;&gt;</span><br><span class="line">		&lt;rect x=&quot;100&quot; y=&quot;50&quot; width=&quot;100&quot; height=&quot;50&quot;&gt;</span><br><span class="line">		&lt;/rect&gt;</span><br><span class="line">		&lt;rect x=&quot;140&quot; y=&quot;100&quot; width=&quot;20&quot; height=&quot;120&quot;&gt;</span><br><span class="line">		&lt;/rect&gt;</span><br><span class="line">	&lt;/g&gt;</span><br><span class="line">	&lt;g&gt;</span><br><span class="line">		&lt;polygon points=&quot;100,10 40,180 190,60 10,60 160,180&quot; style=&quot;fill:red;stroke:blue;stroke-width:3;fill-rule:evenodd;&quot;&gt;</span><br><span class="line">	&lt;/g&gt;</span><br><span class="line">&lt;/svg&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="坐标系统概述"><a href="#坐标系统概述" class="headerlink" title="坐标系统概述"></a>坐标系统概述</h2><ul>
+<li>笛卡尔直角坐标系</li>
+<li>原点</li>
+<li>互相垂直的两条数轴</li>
+<li>角度定义</li>
+</ul>
+<p>坐标系统的作用是为图形提供一个基本的定位基准<br>基于原点和数轴的定义又可以定义角度，数学上，x轴方向水平向右，y轴方向水平向上，角度的正方向是逆时针方向，由于svg的阅读媒介一般都是屏幕，出于对人的阅读习惯的考虑和大多数浏览器上其他动元素的坐标的习惯，svg使用的坐标系是y轴方向水平向下的，角度的正方向是顺时针的<br>角度的正方向是笛卡尔坐标系中从x轴正方向到y轴正方向旋转的方向</p>
+<h2 id="四个坐标系"><a href="#四个坐标系" class="headerlink" title="四个坐标系"></a>四个坐标系</h2><h4 id="用户坐标系（User-Coordinate）"><a href="#用户坐标系（User-Coordinate）" class="headerlink" title="用户坐标系（User Coordinate）"></a>用户坐标系（User Coordinate）</h4><p>世界的坐标系</p>
+<p>viewBox视野大小就是观察用户坐标系中的区域，用户坐标系是最原始的坐标系，即svg标签的坐标系，其他的坐标系都是从用户坐标系产生的，也被称为原始坐标系</p>
+<h4 id="自身坐标系（Current-Coordinate）"><a href="#自身坐标系（Current-Coordinate）" class="headerlink" title="自身坐标系（Current Coordinate）"></a>自身坐标系（Current Coordinate）</h4><p>每个图形元素或分组独立与生俱来</p>
+<h4 id="前驱坐标系（Previous-Coordinate）"><a href="#前驱坐标系（Previous-Coordinate）" class="headerlink" title="前驱坐标系（Previous Coordinate）"></a>前驱坐标系（Previous Coordinate）</h4><p>父容器的坐标系</p>
+<p>坐标变换就是前驱坐标系经过了元素变换之后得到的自身坐标系</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg&gt;</span><br><span class="line">	&lt;rect id=&quot;a&quot;</span><br><span class="line">	x=&quot;0&quot;</span><br><span class="line">	y=&quot;0&quot;</span><br><span class="line">	width=&quot;100&quot;</span><br><span class="line">	height=&quot;50&quot;</span><br><span class="line">	transform=&quot;translate(50,50)&quot;&gt;</span><br><span class="line">	&lt;/rect&gt;</span><br><span class="line">&lt;/svg&gt;</span><br></pre></td></tr></table></figure>
+
+<p>自身坐标系和前驱坐标系.例子</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg id=&quot;A&quot; xmlns=&quot;...&quot;&gt;</span><br><span class="line">	&lt;g id=&quot;B&quot; transform=&quot;translate(0,50)&quot;&gt;</span><br><span class="line">		&lt;rect id=&quot;C&quot; x=&quot;100&quot; y=&quot;50&quot; width=&quot;100&quot; height=&quot;50&quot;&gt;</span><br><span class="line">		&lt;/rect&gt;</span><br><span class="line">		&lt;rect id=&quot;D&quot; x=&quot;140&quot; y=&quot;100&quot; width=&quot;20&quot; height=&quot;120&quot;&gt;</span><br><span class="line">		&lt;/rect&gt;</span><br><span class="line">	&lt;/g&gt;</span><br><span class="line">&lt;/svg&gt;</span><br></pre></td></tr></table></figure>
+<p>分别定义对应的坐标系OA、OB、OC、OD<br>世界坐标系 OA<br>#B的前驱坐标系 用户坐标系 OA<br>#C和#D的图形定义是基于坐标系 OC和OD （所有的图形，关于它自身图形描述的属性都是基于它自己的自身坐标系来进行定义）<br>#C和#D的前驱坐标系 OB<br>分组#B的自身坐标系 OB<br>分组#B上的transform属性表示分组#B的自身坐标系OB是从它的前驱坐标系OA经过transform变换来的<br>OB、OC、OD坐标系重合了，因为OB是OC和OD的前驱坐标系，而#C和#D都没有定义transform属性，#C和#D的自身坐标系和前驱坐标系重合</p>
+<h4 id="参考坐标系（Reference-Coordinate）"><a href="#参考坐标系（Reference-Coordinate）" class="headerlink" title="参考坐标系（Reference Coordinate）"></a>参考坐标系（Reference Coordinate）</h4><p>使用其他坐标系来考究自身的情况下使用</p>
+<h2 id="坐标变换"><a href="#坐标变换" class="headerlink" title="坐标变换"></a>坐标变换</h2><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><ul>
+<li>数学上，坐标变换是采用一定的数学方法将一个坐标系的坐标变换为另一个坐标系的坐标的过程</li>
+<li>SVG中，坐标变换是对一个坐标系到另一个坐标系的变换的描述</li>
+</ul>
+<h4 id="线性变换"><a href="#线性变换" class="headerlink" title="线性变换"></a>线性变换</h4><ul>
+<li>线性变换方程<br>X‘ &#x3D; aX + cY + e<br>Y‘ &#x3D; bX + dY + f</li>
+<li>变换矩阵，记为M<br>「a c e<br>b d f<br>0 0 1」</li>
+</ul>
+<p>原坐标系中的每个点经过线性运算之后得到新坐标系中的每个点</p>
+<p>平移<br>「1 0 10<br>  0 1 10<br>  0 0 1」<br>X’ &#x3D; 1<em>X + 0</em>Y + 10 &#x3D; X + 10<br>Y’ &#x3D; 0<em>X + 1</em>Y + 10 &#x3D; Y + 10</p>
+<p>旋转</p>
+<ul>
+<li>使用极坐标求变换矩阵<br>极坐标方程:<br>X &#x3D; r<em>cos(α)<br>Y &#x3D; r</em>sin(α)<br>旋转θ度后:<br>X’ &#x3D; r<em>cos(α+θ)<br>Y’ &#x3D; r</em>sin(α+θ)<br>展开:<br>X’ &#x3D; r<em>cos(α)cos(θ) - r</em>sin(α)sin(θ) &#x3D; cos(θ)X - sin(θ)Y + 0<br>Y’ &#x3D; r<em>cos(α)sin(θ) + r</em>sin(α)cos(θ) &#x3D; sin(θ)X + cos(θ)Y + 0<br>「cos(30o) -sin(30o) 0<br>sin(30o) cos(30o) 0<br>0    0    1」</li>
+</ul>
+<p>缩放</p>
+<ul>
+<li>a和c直观控制缩放<br>「2 0 0<br>0 2 0<br>0 0 1」</li>
+</ul>
+<h4 id="线性变换列表"><a href="#线性变换列表" class="headerlink" title="线性变换列表"></a>线性变换列表</h4><ul>
+<li>表示一系列的变换，结果为变换的矩阵的乘积<br>M &#x3D; Mn * Mn-1 * … * M2 * M1 * M0</li>
+<li>后面的变换乘在前面<br>「1 0 10			「cos(30o) -sin(30o) 0<br>0 1 10    *      sin(30o) cos(30o) 0<br>0 0 1」          0    0    1」<br>Mtranslate * Mrotate</li>
+</ul>
+<h4 id="transform属性"><a href="#transform属性" class="headerlink" title="transform属性"></a>transform属性</h4><ul>
+<li>前驱坐标系：父容器的坐标系</li>
+<li>transform属性：定义前驱坐标系到自身坐标系到线性变换</li>
+<li>语法：<br>ratate(<deg>)*<br>translate(<x>,<y>)*<br>scale(<sx>,<sy>)*<br>matrix(<a>,<b>,<c>,<d>,<e>,<f>)*</li>
+</ul>
+<ul>
+<li>demo<br>viewBox加0.5的偏移，之后的坐标是对齐到整数的话(画线?)会比较锐利  浏览器渲染svg的1像素偏差</li>
+</ul>
+<p>根据<a target="_blank" rel="noopener" href="https://www.imooc.com/video/2612">慕课网课程</a>整理</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/08/08/SVG%E5%AD%A6%E4%B9%A0-2/" data-id="cuid_37-BqhmcPzDmEjFhiwOv" data-title="SVG学习(2)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/svg/" rel="tag">svg</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-SVG学习-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/08/08/SVG%E5%AD%A6%E4%B9%A0-1/" class="article-date">
+  <time class="dt-published" datetime="2018-08-08T12:59:53.000Z" itemprop="datePublished">2018-08-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/svg/">svg</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/08/08/SVG%E5%AD%A6%E4%B9%A0-1/">SVG学习(1)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="SVG入门"><a href="#SVG入门" class="headerlink" title="SVG入门"></a>SVG入门</h1><h2 id="SVG简介"><a href="#SVG简介" class="headerlink" title="SVG简介"></a>SVG简介</h2><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><ul>
+<li>使用XML描述的矢量文件<br>位图：基于颜色的描述 bmp、png、jpg等<br>矢量图：基于数学的描述 svg、ai等</li>
+<li>W3C标准(1.1) <a target="_blank" rel="noopener" href="https://www.w3.org/TR/SVG11/">https://www.w3.org/TR/SVG11/</a></li>
+<li>浏览器支持 <a target="_blank" rel="noopener" href="https://caniuse.com/#search=svg">https://caniuse.com/#search=svg</a></li>
+</ul>
+<h4 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h4><ul>
+<li>1.浏览器直接打开</li>
+<li>2.在HTML中使用<code>&lt;img&gt;</code>标签引用</li>
+<li>3.直接在HTML中使用SVG标签</li>
+<li>4.作为CSS背景</li>
+</ul>
+<h2 id="svg的基本图形和属性"><a href="#svg的基本图形和属性" class="headerlink" title="svg的基本图形和属性"></a>svg的基本图形和属性</h2><h4 id="基本图形和属性"><a href="#基本图形和属性" class="headerlink" title="基本图形和属性"></a>基本图形和属性</h4><ul>
+<li>1.基本图形</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;rect&gt; &lt;cricle&gt; &lt;ellipse&gt; &lt;line&gt; &lt;polyline&gt; &lt;polygon&gt;</span><br></pre></td></tr></table></figure>
+
+<p>（曲线一般用<code>&lt;path&gt;</code>绘制，<code>&lt;path&gt;</code>可以绘制任意图形）</p>
+<p><code>&lt;rect&gt;</code> 矩形<br>x,y,width,height,rx,ry<br>x,y 定义了坐标,矩形左上角的位置<br>width,height 定义了宽高<br>rx,ry 定义了圆角<br><code>&lt;circle&gt;</code> 圆形<br>cx,cy,r<br>cx,cy 圆心位置<br>r 半径<br><code>&lt;ellipse&gt;</code> 椭圆形<br>cx,cy,rx,ry<br>cx,cy 圆心坐标<br>rx,ry 半径<br><code>&lt;line&gt;</code> 直线<br>x1,y1,x2,y2<br>描述两个点(x1,y1)，(x2,y2)<br><code>&lt;polyline&gt;</code> 折线<br>points<br>格式:(xi,yi)+<br>描述多个点<br><code>&lt;polygon&gt;</code> 多边形<br>points<br>格式:(xi,yi)+<br>描述多个点，会把最后一个点和第一个点连起来形成一个封闭的图形</p>
+<ul>
+<li>2.基本属性<br>fill、stroke、stroke-width、transform<br>填充、描边和变换<br>fill 填充颜色<br>stroke 描边颜色<br>stroke-width 描边粗细<br>transform 变形，其坐标与其父坐标相对变换值</li>
+</ul>
+<h2 id="svg基本操作API"><a href="#svg基本操作API" class="headerlink" title="svg基本操作API"></a>svg基本操作API</h2><ul>
+<li>3.基本操作API</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 创建图形</span><br><span class="line">document.createElementNS(ns,tagName)</span><br><span class="line">// 添加图形</span><br><span class="line">element.appendChild(childElement)</span><br><span class="line">// 设置/获取属性</span><br><span class="line">element.setAttribute(name,value)</span><br><span class="line">element.getAttribute(name)</span><br></pre></td></tr></table></figure>
+
+<h2 id="综合例子：简单的svg编辑器"><a href="#综合例子：简单的svg编辑器" class="headerlink" title="综合例子：简单的svg编辑器"></a>综合例子：简单的svg编辑器</h2><p>根据<a target="_blank" rel="noopener" href="https://www.imooc.com/video/2612">慕课网课程</a>整理</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/08/08/SVG%E5%AD%A6%E4%B9%A0-1/" data-id="cuid7ChV3-xBcYALOujCgEuBZ" data-title="SVG学习(1)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/svg/" rel="tag">svg</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-经典布局方案" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/07/05/%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80%E6%96%B9%E6%A1%88/" class="article-date">
+  <time class="dt-published" datetime="2018-07-05T01:44:39.000Z" itemprop="datePublished">2018-07-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/07/05/%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80%E6%96%B9%E6%A1%88/">经典布局方案</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>值得反复推敲的经典布局方案</p>
+<h2 id="1-上中下一栏式"><a href="#1-上中下一栏式" class="headerlink" title="1.上中下一栏式"></a>1.上中下一栏式</h2><p>把页面分为上中下3块，上面是导航，中间是主要内容，下面是底部</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">body&#123;margin:0;&#125;</span><br><span class="line">.wrap&#123;width:900px; margin:0 auto;&#125;</span><br><span class="line">#header&#123;height:100px;background:#6cf;&#125;</span><br><span class="line">#main&#123;height:500px;background:#fcc;&#125;</span><br><span class="line">#footer&#123;height:80px;background:#9cf;&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">header#header.wrap</span><br><span class="line">section#main.wrap</span><br><span class="line">footer#footer.wrap</span><br></pre></td></tr></table></figure>
+<h2 id="2-左右两栏式"><a href="#2-左右两栏式" class="headerlink" title="2.左右两栏式"></a>2.左右两栏式</h2><p>一般左边是子菜单或菜单栏，右边是主要的内容部分<br>为了控制整体需要给两栏加一个共同的父级</p>
+<h4 id="a-混合浮动-普通流"><a href="#a-混合浮动-普通流" class="headerlink" title="a)混合浮动+普通流"></a>a)混合浮动+普通流</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.wrap&#123;margin:0 auto;width:900px;&#125;</span><br><span class="line">#left&#123;width:200px;height:500px;background:#cff;float:left;&#125;</span><br><span class="line">#right&#123;height:500px;margin-left:200px;background:#fcc;&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">div.wrap</span><br><span class="line">    aside#left</span><br><span class="line">    section#right</span><br></pre></td></tr></table></figure>
+
+<h4 id="b-纯浮动式"><a href="#b-纯浮动式" class="headerlink" title="b)纯浮动式"></a>b)纯浮动式</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.wrap&#123;margin:0 auto;width:900px;overflow:hidden;&#125;/*子级都浮动，父级需要清浮动*/</span><br><span class="line">#left&#123;width:200px;height:500px;background:#cff;float:left;&#125;</span><br><span class="line">#right&#123;width:700px;height:500px;background:#fcc;float:left;&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">div.wrap</span><br><span class="line">    aside#left</span><br><span class="line">    section#right</span><br></pre></td></tr></table></figure>
+
+<h4 id="c-绝对定位方式"><a href="#c-绝对定位方式" class="headerlink" title="c)绝对定位方式"></a>c)绝对定位方式</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.wrap&#123;margin:0 auto;width:900px;position:relative;&#125;/*子级都浮动，父级需要清浮动 ||| 可以设置.wrap&#123;width:80%;&#125;宽度为百分比，使左边栏固定，右边栏自适应*/</span><br><span class="line">#left&#123;width:200px;height:500px;background:#cff;position:absolute;top:0;left:0;&#125;</span><br><span class="line">#right&#123;width:700px;height:500px;background:#fcc;position:absolute;top:0;right:0;&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">div.wrap</span><br><span class="line">    aside#left</span><br><span class="line">    section#right</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-左右两栏加页眉页脚"><a href="#3-左右两栏加页眉页脚" class="headerlink" title="3.左右两栏加页眉页脚"></a>3.左右两栏加页眉页脚</h2><p>先写上下三栏，然后中间一栏再分为左右两栏，中间栏当成一个整体来处理</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.wrap&#123;margin:0 auto;width:900px;&#125;</span><br><span class="line">#header&#123;height:100px;background:#6cf;&#125;</span><br><span class="line">#main&#123;height:500px;background:#fcc;&#125;</span><br><span class="line">#footer&#123;height:80px;background:#9cf;&#125;</span><br><span class="line">#left&#123;width:200px;height:100%;background:#cff;float:left;&#125;</span><br><span class="line">#right&#123;width:700px;height:100%;background:#fcc;float:left;&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">header#header.wrap</span><br><span class="line">section#main.wrap</span><br><span class="line">    aside#left</span><br><span class="line">    section#right</span><br><span class="line">footer#footer.wrap</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-左中右三栏"><a href="#4-左中右三栏" class="headerlink" title="4.左中右三栏"></a>4.左中右三栏</h2><p>左右两栏固定，中间栏自适应<br>布局时一般有个原则：凡是遇到多栏式布局，一般情况下都要给它们加上一个共同的父级。</p>
+<ul>
+<li>圣杯布局</li>
+<li>双飞翼布局</li>
+<li>左右浮动，中间自适应</li>
+</ul>
+<h4 id="a-左右浮动，中间自适应"><a href="#a-左右浮动，中间自适应" class="headerlink" title="a)左右浮动，中间自适应"></a>a)左右浮动，中间自适应</h4><p>这种布局方式左右两边的标签一定要放在中间标签的前面<br>解释：因为前面两个元素都是浮动元素，浮动元素是不占用高度的(脱离文档流)，所以第三个元素可以到上面去，但是如果把中间的元素section放到上面的话，section会独占一行，写在section之后的浮动元素则不会和section在同一行，会掉到下一行去，所以section必须要放在最后写</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.wrap&#123;margin:0 auto;width:80%;&#125; /* 设置宽度为百分比，使中间栏自适应 */</span><br><span class="line">#left&#123;width:200px;height:500px;background:#cff;float:left;&#125;</span><br><span class="line">#rigth&#123;width:200px;height:500px;background:#cff;float:right;&#125;</span><br><span class="line">#main&#123;height:500px;margin:0 210px;background:#fcc;&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">div.wrap</span><br><span class="line">    aside#left</span><br><span class="line">    adise#right</span><br><span class="line">    section#main</span><br></pre></td></tr></table></figure>
+
+<h4 id="b-左中右三栏之双飞翼"><a href="#b-左中右三栏之双飞翼" class="headerlink" title="b)左中右三栏之双飞翼"></a>b)左中右三栏之双飞翼</h4><p>来自淘宝UED团队<br>这种布局方式中间的主要内容section要放在最前面,section中还需要加入一个元素div.content，中间的主要内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.wrap&#123;margin:0 auto;width:80%;&#125; /* 设置宽度为百分比，使中间栏自适应 */</span><br><span class="line">#main&#123;width:100%;float:left; background:#fcc;&#125;</span><br><span class="line">#left&#123;width:200px;float:left;height:500px;background:#cff;margin-left:-100%;&#125;</span><br><span class="line">#right&#123;width:200px;float:left;height:500px;background:#cff;margin-left:-200px;&#125;</span><br><span class="line">.content&#123;height:500px;margin:0 200px;&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">div.wrap</span><br><span class="line">    section#main</span><br><span class="line">        div.content</span><br><span class="line">    aside#left</span><br><span class="line">    aside#right</span><br></pre></td></tr></table></figure>
+<h2 id="5-左中右三栏加页眉页脚"><a href="#5-左中右三栏加页眉页脚" class="headerlink" title="5.左中右三栏加页眉页脚"></a>5.左中右三栏加页眉页脚</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.wrap&#123;margin:0 auto;width:900px;&#125;</span><br><span class="line">#header&#123;height:100px;background:#6cf;&#125;</span><br><span class="line">#main&#123;height:500px;background:#fcc;&#125;</span><br><span class="line">#footer&#123;height:80px;background:#9cf;&#125;</span><br><span class="line">#middle&#123;width:100%;float:left;&#125; /* 浮动元素的宽度默认由内容来撑开，如果不设置宽度，middle的宽度只能由内容撑开，没有内容的时候宽度是0，所以这个地方必须要设置width:100%; */</span><br><span class="line">#left&#123;width:200px;height:100%;background:#cff;float:left;margin-left:-100%;&#125;</span><br><span class="line">#right&#123;width:200px;height:100%;background:#cff;float:left;margin-left:-200px;&#125;</span><br><span class="line">.content&#123;height:500px;margin:0 200px;&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">header#header.wrap</span><br><span class="line">section#main.wrap</span><br><span class="line">    section#middle</span><br><span class="line">        div.content</span><br><span class="line">    aside#left</span><br><span class="line">    aside#right</span><br><span class="line">footer#footer.wrap</span><br></pre></td></tr></table></figure>
+
+<p>练习<br>DUX主题</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/07/05/%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80%E6%96%B9%E6%A1%88/" data-id="cuidFVu_uO2ibNB-iAFBaEe3h" data-title="经典布局方案" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-XHTML-Strict下的嵌套规则" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/07/04/XHTML-Strict%E4%B8%8B%E7%9A%84%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99/" class="article-date">
+  <time class="dt-published" datetime="2018-07-04T14:20:27.000Z" itemprop="datePublished">2018-07-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/07/04/XHTML-Strict%E4%B8%8B%E7%9A%84%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99/">(XHTML)Strict下的嵌套规则</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>下面是一份在 HTML 4 Strict 和 XHTML 1.0 Strict 下必须遵守的标签嵌套规则，比如你不能在<code>&lt;a&gt;</code>里面再嵌入一个<code>&lt;a&gt;</code>这样的约定。</p>
+<h3 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h3><ul>
+<li>为了方便读者阅读，本文中的标签使用了大写（根据 XHTML 的规则，元素名必须小写，比如<code>&lt;html&gt;</code>而不应是<code>&lt;HTML&gt;</code>）</li>
+<li>小写的单词表明一组或一系列 HTML 标签</li>
+<li>每一项条目（标签）后都跟随一组标签列表，如果没有这个列表，那么表明该条目（标签）内部不允许包含任何标签。这意味着该条目内部只能包含纯文本内容（#PCDATA，见下文）。如果注明 (empty)，这意味着该条目内部不允许包含任何形式的内容。对于 flow，inline，block，OBJECT 和BODY，其内部允许包含的内容在文中会单独给出。</li>
+<li>#PCDATA 的意思是“parsed character data”，即纯文本内容（不包括任何 HTML 标签，但是转义内容可以存在，比如<code>&amp;auml;</code>和<code>&amp;#228;</code>）</li>
+<li>CDATA 的意思是“character data”，这意味着不包括转义内容的纯文本内容，详细内容可以参考CDATA Confusion</li>
+<li>excluding … 意即不得直接或者间接的包含所列的元素</li>
+</ul>
+<p>HTML</p>
+<ul>
+<li>HEAD<br>  TITLE (required)<br>  SCRIPT, STYLE<ul>
+<li>CDATA<br>  BASE, META, LINK (empty)<br>  OBJECT (see content model below)</li>
+</ul>
+</li>
+<li>BODY<br>  INS, DEL (special rules apply)<ul>
+<li>flow<br>  block<br>  inline<br>  SCRIPT</li>
+<li>CDATA<br>  block</li>
+<li>P, H1, H2, H3, H4, H5, H6<br>  inline<ul>
+<li>#PCDATA</li>
+<li>TT, I, B, BIG, SMALL, EM, STRONG, DFN, CODE, SAMP, KBD, VAR, CITE, ABBR, ACRONYM, SUB, SUP, Q, SPAN, BDO<br>  inline</li>
+<li>A<br>  inline excluding an enclosed A element</li>
+<li>OBJECT<br>  PARAM (empty)<br>  flow</li>
+<li>IMG, BR (empty)</li>
+<li>SCRIPT<br>  CDATA</li>
+<li>MAP<br>  AREA (empty)<br>  block</li>
+<li>INPUT (empty)</li>
+<li>SELECT<br>  OPTGROUP<ul>
+<li>OPTION<br>  OPTION</li>
+</ul>
+</li>
+<li>TEXTAREA</li>
+<li>LABEL<br>  LABEL excluding enclosed LABEL</li>
+<li>BUTTON<br>  flow excluding A, INPUT, SELECT, TEXTAREA, LABEL, BUTTON, FORM, FIELDSET</li>
+</ul>
+</li>
+<li>UL, OL<br>  LI<ul>
+<li>flow</li>
+</ul>
+</li>
+<li>DL<br>  DT<ul>
+<li>inline<br>  DD</li>
+<li>flow</li>
+</ul>
+</li>
+<li>PRE<br>  inline excluding IMG, OBJECT, BIG, SMALL, SUB, SUP</li>
+<li>DIV<br>  flow</li>
+<li>BLOCKQUOTE<br>  block<br>  SCRIPT<ul>
+<li>CDATA</li>
+</ul>
+</li>
+<li>NOSCRIPT<br>  flow</li>
+<li>FORM<br>  block excluding an enclosed FORM<br>  SCRIPT<ul>
+<li>CDATA</li>
+</ul>
+</li>
+<li>HR (empty)</li>
+<li>TABLE<br>  CAPTION<ul>
+<li>inline<br>  COLGROUP</li>
+<li>COL (empty)<br>  COL (empty)<br>  THEAD, TBODY, TBODY</li>
+<li>TR<br>  TH, TD<ul>
+<li>flow</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ADDRESS<br>  inline</li>
+<li>FIELDSET<br>  #PCDATA<br>  inline<br>  flow<br>  LEGEND<ul>
+<li>inline</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>注1. 以上内容基于 [HTML 4.01 Specification] 的 <a target="_blank" rel="noopener" href="https://www.w3.org/TR/1999/REC-html401-19991224/sgml/dtd.html">Strict DTD</a> 。<a target="_blank" rel="noopener" href="http://www.junchenwu.com/">JunChen</a> 翻译自 <a target="_blank" rel="noopener" href="http://www.cs.tut.fi/~jkorpela/html/strict.html">Allowed nesting of elements in HTML 4 Strict (and XHTML 1.0 Strict)</a></p>
+<p>注2. 对于XHTML1.0，基本上一致，不同点如下：对于<code>&lt;script&gt;</code>和<code>&lt;style&gt;</code>的内容，在 HTML 4 里是 CDATA 而在 XHTML 里是 #PCDATA 在 XHTML 中，<code>&lt;table&gt;</code>标签后可以紧跟一个<code>&lt;tr&gt;</code>，而在 HTML 4.01 里，不允许这样，不过<code>&lt;tbody&gt;</code>标签又是可以省略的。意思就是说，如果代码中的<code>&lt;table&gt;</code>后紧跟<code>&lt;tr&gt;</code>，对于 HTML 4.01，会隐性的生成一个<code>&lt;tbody&gt;</code>标签，而在 XHTML 里面就没有。这会影响到样式表使用 tbody 作为选择器。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/07/04/XHTML-Strict%E4%B8%8B%E7%9A%84%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99/" data-id="cuid8lqDtFeRW7dhh41RtKR9u" data-title="(XHTML)Strict下的嵌套规则" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99/" rel="tag">标签嵌套规则</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%A7%84%E8%8C%83/" rel="tag">规范</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-html5高级" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/07/04/html5%E9%AB%98%E7%BA%A7/" class="article-date">
+  <time class="dt-published" datetime="2018-07-04T05:58:49.000Z" itemprop="datePublished">2018-07-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/07/04/html5%E9%AB%98%E7%BA%A7/">html5高级</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><p>display：inline-block 框内行</p>
+<h4 id="块元素的特征"><a href="#块元素的特征" class="headerlink" title="块元素的特征"></a>块元素的特征</h4><ul>
+<li>1.在没有设置宽度时，默认充满一行</li>
+<li>2.默认独占一行</li>
+<li>3.支持所有css命令</li>
+</ul>
+<h4 id="内嵌（内联、行内）的特征"><a href="#内嵌（内联、行内）的特征" class="headerlink" title="内嵌（内联、行内）的特征"></a>内嵌（内联、行内）的特征</h4><ul>
+<li>1.同排可以继续跟同类的标签</li>
+<li>2.内容撑宽度</li>
+<li>3.不支持宽高</li>
+<li>4.不支持上下margin</li>
+<li>5.代码换行被解析</li>
+</ul>
+<h4 id="inline-block特征"><a href="#inline-block特征" class="headerlink" title="inline-block特征"></a>inline-block特征</h4><ul>
+<li>1.块在一行显示</li>
+<li>2.行内属性标签支持宽高</li>
+<li>3.没有宽度的时候内容撑开宽度</li>
+<li>4.代码换行被解析（两个inline-block之间会有个空白间距）（问题）</li>
+<li>5.ie6、ie7不支持块属性标签inline-block（问题）</li>
+</ul>
+<h4 id="发现好店练习要求"><a href="#发现好店练习要求" class="headerlink" title="发现好店练习要求"></a>发现好店练习要求</h4><p>1.考虑标签语义化，使用合适的标签<br>2.标签特性的转换<br>3.小竖线使用哪种方式进行编码(图片、边框、背景颜色、字符)<br>4.文字的行高设置<br>5.标签默认样式的处理(reset css)</p>
+<p>1.合理应用标签，标签语义化<br>2.样式的配合，标签特性的转换<br>3.思考：模块之间的边框如何重合？</p>
+<h3 id="float"><a href="#float" class="headerlink" title="float"></a>float</h3><p>文档流是文档中可显示对象在排列时所占用的位置。<br>浮动：使文档脱离文档流，按照指定的方向发生移动，遇到父级边界或者相邻的浮动元素停了下来。</p>
+<h4 id="float的特征"><a href="#float的特征" class="headerlink" title="float的特征"></a>float的特征</h4><ul>
+<li>1.块在一排显示</li>
+<li>2.内联支持宽高</li>
+<li>3.默认内容撑开宽度</li>
+<li>4.脱离文档流</li>
+<li>5.提升层级半层</li>
+</ul>
+<h4 id="清除浮动的方法"><a href="#清除浮动的方法" class="headerlink" title="清除浮动的方法"></a>清除浮动的方法</h4><ul>
+<li>1.加高度<br>问题：扩展性不好</li>
+<li>2.给父级加浮动 <br>问题：页面中所有元素都加浮动，margin左右自动失效（floats bad！）</li>
+<li>3.inline-block清除浮动<br>问题：margin左右auto失效</li>
+<li>4.空标签清除浮动<br>问题：IE6最小高度19px；（解决后IE6下还有2px偏差）</li>
+<li>5.br清浮动<br>问题：不符合工作中：结构、样式、行为，三者分离的要求</li>
+<li>6.after伪类清浮动法（现在主流方法）<br><code>.clear:after{content:&#39;&#39;;display:block;clear:both;}</code><br><code>.clear{zoom:1;}</code><br>after伪类：元素内部末尾添加内容；<br>:after{content:’添加的内容’;} IE6,7下不兼容<br>zoom缩放<br>a、触发IE下haslayout，使元素根据自身内容计算宽高；<br>b、FF不支持。</li>
+</ul>
+<p>IE6下还要添加<code>.clear{*zoom:1;}</code></p>
+<h4 id="BFC（block-formatting-context）标准浏览器"><a href="#BFC（block-formatting-context）标准浏览器" class="headerlink" title="BFC（block formatting context）标准浏览器"></a>BFC（block formatting context）标准浏览器</h4><ul>
+<li>a、<code>float</code>的值不为<code>none</code></li>
+<li>b、<code>overflow</code>的值不为<code>visible</code></li>
+<li>c、<code>display</code>的值为<code>table-cell</code>，<code>table-caption</code>，<code>inline-block</code>中的任何一个</li>
+<li>d、<code>position</code>的值不为<code>relative</code>和<code>static</code></li>
+<li>e、<code>width</code>|<code>height</code>|<code>min-width</code>|<code>min-height</code>（！<code>auto</code>）</li>
+</ul>
+<h4 id="haslayout-IE浏览器"><a href="#haslayout-IE浏览器" class="headerlink" title="haslayout IE浏览器"></a>haslayout IE浏览器</h4><ul>
+<li>a、<code>writing-mode:tb-rl</code></li>
+<li>b、<code>-ms-writing-mode:tb-rl</code></li>
+<li>c、zoom:(!normal)</li>
+</ul>
+<h4 id="overflow-hidden-清浮动方法"><a href="#overflow-hidden-清浮动方法" class="headerlink" title="overflow:hidden 清浮动方法"></a>overflow:hidden 清浮动方法</h4><ul>
+<li>问题：需要配合宽度或者zoom兼容IE6IE7</li>
+<li>overflow:scroll|auto|hidden;</li>
+<li>overflow:hidden;溢出隐藏</li>
+</ul>
+<h4 id="浮动练习"><a href="#浮动练习" class="headerlink" title="浮动练习"></a>浮动练习</h4><p>1.必须用浮动布局（对浮动的知识点进行检验）<br>2.必须清浮动<br>3.结构、标签语义化<br>4.思考：扩展性，以后维护起来更方便</p>
+<h2 id="定位-position"><a href="#定位-position" class="headerlink" title="定位 position"></a>定位 position</h2><h4 id="相对定位的特征"><a href="#相对定位的特征" class="headerlink" title="相对定位的特征"></a>相对定位的特征</h4><ul>
+<li>a、不影响元素本身的特性</li>
+<li>b、不使元素脱离文档流（元素移动之后原始位置会被保留）</li>
+<li>c、如果没有定位偏移量，对元素本身没有任何影响</li>
+<li>d、提升层级</li>
+</ul>
+<h4 id="绝对定位的特征"><a href="#绝对定位的特征" class="headerlink" title="绝对定位的特征"></a>绝对定位的特征</h4><ul>
+<li>a、使元素完全脱离文档流</li>
+<li>b、使内嵌支持宽高</li>
+<li>c、块属性标签内容撑开宽度   </li>
+<li>d、如果有定位父级相对于定位父级发生偏移，没有定位父级相对于document发生偏移</li>
+<li>e、相对定位一般都是配合绝对定位元素使用</li>
+<li>f、提升层级</li>
+</ul>
+<h4 id="fixed-固定定位"><a href="#fixed-固定定位" class="headerlink" title="fixed 固定定位"></a>fixed 固定定位</h4><h4 id="z-index-层级定位"><a href="#z-index-层级定位" class="headerlink" title="z-index 层级定位"></a>z-index 层级定位</h4><h4 id="透明度"><a href="#透明度" class="headerlink" title="透明度"></a>透明度</h4><ul>
+<li>标准不透明度 <code>opacity:0~1;</code></li>
+<li>IE滤镜 <code>filter:alpha(opacity=0~100);/*IE6、7下的透明度设置*/</code></li>
+</ul>
+<h4 id="定位练习要求"><a href="#定位练习要求" class="headerlink" title="定位练习要求"></a>定位练习要求</h4><p>1.定位的使用<br>2.层级的理解和应用<br>3.导航练习，当hover的时候需要有变化<br>4.相对定位和决定定位的配合使用<br>5.透明度的配合使用</p>
+<h2 id="表格-表单"><a href="#表格-表单" class="headerlink" title="表格&#x2F;表单"></a>表格&#x2F;表单</h2><h4 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h4><ul>
+<li>table 表格</li>
+<li>thead 表格头</li>
+<li>tbody 表格主体</li>
+<li>tr 表格行</li>
+<li>th 元素定义表头</li>
+<li>td 元素定义表格单元</li>
+</ul>
+<h4 id="表格样式重置"><a href="#表格样式重置" class="headerlink" title="表格样式重置"></a>表格样式重置</h4><ul>
+<li><code>table{border-collapse;}</code>单元格间隙合并</li>
+<li><code>th,td{padding:0}</code>重置单元格默认填充</li>
+<li><code>&lt;table border=&quot;1&quot;&gt;&lt;/table&gt;</code>加属性border可以让表中的每个单元格都有一个边框，而设置table{border: 1px solid #000;}只有table外围有边框</li>
+</ul>
+<h4 id="单元格合并"><a href="#单元格合并" class="headerlink" title="单元格合并"></a>单元格合并</h4><ul>
+<li>colspan 横向 删除该行(<tr>)多出的单元格</li>
+<li>rowspan 纵向 删除每一行(<tr>)多出的单元格</li>
+</ul>
+<h4 id="表单-表单元素"><a href="#表单-表单元素" class="headerlink" title="表单&#x2F;表单元素"></a>表单&#x2F;表单元素</h4><h4 id="form表单"><a href="#form表单" class="headerlink" title="form表单"></a>form表单</h4><ul>
+<li><code>&lt;input type=&quot;&quot; name=&quot;&quot; value=&quot;&quot; /&gt;</code></li>
+<li>text 文本框</li>
+<li>password 密码</li>
+<li>radio 单选</li>
+<li>checkbox 复选</li>
+<li>submit 提交</li>
+<li>reset 重置</li>
+<li>button 按钮</li>
+<li>image 图片</li>
+<li>file 上传</li>
+<li>hidden 隐藏</li>
+</ul>
+<h4 id="label-标签为input元素定义标注"><a href="#label-标签为input元素定义标注" class="headerlink" title="label 标签为input元素定义标注"></a>label 标签为input元素定义标注</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;checkbox&quot; name=&quot;&quot; id=&quot;a&quot; /&gt;</span><br><span class="line">&lt;label for=&quot;a&quot;&gt;&lt;/label&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="checked-在页面加载时默认选定的input元素"><a href="#checked-在页面加载时默认选定的input元素" class="headerlink" title="checked 在页面加载时默认选定的input元素"></a>checked 在页面加载时默认选定的input元素</h4><p><code>&lt;input type=&quot;checkbox&quot; name=&quot;&quot; checked /&gt;</code></p>
+<h4 id="disabled-属性规定应该禁用input元素"><a href="#disabled-属性规定应该禁用input元素" class="headerlink" title="disabled 属性规定应该禁用input元素"></a>disabled 属性规定应该禁用input元素</h4><p><code>&lt;input type=&quot;checkbox&quot; name=&quot;&quot; disabled /&gt;</code></p>
+<h4 id="select-option下拉选框"><a href="#select-option下拉选框" class="headerlink" title="select&#x2F;option下拉选框"></a>select&#x2F;option下拉选框</h4><ul>
+<li>对高度的支持不兼容；</li>
+</ul>
+<h4 id="textarea-文本域"><a href="#textarea-文本域" class="headerlink" title="textarea 文本域"></a>textarea 文本域</h4><ul>
+<li>各个浏览器下的滚动条显示不兼容</li>
+<li>css3新增resize调整尺寸属性</li>
+</ul>
+<h4 id="表格表单练习要求"><a href="#表格表单练习要求" class="headerlink" title="表格表单练习要求"></a>表格表单练习要求</h4><p>一、表格练习<br>1.表头、表主体的划分<br>2.单元格的合并<br>3.思考：在同一个table标签里如何处理行之间的空隙<br>二、表单练习<br>1.表单与表单控件的配合使用<br>2.单选可以使用图片，也可以直接使用表单的单选控件<br>3.思考：布局结构如何做到一个统一化</p>
+<h2 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h2><h4 id="css常见问题"><a href="#css常见问题" class="headerlink" title="css常见问题"></a>css常见问题</h4><ul>
+<li>H5标签兼容<br>IE6不识别 如header section footer 解决方法：通过js去动态的创建标签，创建的标签为自定义标签，默认为内联元素，document.createElement(“header”);所以还需要给元素设置样式display:block;但是每个标签都自定义会比较麻烦，可以使用插件html5shiv.js兼容h5标签</li>
+<li>元素浮动之后，能设置宽度的话就给元素加宽度。如果需要宽度是内容撑开，就给它里边的块元素加上浮动<br>第一块元素浮动，第二块元素加margin值等于第一块元素，在IE6下会有间隙问题<br>解决方案：1.不建议这么写 2.用浮动解决，第二块元素也用浮动而不是加margin</li>
+<li>IE6下子元素超出父级宽高，会把父级的宽高撑开<br>解决方案：不要让子元素的宽高超过父级</li>
+<li>p包含块元素嵌套规则<br>p、td、h标签不要嵌套块元素，在chrome下会有问题，块元素会自动把这些标签分开自动结束</li>
+<li>margin兼容性问题<br>1.margin-top传递 解决方法：触发BFC、haslayout<br>2.上下margin叠压 解决方法：尽量使用同一方向的margin，比如都设置top或者bottom</li>
+<li>display:inline-block<br>解决方案:<code>*display:inline;*zoom:1;</code></li>
+<li>IE6最小高度问题<br>IE6下最小高度19像素；解决方案：overflow:hidden;</li>
+<li>IE6双边距<br>当元素浮动后再设置margin就会产生双倍边距<br>解决方案：针对IE6 7添加<code>*display:inline;</code></li>
+<li>li里元素都浮动 li在IE6 7 下方会产生4px间隙问题<br>解决方案：针对IE6 7 添加<code>*vertical-align:top;</code></li>
+<li>浮动元素之间注释，导致多复制一个文字问题<br>两个浮动元素中间有注释或者内联元素并且和父级宽度相差不超过3px<br>解决方案：1.两个浮动元素中间避免出现内联元素或注释 2.与父级宽度相差3px或以上</li>
+<li>IE6 7父级元素的overflow:hidden 是包不住子级的relative<br>解决方案：针对IE6 7 给父级元素添加相对定位 <code>*position:relative;</code></li>
+<li>IE6下绝对定位元素父级宽高是奇数，绝对定位元素的right和bottom值会有1px的偏差<br>解决方案：避免父级宽高出现奇数</li>
+<li>IE6下绝对定位元素和浮动元素并列绝对定位元素消失<br>解决方案：浮动元素和绝对定位元素是同级的话定位元素就会消失，所以只要让他们不处于同级就可以避免</li>
+<li>IE6下input的空隙<br>解决方案：给input元素添加<code>*float:left;</code></li>
+<li>IE6下输入类型表单控件背景问题<br>解决方案：设置<code>background-attachment:fixed;</code></li>
+</ul>
+<h4 id="css-hack"><a href="#css-hack" class="headerlink" title="css hack"></a>css hack</h4><p>hack 黑客？ （原意：修改）<br>针对不同的浏览器写不同css样式的过程，就叫css hack！<br><code>\9</code> 所有的IE10及之前版本的IE浏览器<br>+* IE7及IE7以下版本的ie浏览器认识<br>_ IE6及IE6以下版本的ie浏览器认识<br>远离css hack</p>
+<h4 id="PNG24兼容性问题"><a href="#PNG24兼容性问题" class="headerlink" title="PNG24兼容性问题"></a>PNG24兼容性问题</h4><p>IE6不支持png24图片<br>解决方案：</p>
+<ul>
+<li>js插件（问题：不能处理body之上png24）</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DD_belatedPNG.fix(&#x27;xxx&#x27;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>原生滤镜</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_background-image:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#x27;xx.png&#x27;,sizingMethod=&#x27;crop&#x27;);</span><br></pre></td></tr></table></figure>
+<h4 id="样式优先级、提升样式优先级"><a href="#样式优先级、提升样式优先级" class="headerlink" title="样式优先级、提升样式优先级"></a>样式优先级、提升样式优先级</h4><p>默认 &lt; 类型 &lt; class &lt; id &lt; style(行间) &lt; !important<br>!important提升样式优先级权重</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!–[if IE 6]&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;下载下来的JS路径&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">DD_belatedPNG.fix(&#x27;CSS选择器, 应用类型&#x27;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;![endif]–&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/07/04/html5%E9%AB%98%E7%BA%A7/" data-id="cuidH5iRNwHKzF938KE8I-oOL" data-title="html5高级" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-公爵之吻" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/07/04/%E5%85%AC%E7%88%B5%E4%B9%8B%E5%90%BB/" class="article-date">
+  <time class="dt-published" datetime="2018-07-03T18:23:58.000Z" itemprop="datePublished">2018-07-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%B9%A6%E7%AE%80/">书简</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/07/04/%E5%85%AC%E7%88%B5%E4%B9%8B%E5%90%BB/">公爵之吻</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>文 &#x2F; [日]江国香织</p>
+<p>一边走，我一边泪如泉涌。一个已经二十一岁的女孩，还边走边哭，难免会招来他人疑惑的目光。可是我怎么也止不住我的泪水。</p>
+<p>公爵死了。</p>
+<p>我的公爵死了。我悲伤到了极点。</p>
+<p>公爵是一条灰眼睛、奶油色的长毛狗，是一种名叫Pully的牧羊犬。刚到我们家的时候，它还是一只才呱呱坠地的小狗崽儿，在走廊里跑的时候，总是轻轻地伸开四条腿，用肚皮飞快地往前滑。那样子实在太可爱了，我一遍又一遍地唤着它的名字，让他在走廊里跑（我说它那样子简直就像拖把，大家不禁哄堂大笑起来。）蛋、冰激凌和梨，是公爵最喜欢吃的东西。或许是五月出生的缘故吧，公爵与初夏特别相配。当大地绽出一片嫩绿的时候带它出去散步，芬芳的风一吹，他身上的毛就会轻轻飘动，连眼睛都眯成了一条缝，发脾气时的侧脸酷似詹姆斯•汀。公爵喜欢音乐。我只要一弹钢琴，它就会蹲在一边听。还有，公爵特别会接吻。</p>
+<p>公爵是老死的。我打完工回家里时，它的身子还是微热的，可是我把它的头搁在我的腿上抚摸的时候，不知什么时候就变硬了，冷了下来。公爵死了。</p>
+<p>第二天，我还必须去打工。在门口，我奇怪地用明快的声音喊了一声“我走了”，可是在关上门的一刹那，我的泪水禁不住夺眶而出。哭啊，哭啊，边哭边往车站走，边哭边在检票口掏出了月票，边哭边站到了站台上，边哭边乘上了电车。电车上还像往日一样拥挤。我不住地抽噎，那些抱着书包的女学生，还有那些穿着几乎一模一样风衣的上班族的目光，毫不掩饰地在我的脸上扫来扫去。</p>
+<p>“请。”</p>
+<p>一个男孩冷淡地说了一声，把座位让给了我。看样子也就是十九岁左右吧，白色的T恤衫外面套了一件藏蓝色的毛衣，一个相当酷的少年。</p>
+<p>“谢谢。”</p>
+<p>我好不容易才用像蚊子一样的哭声谢了他一句，坐到了座位上。少年站在我的面前，一双幽深的眸子目不转睛地盯着我那张哭泣的脸。我在少年的视线下蜷缩成了一团，不知为什么竟动弹不了。接着，我不知不觉地停止了哭泣。</p>
+<p>在我下车的那站，少年也下了车。我换电车，少年也换电车。我们一起一直坐到了终点站。怎么了？不要紧吧？连问也不问一句，少年只是一直待在我的身边，在拥挤不堪的满员电车里若无其事地守护着我。渐渐地，我的心平静下来了。</p>
+<p>“我请你喝咖啡吧。”</p>
+<p>下了电车，我对少年说。</p>
+<p>十二月的大街上，走着匆匆忙忙的行人，刮着凛冽的风。虽然距离圣诞节还有两个星期，然而圣诞树和天使已经举目皆是了，从大楼上也垂下了“年终大甩卖”的竖幅广告。走进咖啡店，少年朝菜单上瞥了一眼，问我：</p>
+<p>“还没吃早饭哪，点份煎蛋卷行吗？”</p>
+<p>我回答说，请。他开心地笑了。</p>
+<p>我在公用电话亭给打工的地方打了一个电话，说感冒了，请一天假。当我返回到桌边，少年像是听到了，粗声粗气地说：</p>
+<p>“这么说，你今天一天都闲着啦？”</p>
+<p>走出咖啡店，我们往坡上走去。少年说，坡上有一个好地方。</p>
+<p>“这里。”</p>
+<p>他指的是一个游泳池。</p>
+<p>“你不是在开玩笑吧，这么冷的天。”</p>
+<p>“是温水，没事。”</p>
+<p>“可我没带游泳衣啊。”</p>
+<p>“买不就行了。”</p>
+<p>不是我推脱，我不会游泳。</p>
+<p>“可是我不喜欢游泳……”</p>
+<p>“不会游？”</p>
+<p>少年拿一种十分奇怪的眼神望着我，我火了，一声不吭地从钱包里掏出300元，买了门票。</p>
+<p>除了我们这样一对疯狂的人，没有人会在十二月，而且是在一大清早跳进游泳池里！不过，也正因为如此，宽阔的游泳池被我们俩独占了。少年利落地做完准备体操，轻柔地跳进了水里。他游得像鱼一样好。池水呈现出人工的蓝色、漂白粉的味道，还有那波动的水声，都让我倍感思念。已经有多少年没进游泳池了？慢慢地下了水，看着身子随波飘荡起来。</p>
+<p>蓦地，被谁猛地往前拉了一把，我想时摔倒了似的趴到了水面上，朝前游去。简直就像是有人在拉系在我头上的一根绳子，我不停地向前游去。刷的一下，拉绳子的力量弱了下来，我慌乱地直起身，一看，我已经是在游泳池的中央了。少年站在距我大约三米的地方，望着我的脸，微微地笑着。我想，游泳原来竟是这样惬意！</p>
+<p>少年与我，默默无语地一圈一圈地游着。</p>
+<p>“上去吧。”</p>
+<p>当少年说这话时，墙上的挂钟已经指向正午时分了。</p>
+<p>出了游泳池，我们买了冰激凌，边走边吃。游泳后的那种疲惫感也让人觉得畅快，冰激凌的甜味，甜得连舌尖都发颤了。这一带，稍走几步，就是幽静的住宅区，与车站四周的喧嚣简直是天壤之别。少年走在我的身边，高挑的个子、端正的面孔，让我的心禁不住怦怦直跳。晴朗的白昼下，吹来一阵冬天的气息。</p>
+<p>我们乘地铁到了银座。这次该轮到我告诉他“一个好地方”了。顺着一条背街小巷，走15分钟，有一座小小的美术馆。虽不惹眼，但却小巧玲珑，是座别具一格的美术馆。我们先欣赏了中世纪意大利的宗教画，随后，又看了古印度的工笔画。一幅一幅，看得仔细极了。</p>
+<p>“我喜欢这幅画。”</p>
+<p>少年说的是一幅以象及树为主题的暗绿色工笔画。</p>
+<p>“我有一种古印度总是初夏的感觉。”</p>
+<p>“你好浪漫啊。”</p>
+<p>给我这么一说，少年羞涩地笑了。</p>
+<p>从美术馆出来，我们又去听了单口相声。因为碰巧从曲艺馆前面走过，少年说，我喜欢单口相声，所以就走了进去。可以进去，我就又开始变得忧郁起来。</p>
+<p>公爵也喜欢单口相声。一天夜里，我醒过来下楼一看，已经关掉的电视机又打开了，公爵独自坐在那里听着单口相声。爸爸、妈妈，还有妹妹，谁也不相信，可我却确确实实看到了呀！</p>
+<p>公爵死了，悲痛欲绝的我，却和一个素不相识的男孩子一起喝茶、游泳、散步、去美术馆、听单口相声，我究竟是在干什么啊？</p>
+<p>演的段子是“木匠调子”。少年不时地被逗得哈哈大笑，而我却一声也笑不出来，岂止如此，我的心情还愈发沉重了。当听完单口相声，我们朝大街上走去时，悲伤又重新占据了我的心灵。</p>
+<p>公爵不在了。</p>
+<p>公爵死了。</p>
+<p>大街上飘来一阵阵圣诞的歌声，浅蓝的暮色中，霓虹灯开始闪烁放光。</p>
+<p>“今年就要结束了。”少年说。</p>
+<p>“是哦。”</p>
+<p>“明年又是新的一年。”</p>
+<p>“是哦。”</p>
+<p>“直到今天，我都是好开心啊。”</p>
+<p>“是哦，我也是。”</p>
+<p>我耷拉着脑袋说。少年轻轻地托起我的下颌：</p>
+<p>“直到今天哟。”</p>
+<p>他用依依不舍、含情脉脉的目光凝视着我。接下来，少年吻了我。</p>
+<p>我是那样诧异，不是因为他吻了我，而是他的吻太像公爵的吻了。我呆若木鸡地站在那里，连一句话也说不出来。</p>
+<p>少年对我说：“我也好爱你啊。”</p>
+<p>那凄凉的笑脸，酷似詹姆斯•汀。</p>
+<p>“我只是来对你说这句话的！再见，保重啊。”</p>
+<p>说完，少年就飞快地冲上了人行道，绿色信号灯已经开始闪烁了。</p>
+<p>我伫立在那里，久久地听着圣诞的歌声，银座的夜，慢慢地开始了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/07/04/%E5%85%AC%E7%88%B5%E4%B9%8B%E5%90%BB/" data-id="cuidOVpVZHiYEB6iakwJr0B3l" data-title="公爵之吻" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B0%8F%E8%AF%B4/" rel="tag">小说</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%96%87%E5%AD%A6/" rel="tag">文学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-html5基础" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/06/29/html5%E5%9F%BA%E7%A1%80/" class="article-date">
+  <time class="dt-published" datetime="2018-06-29T15:53:27.000Z" itemprop="datePublished">2018-06-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/06/29/html5%E5%9F%BA%E7%A1%80/">html5基础</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>行间样式表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;...&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>内部样式表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;...&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p>外部样式表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;...&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="常见样式"><a href="#常见样式" class="headerlink" title="常见样式"></a>常见样式</h4><p>边框的语法规则、边框的单一方向&#x2F;条件设置<br>边框组成:边框粗细、边框样式、边框颜色</p>
+<ul>
+<li>border-width</li>
+<li>border-style<br>  solid 实线 | dashed 虚线 | dotted 点线（IE6不兼容）</li>
+<li>border-color<br>边框的方向:top right bottom left</li>
+<li>border-top<br>  border-top-width | border-top-style | border-top-color</li>
+<li>border-right<br>  border-right-width | border-right-style | border-right-color</li>
+<li>border-bottom<br>  border-bottom-width | border-bottom-style | border-bottom-color</li>
+<li>border-left<br>  border-left-width | border-left-style | border-left-color</li>
+</ul>
+<h4 id="边框的特性、使用边框实现三角形"><a href="#边框的特性、使用边框实现三角形" class="headerlink" title="边框的特性、使用边框实现三角形"></a>边框的特性、使用边框实现三角形</h4><ul>
+<li>边框的特征:<br>  边框的形状:非矩形</li>
+<li>边框三角形</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">width:0;</span><br><span class="line">height:0;</span><br><span class="line">border:10px solid #fff;</span><br><span class="line">border-top-color:#ccc;</span><br></pre></td></tr></table></figure>
+<p>边框练习的步骤及要求<br>1.先分析设计图的结构<br>2.根据所分析的结构，进行结构编码<br>3.根据所书写的结构，进行css编码<br>4.利用ps工具，对设计图上的模块进行测量以及颜色的拾取<br>5.样式添加</p>
+<h4 id="background"><a href="#background" class="headerlink" title="background"></a>background</h4><p>内容是会撑开容器宽高，背景不会占用容器宽高，默认铺满整个容器大小</p>
+<ul>
+<li>background-color 背景颜色<br>颜色英文关键字 rgb 十六进制</li>
+<li>background-image 背景图片</li>
+<li>background-repeat 背景图是否重复</li>
+<li>no-repeat 不重复 repeat-x x轴重复 repeat-y y轴重复 repeat x&#x2F;y都重复</li>
+<li>background-position 背景图位置<br>1）具体数值<br>2）方向关键字<ul>
+<li>left right center</li>
+<li>top bottom center<br>当第二个属性没有填写，默认居中。</li>
+</ul>
+</li>
+<li>background-attachment 背景是否滚动<br>fixed 固定在浏览器可视区域<br>scroll 跟随滚动条滚动</li>
+<li>background复合样式 不分属性值书写顺序</li>
+</ul>
+<p>背景练习的要求<br>1.头部区域（第一个块）直接切一张完整的图片<br>2.内容区域里的每一个小块需要有ico并且还有背景颜色</p>
+<p>文字着重、文字倾斜、文字大小、字体、行高</p>
+<ul>
+<li>font-wight 文字着重</li>
+<li>blod 加粗 normal 正常</li>
+<li>font-style 文字样式</li>
+<li>italic 斜体</li>
+<li>font-size 文字大小</li>
+<li>font-family 字体</li>
+<li>line-height 行高 文字在一行里面所占用的位置<br>  注意：line-height 为奇数时，上面比下面少一像素</li>
+<li>font-variant 设置小型大写字母的字体显示文本</li>
+<li>small-caps 浏览器会显示小型大写字母的字体. normal 默认值 标准字体 css3属性</li>
+</ul>
+<h4 id="行高的特性、行高的测量方式"><a href="#行高的特性、行高的测量方式" class="headerlink" title="行高的特性、行高的测量方式"></a>行高的特性、行高的测量方式</h4><p>当行高的值与容器高度一致时，文字会垂直居中显示<br>多行文字测量行高的方法:</p>
+<ul>
+<li>1.确认文字大小</li>
+<li>2.确认两行文字之间的 空隙大小</li>
+<li>3.空隙大小除以2，得出来的值就是每行文字的上下的空隙大小<br>  3.1 当行高为奇数时，那么文字的上方要比下方少一个像素<br>  3.2 当行高为偶数时，那么文字上下空隙值一致</li>
+<li>4.通过辅助线测量多行文字的行高</li>
+<li>font复合样式 需要注意书写顺序<br>font:font-style | font-variant（设置小型大写字母的字体显示文本） | font-weight | font-size&#x2F;line-height | font-family;</li>
+</ul>
+<h4 id="文本设置-文字颜色、文本对齐方式、首行缩进、文本修饰、字母间距、单词间距"><a href="#文本设置-文字颜色、文本对齐方式、首行缩进、文本修饰、字母间距、单词间距" class="headerlink" title="文本设置 文字颜色、文本对齐方式、首行缩进、文本修饰、字母间距、单词间距"></a>文本设置 文字颜色、文本对齐方式、首行缩进、文本修饰、字母间距、单词间距</h4><ul>
+<li>color 文字颜色</li>
+<li>text-align 文字对齐（显示）方式 left right center</li>
+<li>text-indent 首行缩进</li>
+<li>使用em单位 em是根据字体大小来进行计算的 1em&#x3D;当前字体大小</li>
+<li>text-decoration 文本修饰</li>
+<li>underline 下划线  none</li>
+<li>letter-spacing 字母间距</li>
+<li>word-spacing 单词间距（以空格为解析单位）<br>强制不换行、空格大小的测量</li>
+<li>white-space 强制不换行</li>
+<li>nowarp 不换行 normal 正常<br>（text无复合样式）<br>一个空格有多大？<br>空格的大小:宋体字体下文字大小的一半;字体格式不一样时，空格大小也不一样。<br>文字其实是一张张的图片，并非刚好是正正方方的，每个文字的右侧会留有一个间隙<br>测量文字大小时，最好是使用从上到下的方式去测量文字大小，从左到右不确定文字之间留有的间隙大小</li>
+</ul>
+<p>文本（font）属性练习 要求<br>1.模块、单词间距、文字行高要与设计图统一<br>2.思考题:每一行的前方粉色带三角的区域该如何实现？</p>
+<h4 id="padding-内填充"><a href="#padding-内填充" class="headerlink" title="padding 内填充"></a>padding 内填充</h4><h4 id="margin-外边距"><a href="#margin-外边距" class="headerlink" title="margin 外边距"></a>margin 外边距</h4><p>标签与标签之间的间隔（距离）<br>margin的问题</p>
+<ul>
+<li>1.margin-top传递 :父子级包含的时候子级的margin-top会传递给父级<br>解决方法:仅用已学知识点可以使用border解决（父级加边框）</li>
+<li>2.margin上下叠压:上下边距会叠压（相邻元素）<br>解决技巧:<br>  1.还是使用margin，可以将某一个元素方向设置成预想的值。margin叠压会取最大的margin值。<br>  2.如果元素没有特殊特征，也可以用padding代替。</li>
+</ul>
+<h4 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h4><ul>
+<li>盒模型大小:<br>border + padding + width&#x2F;height</li>
+<li>盒模型的宽度:<br>border-left-width + padding-left + width + padding-right + border-right-width</li>
+<li>盒模型的高度:<br>border-top-width + padding-top + height + padding-bottom + border-bottom-width</li>
+</ul>
+<p>常见复合属性:</p>
+<ul>
+<li>background</li>
+<li>border</li>
+<li>padding</li>
+<li>margin</li>
+<li>font:font-style|font-weight|font-size&#x2F;line-height|font-family;</li>
+</ul>
+<p>盒模型线框图（marign_padding）练习<br>1.两个线框图都得做<br>2.利用margin完成<br>3.利用padding完成<br>4.混合使用margin和padding同时完成<br>注意:不管是结构还是样式的编码 从外往里（从大往小）进行编码</p>
+<p>网易产品模块练习<br>1.利用第一章所学的所有知识点完成<br>2.思考:能否统一对该模块所有的文字进行行高统一的设置？</p>
+<h4 id="常见标签"><a href="#常见标签" class="headerlink" title="常见标签"></a>常见标签</h4><p>a标签，超链接，伪类是什么，a标签的伪类，伪类的顺序<br>a 超链接<br>伪类 给元素添加特殊的效果<br>link 未访问过的链接初始颜色<br>visited 访问过后的链接颜色<br>hover 鼠标移入（悬停）<br>active 鼠标按下时链接的颜色</p>
+<h4 id="css-reset"><a href="#css-reset" class="headerlink" title="css reset"></a>css reset</h4><p>原则<br>但凡是浏览器默认的样式，都不要使用。因为每个浏览器下标签的默认样式可能会出现不一致的情况。</p>
+<p>人为的将所有样式全部统一（清除），再根据实际情况（设计稿）进行设置。<br>哪些样式是需要重置的？<br>与盒模型相关的样式<br>border | margin | padding<br>标签特有的样式<br>il&gt;li<br>ol&gt;li<br>书写原则</p>
+<ul>
+<li>用到什么标签就清除所用标签的默认样式</li>
+<li>建议不要直接将所有标签全部加上。</li>
+<li>不要将所有标签全部统一设置一致的reset，需根据标签默认样式特征来分类设置。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">body,h1,h2,h3,h4,h5,h6,p,dl,dd｛margin:0;｝</span><br><span class="line">ul，ol｛margin:0;padding:0;list-style:none;｝</span><br><span class="line">img｛border:none;vertacial-align:top;｝/*当a标签包裹img时，IE6下会有缝隙和蓝边*/</span><br><span class="line">a｛text-decoration:none;｝</span><br></pre></td></tr></table></figure>
+
+<h4 id="常用选择器"><a href="#常用选择器" class="headerlink" title="常用选择器"></a>常用选择器</h4><ul>
+<li>id选择器 当前页面唯一的</li>
+<li>类选择器 可以是多个class加在同一个元素上<br> .class名称</li>
+<li>标签选择器 当前页面上所有标签名为xxx的元素</li>
+<li>群组选择器 用逗号分隔，被逗号分隔的元素（选择器）全部执行统一的代码片段</li>
+<li>包含选择器<br>目标父级元素 目标元素<br>空格-代表下一级（语法）</li>
+<li><ul>
+<li>通配符 找到页面上符合规则的所有元素</li>
+</ul>
+</li>
+</ul>
+<p>！！！不建议使用通配符</p>
+<h4 id="选择器优先级"><a href="#选择器优先级" class="headerlink" title="选择器优先级"></a>选择器优先级</h4><p>优先级 代码执行生效的顺序<br>行间样式 &gt; id选择器 &gt; 类选择器 &gt; 标签选择器<br>行间样式 1000<br>id选择器 100<br>类选择器 10<br>标签选择器 1</p>
+<h4 id="块元素和内联元素"><a href="#块元素和内联元素" class="headerlink" title="块元素和内联元素"></a>块元素和内联元素</h4><p>块元素的特征</p>
+<ul>
+<li>1.默认独占一行</li>
+<li>2.没有宽度时，默认撑满一行</li>
+<li>3.支持所有css命令<br>内联（内嵌、行内）元素的特征</li>
+<li>1.同排可以继续跟同类的标签</li>
+<li>2.内容撑开宽度</li>
+<li>3.不支持宽高</li>
+<li>4.不支持上下的margin</li>
+<li>5.代码换行被解析</li>
+</ul>
+<p>display:inline 显示为内联<br>使行块属性标签具备内联元素的特性<br>display:block 显示为块<br>使内联元素具备块属性标签的特性</p>
+<p>display是将标签转换为页面中显示的类型<br>display不会改变标签本质</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/06/29/html5%E5%9F%BA%E7%A1%80/" data-id="cuidHrF3TgpmgbOLi-cCfHEud" data-title="html5基础" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-svg动画遇到的问题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/06/05/svg%E5%8A%A8%E7%94%BB%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" class="article-date">
+  <time class="dt-published" datetime="2018-06-05T10:37:24.000Z" itemprop="datePublished">2018-06-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/svg/">svg</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/06/05/svg%E5%8A%A8%E7%94%BB%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">svg动画遇到的问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><p>​		没有更改代码的情况下，svg动画在Chrome、Safari、Firefox下样式飞了，360浏览器、搜狗浏览器下样式正常（没有看其他浏览器的情况，IE浏览器不支持svg动画）</p>
+<h2 id="追溯问题"><a href="#追溯问题" class="headerlink" title="追溯问题"></a>追溯问题</h2><p>​		观察出问题动画，发现是元素旋转基点发生了变化，涉及到的相关属性<code>transform-origin</code>，修改<code>transform-origin</code>属性后，动画在<strong>Chrome</strong>、<strong>Safari</strong>、<strong>Firefox</strong>下表现正常了</p>
+<p>​		但是在360浏览器、搜狗浏览器又错乱了。Chrome的私有属性<code>-webkit-transform-origin</code>在360浏览器	、搜狗浏览器同样生效。</p>
+<p>​		又去查了一些svg相关的信息，但对本问题都没有帮助。</p>
+<p>​		最后同事解决了这个问题–</p>
+<p>​			推测浏览器行为变了，推测是取父元素的标准变了</p>
+<p>​			搜<code>transform-origin</code>找到相关文档，发现有个Percentages：refer to the size of bounding box</p>
+<p>​			搜索关键字，搜到transform-box属性，验证se也确实没有这个属性，将其值改为fill-box后正常了</p>
+<h2 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h2><p>​		直接英文文档有困难，囧…找到了相关的中文文档<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/section/1072451">https://cloud.tencent.com/developer/section/1072451</a></p>
+<h3 id="transform-box"><a href="#transform-box" class="headerlink" title="transform-box"></a>transform-box</h3><p>​		该transform-box属性定义了与transform以及transform-origin属性相关的布局框。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/* Keyword values */</span><br><span class="line">transform-box: border-box;</span><br><span class="line">transform-box: fill-box;</span><br><span class="line">transform-box: view-box;</span><br><span class="line"></span><br><span class="line">/* Global values */</span><br><span class="line">transform-box: inherit;</span><br><span class="line">transform-box: initial;</span><br><span class="line">transform-box: unset;</span><br></pre></td></tr></table></figure>
+<p>|Initial value|border-box|<br>| - | - | - |<br>|Applies to|transformable elements|<br>|Inherited|no|<br>|Media|visual|<br>|Computed value|as specified|<br>|Animation type|discrete|<br>|Canonical order|the unique non-ambiguous order defined by the formal grammar|</p>
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><h5 id="可能值"><a href="#可能值" class="headerlink" title="可能值"></a>可能值</h5><ul>
+<li><code>border-box</code>——使用边框作为参考框。表的参考框是包裹着该表的边框，而不是其表框。</li>
+<li><code>fill-box</code>——使用对象边界框作为参考框。</li>
+<li><code>view-box</code>——使用最近的SVG视口作为参考框。如果viewBox属性为创建SVG视口元素指定了一个值，则参考框位于由viewBox属性建立的坐标系的原点处，并且参考框的尺寸被设置为该viewBox属性的宽度和高度值。</li>
+</ul>
+<h4 id="形式语法"><a href="#形式语法" class="headerlink" title="形式语法"></a>形式语法</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border-box | fill-box | view-box</span><br></pre></td></tr></table></figure>
+<h4 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h4><p>|Specification|Status|Comment|<br>|CSS Transforms Level 1The definition of ‘transform-box’ in that specification.|Working Draft|Initial definition|</p>
+<h4 id="浏览器兼容性"><a href="#浏览器兼容性" class="headerlink" title="浏览器兼容性"></a>浏览器兼容性</h4><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th align="center">Chrome</th>
+<th align="center">Firefox (Gecko)</th>
+<th align="center">Internet Explorer</th>
+<th align="center">Opera</th>
+<th>Safari</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Basic support</td>
+<td align="center">No support</td>
+<td align="center">55.0 (55.0)1</td>
+<td align="center">No support</td>
+<td align="center">No support</td>
+<td>?</td>
+</tr>
+</tbody></table>
+<p>|Feature|Android|Chrome for Android|Firefox Mobile (Gecko)|IE Mobile|Opera Mobile|Safari Mobile|<br>| - | :-: | :-: | :-: | :-: | - |<br>|Basic support|?|?|55.0 (55.0)1|?|?|?|</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>擅用搜索工具，svn+Google</li>
+<li>先确认是不是浏览器行为变了，确认后找哪些属性的行为变了</li>
+<li>多写码，在学习实践中拓宽思路</li>
+<li>学好英语</li>
+</ul>
+<p>transform-origin 的定位</p>
+<p>transform-origin接受两个参数，它们可以是百分比，em，px等具体的值，也可以是left,center,right，或者 top,center,bottom等描述性参数，第一个参数表示X方向，第二个参数表示Y方向，但是，当用 left，right，center 来表示的时候，是不区分先后的！也就是说 left center 和 center left 是一回事。具体见下表：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>top left</td>
+<td>left top 等价于 0 0；</td>
+<td></td>
+</tr>
+<tr>
+<td>top</td>
+<td>top center</td>
+<td>center top 等价于 50% 0</td>
+</tr>
+<tr>
+<td>right top</td>
+<td>top right 等价于 100% 0</td>
+<td></td>
+</tr>
+<tr>
+<td>left</td>
+<td>left center</td>
+<td>center left 等价于 0 50%</td>
+</tr>
+<tr>
+<td>center</td>
+<td>center center 等价于 50% 50%（默认值）</td>
+<td></td>
+</tr>
+<tr>
+<td>right</td>
+<td>right center</td>
+<td>center right 等价于 100% 50%</td>
+</tr>
+<tr>
+<td>bottom left</td>
+<td>left bottom 等价于 0 100%</td>
+<td></td>
+</tr>
+<tr>
+<td>bottom</td>
+<td>bottom center</td>
+<td>center bottom 等价于 50% 100%</td>
+</tr>
+<tr>
+<td>bottom right</td>
+<td>right bottom 等价于 100% 100%</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>svg中的transform<br>HTML元素的CSS3 transform和SVG的transform坐标系统大相径庭；<br>平常我们使用transform其坐标是相对于当前元素而言的，默认是元素的中心点变换，我们可以通过transform-origin属性改变变换的中心点。而SVG中的transform的坐标变换的是相对于画布的左上角计算的，跟HTML的transform差别较大，理解上也更加麻烦。<br>体的语法细节有差异。SVG transform属性语法有些自带偏移。而CSS transform则更加纯粹些。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/06/05/svg%E5%8A%A8%E7%94%BB%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" data-id="cuidTyaJvsS5ivhUCUki8nQSV" data-title="svg动画遇到的问题" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/svg/" rel="tag">svg</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hexo建站记录" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/05/30/hexo%E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95/" class="article-date">
+  <time class="dt-published" datetime="2018-05-30T13:45:47.000Z" itemprop="datePublished">2018-05-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%85%B6%E4%BB%96/">其他</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/05/30/hexo%E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95/">hexo建站记录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>安装node<br>安装hexo</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>新建文件夹并打开</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir hexo &amp;&amp; cd hexo</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="站内搜索功能"><a href="#站内搜索功能" class="headerlink" title="站内搜索功能"></a>站内搜索功能</h4><p>1)安装插件。进入本地hexo目录。输入以下命令:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-search —save</span><br><span class="line">$ npm install hexo-generator-searchdb —save</span><br></pre></td></tr></table></figure>
+<p>2)修改站点配置文件。在本地hexo根目录下的_config.yml文件中，添加以下配置:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure>
+<p>3)修改主题配置文件。在主题目录下的_config.yml目录下，添加如下配置:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">local_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
+
+<h4 id="评论功能"><a href="#评论功能" class="headerlink" title="评论功能"></a>评论功能</h4><p>来必力 <a target="_blank" rel="noopener" href="https://livere.com/%EF%BC%8C%E7%A8%B3%E5%AE%9A%E6%80%A7%E8%BE%83%E5%B7%AE%EF%BC%8C%E7%BB%8F%E5%B8%B8%E5%8A%A0%E8%BD%BD%E4%B8%8D%E5%87%BA%E6%9D%A5">https://livere.com/，稳定性较差，经常加载不出来</a></p>
+<p>最后选了gitment，配置如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># Gitment</span><br><span class="line"># Introduction: https://imsun.net/posts/gitment-introduction/</span><br><span class="line"># You can get your Github ID from https://api.github.com/users/&lt;Github username&gt;</span><br><span class="line">gitment:</span><br><span class="line">  enable: true</span><br><span class="line">  mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway</span><br><span class="line">  count: true # Show comments count in post meta area</span><br><span class="line">  lazy: false # Comments lazy loading with a button</span><br><span class="line">  cleanly: false # Hide &#x27;Powered by ...&#x27; on footer, and more</span><br><span class="line">  language: # Force language, or auto switch by theme</span><br><span class="line">  github_user: # MUST HAVE, Your Github ID  #开始设置为id（api里可以看到的一串数字），总是报`Error: Not Found`错误，改成username后就好了</span><br><span class="line">  github_repo: # MUST HAVE, The repo you use to store Gitment comments #例如：BlogDiscuss</span><br><span class="line">  client_id: # MUST HAVE, Github client id for the Gitment</span><br><span class="line">  client_secret: # EITHER this or proxy_gateway, Github access secret token for the Gitment</span><br><span class="line">  proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect</span><br><span class="line">  redirect_protocol: # Protocol of redirect_uri with force_redirect_protocol when mint enabled</span><br></pre></td></tr></table></figure>
+<p>但是遇到一些问题，比如报[object ProgressEvent]的错，在网上找到了解决方法<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000018177680">使用Heroku，解决gitment登录失败，报[object ProgressEvent]的错</a>，这个地方需要注意的是，Heroku注册需要翻墙（可以使用蓝灯），否则注册页面不出现验证码，注册不了</p>
+<h4 id="统计功能"><a href="#统计功能" class="headerlink" title="统计功能"></a>统计功能</h4><p><a target="_blank" rel="noopener" href="https://leancloud.cn/">https://leancloud.cn/</a></p>
+<h4 id="版权声明模块"><a href="#版权声明模块" class="headerlink" title="版权声明模块"></a>版权声明模块</h4><p>修改站点配置文件。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Declare license on posts</span><br><span class="line">post_copyright:</span><br><span class="line">  enable: true</span><br><span class="line">  license: CC BY-NC-SA 4.0</span><br><span class="line">  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/</span><br></pre></td></tr></table></figure>
+
+<h2 id="同时部署到GitHub和coding"><a href="#同时部署到GitHub和coding" class="headerlink" title="同时部署到GitHub和coding"></a>同时部署到GitHub和coding</h2><p>1)安装插件。进入本地hexo目录。输入以下命令:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>2)修改站点配置文件。在本地hexo根目录下的_config.yml文件中，添加以下配置:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: http://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:username/username.github.io.git</span><br><span class="line">  repository: git@git.coding.net:username/username.coding.me.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p>3)hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy</p>
+<h2 id="添加标签"><a href="#添加标签" class="headerlink" title="添加标签"></a>添加标签</h2><p>1)在要发布的新文章头部添加文章的标签tags数组</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tags: [1,2]</span><br><span class="line">tags:</span><br><span class="line">	- 1</span><br><span class="line">	- 2</span><br></pre></td></tr></table></figure>
+<p>2)输入命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
+<p>3)修改生成的sources&#x2F;tags&#x2F;index.md文件，头部添加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type: &quot;tags&quot;</span><br></pre></td></tr></table></figure>
+<p>4)修改主题配置文件。打开标签页：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  tags: /tags</span><br></pre></td></tr></table></figure>
+
+<h2 id="hexo插件安装记录"><a href="#hexo插件安装记录" class="headerlink" title="hexo插件安装记录"></a>hexo插件安装记录</h2><h4 id="sitemap-添加站点地图"><a href="#sitemap-添加站点地图" class="headerlink" title="sitemap 添加站点地图"></a>sitemap 添加站点地图</h4><p>1)安装插件。分别安装百度和google插件，进入本地hexo目录。输入以下命令:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-sitemap</span><br><span class="line">$ npm install hexo-generator-baidu-sitemap --save</span><br></pre></td></tr></table></figure>
+<p>2)修改站点配置文件。在本地hexo根目录下的_config.yml文件中，添加以下配置:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 自动生成sitemap</span><br><span class="line">sitemap:</span><br><span class="line"> path: sitemap.xml</span><br><span class="line">baidusitemap:</span><br><span class="line"> path: baidusitemap.xml</span><br></pre></td></tr></table></figure>
+<p>把生成的sitemap提交到搜索引擎的站长平台来增加收录。</p>
+<h4 id="RSS"><a href="#RSS" class="headerlink" title="RSS"></a>RSS</h4><p>1)安装插件。进入本地hexo目录。输入以下命令:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-feed —save</span><br></pre></td></tr></table></figure>
+<p>2)修改站点配置文件。在本地hexo根目录下的_config.yml文件中，添加以下配置:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: http://hexo.io/plugins/</span><br><span class="line">#RSS订阅</span><br><span class="line">plugin:</span><br><span class="line">- hexo-generator-feed</span><br><span class="line">#Feed Atom</span><br><span class="line">feed:</span><br><span class="line">type: atom</span><br><span class="line">path: atom.xml</span><br><span class="line">limit: 20</span><br></pre></td></tr></table></figure>
+<p>3)修改主题配置文件。在主题目录下的_config.yml目录下，添加如下配置:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Set rss to false to disable feed link.</span><br><span class="line"># Leave rss as empty to use site&#x27;s feed link.</span><br><span class="line"># Set rss to specific value if you have burned your feed already.</span><br><span class="line">rss: /atom.xml</span><br></pre></td></tr></table></figure>
+
+<p>DNS云解析<br>coding 的项目 选 CNAME 解析线路选择默认线路 username.coding.me<br>github 的项目 选 CNAME 解析线路选择谷歌 username.github.io</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/05/30/hexo%E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95/" data-id="cuid6FIl4wBOc1kvgeSef2YXV" data-title="hexo建站记录" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BB%BA%E7%AB%99/" rel="tag">建站</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/9/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/11/">下一页 &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/test/">test</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B9%A6%E7%AE%80/">书简</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/canvas/">canvas</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/svg/">svg</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%85%B6%E4%BB%96/">其他</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B5%8B%E8%AF%95/">测试</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%85%E5%8D%95/">清单</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/3d/" rel="tag">3d</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/" rel="tag">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/" rel="tag">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fiddler/" rel="tag">Fiddler</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MAC/" rel="tag">MAC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PhotoShop/" rel="tag">PhotoShop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wireshark/" rel="tag">Wireshark</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/" rel="tag">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/app/" rel="tag">app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/" rel="tag">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/" rel="tag">canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deeplink/" rel="tag">deeplink</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emmet/" rel="tag">emmet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/" rel="tag">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5/" rel="tag">h5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/less/" rel="tag">less</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/parallels-desktop/" rel="tag">parallels desktop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svg/" rel="tag">svg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/" rel="tag">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/textarea/" rel="tag">textarea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/todolist/" rel="tag">todolist</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/transform/" rel="tag">transform</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10/" rel="tag">win10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E8%AF%B4/" rel="tag">小说</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E7%AB%99/" rel="tag">建站</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" rel="tag">开发环境</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="tag">快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" rel="tag">思维导图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%93%E5%8C%85/" rel="tag">抓包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8F%92%E4%BB%B6/" rel="tag">插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E5%AD%A6/" rel="tag">文学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99/" rel="tag">标签嵌套规则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE/" rel="tag">百度脑图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/" rel="tag">移动开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" rel="tag">编辑器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%84%E8%8C%83/" rel="tag">规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1/" rel="tag">设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/3d/" style="font-size: 10px;">3d</a> <a href="/tags/Charles/" style="font-size: 10px;">Charles</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/JavaScript/" style="font-size: 18px;">JavaScript</a> <a href="/tags/MAC/" style="font-size: 11px;">MAC</a> <a href="/tags/PhotoShop/" style="font-size: 11px;">PhotoShop</a> <a href="/tags/Wireshark/" style="font-size: 10px;">Wireshark</a> <a href="/tags/ajax/" style="font-size: 14px;">ajax</a> <a href="/tags/app/" style="font-size: 11px;">app</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css/" style="font-size: 17px;">css</a> <a href="/tags/deeplink/" style="font-size: 10px;">deeplink</a> <a href="/tags/emmet/" style="font-size: 10px;">emmet</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/git/" style="font-size: 13px;">git</a> <a href="/tags/h5/" style="font-size: 13px;">h5</a> <a href="/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/less/" style="font-size: 10px;">less</a> <a href="/tags/parallels-desktop/" style="font-size: 10px;">parallels desktop</a> <a href="/tags/svg/" style="font-size: 16px;">svg</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/textarea/" style="font-size: 10px;">textarea</a> <a href="/tags/todolist/" style="font-size: 11px;">todolist</a> <a href="/tags/transform/" style="font-size: 11px;">transform</a> <a href="/tags/vue/" style="font-size: 12px;">vue</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 20px;">前端</a> <a href="/tags/%E5%B0%8F%E8%AF%B4/" style="font-size: 10px;">小说</a> <a href="/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 14px;">建站</a> <a href="/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" style="font-size: 10px;">开发环境</a> <a href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" style="font-size: 11px;">快捷键</a> <a href="/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" style="font-size: 10px;">思维导图</a> <a href="/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 19px;">技术</a> <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 10px;">抓包</a> <a href="/tags/%E6%8F%92%E4%BB%B6/" style="font-size: 10px;">插件</a> <a href="/tags/%E6%96%87%E5%AD%A6/" style="font-size: 10px;">文学</a> <a href="/tags/%E6%A0%87%E7%AD%BE%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99/" style="font-size: 10px;">标签嵌套规则</a> <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 10px;">正则表达式</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a> <a href="/tags/%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE/" style="font-size: 10px;">百度脑图</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/" style="font-size: 10px;">移动开发</a> <a href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 11px;">编辑器</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/tags/%E8%A7%84%E8%8C%83/" style="font-size: 13px;">规范</a> <a href="/tags/%E8%AE%BE%E8%AE%A1/" style="font-size: 11px;">设计</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">五月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">三月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/05/22/%E6%9C%AC%E5%9C%B0-git-%E9%A1%B9%E7%9B%AE%E5%90%8C%E6%97%B6%E5%85%B3%E8%81%94-github-%E5%92%8C-gitee/">本地 git 项目同时关联 github 和 gitee</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/12/git-clone-%E6%8A%A5%E9%94%99Permission-denied-publickey/">git clone 报错Permission denied (publickey)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/23/hexo%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99/">hexo部署报错</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/16/h5%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/">h5开发记录</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/24/Mac%E4%B8%8B%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE%E5%BF%AB%E6%8D%B7%E9%94%AE/">Mac下百度脑图快捷键</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 阿寻<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+<!-- 在 footer.ejs 中引入 JS -->
+<script src="/share/js/social-share.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+<!-- 搜索功能代码 -->
+<script src="/js/search.js"></script>
+  </div>
+</body>
+</html>

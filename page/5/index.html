@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>一半在街头，一半在云端</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="一半在街头，一半在云端">
+<meta property="og:url" content="http://example.com/page/5/index.html">
+<meta property="og:site_name" content="一半在街头，一半在云端">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="阿寻">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="一半在街头，一半在云端" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+
+  <!-- 在 head.ejs 中引入 CSS -->
+  <link rel="stylesheet" href="/share/css/share.min.css">
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">一半在街头，一半在云端</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">我是阿寻。一个INFP-T → INTP-A的田野调查者。一半在街头收集人间，一半在云端放牧想象。这里是我的赤脚漫游指南。所有笨拙，都是过程。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅" target="_blank"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-微信页面打开链接-引导在其他浏览器打开的引导页实现" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/02/19/%E5%BE%AE%E4%BF%A1%E9%A1%B5%E9%9D%A2%E6%89%93%E5%BC%80%E9%93%BE%E6%8E%A5-%E5%BC%95%E5%AF%BC%E5%9C%A8%E5%85%B6%E4%BB%96%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E7%9A%84%E5%BC%95%E5%AF%BC%E9%A1%B5%E5%AE%9E%E7%8E%B0/" class="article-date">
+  <time class="dt-published" datetime="2019-02-19T07:09:00.000Z" itemprop="datePublished">2019-02-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2019/02/19/%E5%BE%AE%E4%BF%A1%E9%A1%B5%E9%9D%A2%E6%89%93%E5%BC%80%E9%93%BE%E6%8E%A5-%E5%BC%95%E5%AF%BC%E5%9C%A8%E5%85%B6%E4%BB%96%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E7%9A%84%E5%BC%95%E5%AF%BC%E9%A1%B5%E5%AE%9E%E7%8E%B0/">微信页面打开链接,引导在其他浏览器打开的引导页实现</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>微信访问网站时，网页内容不显示，显示引导内容，让用户用浏览器打开</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>判断为微信浏览器时，阻止页面加载，提示“点击右上角用浏览器打开”信息<br>阻止页面加载需要在document文档头部载入相关js代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  window.stop();  // 停止窗口的加载。</span><br><span class="line">  document.write(&#x27;&lt;div&gt;点击右上角用浏览器打开&lt;/div&gt;&#x27;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>[Window stop() 方法] 由于脚本的加载顺序，stop()方法不能停止包含它的文档的加载，但是它将停止加载大型图像、新窗口和其他延迟加载的对象。<br>[HTML DOM write() 方法] write() 方法可向文档写入 HTML 表达式或 JavaScript 代码。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2019/02/19/%E5%BE%AE%E4%BF%A1%E9%A1%B5%E9%9D%A2%E6%89%93%E5%BC%80%E9%93%BE%E6%8E%A5-%E5%BC%95%E5%AF%BC%E5%9C%A8%E5%85%B6%E4%BB%96%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E7%9A%84%E5%BC%95%E5%AF%BC%E9%A1%B5%E5%AE%9E%E7%8E%B0/" data-id="cuidUFiXai-yNB3RK36OKV4Fv" data-title="微信页面打开链接,引导在其他浏览器打开的引导页实现" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/h5/" rel="tag">h5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-抓包软件的使用记录" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/01/26/%E6%8A%93%E5%8C%85%E8%BD%AF%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" class="article-date">
+  <time class="dt-published" datetime="2019-01-26T07:07:26.000Z" itemprop="datePublished">2019-01-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%85%B6%E4%BB%96/">其他</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2019/01/26/%E6%8A%93%E5%8C%85%E8%BD%AF%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/">抓包软件的使用记录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>移动端页面抓包，Mac OS</p>
+<h2 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h2><h4 id="Charles"><a href="#Charles" class="headerlink" title="Charles"></a>Charles</h4><p>Mac OS系统可用</p>
+<p>1.下载安装包安装，<a target="_blank" rel="noopener" href="http://www.charlesproxy.com/">Charles官网</a>，我是同事发的个破解版，可以网上随便找个。<br>2.配置代理使移动设备可以连接到Charles。<br>Proxy -&gt; Proxy Settings默认端口是8888，根据实际情况可修改。<br>手机配置代理，保证手机和pc在同一网络下，代理服务器ip设为连接的pc的ip，端口8888<br>打开要调试的页面，请求就会先发送到Charles，然后验证是否允许访问。点击Allow</p>
+<p>手机抓包出现unknown和乱码的问题<br>在电脑上安装CA证书<br>    打开charles，点击help-&gt;SSL Proxying-&gt;Install Charles Root Certificate<br><a target="_blank" rel="noopener" href="https://www.v2ex.com/t/255040">https://www.v2ex.com/t/255040</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xuxiaolu/p/6186410.html">https://www.cnblogs.com/xuxiaolu/p/6186410.html</a></p>
+<h4 id="Fiddler"><a href="#Fiddler" class="headerlink" title="Fiddler"></a>Fiddler</h4><p><a target="_blank" rel="noopener" href="https://www.telerik.com/download/fiddler">下载安装包</a><br><a target="_blank" rel="noopener" href="https://www.telerik.com/download/fiddler/fiddler-osx-beta">https://www.telerik.com/download/fiddler/fiddler-osx-beta</a></p>
+<h4 id="Wireshark"><a href="#Wireshark" class="headerlink" title="Wireshark"></a>Wireshark</h4><p><a target="_blank" rel="noopener" href="https://www.wireshark.org/download/">下载安装包</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2019/01/26/%E6%8A%93%E5%8C%85%E8%BD%AF%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" data-id="cuidD1_YnNtnd3h2yX-pCHui-" data-title="抓包软件的使用记录" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Charles/" rel="tag">Charles</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fiddler/" rel="tag">Fiddler</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Wireshark/" rel="tag">Wireshark</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%93%E5%8C%85/" rel="tag">抓包</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-移动开发中需要注意的问题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/01/25/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98/" class="article-date">
+  <time class="dt-published" datetime="2019-01-25T03:00:58.000Z" itemprop="datePublished">2019-01-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2019/01/25/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98/">移动开发中需要注意的问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><ul>
+<li>做用于在移动app中的h5页面时，需要从一个页面跳到另一个页面。同事告知移动端使用<code>&lt;a&gt;</code>标签会有一些坑，可能会导致页面多次跳转的问题，尽量避免使用<code>&lt;a&gt;</code>标签</li>
+<li>测试了一下，ios单独使用<code>click</code>事件写的跳转或者<code>&lt;a&gt;</code>标签都可以正常跳转，使用<code>&lt;a&gt;</code>标签跳出去再回到当前页面再使用<code>click</code>事件写的跳转就会多打开一个页面，每多跳转出去一次就多打开一个页面&#x3D;&#x3D;</li>
+<li><code>click</code>事件里调用了ios的方法打开页面</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;btn&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;a href=&quot;http://&quot;&gt;&lt;/a&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  $(&#x27;.btn&#x27;).on(&#x27;click&#x27;, function()&#123;</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="定位问题-查阅资料"><a href="#定位问题-查阅资料" class="headerlink" title="定位问题&amp;&amp;查阅资料"></a>定位问题&amp;&amp;查阅资料</h2><p>定义了一个变量<code>var num=0;</code>，每点击一次num++，ios在方法中打印后发现是多次触发了click事件，事件被累加绑定了。</p>
+<p>累加绑定：在页面中为一个元素绑定事件，事件执行后页面未刷新且元素还在，然后你再次点击，元素又被绑定个一次点击事件，这样第二次点击就会执行两次，以此类推。</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>解绑后再进行绑定</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;btn&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;a href=&quot;http://&quot;&gt;&lt;/a&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  $(&#x27;.btn&#x27;).off(&#x27;click&#x27;);</span><br><span class="line">  $(&#x27;.btn&#x27;).on(&#x27;click&#x27;, function()&#123;</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>参考：<br>1.<a target="_blank" rel="noopener" href="https://blog.csdn.net/GSCurry/article/details/71857127">click点击一次，执行多次的bug</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2019/01/25/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98/" data-id="cuidJ1rXz6hrGw9CoD-cluaaF" data-title="移动开发中需要注意的问题" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/" rel="tag">移动开发</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-使用纯css写一个按钮——自适应，阴影" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/01/23/%E4%BD%BF%E7%94%A8%E7%BA%AFcss%E5%86%99%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE%E2%80%94%E2%80%94%E8%87%AA%E9%80%82%E5%BA%94%EF%BC%8C%E9%98%B4%E5%BD%B1/" class="article-date">
+  <time class="dt-published" datetime="2019-01-23T06:57:51.000Z" itemprop="datePublished">2019-01-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2019/01/23/%E4%BD%BF%E7%94%A8%E7%BA%AFcss%E5%86%99%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE%E2%80%94%E2%80%94%E8%87%AA%E9%80%82%E5%BA%94%EF%BC%8C%E9%98%B4%E5%BD%B1/">使用纯css写一个按钮——自适应，阴影</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>制作h5页面的自适应宽度按钮，开始使用背景图制作，把按钮两端切出来，中间区域单独切出来宽一像素图沿x轴重复，但在不同客户端浏览器表现不一致（遇到的是android的某款机型显示有问题，大概用图片仍可以调好，没做尝试），之后考虑直接用css写按钮效果</p>
+<h2 id="实现过程中遇到的问题"><a href="#实现过程中遇到的问题" class="headerlink" title="实现过程中遇到的问题"></a>实现过程中遇到的问题</h2><h4 id="关于阴影部分"><a href="#关于阴影部分" class="headerlink" title="关于阴影部分"></a>关于阴影部分</h4><p>使用box-shadow属性设置内阴影、外阴影、内发光、外发光<br>语法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-shadow: h-shadow(必需) v-shadow(必需) blur(可选) spread(可选) color(可选) inset(可选);</span><br></pre></td></tr></table></figure>
+<p>可以用逗号分隔阴影列表设置多个阴影叠加效果，层级关系位置越靠前面的显示层级越高，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-shadow:  0px 0px 0px 10px #f00, 0px 0px 0px 20px #fc0, 0px 0px 0px 30px #ff0, 0px 0px 0px 40px #0f0, 0px 0px 0px 50px #0fe, 0px 0px 0px 60px #00f, 0px 0px 0px 70px #f0f;</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://blog.secretbase.vip/Photoshop%E6%8A%95%E5%BD%B1%E4%B8%8ECSS%E4%B8%ADbox-shadow%E7%9A%84%E8%BD%AC%E6%8D%A2.html">Photoshop投影与CSS中box-shadow的转换</a></p>
+<h4 id="关于阴影使用了混合模式，正片叠底和滤色等"><a href="#关于阴影使用了混合模式，正片叠底和滤色等" class="headerlink" title="关于阴影使用了混合模式，正片叠底和滤色等"></a>关于阴影使用了混合模式，正片叠底和滤色等</h4><p>阴影颜色使用了正片叠底，暂时是使用了叠完之后的颜色做为阴影颜色&#x3D;&#x3D;<br>如果是元素,可以使用CSS3新特性: mix-blend-mode<br>文档描述为：</p>
+<blockquote>
+<p>mix-blend-mode CSS 属性描述了元素的内容应该与元素的直系父元素的内容和元素的背景如何混合。</p>
+</blockquote>
+<p>扩展：<br>1.<a target="_blank" rel="noopener" href="https://www.zhangxinxu.com/wordpress/2015/05/css3-mix-blend-mode-background-blend-mode/">CSS3混合模式mix-blend-mode&#x2F;background-blend-mode简介</a><br>2.<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/mix-blend-mode">https://developer.mozilla.org/zh-CN/docs/Web/CSS/mix-blend-mode</a></p>
+<h4 id="关于自适应"><a href="#关于自适应" class="headerlink" title="关于自适应"></a>关于自适应</h4><p>h5页面css设置属性值单位的问题，px，rem，em，百分比<br>对于一个固定可自动缩放模块，如果可以使用百分比，优先使用百分比。内部如果font-size值不会受影响可以使用em，如果font-size值不确定，可以使用rem，对于不期望随着模版放大缩小改变的单位使用px。</p>
+<h4 id="关于伪类选择器中文乱码的问题"><a href="#关于伪类选择器中文乱码的问题" class="headerlink" title="关于伪类选择器中文乱码的问题"></a>关于伪类选择器中文乱码的问题</h4><p>确保html文件编码和css文件编码保持一致。最好使用utf-8编码。在css文档头加入 <code>@charset &quot;utf-8&quot;;</code>（不声明的话会默认为ansi编码）。伪类选择器中的中文可以使用中文对应的Unicode，需要注意Unicode在CSS中的书写方式。<br>英文字符不要转换为Unicode，会被转成实体字符<br>例如：”更多&gt;”<br>  对应的Unicode：<code>\u66f4\u591a\u0026\u0067\u0074\u003b</code><br>  对应的UTF-8：<code>&amp;#x66F4;&amp;#x591A;&gt;</code><br>  伪类选择器中 使用 <code>content: &#39;\66F4\591A&gt;&#39;;</code><br>转换工具：<a target="_blank" rel="noopener" href="http://tool.chinaz.com/tools/urlencode.aspx">http://tool.chinaz.com/tools/urlencode.aspx</a></p>
+<p>参考及扩展：<br>1.<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/cssref/pr_box-shadow.asp">http://www.w3school.com.cn/cssref/pr_box-shadow.asp</a><br>2.<a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html">字符编码笔记：ASCII，Unicode 和 UTF-8</a><br>3.<a target="_blank" rel="noopener" href="https://blog.csdn.net/Deft_MKJing/article/details/79460485">ASCII，Unicode和UTF-8</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2019/01/23/%E4%BD%BF%E7%94%A8%E7%BA%AFcss%E5%86%99%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE%E2%80%94%E2%80%94%E8%87%AA%E9%80%82%E5%BA%94%EF%BC%8C%E9%98%B4%E5%BD%B1/" data-id="cuid_fjG261sdST-0qfCRLWOy" data-title="使用纯css写一个按钮——自适应，阴影" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-less使用记录" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/01/19/less%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" class="article-date">
+  <time class="dt-published" datetime="2019-01-19T04:28:24.000Z" itemprop="datePublished">2019-01-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2019/01/19/less%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/">less使用记录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h2><p>Less 可以运行在 Node 或浏览器端。</p>
+<h4 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h4><ul>
+<li>下载nodejs安装包安装<a target="_blank" rel="noopener" href="https://nodejs.org/en/">https://nodejs.org/en/</a></li>
+<li>macOS下使用brew安装node<ul>
+<li>安装brew <a target="_blank" rel="noopener" href="http://brew.sh/">http://brew.sh/</a></li>
+</ul>
+</li>
+<li>linux下使用yum安装nodejs (自行搜索安装方法)</li>
+</ul>
+<h3 id="Node-js-环境中使用-Less-："><a href="#Node-js-环境中使用-Less-：" class="headerlink" title="Node.js 环境中使用 Less ："></a>Node.js 环境中使用 Less ：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g less</span><br><span class="line">&gt; lessc styles.less styles.css</span><br></pre></td></tr></table></figure>
+
+<h3 id="在浏览器环境中使用-Less-："><a href="#在浏览器环境中使用-Less-：" class="headerlink" title="在浏览器环境中使用 Less ："></a>在浏览器环境中使用 Less ：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet/less&quot; type=&quot;text/css&quot; href=&quot;styles.less&quot; /&gt;</span><br><span class="line">&lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Phpstorm配置Less"><a href="#Phpstorm配置Less" class="headerlink" title="Phpstorm配置Less"></a>Phpstorm配置Less</h2><p>配置：“Phpstorm”&gt; “Preferences”（command+,）弹出设置界面，在左侧导航找到“Tools”&gt;”File Watchers” 点击“+”号按钮找到less文件选项点击添加。</p>
+<p>Output paths to refresh：<br>默认：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$FileNameWithoutExtension$.css:$FileNameWithoutExtension$.css.map</span><br></pre></td></tr></table></figure>
+<p>修改为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$FileParentDir(less)$/css/$FileDirPathFromParent(less)$/$FileNameWithoutExtension$.css</span><br></pre></td></tr></table></figure>
+<p>&#x2F;&#x2F;说明<br>$FileParentDir(less)$ 是获取 less 目录的路径<br>$FileDirPathFromParent(less)$ 是获取 less 文件到 less 目录的路径<br>$FileNameWithoutExtension$ 是获取 less 文件不带后缀的名字</p>
+<h2 id="Atom配置Less"><a href="#Atom配置Less" class="headerlink" title="Atom配置Less"></a>Atom配置Less</h2><p>“Window” -&gt; “Settings” -&gt; “Packages”<br>安装插件</p>
+<ul>
+<li>搜索atom-less -&gt; install</li>
+<li>搜索less-autocompile -&gt; install</li>
+</ul>
+<p>Example</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">less/base.less</span><br><span class="line"></span><br><span class="line">  // &quot;out&quot;: false, &quot;compress&quot;: false</span><br><span class="line">  /**</span><br><span class="line">   * 不编译 不压缩</span><br><span class="line">   */</span><br><span class="line"></span><br><span class="line">less/styles.less</span><br><span class="line"></span><br><span class="line">  // out: ../css/styles.css, sourcemap: true, compress: true</span><br><span class="line">  /**</span><br><span class="line">   * 编译输出到../css/styles.css</span><br><span class="line">   * 生成sourcemap</span><br><span class="line">   * 压缩文件</span><br><span class="line">   */</span><br><span class="line"></span><br><span class="line">  @import &quot;my/components/select.less&quot;;</span><br><span class="line"></span><br><span class="line">less/my/components/select.less</span><br><span class="line"></span><br><span class="line">  // main: ../../styles.less</span><br><span class="line"></span><br><span class="line">  @import &quot;base.less&quot;;</span><br><span class="line"></span><br><span class="line">  .select &#123;</span><br><span class="line">    height: 100px;</span><br><span class="line">    width: 100px;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>参考：<br>1.<a target="_blank" rel="noopener" href="http://lesscss.cn/">http://lesscss.cn/</a><br>2.<a target="_blank" rel="noopener" href="https://less.bootcss.com/">https://less.bootcss.com/</a><br>3.<a target="_blank" rel="noopener" href="https://www.cnblogs.com/enix/p/3505610.html">https://www.cnblogs.com/enix/p/3505610.html</a><br>4.<a target="_blank" rel="noopener" href="https://www.cnblogs.com/zzhbx/p/6944922.html">https://www.cnblogs.com/zzhbx/p/6944922.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2019/01/19/less%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" data-id="cuidLRoM69VGCrQOj5_cldAbX" data-title="less使用记录" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/less/" rel="tag">less</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-h5页面与app原生页面通信——postMessage方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/01/18/h5%E9%A1%B5%E9%9D%A2%E4%B8%8Eapp%E5%8E%9F%E7%94%9F%E9%A1%B5%E9%9D%A2%E9%80%9A%E4%BF%A1%E2%80%94%E2%80%94postMessage%E6%96%B9%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2019-01-18T04:02:59.000Z" itemprop="datePublished">2019-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2019/01/18/h5%E9%A1%B5%E9%9D%A2%E4%B8%8Eapp%E5%8E%9F%E7%94%9F%E9%A1%B5%E9%9D%A2%E9%80%9A%E4%BF%A1%E2%80%94%E2%80%94postMessage%E6%96%B9%E6%B3%95/">h5页面与app原生页面通信——postMessage方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><ul>
+<li>有些页面需要经常改动，为了避免app频繁发版本，需要在app里放h5页面</li>
+<li>h5页面和app有交互</li>
+</ul>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ul>
+<li>JS部分</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">var params = &#123;</span><br><span class="line">    &#x27;id&#x27;: $id,</span><br><span class="line">    &#x27;type&#x27;: $type,</span><br><span class="line">    &#x27;typeide&#x27;: $typeide,</span><br><span class="line">    &#x27;categoryId&#x27;: $categoryId,</span><br><span class="line">    &#x27;good_id&#x27;: $good_id,</span><br><span class="line">    &#x27;url&#x27;: $url</span><br><span class="line">&#125;;</span><br><span class="line">function setupWvJsBridge(params)&#123; //参数</span><br><span class="line">  var u = navigator.userAgent;</span><br><span class="line">  var isAndroid = u.indexOf(&#x27;Android&#x27;) &gt; -1 || u.indexOf(&#x27;Adr&#x27;) &gt; -1; //android终端</span><br><span class="line">  var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端</span><br><span class="line"></span><br><span class="line">  // ios postMessage</span><br><span class="line">  try &#123;</span><br><span class="line">    if(isAndroid != true &amp;&amp; isiOS == true)&#123;</span><br><span class="line">      var postMsg = params;</span><br><span class="line">      window.webkit.messageHandlers.AppModel.postMessage(postMsg);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; catch &#123;&#125;</span><br><span class="line"></span><br><span class="line">  // android postMessage</span><br><span class="line">  try &#123;</span><br><span class="line">    if(isiOS != true &amp;&amp; isAndroid == true)&#123;</span><br><span class="line">      var postMsg = params;</span><br><span class="line">      window.Android.postMessage(JSON.stringify(postMsg));</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; catch(error) &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36435508/article/details/78165007">https://blog.csdn.net/qq_36435508&#x2F;article&#x2F;details&#x2F;78165007</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2019/01/18/h5%E9%A1%B5%E9%9D%A2%E4%B8%8Eapp%E5%8E%9F%E7%94%9F%E9%A1%B5%E9%9D%A2%E9%80%9A%E4%BF%A1%E2%80%94%E2%80%94postMessage%E6%96%B9%E6%B3%95/" data-id="cuidWS3YhmqDN7UdPLlfaFXQt" data-title="h5页面与app原生页面通信——postMessage方法" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/app/" rel="tag">app</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/h5/" rel="tag">h5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-js判断h5页面滑动方向" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/01/17/js%E5%88%A4%E6%96%ADh5%E9%A1%B5%E9%9D%A2%E6%BB%91%E5%8A%A8%E6%96%B9%E5%90%91/" class="article-date">
+  <time class="dt-published" datetime="2019-01-17T07:53:11.000Z" itemprop="datePublished">2019-01-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2019/01/17/js%E5%88%A4%E6%96%ADh5%E9%A1%B5%E9%9D%A2%E6%BB%91%E5%8A%A8%E6%96%B9%E5%90%91/">js判断h5页面滑动方向</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><p>最近做了个h5页面，需要在页面中的一个固定区域向上滑动时加载数据</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">var windowHeight = $(window).height();</span><br><span class="line">$(&quot;body&quot;).css(&quot;height&quot;, windowHeight);</span><br><span class="line">var startX, startY, moveEndX, moveEndY, X, Y;</span><br><span class="line">$(&quot;body&quot;).on(&quot;touchstart&quot;, function(e) &#123;</span><br><span class="line">   e.preventDefault();</span><br><span class="line">   startX = e.targetTouches[0].pageX;</span><br><span class="line">   startY = e.targetTouches[0].pageY;</span><br><span class="line">&#125;);</span><br><span class="line">$(&quot;body&quot;).on(&quot;touchmove&quot;, function(e) &#123;</span><br><span class="line">   e.preventDefault();</span><br><span class="line">   moveEndX = e.targetTouches[0].pageX;</span><br><span class="line">   moveEndY = e.targetTouches[0].pageY;</span><br><span class="line">   X = moveEndX - startX;</span><br><span class="line">   Y = moveEndY - startY;</span><br><span class="line">   if (Math.abs(X) &gt; Math.abs(Y) &amp;&amp; X &gt; 0) &#123;</span><br><span class="line">       alert(&quot;left to right&quot;);</span><br><span class="line">   &#125; else if (Math.abs(X) &gt; Math.abs(Y) &amp;&amp; X &lt; 0) &#123;</span><br><span class="line">       alert(&quot;right to left&quot;);</span><br><span class="line">   &#125; else if (Math.abs(Y) &gt; Math.abs(X) &amp;&amp; Y &gt; 0) &#123;</span><br><span class="line">       alert(&quot;top to bottom&quot;);</span><br><span class="line">   &#125; else if (Math.abs(Y) &gt; Math.abs(X) &amp;&amp; Y &lt; 0) &#123;</span><br><span class="line">       alert(&quot;bottom to top&quot;);</span><br><span class="line">   &#125; else &#123;</span><br><span class="line">       alert(&quot;just touch&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2019/01/17/js%E5%88%A4%E6%96%ADh5%E9%A1%B5%E9%9D%A2%E6%BB%91%E5%8A%A8%E6%96%B9%E5%90%91/" data-id="cuid6xjt_PVSN1mZ_VumwsLiC" data-title="js判断h5页面滑动方向" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/h5/" rel="tag">h5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/transform/" rel="tag">transform</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-CSS-3D转换" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/01/07/CSS-3D%E8%BD%AC%E6%8D%A2/" class="article-date">
+  <time class="dt-published" datetime="2019-01-07T10:15:24.000Z" itemprop="datePublished">2019-01-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2019/01/07/CSS-3D%E8%BD%AC%E6%8D%A2/">CSS 3D转换</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="html部分"><a href="#html部分" class="headerlink" title="html部分"></a>html部分</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;section class=&quot;container&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;box&quot;&gt;</span><br><span class="line">    &lt;figure&gt;1&lt;/figure&gt;</span><br><span class="line">    &lt;figure&gt;2&lt;/figure&gt;</span><br><span class="line">    &lt;figure&gt;3&lt;/figure&gt;</span><br><span class="line">    &lt;figure&gt;4&lt;/figure&gt;</span><br><span class="line">    &lt;figure&gt;5&lt;/figure&gt;</span><br><span class="line">    &lt;figure&gt;6&lt;/figure&gt;</span><br><span class="line">    &lt;figure&gt;7&lt;/figure&gt;</span><br><span class="line">    &lt;figure&gt;8&lt;/figure&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/section&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="css部分"><a href="#css部分" class="headerlink" title="css部分"></a>css部分</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  .container&#123;position: relative;margin: auto;width: 100px;height: 100px;&#125;</span><br><span class="line">  .box&#123;position: absolute;width: 100%;height: 100%;transform-style: preserve-3d;transform-origin: 100%;animation: circle 10s linear infinite;&#125;</span><br><span class="line">  figure&#123;position: absolute;width: 100%;height: 100%;font-size: 20px; line-height: 100px;color: #fff;text-align: center;&#125;</span><br><span class="line">  figure:nth-child(1)&#123;background-color: hsla(0, 100%, 50%, 0.5);transform: translateZ(-86.6px);&#125;</span><br><span class="line">  figure:nth-child(2)&#123;background-color: hsla(45, 100%, 50%, 0.5);transform: rotateY(60deg) translateZ(-86.6px);&#125;</span><br><span class="line">  figure:nth-child(3)&#123;background-color: hsla(90, 100%, 50%, 0.5);transform: rotateY(120deg) translateZ(-86.6px);&#125;</span><br><span class="line">  figure:nth-child(4)&#123;background-color: hsla(135, 100%, 50%, 0.5);transform: rotateY(180deg) translateZ(-86.6px);&#125;</span><br><span class="line">  figure:nth-child(5)&#123;background-color: hsla(180, 100%, 50%, 0.5);transform: rotateY(240deg) translateZ(-86.6px);&#125;</span><br><span class="line">  figure:nth-child(6)&#123;background-color: hsla(225, 100%, 50%, 0.5);transform: rotateY(300deg) translateZ(-86.6px);&#125;</span><br><span class="line">  figure:nth-child(7)&#123;height: 173.2px;line-height: 173.2px;background-color: hsla(270, 100%, 50%, 0.5);transform: rotateX(90deg) translateZ(86.6px);&#125;</span><br><span class="line">  figure:nth-child(8)&#123;height: 173.2px;line-height: 173.2px;background-color: hsla(315, 100%, 50%, 0.5);transform: rotateX(-90deg) translateZ(13.4px);&#125;</span><br><span class="line">  figure:nth-child(7):before&#123;content: &#x27;&#x27;;display: block;border-width: 86.6px 50px 86.6px 0;border-style: solid;border-color: transparent hsla(270, 100%, 50%, 0.5) transparent transparent;position: absolute;left: -50px;top: 0;&#125;</span><br><span class="line">  figure:nth-child(7):after&#123;content: &#x27;&#x27;;display: block;border-width: 86.6px 0 86.6px 50px;border-style: solid;border-color: transparent transparent transparent hsla(270, 100%, 50%, 0.5);position: absolute;right: -50px;top: 0;&#125;</span><br><span class="line">  figure:nth-child(8):before&#123;content: &#x27;&#x27;;display: block;border-width: 86.6px 50px 86.6px 0;border-style: solid;border-color: transparent hsla(315, 100%, 50%, 0.5) transparent transparent;position: absolute;left: -50px;top: 0;&#125;</span><br><span class="line">  figure:nth-child(8):after&#123;content: &#x27;&#x27;;display: block;border-width: 86.6px 0 86.6px 50px;border-style: solid;border-color: transparent transparent transparent hsla(315, 100%, 50%, 0.5);position: absolute;right: -50px;top: 0;&#125;</span><br><span class="line">  @keyframes circle&#123;</span><br><span class="line">    0%&#123;transform: translateY(200px) rotateX(-20deg) rotateY(0);&#125;</span><br><span class="line">    100%&#123;transform: translateY(200px) rotateX(-20deg) rotateY(360deg);&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p>例子：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/CSS-3D%E8%BD%AC%E6%8D%A2.html">CSS-3D转换</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2019/01/07/CSS-3D%E8%BD%AC%E6%8D%A2/" data-id="cuidT-UN92IT4o4AaVViKWN6y" data-title="CSS 3D转换" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/3d/" rel="tag">3d</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/transform/" rel="tag">transform</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-canvas学习-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/12/29/canvas%E5%AD%A6%E4%B9%A0-1/" class="article-date">
+  <time class="dt-published" datetime="2018-12-29T06:33:57.000Z" itemprop="datePublished">2018-12-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/canvas/">canvas</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/12/29/canvas%E5%AD%A6%E4%B9%A0-1/">canvas学习(1)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/12/29/canvas%E5%AD%A6%E4%B9%A0-1/" data-id="cuidWsftpWVcf7Ak5mGvYHCVV" data-title="canvas学习(1)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/canvas/" rel="tag">canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-HTML5详解学习笔记-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/12/07/HTML5%E8%AF%A6%E8%A7%A3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/" class="article-date">
+  <time class="dt-published" datetime="2018-12-07T06:50:14.000Z" itemprop="datePublished">2018-12-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/12/07/HTML5%E8%AF%A6%E8%A7%A3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/">HTML5详解学习笔记(1)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="HTML5新增语义化标签"><a href="#HTML5新增语义化标签" class="headerlink" title="HTML5新增语义化标签"></a>HTML5新增语义化标签</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/12/07/HTML5%E8%AF%A6%E8%A7%A3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/" data-id="cuid0_DVBWlED59k27Cw9pxOj" data-title="HTML5详解学习笔记(1)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/4/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/6/">下一页 &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/test/">test</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B9%A6%E7%AE%80/">书简</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/canvas/">canvas</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/svg/">svg</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%85%B6%E4%BB%96/">其他</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B5%8B%E8%AF%95/">测试</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%85%E5%8D%95/">清单</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/3d/" rel="tag">3d</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/" rel="tag">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/" rel="tag">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fiddler/" rel="tag">Fiddler</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MAC/" rel="tag">MAC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PhotoShop/" rel="tag">PhotoShop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wireshark/" rel="tag">Wireshark</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/" rel="tag">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/app/" rel="tag">app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/" rel="tag">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/" rel="tag">canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deeplink/" rel="tag">deeplink</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emmet/" rel="tag">emmet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/" rel="tag">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5/" rel="tag">h5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/less/" rel="tag">less</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/parallels-desktop/" rel="tag">parallels desktop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svg/" rel="tag">svg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/" rel="tag">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/textarea/" rel="tag">textarea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/todolist/" rel="tag">todolist</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/transform/" rel="tag">transform</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10/" rel="tag">win10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E8%AF%B4/" rel="tag">小说</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E7%AB%99/" rel="tag">建站</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" rel="tag">开发环境</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="tag">快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" rel="tag">思维导图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%93%E5%8C%85/" rel="tag">抓包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8F%92%E4%BB%B6/" rel="tag">插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E5%AD%A6/" rel="tag">文学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99/" rel="tag">标签嵌套规则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE/" rel="tag">百度脑图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/" rel="tag">移动开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" rel="tag">编辑器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%84%E8%8C%83/" rel="tag">规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1/" rel="tag">设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/3d/" style="font-size: 10px;">3d</a> <a href="/tags/Charles/" style="font-size: 10px;">Charles</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/JavaScript/" style="font-size: 18px;">JavaScript</a> <a href="/tags/MAC/" style="font-size: 11px;">MAC</a> <a href="/tags/PhotoShop/" style="font-size: 11px;">PhotoShop</a> <a href="/tags/Wireshark/" style="font-size: 10px;">Wireshark</a> <a href="/tags/ajax/" style="font-size: 14px;">ajax</a> <a href="/tags/app/" style="font-size: 11px;">app</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css/" style="font-size: 17px;">css</a> <a href="/tags/deeplink/" style="font-size: 10px;">deeplink</a> <a href="/tags/emmet/" style="font-size: 10px;">emmet</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/git/" style="font-size: 13px;">git</a> <a href="/tags/h5/" style="font-size: 13px;">h5</a> <a href="/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/less/" style="font-size: 10px;">less</a> <a href="/tags/parallels-desktop/" style="font-size: 10px;">parallels desktop</a> <a href="/tags/svg/" style="font-size: 16px;">svg</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/textarea/" style="font-size: 10px;">textarea</a> <a href="/tags/todolist/" style="font-size: 11px;">todolist</a> <a href="/tags/transform/" style="font-size: 11px;">transform</a> <a href="/tags/vue/" style="font-size: 12px;">vue</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 20px;">前端</a> <a href="/tags/%E5%B0%8F%E8%AF%B4/" style="font-size: 10px;">小说</a> <a href="/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 14px;">建站</a> <a href="/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" style="font-size: 10px;">开发环境</a> <a href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" style="font-size: 11px;">快捷键</a> <a href="/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" style="font-size: 10px;">思维导图</a> <a href="/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 19px;">技术</a> <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 10px;">抓包</a> <a href="/tags/%E6%8F%92%E4%BB%B6/" style="font-size: 10px;">插件</a> <a href="/tags/%E6%96%87%E5%AD%A6/" style="font-size: 10px;">文学</a> <a href="/tags/%E6%A0%87%E7%AD%BE%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99/" style="font-size: 10px;">标签嵌套规则</a> <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 10px;">正则表达式</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a> <a href="/tags/%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE/" style="font-size: 10px;">百度脑图</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/" style="font-size: 10px;">移动开发</a> <a href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 11px;">编辑器</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/tags/%E8%A7%84%E8%8C%83/" style="font-size: 13px;">规范</a> <a href="/tags/%E8%AE%BE%E8%AE%A1/" style="font-size: 11px;">设计</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">五月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">三月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/05/22/%E6%9C%AC%E5%9C%B0-git-%E9%A1%B9%E7%9B%AE%E5%90%8C%E6%97%B6%E5%85%B3%E8%81%94-github-%E5%92%8C-gitee/">本地 git 项目同时关联 github 和 gitee</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/12/git-clone-%E6%8A%A5%E9%94%99Permission-denied-publickey/">git clone 报错Permission denied (publickey)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/23/hexo%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99/">hexo部署报错</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/16/h5%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/">h5开发记录</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/24/Mac%E4%B8%8B%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE%E5%BF%AB%E6%8D%B7%E9%94%AE/">Mac下百度脑图快捷键</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 阿寻<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+<!-- 在 footer.ejs 中引入 JS -->
+<script src="/share/js/social-share.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+<!-- 搜索功能代码 -->
+<script src="/js/search.js"></script>
+  </div>
+</body>
+</html>

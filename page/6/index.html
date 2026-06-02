@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>一半在街头，一半在云端</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="一半在街头，一半在云端">
+<meta property="og:url" content="http://example.com/page/6/index.html">
+<meta property="og:site_name" content="一半在街头，一半在云端">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="阿寻">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="一半在街头，一半在云端" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+
+  <!-- 在 head.ejs 中引入 CSS -->
+  <link rel="stylesheet" href="/share/css/share.min.css">
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">一半在街头，一半在云端</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">我是阿寻。一个INFP-T → INTP-A的田野调查者。一半在街头收集人间，一半在云端放牧想象。这里是我的赤脚漫游指南。所有笨拙，都是过程。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅" target="_blank"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Photoshop投影与CSS中box-shadow的转换" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/12/04/Photoshop%E6%8A%95%E5%BD%B1%E4%B8%8ECSS%E4%B8%ADbox-shadow%E7%9A%84%E8%BD%AC%E6%8D%A2/" class="article-date">
+  <time class="dt-published" datetime="2018-12-04T02:57:17.000Z" itemprop="datePublished">2018-12-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/12/04/Photoshop%E6%8A%95%E5%BD%B1%E4%B8%8ECSS%E4%B8%ADbox-shadow%E7%9A%84%E8%BD%AC%E6%8D%A2/">Photoshop投影与CSS中box-shadow的转换</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>“混合模式”：<br>    Photoshop提供了各式各样的混合模式，但是CSS3阴影只支持正常模式（normal）。<br>“颜色（color）”：<br>    阴影颜色。对应于CSS3阴影中的 color 值。<br>“不透明度（opacity）”：<br>    阴影的不透明度。对应于CSS3阴影的颜色 rgba() 中的 a 值。<br>“角度（Angle）”：<br>    投影的角度。<br>“距离（Distance）”：<br>    阴影的距离。根据角度和距离可以换算出CSS3阴影中的x-offset和y-offet。<br>    x-offset &#x3D; Distance * cos(180 -Angle) ，<br>    y-offset &#x3D; Distance * sin(180 - Angle)<br>“扩展（Spread）”：<br>    阴影的扩展大小。控制阴影实体颜色和虚化颜色的多少。<br>    Spread * Size &#x3D; 阴影中实体颜色的大小 。剩下的就是虚化的颜色。<br>    CSS3阴影 spread-radius &#x3D; Spread * Size<br>“大小（Size）”：<br>    阴影的大小。<br>    在CSS3中 blur-radius + spread-radius &#x3D; Size 即 blur-radius &#x3D; Size - spread-radius 。</p>
+<p>例：<br>图层样式：<br>投影：<br>  结构：<br>    混合模式：正常<br>    不透明度：75%<br>    角度：145（使用全局光）<br>    距离：5像素<br>    扩展：6%<br>    大小：10像素<br>  品质：<br>    杂色：0%<br>    图层挖空投影</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">color: rgba(118,113,113,.75);</span><br><span class="line">x-offset: 5 * cos(180°- 145°) = 4.09px;</span><br><span class="line">y-offset: 5 * sin(180°- 145°) = 2.87px;</span><br><span class="line">spread-radius: 10 * 6% = 0.6px</span><br><span class="line">blur-radius: 10 - 0.6 = 9.4px;</span><br><span class="line">box-shadow: 4.09px 2.87px 9.4px 0.6px rgba(118,113,113,.75);</span><br><span class="line">text-shadow: 4.09px 2.87px 9.4px rgba(118,113,113,.75);</span><br></pre></td></tr></table></figure>
+
+<p>参考：<br>1.<a target="_blank" rel="noopener" href="https://www.jb51.net/css/404167.html">https://www.jb51.net/css/404167.html</a><br>2.<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-shadow">https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-shadow</a><br>3.<a target="_blank" rel="noopener" href="http://psd-to-css-shadows.com/">http://psd-to-css-shadows.com/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/12/04/Photoshop%E6%8A%95%E5%BD%B1%E4%B8%8ECSS%E4%B8%ADbox-shadow%E7%9A%84%E8%BD%AC%E6%8D%A2/" data-id="cuidYv-_eDjjzvz_G2PAPM_Xu" data-title="Photoshop投影与CSS中box-shadow的转换" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-css中透明度和颜色的关系" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/12/04/css%E4%B8%AD%E9%80%8F%E6%98%8E%E5%BA%A6%E5%92%8C%E9%A2%9C%E8%89%B2%E7%9A%84%E5%85%B3%E7%B3%BB/" class="article-date">
+  <time class="dt-published" datetime="2018-12-04T02:33:29.000Z" itemprop="datePublished">2018-12-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/12/04/css%E4%B8%AD%E9%80%8F%E6%98%8E%E5%BA%A6%E5%92%8C%E9%A2%9C%E8%89%B2%E7%9A%84%E5%85%B3%E7%B3%BB/">css中透明度和颜色的关系</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>每一种颜色 &#x3D; 透明度百分比 * 当前色种值 + (1-透明度百分比) * 底部色种值<br>RGB三个分量分别相加</p>
+<p>ARGB 依次代表透明度（alpha）、红色(red)、绿色(green)、蓝色(blue)。<br><code>#FF99CC00</code> 为例，其中，FF 是透明度，99 是红色值， CC 是绿色值， 00 是蓝色值。</p>
+<p>1.透明度分为256阶（0-255），计算机上用16进制表示为（00-ff）。透明就是0阶，不透明就是255阶,如果50%透明就是127阶（256的一半当然是128，但因为是从0开始，所以实际上是127）。<br>2.透明度 和 不透明度是两个概念， 它们加起来是1，或者100%.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">透明度参照表；</span><br><span class="line">00%=FF（不透明）</span><br><span class="line">5%=F2</span><br><span class="line">10%=E5</span><br><span class="line">15%=D8</span><br><span class="line">20%=CC</span><br><span class="line">25%=BF</span><br><span class="line">30%=B2</span><br><span class="line">35%=A5</span><br><span class="line">40%=99</span><br><span class="line">45%=8c</span><br><span class="line">50%=7F</span><br><span class="line">55%=72</span><br><span class="line">60%=66</span><br><span class="line">65%=59</span><br><span class="line">70%=4c</span><br><span class="line">75%=3F</span><br><span class="line">80%=33</span><br><span class="line">85%=21</span><br><span class="line">90%=19</span><br><span class="line">95%=0c</span><br><span class="line">100%=00（全透明）</span><br></pre></td></tr></table></figure>
+<p>参考：<br>1.<a target="_blank" rel="noopener" href="http://blog.csdn.net/pinglingying/article/details/52403819">http://blog.csdn.net/pinglingying/article/details/52403819</a><br>2.<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35900047/article/details/79097658">https://blog.csdn.net/qq_35900047&#x2F;article&#x2F;details&#x2F;79097658</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/12/04/css%E4%B8%AD%E9%80%8F%E6%98%8E%E5%BA%A6%E5%92%8C%E9%A2%9C%E8%89%B2%E7%9A%84%E5%85%B3%E7%B3%BB/" data-id="cuidfQtvegmoXt-ct67zOmrLA" data-title="css中透明度和颜色的关系" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-textarea实现高度自适应" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/12/03/textarea%E5%AE%9E%E7%8E%B0%E9%AB%98%E5%BA%A6%E8%87%AA%E9%80%82%E5%BA%94/" class="article-date">
+  <time class="dt-published" datetime="2018-12-03T07:29:21.000Z" itemprop="datePublished">2018-12-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/12/03/textarea%E5%AE%9E%E7%8E%B0%E9%AB%98%E5%BA%A6%E8%87%AA%E9%80%82%E5%BA%94/">textarea实现高度自适应</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><p>自学前端过程中想要模仿windows桌面做个网页版，作为练习。桌面图标改名框刚开始使用input实现，然后发现改名框是可以多行而且根据名称长度自适应高度的，然后考虑使用textarea实现，但是textarea不能自适应高度</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>网上查找资料，总结几种解决方案</p>
+<ul>
+<li>1.div模拟textarea文本域轻松实现高度自适应,通过添加<code>contenteditable</code>属性并将属性值设为<code>true</code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div contenteditable=&quot;true&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+单击后选中文本的实现：<code>selectNodeContents</code>对具有<code>contenteditable=&#39;true&#39;</code>的容器有效<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;div contenteditable=&#x27;true&#x27; id=&quot;selectable&quot;&gt;http://example.com/page.htm&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    var obj = document.getElementById(&#x27;selectable&#x27;);</span><br><span class="line">    obj.onclick = function()&#123;</span><br><span class="line">      selectText(this);</span><br><span class="line">    &#125;;</span><br><span class="line">    function selectText(obj) &#123;</span><br><span class="line">        if (document.selection) &#123;</span><br><span class="line">            var range = document.body.createTextRange();</span><br><span class="line">            range.moveToElementText(obj);</span><br><span class="line">            range.select();</span><br><span class="line">        &#125; else if (window.getSelection) &#123;</span><br><span class="line">            var range = document.createRange();</span><br><span class="line">            range.selectNodeContents(obj);</span><br><span class="line">            window.getSelection().removeAllRanges();</span><br><span class="line">            window.getSelection().addRange(range);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
+<li>2.文本框textarea根据输入内容自适应高度,js实现</li>
+</ul>
+<p>参考：<br>1.<a target="_blank" rel="noopener" href="https://www.zhangxinxu.com/wordpress/2010/12/div-textarea-height-auto/">https://www.zhangxinxu.com/wordpress/2010/12/div-textarea-height-auto/</a><br>2.<a target="_blank" rel="noopener" href="https://www.cnblogs.com/dffy/p/6386318.html">https://www.cnblogs.com/dffy/p/6386318.html</a><br>3.<a target="_blank" rel="noopener" href="https://segmentfault.com/q/1010000007857595?_ea=1474484">https://segmentfault.com/q/1010000007857595?_ea&#x3D;1474484</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/12/03/textarea%E5%AE%9E%E7%8E%B0%E9%AB%98%E5%BA%A6%E8%87%AA%E9%80%82%E5%BA%94/" data-id="cuidknsMId9ITQXb2WJckncto" data-title="textarea实现高度自适应" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/textarea/" rel="tag">textarea</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-JS面向对象及组件开发学习笔记-3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/11/28/JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%8F%8A%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-3/" class="article-date">
+  <time class="dt-published" datetime="2018-11-28T10:24:37.000Z" itemprop="datePublished">2018-11-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/11/28/JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%8F%8A%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-3/">JS面向对象及组件开发学习笔记(3)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="组件开发"><a href="#组件开发" class="headerlink" title="组件开发"></a>组件开发</h4><p>对象的多种表现形式<br>提高对象的复用性<br>如何配置参数和默认参数<br>例子：拖拽<br>例子：弹窗</p>
+<p>例子：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91-%E6%8B%96%E6%8B%BD.html">拖拽的组件开发</a><br>例子：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91-%E5%BC%B9%E7%AA%97.html">弹窗的组件开发</a></p>
+<h4 id="复杂组件开发之自定义事件"><a href="#复杂组件开发之自定义事件" class="headerlink" title="复杂组件开发之自定义事件"></a>复杂组件开发之自定义事件</h4><p>组件<br>  对面向对象的深入应用（UI组件，功能组件）<br>  将配置参数、方法、事件，三者进行分离<br>创建自定义事件<br>    有利于多人协作开发代码<br>    如何去挂载自定义事件与事件函数</p>
+<p>自定义事件：让函数能够具备事件的某些特性（绑定事件互相不会覆盖）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&#x27;show&#x27;,function()&#123;</span><br><span class="line">  alert(1);</span><br><span class="line">&#125;,false);</span><br><span class="line">window.addEventListener(&#x27;show&#x27;,function()&#123;</span><br><span class="line">  alert(2);</span><br><span class="line">&#125;,false);</span><br><span class="line">window.addEventListener(&#x27;show&#x27;,function()&#123;</span><br><span class="line">  alert(3);</span><br><span class="line">&#125;,false);</span><br><span class="line"></span><br><span class="line">show(); //主动触发自定义事件</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;div1&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;span id=&quot;span1&quot;&gt;&lt;/span&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  window.onload = function()&#123;</span><br><span class="line">    var oDiv = document.getElementById(&#x27;div1&#x27;);</span><br><span class="line">    var oSpan = document.getElementById(&#x27;span1&#x27;);</span><br><span class="line"></span><br><span class="line">    bindEvent(oDiv, &#x27;click&#x27;, function()&#123;</span><br><span class="line">      alert(1);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    bindEvent(oDiv, &#x27;click&#x27;, function()&#123;</span><br><span class="line">      alert(2);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    bindEvent(oSpan, &#x27;show&#x27;, function()&#123;</span><br><span class="line">      alert(3);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    bindEvent(oSpan, &#x27;show&#x27;, function()&#123;</span><br><span class="line">      alert(4);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    bindEvent(oSpan, &#x27;hide&#x27;, function()&#123;</span><br><span class="line">      alert(5);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    fireEvent(oSpan, &#x27;show&#x27;); //执行结果 3</span><br><span class="line"></span><br><span class="line">    function bindEvent(obj, events, fn)&#123;</span><br><span class="line">      // obj : 楼层</span><br><span class="line">      // events : 书架</span><br><span class="line">      // fn : 一本书</span><br><span class="line"></span><br><span class="line">      obj.listeners = obj.listeners || &#123;&#125;;</span><br><span class="line">      obj.listeners[events] = obj.listeners[events] || [];</span><br><span class="line">      obj.listeners[events].push(fn);</span><br><span class="line"></span><br><span class="line">      if (obj.addEventListener) &#123;</span><br><span class="line">        obj.addEventListener(events, fn, false);</span><br><span class="line">      &#125; else &#123; //兼容IE</span><br><span class="line">        obj.attachEvent(&#x27;on&#x27;+events, fn);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    function fireEvent(obj, events)&#123; //主动触发自定义事件</span><br><span class="line">      for (var i = 0; i &lt; obj.listeners[events].length; i++) &#123;</span><br><span class="line">        obj.listeners[events][i]();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener">EventTarget.addEventListener()</a></p>
+<h4 id="JS综合应用"><a href="#JS综合应用" class="headerlink" title="JS综合应用"></a>JS综合应用</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;div1&quot;&gt;</span><br><span class="line">  &lt;div id=&quot;div2&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  var oDiv = document.getElementById(&#x27;div1&#x27;);</span><br><span class="line">  oDiv.onmouseover = function()&#123;&#125;;</span><br><span class="line">  oDiv.onmouseout = function()&#123;&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>子集影响父级的bug（在IE下使用onmouseover和onmouseout时）<br>解决方案：<br>  1.js：onmouseenter onmouseleave（子集不会影响父级）（最早IE支持，可能会有兼容性问题，做兼容非常麻烦）<br>  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function elContains(a, b)&#123; //判断两个元素是否是嵌套关系</span><br><span class="line">  return a.contains ? a != b &amp;&amp; a.contains(b) : !!(a.compareDocumentPosition(b) &amp; 16);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>  2.css：加一个层</p>
+<p>例子：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/%E5%9B%BE%E7%89%87%E6%94%BE%E5%A4%A7%E9%95%9C%E6%95%88%E6%9E%9C.html">图片放大镜效果</a><br>例子：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/%E8%8B%B9%E6%9E%9C%E8%8F%9C%E5%8D%95.html">苹果菜单</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/11/28/JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%8F%8A%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-3/" data-id="cuidJdwgC6hX8v88v-Dc3G5Yo" data-title="JS面向对象及组件开发学习笔记(3)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-PS参考线小插件GuideGuide" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/11/28/PS%E5%8F%82%E8%80%83%E7%BA%BF%E5%B0%8F%E6%8F%92%E4%BB%B6GuideGuide/" class="article-date">
+  <time class="dt-published" datetime="2018-11-28T09:49:57.000Z" itemprop="datePublished">2018-11-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/11/28/PS%E5%8F%82%E8%80%83%E7%BA%BF%E5%B0%8F%E6%8F%92%E4%BB%B6GuideGuide/">PS参考线小插件GuideGuide</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>下载&#x2F;参考：<a target="_blank" rel="noopener" href="http://iiidea.cn/guideguide-v4-6-4-macosx.html">http://iiidea.cn/guideguide-v4-6-4-macosx.html</a><br>使用参考：<a target="_blank" rel="noopener" href="https://www.uisdc.com/logo-design-auxiliary-line">标识设计中辅助参考线入门</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/11/28/PS%E5%8F%82%E8%80%83%E7%BA%BF%E5%B0%8F%E6%8F%92%E4%BB%B6GuideGuide/" data-id="cuidqDDiQNwoYbgIr0-X4xRpW" data-title="PS参考线小插件GuideGuide" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PhotoShop/" rel="tag">PhotoShop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1/" rel="tag">设计</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-JS面向对象及组件开发学习笔记-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/11/27/JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%8F%8A%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/" class="article-date">
+  <time class="dt-published" datetime="2018-11-27T07:19:10.000Z" itemprop="datePublished">2018-11-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/11/27/JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%8F%8A%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/">JS面向对象及组件开发学习笔记(2)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="JS是基于原型的程序"><a href="#JS是基于原型的程序" class="headerlink" title="JS是基于原型的程序"></a>JS是基于原型的程序</h4><p>尽量不要去修改或者添加系统对象下面的方法和属性</p>
+<h4 id="包装对象"><a href="#包装对象" class="headerlink" title="包装对象"></a>包装对象</h4><p>基本类型都有自己对应的包装对象：String Number Boolean（null undefined没有）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> var str = new String(&#x27;hello&#x27;);</span><br><span class="line"> alert(typeof str); //object</span><br><span class="line"> alert(str.charAt(1));</span><br><span class="line"> String.prototype.charAt = function()&#123;&#125;;</span><br><span class="line"></span><br><span class="line">var str = &#x27;hello&#x27;;</span><br><span class="line">str.charAt(0);  //基本类型会找到对应的包装对象类型，然后包装对象类型把所有的属性和方法给了基本类型，然后包装对象消失</span><br><span class="line"></span><br><span class="line">var str = &#x27;hello&#x27;;</span><br><span class="line">//给基本类型添加方法时，把方法添加到基本类型对应的包装对象上</span><br><span class="line">String.prototype.lastValue = function()&#123;</span><br><span class="line">  return this.charAt(this.length-1);</span><br><span class="line">&#125;</span><br><span class="line">alert(str.lastValue()); //o</span><br><span class="line"></span><br><span class="line">var str = &#x27;hello&#x27;;</span><br><span class="line">str.number = 10;</span><br><span class="line">alert(str.number);  //undefined</span><br></pre></td></tr></table></figure>
+
+<h4 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h4><p>实例对象与原型之间的连接，叫做原型链<br><strong>proto</strong>(隐式连接)<br>Object对象类型是原型链的最外层</p>
+<h4 id="hasOwnProperty和constructor的使用"><a href="#hasOwnProperty和constructor的使用" class="headerlink" title="hasOwnProperty和constructor的使用"></a>hasOwnProperty和constructor的使用</h4><p>面向对象的一些属性和方法<br>  -hasOwnProperty():看是不是对象自身下面的属性<br>  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var arr = [];</span><br><span class="line">arr.num = 10;</span><br><span class="line">Array.prototype.num2 = 20;</span><br><span class="line"></span><br><span class="line">alert(arr.hasOwnProperty(&#x27;num&#x27;)); //true</span><br><span class="line">alert(arr.hasOwnProperty(&#x27;num2&#x27;));  //false</span><br></pre></td></tr></table></figure><br>  -constructor:查看对象的构造函数<br>      每个原型都会自动添加constructor属性<br>      For in 的时候有些属性是找不到的<br>      避免修改constructor属性<br>  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">function A()&#123;&#125;</span><br><span class="line">//A.prototype.constructor = A; 自动添加，constructor属性的值为构造函数A</span><br><span class="line">var a1 = new A();</span><br><span class="line">alert(a1.constructor);  //A</span><br><span class="line">alert(a1.hasOwnProperty == Object.prototype.hasOwnProperty);  //true</span><br><span class="line">var arr = [];</span><br><span class="line">alert(arr.constructor == Array);  //true</span><br><span class="line"></span><br><span class="line">function Person()&#123;&#125;</span><br><span class="line">Person.prototype.name = &#x27;xiaoming&#x27;;</span><br><span class="line">Person.prototype.age = 20;</span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">  constructor: Person,  //这里需要添加这句话修正指向</span><br><span class="line">  name: &#x27;xiaoming&#x27;,</span><br><span class="line">  age: 20</span><br><span class="line">&#125;;</span><br><span class="line">for(var attr in Person.prototype)&#123;</span><br><span class="line">  alert(attr);</span><br><span class="line">&#125;</span><br><span class="line">//系统自带的属性不能被for in到，自己添加的属性可以</span><br></pre></td></tr></table></figure><br>  -isntanseof:运算符<br>      对象与构造函数在原型链上是否有关系<br>  -toString():object上的方法</p>
+<p>isntanseof类型判断</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr = [];</span><br><span class="line">alert(arr isntanseof Array);  //true</span><br></pre></td></tr></table></figure>
+
+<p>利用toString做类型判断</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var arr = [];</span><br><span class="line">alert( Object.prototype.toString.call(arr) == &#x27;[object Array]&#x27; ); //true</span><br><span class="line"></span><br><span class="line">window.onload = function()&#123;</span><br><span class="line">  var oF = document.createElement(&#x27;iframe&#x27;);</span><br><span class="line">  document.body.appendChild(oF);</span><br><span class="line">  var ifArray = window.frames[0].Array;</span><br><span class="line">  var arr = new ifArray();</span><br><span class="line">  alert(arr.constructor == Array);  //false</span><br><span class="line">  alert(arr isntanseof Array);  //false</span><br><span class="line">  alert(Object.prototype.toString.call(arr) == &#x27;[object Array]&#x27;); //true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="面向对象的继承"><a href="#面向对象的继承" class="headerlink" title="面向对象的继承"></a>面向对象的继承</h4><p>-在原有对象的基础上，略作修改，得到一个新的对象<br>-不影响原有对象的功能</p>
+<p>子类不影响父类，子类可以继承父类的一些功能（代码复用）<br>属性继承：调用父类的构造函数 使用call改变this指向<br>方法继承：for in 拷贝继承（jquery也是采用拷贝继承extend）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">function CreatePerson(name, gender)&#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.gender = gender;</span><br><span class="line">&#125;</span><br><span class="line">CreatePerson.prototype.showName = function()&#123;</span><br><span class="line">  alert(this.name);</span><br><span class="line">&#125;</span><br><span class="line">var p1 = new CreatePerson(&#x27;xiaoming&#x27;,&#x27;male&#x27;);</span><br><span class="line">p1.showName();</span><br><span class="line"></span><br><span class="line">function CreateStar(name, gender, job)&#123;</span><br><span class="line">  CreatePerson.call(this, name, gender);</span><br><span class="line">  this.job = job;</span><br><span class="line">&#125;</span><br><span class="line">//CreateStar.prototype = CreatePerson.prototype; 这样会有对象引用问题</span><br><span class="line">extend(CreateStar.prototype, CreatePerson.prototype);</span><br><span class="line"></span><br><span class="line">var p2 = new CreateStar(&#x27;xxx&#x27;, &#x27;male&#x27;, &#x27;actor&#x27;);</span><br><span class="line">p2.showName();</span><br><span class="line"></span><br><span class="line">//对象拷贝会有引用问题，基本类型复制不会，可以通过把对象里的每一项赋给另一个对象的每一项</span><br><span class="line">//函数虽然是对象类型，但是函数不能被修改，只能重新赋值</span><br><span class="line">function extend(obj1, obj2)&#123;</span><br><span class="line">  for(var attr in obj2)&#123;</span><br><span class="line">    obj1[attr] = obj2[attr];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>例子：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%8B%96%E6%8B%BD.html">继承的拖拽</a></p>
+<h4 id="继承的其他形式"><a href="#继承的其他形式" class="headerlink" title="继承的其他形式"></a>继承的其他形式</h4><p>-类式继承<br>    利用构造函数(类)继承的方式<br>-原型继承<br>    借助原型来实现对象继承对象</p>
+<h6 id="类式继承"><a href="#类式继承" class="headerlink" title="类式继承"></a>类式继承</h6><p>JS中没有类的概念，把JS中的构造函数看作是类<br>属性和方法要分开继承</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function A()&#123;</span><br><span class="line">  this.name = &#x27;xiaoming&#x27;;</span><br><span class="line">&#125;</span><br><span class="line">A.prototype.showName = function()&#123;</span><br><span class="line">  alert(this.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function B()&#123;</span><br><span class="line">  A.call(this);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var F = function()&#123;&#125;;</span><br><span class="line">F.prototype = A.prototype;</span><br><span class="line">B.prototype = new F();</span><br><span class="line">B.prototype.constructor = B;  //修正指向问题</span><br><span class="line"></span><br><span class="line">var b1 = new B();</span><br><span class="line">b1.showName();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h6 id="原型继承"><a href="#原型继承" class="headerlink" title="原型继承"></a>原型继承</h6><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_37838171/article/details/80811205">JS 拓展对象原型方法的正确姿势</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/11/27/JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%8F%8A%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/" data-id="cuidXy4cumScCMBNC9xok-eQG" data-title="JS面向对象及组件开发学习笔记(2)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-JS面向对象及组件开发学习笔记-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/11/23/JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%8F%8A%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/" class="article-date">
+  <time class="dt-published" datetime="2018-11-23T09:21:34.000Z" itemprop="datePublished">2018-11-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/11/23/JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%8F%8A%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/">JS面向对象及组件开发学习笔记(1)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h4><p>this</p>
+<ul>
+<li>js中,所有的函数都是通过一个对象进行调用的,是谁调用this就指向谁<br>例如定时器，打印里面的this会指向window - 定时器是window下面的方法<br>window object是所有浏览器都支持的，代表当前窗口。全局变量是window对象的属性，全局函数是window的方法。所以你不写window，也会默认对象是window，此种情况window对象可以省略.</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  var obj = new Object();  //创建了一个空的对象</span><br><span class="line">  obj.name = &#x27;小明&#x27;;  //属性</span><br><span class="line">  obj.showName = function()&#123;  //方法</span><br><span class="line">    alert(this); //打印出来的this是obj</span><br><span class="line">  &#125;;</span><br><span class="line">  obj.showName();</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var obj = new Object();  //创建了一个空的对象</span><br><span class="line">    obj.name = &#x27;小明&#x27;;  //属性</span><br><span class="line">    obj.showName = function()&#123;  //方法</span><br><span class="line">        alert(this);  //打印出来的this是document</span><br><span class="line">    &#125;;</span><br><span class="line">    document.onclick = obj.showName;</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line"> &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    var obj = &#123;</span><br><span class="line">      showName() &#123;</span><br><span class="line">        console.dir(this);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    var f = obj.showName;</span><br><span class="line">    obj.showName(); //obj对象</span><br><span class="line">    f();  //window</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="工厂方式与构造函数"><a href="#工厂方式与构造函数" class="headerlink" title="工厂方式与构造函数"></a>工厂方式与构造函数</h4><p>工厂方式：<br>  面向对象中的封装函数<br>  改成与系统对象类似写法<br>    -首字母大写<br>    -New关键字提取<br>    -This指向为新创建的对象<br>  构造函数<br>    -用来创建对象的函数，叫做构造函数<br>  存在的问题<br>    -对象的引用<br>    -浪费内存</p>
+<p>当new去调用一个函数：这个时候函数中的this就是创建出来的对象，而且函数的返回值就是this(隐式返回)<br>new 后面调用的函数叫做构造函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">function createPerson(name)&#123;</span><br><span class="line">  // 1.原料</span><br><span class="line">  var obj = new Object();</span><br><span class="line">  // 2.加工</span><br><span class="line">  obj.name = name;</span><br><span class="line">  obj.showName = function()&#123;</span><br><span class="line">    alert(this.name);</span><br><span class="line">  &#125;</span><br><span class="line">  // 3.出厂</span><br><span class="line">  return obj;</span><br><span class="line">&#125;</span><br><span class="line">var p1 = createPerson(&#x27;xiaoming&#x27;);</span><br><span class="line">p1.showName();</span><br><span class="line">var p2 = createPerson(&#x27;xiaoqiang&#x27;);</span><br><span class="line">p2.showName();</span><br><span class="line"></span><br><span class="line">var arr = new Array();</span><br><span class="line">var date = new Date();</span><br><span class="line"></span><br><span class="line">=&gt;</span><br><span class="line"></span><br><span class="line">function CreatePerson(name)&#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.showName = function()&#123;</span><br><span class="line">    alert(this.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var p1 = new CreatePerson(&#x27;xiaoming&#x27;);</span><br><span class="line">p1.showName();</span><br><span class="line">var p2 = new CreatePerson(&#x27;xiaoqiang&#x27;);</span><br><span class="line">p2.showName();</span><br><span class="line"></span><br><span class="line">alert(p1.showName == p2.showName);  //false 引用地址不同</span><br></pre></td></tr></table></figure>
+<h4 id="对象引用"><a href="#对象引用" class="headerlink" title="对象引用"></a>对象引用</h4><p>基本类型：赋值的时候只是值的复制<br>对象类型：赋值不只是值的复制，而且也是引用的传递</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var a = 5;</span><br><span class="line">var b = a;</span><br><span class="line">b += 3;</span><br><span class="line">alert(b); //8</span><br><span class="line">alert(a); //5</span><br><span class="line"></span><br><span class="line">var a = [1,2,3];</span><br><span class="line">var b = a;</span><br><span class="line">b.push(4);</span><br><span class="line">alert(b); //[1,2,3,4]</span><br><span class="line">alert(a); //[1,2,3,4]</span><br><span class="line"></span><br><span class="line">var a = [1,2,3];</span><br><span class="line">var b = a;</span><br><span class="line">var b = [1,2,3,4];</span><br><span class="line">alert(b); //[1,2,3,4]</span><br><span class="line">alert(a); //[1,2,3]</span><br></pre></td></tr></table></figure>
+<p>基本类型：<code>==</code>运算的时候值相同就是true<br>对象类型：<code>==</code>运算的时候值和引用都相同时才为true</p>
+<p>原型：去改写对象下面公用的方法或者属性，让公用的方法或者属性在内存中存在一份(提高性能)</p>
+<h4 id="面向对象的写法和使用"><a href="#面向对象的写法和使用" class="headerlink" title="面向对象的写法和使用"></a>面向对象的写法和使用</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function 构造函数()&#123;</span><br><span class="line">  this.属性</span><br><span class="line">&#125;</span><br><span class="line">构造函数.原型.方法 = function()&#123;&#125;;</span><br><span class="line"></span><br><span class="line">var 对象1 = new 构造函数();</span><br><span class="line">对象1.方法();</span><br></pre></td></tr></table></figure>
+
+<h4 id="面向对象的选项卡"><a href="#面向对象的选项卡" class="headerlink" title="面向对象的选项卡"></a>面向对象的选项卡</h4><p>原则<br>  -先写出普通的写法，然后改成面向对象写法<br>    普通方法变型<br>      尽量不要出现函数嵌套函数<br>      可以有全局变量<br>      把onload中不是赋值的语句放到单独函数中<br>    改成面向对象<br>      全局变量就是属性<br>      函数就是方法<br>      Onload中创建对象<br>      改this指向问题：事件或者定时器中容易出问题，尽量让面向对象中的this指向对象</p>
+<p>示例：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E9%80%89%E9%A1%B9%E5%8D%A1.html">点击查看</a></p>
+<h4 id="面向对象的拖拽"><a href="#面向对象的拖拽" class="headerlink" title="面向对象的拖拽"></a>面向对象的拖拽</h4><p>注意<br>  -Event对象</p>
+<p>示例：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%8B%96%E6%8B%BD.html">点击查看</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/11/23/JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%8F%8A%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/" data-id="cuidDK9WTyUNsLTPuwapv2CPC" data-title="JS面向对象及组件开发学习笔记(1)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-ECMAScript测试题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/11/22/ECMAScript%E6%B5%8B%E8%AF%95%E9%A2%98/" class="article-date">
+  <time class="dt-published" datetime="2018-11-22T09:00:18.000Z" itemprop="datePublished">2018-11-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/11/22/ECMAScript%E6%B5%8B%E8%AF%95%E9%A2%98/">ECMAScript测试题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ol>
+<li></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">A.if(&#x27;21&#x27;&lt;&#x27;15&#x27;)&#123;alert(1)&#125;</span><br><span class="line"></span><br><span class="line">B.if(15-15)&#123;alert(1)&#125;</span><br><span class="line"></span><br><span class="line">C.if(&#x27;21&#x27;&lt;15)&#123;alert(1)&#125;</span><br><span class="line"></span><br><span class="line">D.if(&#x27;5&#x27;+0)&#123;alert(1)&#125;</span><br><span class="line"></span><br><span class="line">哪项会弹1?  B</span><br><span class="line"></span><br><span class="line">if (表达式-条件) &#123;</span><br><span class="line">  // 条件为真执行的代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>A.字符串之间的比较，是按照从左到右的顺序，逐位进行比较，按照unicode码的大小<br>  <code>charCodeAt(index)</code> 用于获取指定索引值位置的unicode<br>  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = &#x27;21&#x27;, b = &#x27;15&#x27;;</span><br><span class="line">console.log(a.charCodeAt(0)); // 50</span><br><span class="line">console.log(b.charCodeAt(0)); // 49</span><br><span class="line">50 &lt; 49 =&gt; false;</span><br><span class="line">// 注：当前位大小相同时会继续比较下一位</span><br></pre></td></tr></table></figure><br>B.减法运算 15-15&#x3D;0 &#x3D;&gt; false<br>C.隐式类型转换<br>  ‘21’ &#x3D;&gt; 21 字符串转为数字<br>  21 &lt; 15 &#x3D;&gt; false<br>D.’5’+0 &#x3D;&gt; ‘50’ &#x3D;&gt; true<br>  +作用：<br>      加法运算：左右两侧都是数字<br>      字符串拼接：左右两侧只要有一侧是字符串，那么就是字符串拼接<br>      正号</p>
+<ol start="2">
+<li></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var i = 0, j = 0;</span><br><span class="line">for (; i &lt; 10,j&lt;6; i++,j++) &#123;</span><br><span class="line">  k = i + j;</span><br><span class="line">&#125;</span><br><span class="line">console.log(k);</span><br><span class="line"></span><br><span class="line">// 10</span><br><span class="line"></span><br><span class="line">for (; i &lt; 6,j&lt;10; i++,j++) &#123;</span><br><span class="line">  k = i + j;</span><br><span class="line">&#125;</span><br><span class="line">console.log(k);</span><br><span class="line"></span><br><span class="line">// 18</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">for (变量初始化; 执行条件; 改变变量) &#123;&#125;</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
+<p>注意：判断条件,运算符而不是&amp;&amp;，只返回,最后的一个，判断条件前面的i&lt;10会被忽略<br>     变量不定义直接赋值会默认为全局变量</p>
+<ol start="3">
+<li></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">fn1();</span><br><span class="line">var fn1 = function(a)&#123;alert(a);&#125;</span><br><span class="line"></span><br><span class="line">// fn1 is not a function</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">变量预解析</span><br><span class="line">var fn1;  // undefined</span><br><span class="line">fn1();  // 只有函数才能调用，此时fn1还没被赋值</span><br><span class="line">fn1 = function(a)&#123;alert(a);&#125;</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var x = 1;</span><br><span class="line">function fn(n)&#123;n = n + 1;&#125;</span><br><span class="line">y = fn(x);</span><br><span class="line"></span><br><span class="line">// undefined</span><br></pre></td></tr></table></figure>
+<p>注意：函数fn没有返回值，必须return才能接收返回值</p>
+<ol start="5">
+<li></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function fn1()&#123;</span><br><span class="line">  var a = 0;</span><br><span class="line">  function fn2()&#123;</span><br><span class="line">    ++a;</span><br><span class="line">    alert(a);</span><br><span class="line">  &#125;</span><br><span class="line">  return fn2;</span><br><span class="line">&#125;</span><br><span class="line">fn1()();  // 1</span><br><span class="line">var newFn = fn1();</span><br><span class="line">newFn();  // 1</span><br><span class="line">newFn();  // 2  这里并没有重新创建a变量</span><br><span class="line"></span><br><span class="line">// 1,1,2</span><br></pre></td></tr></table></figure>
+<p>作用域链：一层层向上查找<br>垃圾回收：把用不到的变量等进行回收</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function fn()&#123;</span><br><span class="line">  var a = 1;</span><br><span class="line">  a = a + 1;</span><br><span class="line">  console.log(a);</span><br><span class="line">&#125;</span><br><span class="line">fn();</span><br><span class="line">fn();</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">for(var i = 0; i &lt; 5; i++)&#123;</span><br><span class="line">  setTimeout(function()&#123;</span><br><span class="line">    console.log(i);</span><br><span class="line">  &#125;, i * 1000);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 55555</span><br><span class="line"></span><br><span class="line">for(var i = 0; i &lt; 5; i++)&#123;</span><br><span class="line">  setTimeout(function(i)&#123;</span><br><span class="line">    console.log(i);</span><br><span class="line">  &#125;(i), i * 1000);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 0 1 2 3 4</span><br><span class="line"></span><br><span class="line">for(let i = 0; i &lt; 5; i++)&#123;</span><br><span class="line">  setTimeout(function()&#123;</span><br><span class="line">    console.log(i);</span><br><span class="line">  &#125;, i * 1000);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 0 1 2 3 4</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">(!+[]+[]+!+[]).length  // 8</span><br><span class="line">=&gt; (!(+[])+[]+!(+[])).length</span><br><span class="line">=&gt; (!0+[]+!0).length</span><br><span class="line">=&gt; (true+[]+true).length</span><br><span class="line">=&gt; (true+&#x27;&#x27;+true).length</span><br><span class="line">=&gt; (&#x27;true&#x27;+true).length</span><br><span class="line">=&gt; (&#x27;truetrue&#x27;).length</span><br><span class="line">/*</span><br><span class="line">! 取反</span><br><span class="line">+号：</span><br><span class="line">  1.加法运算</span><br><span class="line">  2.字符串拼接</span><br><span class="line">  3.正号</span><br><span class="line">隐式类型转换</span><br><span class="line">  +[] =&gt; &#x27;&#x27; =&gt; 0  // 空数组先调用toString转字符串再调用toNumber转数字进行计算</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center">优先级</th>
+<th align="center">运算符</th>
+<th align="center">结合性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center"><code>()</code> <code>[]</code></td>
+<td align="center">从左向右</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center"><code>!</code> <code>+</code>(正) <code>-</code>(负) <code>~</code> <code>++</code> <code>--</code></td>
+<td align="center">从右向左</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center"><code>*</code> <code>/</code> <code>%</code></td>
+<td align="center">从左向右</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center"><code>+</code>(加) <code>-</code>(减)</td>
+<td align="center">从左向右</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center"><code>&lt;&lt;</code> <code>&gt;&gt;</code> <code>&gt;&gt;&gt;</code></td>
+<td align="center">从左向右</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center"><code>&lt;</code> <code>&lt;=</code> <code>&gt;</code> <code>&gt;=</code> <code>instanceof</code></td>
+<td align="center">从左向右</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center"><code>==</code> <code>!=</code></td>
+<td align="center">从左向右</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center"><code>&amp;</code>(按位与)</td>
+<td align="center">从左向右</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center"><code>^</code></td>
+<td align="center">从左向右</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">&#124;</td>
+<td align="center">从左向右</td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="center">&amp;&amp;</td>
+<td align="center">从左向右</td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="center">&#124;&#124;</td>
+<td align="center">从左向右</td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td align="center">?:</td>
+<td align="center">从右向左</td>
+</tr>
+<tr>
+<td align="center">14</td>
+<td align="center"><code>=</code> <code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code> <code>%=</code> <code>&amp;=</code> &#124;&#x3D; <code>^=</code> <code>~=</code> <code>&lt;&lt;=</code> <code>&gt;&gt;=</code> <code>&gt;&gt;&gt;=</code></td>
+<td align="center">从右向左</td>
+</tr>
+</tbody></table>
+<ol start="8">
+<li></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(100[&#x27;toString&#x27;][&#x27;length&#x27;]) // 1</span><br></pre></td></tr></table></figure>
+<p>length 表示的是toString调用时候的参数长度</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function fn1()&#123;&#125;</span><br><span class="line">function fn2(x,y)&#123;&#125;</span><br><span class="line">console.dir(fn1);</span><br><span class="line">console.dir(fn2);</span><br></pre></td></tr></table></figure>
+<p>toString(进制) 接收的参数是进制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = 4;</span><br><span class="line">console.log(a.toString(2)); // 100</span><br></pre></td></tr></table></figure>
+
+<ol start="9">
+<li></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">可以判断数组中是否有大于10的值 arr.some()</span><br><span class="line">arr.every()</span><br><span class="line">// 循环数组中的每一项，执行一个指定的函数，返回true</span><br><span class="line">arr.push()  </span><br><span class="line">// 向数组的末尾添加一个或多个元素，并返回新的长度</span><br><span class="line">arr.some()  </span><br><span class="line">// 循环数组中的每一项，执行一个指定的函数，只要其中有一个符合条件，返回true</span><br><span class="line">arr.splice()  </span><br><span class="line">// 向/从数组中添加/删除项目，然后返回被删除的项目</span><br></pre></td></tr></table></figure>
+
+<ol start="10">
+<li></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2];</span><br><span class="line">var arr2 = arr.concat();</span><br><span class="line">arr2.push( arr.splice()1,0 );</span><br><span class="line">// 第一个参数，开始的index</span><br><span class="line">// 第二个参数，删除的个数</span><br><span class="line">// 返回删除的</span><br><span class="line">// [1,2,[]]</span><br><span class="line"></span><br><span class="line">arr;  // [1,2]</span><br><span class="line">arr2; // [1,2,[]]</span><br><span class="line"></span><br><span class="line">// arr.concat() 用于合并函数，返回的函数是新的函数，不会影响在合并过程中用到的函数</span><br></pre></td></tr></table></figure>
+
+<p>null &#x3D; undefined; &#x2F;&#x2F; true<br>null &#x3D;&#x3D; 0;  &#x2F;&#x2F; false<br>null &#x3D;&#x3D; []  &#x2F;&#x2F; false<br>null &#x3D;&#x3D; null  &#x2F;&#x2F; true<br>null &#x3D;&#x3D; undefined &#x3D;&#x3D; null &#x2F;&#x2F; false  运算符优先级相同，从左到右计算 null &#x3D;&#x3D; undefined &#x3D;&#x3D; null &#x3D;&gt; true &#x3D;&#x3D; null &#x3D;&gt; false<br>null &gt;&#x3D; 0 &#x2F;&#x2F; true<br>null &lt;&#x3D; 0 &#x2F;&#x2F; true</p>
+<p><a target="_blank" rel="noopener" href="http://www.ecma-international.org/ecma-262/5.1/">http://www.ecma-international.org/</a><br><a target="_blank" rel="noopener" href="http://www.fengfly.com/document/ECMAScript5.1/">http://www.fengfly.com/document/ECMAScript5.1/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/11/22/ECMAScript%E6%B5%8B%E8%AF%95%E9%A2%98/" data-id="cuidQadzQdeMYYp-RolVYW6Ty" data-title="ECMAScript测试题" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-原生JS逐行实现购物车功能" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/11/19/%E5%8E%9F%E7%94%9FJS%E9%80%90%E8%A1%8C%E5%AE%9E%E7%8E%B0%E8%B4%AD%E7%89%A9%E8%BD%A6%E5%8A%9F%E8%83%BD/" class="article-date">
+  <time class="dt-published" datetime="2018-11-19T09:38:03.000Z" itemprop="datePublished">2018-11-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/11/19/%E5%8E%9F%E7%94%9FJS%E9%80%90%E8%A1%8C%E5%AE%9E%E7%8E%B0%E8%B4%AD%E7%89%A9%E8%BD%A6%E5%8A%9F%E8%83%BD/">原生JS逐行实现购物车功能</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>常见问题<br>1.开发思路混乱<br>2.代码不够简洁<br>3.格式不统一<br>4.知识点运用知其然不知其所以然<br>5.新增方法或语法看得懂不会用</p>
+<p>制作第一步：功能分析</p>
+<ul>
+<li>列表<br>  -勾选商品<br>  -数量控制<br>  -小计</li>
+<li>统计<br>  -全选<br>  -勾选商品件数统计<br>  -总额计算<br>  -现在结算的点击</li>
+</ul>
+<p>var、let、const的差别</p>
+<ul>
+<li>var<br>  -支持全局、函数作用域<br>  -接受重复声明<br>  -变量预解析</li>
+<li>let<br>  -不接受重复声明<br>  -不存在变量提升<br>  -支持块作用域</li>
+<li>const<br>  -特性同let<br>  -一旦声明，常量的值就不可以改变</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="http://www.w3school.com.cn/js/jsref_tofixed.asp">JavaScript toFixed() 方法</a></p>
+<p>Math方法<br>  Math.min  Math.max<br>Array方法<br>String方法</p>
+<p>every、some数组方法<br>every<br>    -用于循环数组中的每一项，在指定的函数中做判断，如果全部符合返回true，有一项不符合就返回false<br>some<br>    -只要有其中一项符合，就返回true</p>
+<p>示例：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/%E5%8E%9F%E7%94%9FJS%E9%80%90%E8%A1%8C%E5%AE%9E%E7%8E%B0%E8%B4%AD%E7%89%A9%E8%BD%A6%E5%8A%9F%E8%83%BD.html">点击查看</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/11/19/%E5%8E%9F%E7%94%9FJS%E9%80%90%E8%A1%8C%E5%AE%9E%E7%8E%B0%E8%B4%AD%E7%89%A9%E8%BD%A6%E5%8A%9F%E8%83%BD/" data-id="cuid_HMN6BZi_nPK7_2rUqMIz" data-title="原生JS逐行实现购物车功能" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-git使用遇到的问题non-fast-forward" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/11/15/git%E4%BD%BF%E7%94%A8%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98non-fast-forward/" class="article-date">
+  <time class="dt-published" datetime="2018-11-15T11:10:20.000Z" itemprop="datePublished">2018-11-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/11/15/git%E4%BD%BF%E7%94%A8%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98non-fast-forward/">git使用遇到的问题non-fast-forward</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><p>今天git push提交代码时被拒绝，提示 rejected non-fast-forward<br>和别人在同一分支开发</p>
+<h2 id="问题排查"><a href="#问题排查" class="headerlink" title="问题排查"></a>问题排查</h2><p>git push提交前没有更新分支代码，远端仓库中代码有更新<br>查阅资料得知，这是本地和远程的仓库中的文件出现了冲突所致，远端仓库中代码发生改变，它不允许直接把新的代码覆盖上去。提交之前需要将远端的改变合并到本地上。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ol>
+<li>git fetch origin branch<br>获取远程分支branch的修改</li>
+<li>git merge origin branch<br>合并远程分支branch</li>
+<li>git pull origin branch<br>更新本地分支</li>
+<li>git push origin branch<br>提交本地分支</li>
+</ol>
+<p>问题解决参考：<br>1.<a target="_blank" rel="noopener" href="https://blog.csdn.net/programerxiaoer/article/details/78585301">https://blog.csdn.net/programerxiaoer/article/details/78585301</a><br>2.<a target="_blank" rel="noopener" href="https://git-scm.com/book/zh/v2">Pro-Git</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/11/15/git%E4%BD%BF%E7%94%A8%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98non-fast-forward/" data-id="cuidYn911eFW8uFECA9EsC7og" data-title="git使用遇到的问题non-fast-forward" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/5/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/7/">下一页 &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/test/">test</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B9%A6%E7%AE%80/">书简</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/canvas/">canvas</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/svg/">svg</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%85%B6%E4%BB%96/">其他</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B5%8B%E8%AF%95/">测试</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%85%E5%8D%95/">清单</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/3d/" rel="tag">3d</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/" rel="tag">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/" rel="tag">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fiddler/" rel="tag">Fiddler</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MAC/" rel="tag">MAC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PhotoShop/" rel="tag">PhotoShop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wireshark/" rel="tag">Wireshark</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/" rel="tag">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/app/" rel="tag">app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/" rel="tag">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/" rel="tag">canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deeplink/" rel="tag">deeplink</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emmet/" rel="tag">emmet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/" rel="tag">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5/" rel="tag">h5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/less/" rel="tag">less</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/parallels-desktop/" rel="tag">parallels desktop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svg/" rel="tag">svg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/" rel="tag">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/textarea/" rel="tag">textarea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/todolist/" rel="tag">todolist</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/transform/" rel="tag">transform</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10/" rel="tag">win10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E8%AF%B4/" rel="tag">小说</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E7%AB%99/" rel="tag">建站</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" rel="tag">开发环境</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="tag">快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" rel="tag">思维导图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%93%E5%8C%85/" rel="tag">抓包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8F%92%E4%BB%B6/" rel="tag">插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E5%AD%A6/" rel="tag">文学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99/" rel="tag">标签嵌套规则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE/" rel="tag">百度脑图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/" rel="tag">移动开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" rel="tag">编辑器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%84%E8%8C%83/" rel="tag">规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1/" rel="tag">设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/3d/" style="font-size: 10px;">3d</a> <a href="/tags/Charles/" style="font-size: 10px;">Charles</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/JavaScript/" style="font-size: 18px;">JavaScript</a> <a href="/tags/MAC/" style="font-size: 11px;">MAC</a> <a href="/tags/PhotoShop/" style="font-size: 11px;">PhotoShop</a> <a href="/tags/Wireshark/" style="font-size: 10px;">Wireshark</a> <a href="/tags/ajax/" style="font-size: 14px;">ajax</a> <a href="/tags/app/" style="font-size: 11px;">app</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css/" style="font-size: 17px;">css</a> <a href="/tags/deeplink/" style="font-size: 10px;">deeplink</a> <a href="/tags/emmet/" style="font-size: 10px;">emmet</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/git/" style="font-size: 13px;">git</a> <a href="/tags/h5/" style="font-size: 13px;">h5</a> <a href="/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/less/" style="font-size: 10px;">less</a> <a href="/tags/parallels-desktop/" style="font-size: 10px;">parallels desktop</a> <a href="/tags/svg/" style="font-size: 16px;">svg</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/textarea/" style="font-size: 10px;">textarea</a> <a href="/tags/todolist/" style="font-size: 11px;">todolist</a> <a href="/tags/transform/" style="font-size: 11px;">transform</a> <a href="/tags/vue/" style="font-size: 12px;">vue</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 20px;">前端</a> <a href="/tags/%E5%B0%8F%E8%AF%B4/" style="font-size: 10px;">小说</a> <a href="/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 14px;">建站</a> <a href="/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" style="font-size: 10px;">开发环境</a> <a href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" style="font-size: 11px;">快捷键</a> <a href="/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" style="font-size: 10px;">思维导图</a> <a href="/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 19px;">技术</a> <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 10px;">抓包</a> <a href="/tags/%E6%8F%92%E4%BB%B6/" style="font-size: 10px;">插件</a> <a href="/tags/%E6%96%87%E5%AD%A6/" style="font-size: 10px;">文学</a> <a href="/tags/%E6%A0%87%E7%AD%BE%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99/" style="font-size: 10px;">标签嵌套规则</a> <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 10px;">正则表达式</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a> <a href="/tags/%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE/" style="font-size: 10px;">百度脑图</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/" style="font-size: 10px;">移动开发</a> <a href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 11px;">编辑器</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/tags/%E8%A7%84%E8%8C%83/" style="font-size: 13px;">规范</a> <a href="/tags/%E8%AE%BE%E8%AE%A1/" style="font-size: 11px;">设计</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">五月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">三月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/05/22/%E6%9C%AC%E5%9C%B0-git-%E9%A1%B9%E7%9B%AE%E5%90%8C%E6%97%B6%E5%85%B3%E8%81%94-github-%E5%92%8C-gitee/">本地 git 项目同时关联 github 和 gitee</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/12/git-clone-%E6%8A%A5%E9%94%99Permission-denied-publickey/">git clone 报错Permission denied (publickey)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/23/hexo%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99/">hexo部署报错</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/16/h5%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/">h5开发记录</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/24/Mac%E4%B8%8B%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE%E5%BF%AB%E6%8D%B7%E9%94%AE/">Mac下百度脑图快捷键</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 阿寻<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+<!-- 在 footer.ejs 中引入 JS -->
+<script src="/share/js/social-share.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+<!-- 搜索功能代码 -->
+<script src="/js/search.js"></script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>一半在街头，一半在云端</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="一半在街头，一半在云端">
+<meta property="og:url" content="http://example.com/page/8/index.html">
+<meta property="og:site_name" content="一半在街头，一半在云端">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="阿寻">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="一半在街头，一半在云端" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+
+  <!-- 在 head.ejs 中引入 CSS -->
+  <link rel="stylesheet" href="/share/css/share.min.css">
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">一半在街头，一半在云端</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">我是阿寻。一个INFP-T → INTP-A的田野调查者。一半在街头收集人间，一半在云端放牧想象。这里是我的赤脚漫游指南。所有笨拙，都是过程。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅" target="_blank"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-BOM-EVENT学习笔记-4" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/10/11/BOM-EVENT%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-4/" class="article-date">
+  <time class="dt-published" datetime="2018-10-11T10:03:55.000Z" itemprop="datePublished">2018-10-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/10/11/BOM-EVENT%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-4/">BOM/EVENT学习笔记(4)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="事件深入应用"><a href="#事件深入应用" class="headerlink" title="事件深入应用"></a>事件深入应用</h2><h4 id="拖拽的原理"><a href="#拖拽的原理" class="headerlink" title="拖拽的原理"></a>拖拽的原理</h4><p>onmousedown: 选择元素<br>onmousemove: 移动元素<br>onmouseup: 释放元素</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;div1&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  var oDiv = document.getElementById(&#x27;div1&#x27;);</span><br><span class="line">  oDiv.onmousedown = function(ev)&#123;</span><br><span class="line">    var ev = ev || event; // 兼容</span><br><span class="line">    var disX = ev.clientX - this.offsetLeft; // 鼠标距离盒子左边缘的距离</span><br><span class="line">    var disY = ev.clientY - this.offsetTop; // 鼠标距离盒子上边缘的距离</span><br><span class="line"></span><br><span class="line">    document.onmousemove = function(ev)&#123;</span><br><span class="line">      // content</span><br><span class="line">      var ev = ev || event;</span><br><span class="line">      oDiv.style.left = ev.clientX - disX + &#x27;px&#x27;;</span><br><span class="line">      oDiv.style.top = ev.clientY - disY + &#x27;px&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">    document.onmouseup = function()&#123;</span><br><span class="line">      // content</span><br><span class="line">      document.onmousemove = document.onmouseup = null;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>当鼠标移动过快时，鼠标会移出div区域，div的onmousemove事件就不会被执行<br>解决方案：给document加onmousemove事件，不要加到div上<br>当移动到被另一个更高层级的元素后面时，onmouseup事件就不会被执行<br>解决方案：给document加onmouseup事件，不要加到div上</p>
+<h4 id="拖拽的问题及解决方法"><a href="#拖拽的问题及解决方法" class="headerlink" title="拖拽的问题及解决方法"></a>拖拽的问题及解决方法</h4><p>1.拖拽的时候，如果有文字被选中，会产生问题<br>    原因：当鼠标按下时，如果页面中有文字被选中，会触发浏览器默认的拖拽文字的效果<br>    解决方法：<br>        标准下：阻止默认行为<br>        非标准IE：全局捕获  setCapture();<br>  拖拽图片会有问题，原因及解决方法同上</p>
+<p>示例：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/BOM-%E6%8B%96%E6%8B%BD%E5%8E%9F%E7%90%86.html">点击查看</a></p>
+<h4 id="拖拽的封装-限制范围、磁性吸附"><a href="#拖拽的封装-限制范围、磁性吸附" class="headerlink" title="拖拽的封装-限制范围、磁性吸附"></a>拖拽的封装-限制范围、磁性吸附</h4><p>示例：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/BOM-%E6%8B%96%E6%8B%BD%E7%9A%84%E5%B0%81%E8%A3%85-%E9%99%90%E5%88%B6%E8%8C%83%E5%9B%B4%E7%9A%84%E6%8B%96%E6%8B%BD%E3%80%81%E7%A3%81%E6%80%A7%E5%90%B8%E9%99%84.html">点击查看</a></p>
+<h4 id="碰撞检测"><a href="#碰撞检测" class="headerlink" title="碰撞检测"></a>碰撞检测</h4><p>原理分析：<br>  把拖动的对象记为<code>div</code>，被碰撞对象记为<code>img</code><br>  把整个区域通过<code>img</code>所在边划分成九宫格，当要拖拽的对象不在图像所在的方格时则不会碰上，否则会碰上<br>  L1,R1,T1,B1 分别为<code>div</code>的左右上下边<br>  L2,R2,T2,B2 分别为<code>img</code>的左右上下边<br>  当R1 &lt; L2 或 L1 &gt; R2 或 B1 &lt; T2 或 T1 &gt; B2 时不会发生碰撞</p>
+<p>示例：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/BOM-%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B.html">点击查看</a></p>
+<h4 id="拖拽改变层大小"><a href="#拖拽改变层大小" class="headerlink" title="拖拽改变层大小"></a>拖拽改变层大小</h4><p>原理分析：<br>  拖动右边时，只有盒子右边位置发生变化，，只改变盒子宽度<br>    以向右拖动为例，盒子宽度增加，增加的宽度为鼠标最后停在的位置的X轴坐标值减去鼠标按下时的X轴坐标值（当向左拖动时，为负值，盒子宽度减小）<br>  拖动左边时，只有盒子左边位置发生变化，改变盒子宽度和left值<br>    以向右拖动为例，盒子宽度减小，减小的宽度为鼠标最后停在的位置的X轴坐标值减去鼠标按下时的X轴坐标值（当向左拖动时，为负值，盒子宽度增加），left值则要加上这段距离<br>  拖动上边时，只有盒子上边位置发生变化，改变盒子高度和top值<br>  拖动下边时，只有盒子下边位置发生变化，只改变盒子高度<br>  考虑同时拖动两条边的情况</p>
+<p>示例：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/BOM-%E6%8B%96%E6%8B%BD%E6%94%B9%E5%8F%98%E5%B1%82%E5%A4%A7%E5%B0%8F.html">点击查看</a></p>
+<h4 id="滚动条的模拟和扩展运用"><a href="#滚动条的模拟和扩展运用" class="headerlink" title="滚动条的模拟和扩展运用"></a>滚动条的模拟和扩展运用</h4><p>滚动条组成：<br>  滚动区域<br>  滚动条</p>
+<p>示例：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/BOM-%E6%A8%A1%E6%8B%9F%E6%BB%9A%E5%8A%A8%E6%9D%A1%E6%8E%A7%E5%88%B6%E5%85%B6%E4%BB%96%E5%85%83%E7%B4%A0%E7%9A%84%E5%8F%98%E5%8C%96.html">点击查看</a></p>
+<h2 id="鼠标滚轮和cookie"><a href="#鼠标滚轮和cookie" class="headerlink" title="鼠标滚轮和cookie"></a>鼠标滚轮和cookie</h2><h4 id="鼠标滚轮"><a href="#鼠标滚轮" class="headerlink" title="鼠标滚轮"></a>鼠标滚轮</h4><p>鼠标滚轮事件<br>IE&#x2F;Chrome : <code>onmousewheel</code><br>    <code>event.wheelDelta</code> &#x2F;&#x2F;滚轮滚动方向判断<br>        上：120 &#x2F;&#x2F;向上滚动<br>        下：-120  &#x2F;&#x2F;向下滚动<br>FireFox : <code>DOMMouseScroll</code> 必须用addEventListener(实现绑定)<br>    <code>event.detail</code> &#x2F;&#x2F;标准浏览器下有这个属性值为0，IE下，非标准下：undefined；标准下：0<br>        上：-3  &#x2F;&#x2F;向上滚动<br>        下：3 &#x2F;&#x2F;向下滚动<br><code>return false;</code>阻止的是 <code>obj.on事件名称=fn</code> 所触发的默认行为<br><code>addEventListener</code>绑定的事件需要通过<code>event</code>下面的<code>preventDefault()</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">element.onmousewheel = handlerFunction;</span><br><span class="line">var handlerFunction = element.onmousewheel;</span><br><span class="line"></span><br><span class="line">if(element.addEventListener)&#123; // 非标准IE没有addEventListener方法会报错，这里需要判断一下，兼容</span><br><span class="line">    element.addEventListener(&#x27;DOMMouseScroll&#x27;, fn, false);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var b = ture; //布尔值 兼容IE，Firefox</span><br><span class="line">if (ev.wheelDelta) &#123;</span><br><span class="line">  b = ev.wheelDelta &gt; 0 ? true : false;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">  b = ev.detail &lt; 0 ? ture : false;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (ev.preventDefault) &#123;</span><br><span class="line">  ev.preventDefault();</span><br><span class="line">&#125;</span><br><span class="line">return false;</span><br></pre></td></tr></table></figure>
+
+<p>参考：<br>1.<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousewheel">GlobalEventHandlers.onmousewheel</a></p>
+<h4 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h4><p>cookie : 存储数据，当用户访问了某个网站（网页）的时候，可以通过cookie来向访问者的电脑上存储数据<br>    1.不同的浏览器存放的cookie位置不一样，也是不能通用的<br>    2.cookie的存储是以域名的形式进行区分的<br>    3.cookie的数据可以设置名字的<br>    4.一个域名下存放的cookie的个数是有限制的，不同的浏览器存放的个数不一样<br>    5.没个cookie存放的内容大小也是有限制的，不同的浏览器存放的大小不一样</p>
+<p>通过<code>document.cookie</code>来获取当前网站下的cookie的时候，得到字符串形式的值，他包含了当前网站下所有的cookie。他会把所有的cookie通过一个分号+空格的形式 串联起来</p>
+<p>如果想要长时间存放一个cookie，需要在设置这个cookie的时候同时给他设置一个过期时间</p>
+<p>cookie默认是临时存储，当浏览器关闭进程时自动销毁</p>
+<p>内容最好编码存放，encodeURI</p>
+<pre><code>document.cookie = &#39;名字=值&#39;;
+alert(document.cookie);
+
+document.cookie = &#39;username=name&#39;;
+document.cookie = &#39;age=10&#39;;
+
+document.cookie = &#39;名称=值;expires=&#39; + (字符串格式)时间; //这里时间必须是字符串形式。不能是一个日期对象，必须是日期对象的字符串
+
+var oDate = new Date();
+oDate.setDate(oDate.getDate() + 5);
+oDate.toGMTString();
+
+document.cookie = &#39;username=name;expires=&#39; + oDate;
+document.cookie = &#39;age=10&#39;;
+
+// 内容最好编码存放，encodeURI
+// (否则有些特殊字符可能会出现问题，比如换行符`\n`,`\n`之后的部分会被截断不被存储)
+document.cookie = &#39;username=name\n你好;expires=&#39; + oDate;
+alert(document.cookie); // username=name
+
+alert( encodeURI(&#39;你好&#39;) ); // %E4%BD%A0%E5%A5%BD
+alert( decodeURI(&#39;%E4%BD%A0%E5%A5%BD&#39;) ); // 你好
+
+document.cookie = &#39;username=&#39; + encodeURI(&#39;name\n你好&#39;) + &#39;;expires=&#39; + oDate;
+alert(decodeURI(document.cookie));
+
+//封装
+function setCookie(key, value, t){
+  var oDate = new Date();
+  oDate.setDate(oDate.getDate() + t);
+  document.cookie = key + &#39;=&#39; + value + &#39;;expires=&#39; + oDate.toGMTString();
+}
+function getCookie(key){
+  var arr1 = document.cookie.split(&#39;; &#39;);
+  for(var i = 0;i &lt; arr1.length; i++){
+    var arr2 = arr1[i].split(&#39;=&#39;);
+    if(arr2[0] == key){
+      return decodeURI(arr2[1]);
+    }
+  }
+}
+function removeCookie(key){
+  setCookie(key, &#39;&#39;, -1);
+}
+</code></pre>
+<p>chrome 不能操作本地的cookie(本地测试不能用Chrome浏览器？)</p>
+<p>应用：记录用户名<br>示例：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/BOM-%E6%A8%A1%E6%8B%9F%E6%BB%9A%E5%8A%A8%E6%9D%A1%E6%8E%A7%E5%88%B6%E5%85%B6%E4%BB%96%E5%85%83%E7%B4%A0%E7%9A%84%E5%8F%98%E5%8C%96.html">点击查看</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/10/11/BOM-EVENT%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-4/" data-id="cuidwBsbg3s17vmgIuTSaBFEw" data-title="BOM/EVENT学习笔记(4)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-BOM-EVENT学习笔记-3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/10/11/BOM-EVENT%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-3/" class="article-date">
+  <time class="dt-published" datetime="2018-10-11T07:12:48.000Z" itemprop="datePublished">2018-10-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/10/11/BOM-EVENT%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-3/">BOM/EVENT学习笔记(3)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Event事件详解"><a href="#Event事件详解" class="headerlink" title="Event事件详解"></a>Event事件详解</h2><h4 id="事件捕获"><a href="#事件捕获" class="headerlink" title="事件捕获"></a>事件捕获</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;div1&quot;&gt;</span><br><span class="line">  &lt;div id=&quot;div2&quot;&gt;</span><br><span class="line">    &lt;div id=&quot;div3&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">document.addEventListener(&#x27;onclick&#x27;, fn1, true);</span><br><span class="line">document.addEventListener(&#x27;onclick&#x27;, fn2, true);</span><br><span class="line">document.addEventListener(&#x27;onclick&#x27;, fn3, true);</span><br></pre></td></tr></table></figure>
+
+<h4 id="事件的取消"><a href="#事件的取消" class="headerlink" title="事件的取消"></a>事件的取消</h4><p>第一种事件绑定形式的取消</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function fn1()&#123;</span><br><span class="line">  alert(1);</span><br><span class="line">&#125;</span><br><span class="line">function fn2()&#123;</span><br><span class="line">  alert(2);</span><br><span class="line">&#125;</span><br><span class="line">document.onclick = fn1;</span><br><span class="line">document.onclick = null;  //取消</span><br></pre></td></tr></table></figure>
+<p>第二种事件绑定形式的取消<br>IE: obj.detachEvent(事件名称, 事件函数);<br>标准: obj.removeEventListener(事件名称, 事件函数, 是否捕获);</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">document.attachEvent(&#x27;onclick&#x27;, fn1);</span><br><span class="line">document.attachEvent(&#x27;onclick&#x27;, fn2);</span><br><span class="line">document.detachEvent(&#x27;onclick&#x27;, fn1);</span><br><span class="line"></span><br><span class="line">document.addEventListener(&#x27;click&#x27;, fn1, false);</span><br><span class="line">document.addEventListener(&#x27;click&#x27;, fn1, true);</span><br><span class="line">document.addEventListener(&#x27;click&#x27;, fn2, false);</span><br><span class="line">document.removeEventListener(&#x27;click&#x27;, fn1, false);</span><br></pre></td></tr></table></figure>
+
+<p>参考：<br>1.<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190741(v=vs.95)">HtmlDocument.DetachEvent Method</a><br>2.<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/removeEventListener">EventTarget.removeEventListener</a></p>
+<h4 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h4><p>onkeydown：当键盘按键按下的时候触发（如果按下不抬起，那么会连续触发）<br>onkeyup：当键盘按键抬起的时候触发<br>event.keyCode: 数字类型 键盘按键的值 健值<br>    ctrlKey,shiftKey,altKey 布尔值<br>    当一个事件发生的时候，如果 ctrl || shift || alt 是按下的状态，返回true，否则返回false</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">document.onkeydown = function(ev)&#123;</span><br><span class="line">  // alert(1);</span><br><span class="line">  var ev = ev || event;</span><br><span class="line">  alert(ev.keyCode);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">document.onclick = function(ev)&#123;</span><br><span class="line">  var ev = ev || event;</span><br><span class="line">  alert(ev.ctrlKey);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>不是所有元素都能够接收键盘事件，能够响应用户输入的元素，能够接收焦点的元素能够接收键盘事件<br>思考：解决连续输入时输入第一个字符和后面字符间隔时间较长的问题，解决方案：定时器</p>
+<p>示例：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/BOM-%E7%95%99%E8%A8%80%E6%9C%AC&&%E9%94%AE%E7%9B%98%E6%8E%A7%E5%88%B6div%E7%A7%BB%E5%8A%A8&&%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95.html">点击查看</a></p>
+<h4 id="事件默认行为-默认事件"><a href="#事件默认行为-默认事件" class="headerlink" title="事件默认行为-默认事件"></a>事件默认行为-默认事件</h4><p>事件默认行为：当一个事件发生的时候浏览器自己会默认做的事情<br>如何阻止：<br>当前这个行为是什么事件触发的，然后在这个事件的处理函数中使用return false;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">document.onkeydown = function()&#123;</span><br><span class="line">  return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>oncontextmenu: 右键菜单事件，当右键菜单（环境菜单）显示出来的时候触发</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">document.oncontextmenu = function()&#123;</span><br><span class="line">  // alert(1);</span><br><span class="line">  return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>示例：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/BOM-%E7%95%99%E8%A8%80%E6%9C%AC&&%E9%94%AE%E7%9B%98%E6%8E%A7%E5%88%B6div%E7%A7%BB%E5%8A%A8&&%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95.html">点击查看</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/10/11/BOM-EVENT%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-3/" data-id="cuid5GEXQYuRyOB2ln0yvTfqq" data-title="BOM/EVENT学习笔记(3)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-BOM-EVENT学习笔记-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/10/11/BOM-EVENT%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/" class="article-date">
+  <time class="dt-published" datetime="2018-10-11T07:10:48.000Z" itemprop="datePublished">2018-10-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/10/11/BOM-EVENT%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/">BOM/EVENT学习笔记(2)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Event事件详解"><a href="#Event事件详解" class="headerlink" title="Event事件详解"></a>Event事件详解</h2><h4 id="焦点事件"><a href="#焦点事件" class="headerlink" title="焦点事件"></a>焦点事件</h4><p>焦点：使浏览器能够区分用户输入的对象，当一个元素有焦点时，就可以接收用户的输入<br>可以通过一些方式给元素设置焦点：<br>1.点击<br>2.tab键<br>3.js<br>注意：不是所有元素都能够接收焦点，能够响应用户操作的元素才有焦点</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot; id=&quot;text1&quot; value=&quot;请输入内容&quot;&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; value=&quot;全选&quot; id=&quot;btn&quot;&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  var oText = document.getElementById(&#x27;text1&#x27;);</span><br><span class="line"></span><br><span class="line">  //onfocus: 当元素获取到焦点时触发</span><br><span class="line">  oText.onfocus = function()&#123;</span><br><span class="line">    if(this.value == &#x27;请输入内容&#x27;)&#123;</span><br><span class="line">      this.value = &#x27;&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  //onblur: 当元素失去焦点时触发</span><br><span class="line">  oText.onblur = function()&#123;</span><br><span class="line">    if(this.value == &#x27;&#x27;)&#123;</span><br><span class="line">      this.value == &#x27;请输入内容&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  //obj.foucs() 给指定的元素设置焦点</span><br><span class="line">  //obj.blur() 取消指定元素的焦点</span><br><span class="line">  //obj.select() 选择指定元素里面的文本内容</span><br><span class="line">  oText.foucs();</span><br><span class="line"></span><br><span class="line">  var oBtn = document.getElementById(&#x27;btn&#x27;);</span><br><span class="line">  oBtn.onclick = function()&#123;</span><br><span class="line">    oText.select(); //select 能操作可交互元素的文本内容</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>参考：<br>1.<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/dom_obj_event.asp">HTML DOM Event 对象</a><br>2.<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/event_onfocus.asp">onfocus 事件</a><br>3.<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/event_onblur.asp">onblur 事件</a><br>4.<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/event_onselect.asp">onselect 事件</a></p>
+<h4 id="event事件对象和clientX-clientY"><a href="#event事件对象和clientX-clientY" class="headerlink" title="event事件对象和clientX,clientY"></a>event事件对象和clientX,clientY</h4><p>event：事件对象，当一个事件发生的时候，和当前的这个对象发生的这个事件有关的一些详细的信息都会被保存到一个指定地方–event对象中，以供在需要时调用。</p>
+<p>事件对象必须在一个事件调用的函数里面使用才有内容<br>事件函数：事件调用的函数<br>&#x2F;&#x2F;一个函数是不是事件函数并不是在函数定义时决定的，而是函数调用时决定</p>
+<p>兼容<br>ie&#x2F;chrome：event是一个内置全局对象<br>&#x2F;&#x2F; firefox：事件对象是通过事件函数的第一个参数传入<br>标准浏览器下：事件对象是通过事件函数的第一个参数传入</p>
+<p>如果一个函数是被事件调用的，那么，这个函数定义的第一个参数就是事件对象</p>
+<p>clientX&#x2F;clientY: 当一个事件发生的时候，鼠标到页面可视区的距离</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">alert(event); // 这里没有事件发生</span><br><span class="line">// ie/chrome undefined</span><br><span class="line">// firefox 报错 event is not defined</span><br><span class="line"></span><br><span class="line">function fn1(ev)&#123;</span><br><span class="line">  // alert(event);</span><br><span class="line">  // alert(ev);</span><br><span class="line">  var ev = ev || event;</span><br><span class="line">  alert(ev);</span><br><span class="line"></span><br><span class="line">  for(var attr in ev)&#123;</span><br><span class="line">    console.log(attr + &#x27;=&#x27; + ev[attr]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn1();  // 不是事件调用的函数</span><br><span class="line">document.onclick = fn1(); // 是事件调用的函数，event有内容</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">#div1&#123;width: 100px;height: 100px;background: red;position: absolute;&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div id=&quot;div1&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  window.onload = function()&#123;</span><br><span class="line">    // onmousemove: 当鼠标在一个元素上移动时触发</span><br><span class="line">    // 触发频率不是像素，而是间隔时间，在一个指定的时间内（很短），如果鼠标的位置和上一次的位置发生了变化，那么就会触发一次</span><br><span class="line"></span><br><span class="line">    var i = 0;</span><br><span class="line">    var oDiv = document.getElementById(&#x27;div1&#x27;);</span><br><span class="line"></span><br><span class="line">    document.onmousemove = function(ev)&#123;</span><br><span class="line">      // document.title = i++;</span><br><span class="line"></span><br><span class="line">      var ev = ev || event;</span><br><span class="line"></span><br><span class="line">      oDiv.style.left = ev.clientX + &#x27;px&#x27;;</span><br><span class="line">      oDiv.style.top = ev.clientY + &#x27;px&#x27;;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>示例：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/BOM-event%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1%E5%92%8CclientX,clientY.html">点击查看</a></p>
+<h4 id="事件流、事件冒泡机制"><a href="#事件流、事件冒泡机制" class="headerlink" title="事件流、事件冒泡机制"></a>事件流、事件冒泡机制</h4><p>事件流</p>
+<ul>
+<li>事件冒泡<ul>
+<li>取消冒泡：ev.cancelBubble&#x3D;true</li>
+<li>例子：仿select控件</li>
+</ul>
+</li>
+<li>事件捕获<ul>
+<li>IE下是没有的，在绑定事件中，标准下是有的</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  div&#123;padding: 40px;&#125;</span><br><span class="line">  #div1&#123;background: red;&#125;</span><br><span class="line">  #div2&#123;background: green;&#125;</span><br><span class="line">  #div3&#123;background: blue;position: absolute;top: 300px;&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div id=&quot;div1&quot;&gt;</span><br><span class="line">  &lt;div id=&quot;div2&quot;&gt;</span><br><span class="line">    &lt;div id=&quot;div3&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  window.onload = function() &#123;</span><br><span class="line">    /**</span><br><span class="line">     * 事件冒泡机制：当一个元素接收到事件的时候，会把它接收到的所有传给它的父级，一直到顶层window。</span><br><span class="line">     */</span><br><span class="line"></span><br><span class="line">    var oDiv1 = document.getElementById(&#x27;div1&#x27;);</span><br><span class="line">    var oDiv2 = document.getElementById(&#x27;div2&#x27;);</span><br><span class="line">    var oDiv3 = document.getElementById(&#x27;div3&#x27;);</span><br><span class="line">    function fn1()&#123;</span><br><span class="line">      alert(this.id);</span><br><span class="line">    &#125;</span><br><span class="line">    // oDiv1.onclick = fn1;  通常说的给XXX加事件，其实是给元素加事件处理函数</span><br><span class="line">    // 事件函数绑定</span><br><span class="line">    oDiv1.onclick = fn1;  //告诉div1，如果它接收到了一个点击事件，那么它就去执行fn1</span><br><span class="line">    // oDiv2.onclick = fn1;  // 这句话注释掉后，事件发生后不做任何处理，但是不影响接收事件</span><br><span class="line">    oDiv3.onclick = fn1;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>阻止冒泡：在当前要阻止冒泡的事件函数中调用 ev.cancelBubble&#x3D;true;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">div&#123;width: 100px;height: 200px; border: 1px solid red;&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; value=&quot;按钮&quot; id=&quot;btn&quot;&gt;</span><br><span class="line">&lt;div id=&quot;div1&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">window.onload = function()&#123;</span><br><span class="line">  var oBtn = document.getElementById(&#x27;btn&#x27;);</span><br><span class="line">  var oDiv = document.getElementById(&#x27;div1&#x27;);</span><br><span class="line"></span><br><span class="line">  oBtn.onclick = function(ev)&#123;</span><br><span class="line">    var ev = ev || event;</span><br><span class="line">    ev.cancelBubble = true; // 阻止当前对象的当前事件的冒泡</span><br><span class="line"></span><br><span class="line">    oDiv.style.display = &#x27;block&#x27;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  oBtn.onmouseover = function(ev)&#123;</span><br><span class="line">    var ev = ev || event;</span><br><span class="line">    ev.cancelBubble = true; // 阻止当前对象的当前事件的冒泡</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  document.onclick = function()&#123;</span><br><span class="line">    //setTimeout(function()&#123;</span><br><span class="line">    //    oDiv.style.display = &#x27;none&#x27;;</span><br><span class="line">    //&#125;, 1000);</span><br><span class="line">    oDiv.style.display = &#x27;none&#x27;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="事件绑定的第二种形式"><a href="#事件绑定的第二种形式" class="headerlink" title="事件绑定的第二种形式"></a>事件绑定的第二种形式</h4><p>给一个对象绑定一个事件处理函数的第一种形式：赋值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">doucument.onclick = fn1;</span><br><span class="line">doucument.onclick = fn2;  //会覆盖fn1</span><br></pre></td></tr></table></figure>
+<p>后面的赋值会把前面的赋值覆盖掉</p>
+<p>给一个对象的同一个事件绑定多个不同的函数<br>给一个对象绑定一个事件处理函数的第二种形式：函数</p>
+<ul>
+<li>IE：obj.attachEvent(事件名称, 事件函数);<ul>
+<li>没有捕获</li>
+<li>事件名称有on</li>
+<li>事件函数执行的顺序：标准IE-&gt;正序；非标准IE-&gt;倒序；</li>
+<li>this指向window</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">document.attachEvent(&#x27;onclick&#x27;, fn1);</span><br><span class="line">document.attachEvent(&#x27;onclick&#x27;, function()&#123;</span><br><span class="line">    fn1.call(document);</span><br><span class="line">&#125;);</span><br><span class="line">document.attachEvent(&#x27;onclick&#x27;, fn2);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>标准：obj.addEventListener(事件名称, 事件函数, 是否捕获);<br>是否捕获：默认是false false：冒泡 true：捕获<ul>
+<li>有捕获</li>
+<li>事件名称没有on</li>
+<li>事件执行的顺序是正序</li>
+<li>this指向触发该事件的对象</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document.addEventListener(&#x27;onclick&#x27;, fn1, false);</span><br><span class="line">document.addEventListener(&#x27;onclick&#x27;, fn2, false);</span><br></pre></td></tr></table></figure>
+
+<p>call 函数下的一个方法，call方法第一个参数可以改变函数执行过程中的内部this的指向，call方法第二个参数开始就是原来函数的参数列表<br>第一个参数为空，不会改变this指向</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function bind(obj, evname, fn)&#123;</span><br><span class="line">  if(obj.addEventListener)&#123;</span><br><span class="line">    obj.addEventListener(evname, fn, false);</span><br><span class="line">  &#125;else&#123;</span><br><span class="line">    obj.attachEvent(&#x27;on&#x27; + evname, function()&#123;</span><br><span class="line">      fn.call(obj);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">bind(doucument, &#x27;click&#x27;, fn1);</span><br></pre></td></tr></table></figure>
+
+<p>参考：<br>1.<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc189952(v=vs.95)">HtmlDocument.AttachEvent Method</a><br>2.<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener">EventTarget.addEventListener() </a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/10/11/BOM-EVENT%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/" data-id="cuidtBU38u5tA3FaW42wnB19E" data-title="BOM/EVENT学习笔记(2)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-BOM-EVENT学习笔记-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/10/10/BOM-EVENT%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/" class="article-date">
+  <time class="dt-published" datetime="2018-10-10T07:10:29.000Z" itemprop="datePublished">2018-10-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/10/10/BOM-EVENT%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/">BOM/EVENT学习笔记(1)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="BOM相关方法及属性"><a href="#BOM相关方法及属性" class="headerlink" title="BOM相关方法及属性"></a>BOM相关方法及属性</h2><h4 id="BOM-Browser-Object-Model-浏览器对象模型"><a href="#BOM-Browser-Object-Model-浏览器对象模型" class="headerlink" title="BOM : Browser Object Model 浏览器对象模型"></a>BOM : Browser Object Model 浏览器对象模型</h4><h6 id="打开、关闭窗口"><a href="#打开、关闭窗口" class="headerlink" title="打开、关闭窗口"></a>打开、关闭窗口</h6><p>open() 方法 打开一个新的窗口（页面）<br>close() 方法，关闭一个窗口（页面）<br>关闭时提示问题，兼容性问题</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;button&quot; value=&quot;打开新窗口&quot;&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; value=&quot;关闭窗口&quot;&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; value=&quot;关闭新窗口&quot;&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  window.onload = function()&#123;</span><br><span class="line">    var aInput = document.getElementsByTagName(&#x27;input&#x27;);</span><br><span class="line">    var opener = null;</span><br><span class="line"></span><br><span class="line">    // window.open(页面的地址URL, 打开的方式) window可以省略，写为open()</span><br><span class="line">    // 如果url为空，则默认打开一个空白页面</span><br><span class="line">    // 如果打开方式为空，默认为新窗口方式打开    </span><br><span class="line">    aInput[0].onclick = function()&#123;</span><br><span class="line"></span><br><span class="line">      // window.open(&#x27;&#x27;,&#x27;_self&#x27;);</span><br><span class="line">      opener = window.open();</span><br><span class="line">      // alert(opener == window)  //flase</span><br><span class="line"></span><br><span class="line">      opener.document.body.style.background = &#x27;red&#x27;;</span><br><span class="line">      // 如果修改的是其他域名的样式，涉及到跨域问题，样式不会被修改</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    aInput[1].onclick = function()&#123;</span><br><span class="line"></span><br><span class="line">      window.close();</span><br><span class="line">      // FireFox: 默认无法关闭</span><br><span class="line">      // Chrome: 默认直接关闭</span><br><span class="line">      // IE: 询问用户</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    aInput[2].onclick = function()&#123;</span><br><span class="line"></span><br><span class="line">      opener.close();</span><br><span class="line">      //可以关闭在本窗口中通过js方法打开的新窗口</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>参考:<br>1.<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/dom_obj_window.asp">Window 对象</a><br>2.<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/met_win_open.asp">HTML DOM open() 方法</a><br>3.<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/met_win_close.asp">HTML DOM close() 方法</a></p>
+<h6 id="常用属性"><a href="#常用属性" class="headerlink" title="常用属性"></a>常用属性</h6><ul>
+<li>window.navigator.userAgent 浏览器信息</li>
+<li>window.location</li>
+</ul>
+<p>window.navigator.userAgent 浏览器信息<br>判断当前使用的浏览器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if(window.navigator.userAgent.indexOf(&#x27;MSIE&#x27;) != -1)&#123;</span><br><span class="line">  alert(&#x27;ie浏览器&#x27;);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">  alert(&#x27;非ie浏览器&#x27;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>window.location 浏览器地址信息<br>window.location.href : url<br>window.location.search : url?后面的内容<br>window.location.hash : url#后面的内容<br>参考:<br>1.<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/dom_obj_navigator.asp">Navigator 对象</a><br>2.<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/dom_obj_location.asp">Location 对象</a></p>
+<h4 id="文档宽高及窗口事件"><a href="#文档宽高及窗口事件" class="headerlink" title="文档宽高及窗口事件"></a>文档宽高及窗口事件</h4><h4 id="窗口尺寸与大小"><a href="#窗口尺寸与大小" class="headerlink" title="窗口尺寸与大小"></a>窗口尺寸与大小</h4><ul>
+<li>可视区尺寸<br><code>document.documentElement.clientWidth</code><br><code>document.documentElement.clientHeigth</code></li>
+<li>滚动距离<br><code>document.body.scrollTop/scrollLeft</code><br><code>document.documentElement.scrollTop/scrollLeft</code></li>
+<li>内容高度<br><code>document.body.scrollHeight</code></li>
+<li>文档高度<br><code>document.documentElement.offsetHeight</code><br><code>document.body.offsetHeight</code></li>
+</ul>
+<p>事件：<br>onscroll: 当滚动条滚动时触发<br>onresize: 当窗口大小发生改变时触发</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var i = 0;</span><br><span class="line">window.onscroll = function()&#123;</span><br><span class="line">  document.title = i++;</span><br><span class="line">&#125;</span><br><span class="line">window.onresize = function()&#123;</span><br><span class="line">  document.title = i++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/10/10/BOM-EVENT%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/" data-id="cuidfeKK_GIQutjE6huQHYt94" data-title="BOM/EVENT学习笔记(1)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-DOM详解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/09/27/DOM%E8%AF%A6%E8%A7%A3/" class="article-date">
+  <time class="dt-published" datetime="2018-09-27T10:06:20.000Z" itemprop="datePublished">2018-09-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/09/27/DOM%E8%AF%A6%E8%A7%A3/">DOM详解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="javascript-组成"><a href="#javascript-组成" class="headerlink" title="javascript 组成"></a>javascript 组成</h4><ul>
+<li>ECMAscript（javaScript核心标准，也是一个解析器）；</li>
+<li>DOM（通过document提供的一些方法或者属性来操作页面）；</li>
+<li>BOM（通过window提供的一些方法或属性来操作浏览器）</li>
+</ul>
+<h4 id="DOM（Document-Object-Model）"><a href="#DOM（Document-Object-Model）" class="headerlink" title="DOM（Document Object Model）"></a>DOM（Document Object Model）</h4><p>文档对象模型<br>整个页面文档<br>document提供了一些API（接口），赋予了开发者操作页面的能力</p>
+<p>一般分为：<br>  父级关系：只有一层上下级关系（从当前往上找）<br>  子集关系：只有以下一层的关系<br>  兄弟关系：同一个父级（同一级）</p>
+<p>  父子节点：上下两层节点之间的关系<br>  祖先节点：当前节点上面的所有节点的统称<br>  子孙节点：当前节点下面的所有节点的统称</p>
+<h6 id="节点类型："><a href="#节点类型：" class="headerlink" title="节点类型："></a>节点类型：</h6><table>
+<thead>
+<tr>
+<th>节点类型</th>
+<th align="center">节点描述</th>
+<th align="center">nodeName</th>
+<th align="center">nodeValue</th>
+<th>NodeType</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>element</td>
+<td align="center">元素节点</td>
+<td align="center">元素名</td>
+<td align="center">null</td>
+<td>1</td>
+</tr>
+<tr>
+<td>attribute</td>
+<td align="center">属性节点</td>
+<td align="center">属性名称</td>
+<td align="center">属性值</td>
+<td>2</td>
+</tr>
+<tr>
+<td>text</td>
+<td align="center">文本节点</td>
+<td align="center">#text</td>
+<td align="center">文本内容</td>
+<td>3</td>
+</tr>
+<tr>
+<td>CDATASection</td>
+<td align="center">XMLCDATA片段</td>
+<td align="center">#cdata-section</td>
+<td align="center">节点内容</td>
+<td>4</td>
+</tr>
+<tr>
+<td>EntityReference</td>
+<td align="center">实体引用</td>
+<td align="center">实体引用名称</td>
+<td align="center">null</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Entity</td>
+<td align="center">实体</td>
+<td align="center">实体名称</td>
+<td align="center">null</td>
+<td>6</td>
+</tr>
+<tr>
+<td>ProcessingInstruction</td>
+<td align="center">处理指令</td>
+<td align="center">target</td>
+<td align="center">节点内容</td>
+<td>7</td>
+</tr>
+<tr>
+<td>comment</td>
+<td align="center">注释</td>
+<td align="center">#comment</td>
+<td align="center">注释文本</td>
+<td>8</td>
+</tr>
+<tr>
+<td>document</td>
+<td align="center">文档</td>
+<td align="center">#document</td>
+<td align="center">null</td>
+<td>9</td>
+</tr>
+<tr>
+<td>DocumentType</td>
+<td align="center">文档实体接口</td>
+<td align="center">doctype名称</td>
+<td align="center">null</td>
+<td>10</td>
+</tr>
+<tr>
+<td>DocumentFragment</td>
+<td align="center">轻量级文档对象</td>
+<td align="center">#documentfragment</td>
+<td align="center">null</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Notation</td>
+<td align="center">DTD 中声明的符号</td>
+<td align="center">符号名称</td>
+<td align="center">null</td>
+<td>12</td>
+</tr>
+</tbody></table>
+<p>节点例子<br>示例：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/%E8%8A%82%E7%82%B9%E4%BE%8B%E5%AD%90.html">点击查看</a></p>
+<h6 id="offsetLeft、offsetParent"><a href="#offsetLeft、offsetParent" class="headerlink" title="offsetLeft、offsetParent"></a>offsetLeft、offsetParent</h6><p>DOM节点</p>
+<ul>
+<li><p><code>node.offsetParent</code><br>offsetParent 就是最近的有定位属性的祖先节点。（如果祖先节点都没有定位，那么默认为body|想要正常使用，子集要有定位，父级也要有定位|其他浏览器下需要设置宽高，否则会有兼容性问题）</p>
+</li>
+<li><p><code>node.offsetLeft</code>&#x2F;<code>node.offsetTop</code><br>offsetLeft&#x2F;offsetTop就是最近的有定位属性的祖先节点的距离。<br>例子：实用的文字提示层</p>
+</li>
+<li><p><code>node.getBoundingClientRect()</code><br>获取元素的盒模型信息<br>返回值为一个对象<br>  left top bottom right width height<br>  相对于浏览器可视区域<br><img src="https://demo.secretbase.vip/img/%E5%AE%9A%E4%BD%8D%E7%88%B6%E7%BA%A7offsetParent%E5%8F%8A%E5%81%8F%E7%A7%BB%E5%A4%A7%E5%B0%8F.jpg" alt="定位父级offsetParent及偏移大小.jpg"></p>
+<p>例子：实用的文字提示层+</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/09/27/DOM%E8%AF%A6%E8%A7%A3/" data-id="cuidB8CuHvGsLE4vOZRrcdSTy" data-title="DOM详解" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-this对象" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/09/27/this%E5%AF%B9%E8%B1%A1/" class="article-date">
+  <time class="dt-published" datetime="2018-09-27T07:59:15.000Z" itemprop="datePublished">2018-09-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/09/27/this%E5%AF%B9%E8%B1%A1/">this对象</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>全局环境<ul>
+<li>window</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>事件处理函数<ul>
+<li>DOM事件处理函数</li>
+<li>内联事件处理函数</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>函数内部<ul>
+<li>函数直接执行<ul>
+<li>非严格模式下<ul>
+<li>默认指向全局对象<ul>
+<li>浏览器</li>
+<li>node<ul>
+<li>node交互界面中</li>
+<li>js文件中</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>严格模式下(前面省略window，浏览器严格模式支持)<ul>
+<li>undefined</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>call，apply和bind<ul>
+<li>把this的值从一个执行环境传入另一个执行环境<ul>
+<li>call和apply的参数差异</li>
+<li>如果传入的不是对象会调用相对的构造函数，进行隐式转换</li>
+</ul>
+</li>
+<li>bind<ul>
+<li>返回一个新函数，内部this指向被修改</li>
+<li>只会改变一次</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>箭头函数内部<ul>
+<li>与定义时的环境中 this 一致<ul>
+<li>点击元素定时改变</li>
+</ul>
+</li>
+<li>bind，call不能修改其内部指向</li>
+<li>全局中定义箭头函数<ul>
+<li>全局对象</li>
+</ul>
+</li>
+<li>对象内函数定义箭头函数</li>
+<li>对象内函数返回箭头函数</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>对象方法内部<ul>
+<li>当函数作为对象里的方法被调用时<ul>
+<li>调用该函数的对象</li>
+</ul>
+</li>
+<li>对象后续附属上的方法调用<ul>
+<li>调用该函数的对象</li>
+</ul>
+</li>
+<li>作为函数内嵌套多层的方法调用<ul>
+<li>就近绑定</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>构造函数中<ul>
+<li>构造函数中没有显式return</li>
+<li>构造函数中显式return<ul>
+<li>return 对象</li>
+<li>return 非对象</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>原型链上函数<ul>
+<li>调用该函数的对象</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>getter 和 setter 中<ul>
+<li>get访问</li>
+<li>set设置</li>
+</ul>
+</li>
+</ul>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/09/27/this%E5%AF%B9%E8%B1%A1/" data-id="cuidzY5HIz_28H8pG4tzX7DE0" data-title="this对象" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-JavaScript基础学习-7" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/09/19/JavaScript%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-7/" class="article-date">
+  <time class="dt-published" datetime="2018-09-19T10:26:56.000Z" itemprop="datePublished">2018-09-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/09/19/JavaScript%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-7/">JavaScript基础学习(7)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Json、数组方法、随机函数、数组去重"><a href="#Json、数组方法、随机函数、数组去重" class="headerlink" title="Json、数组方法、随机函数、数组去重"></a>Json、数组方法、随机函数、数组去重</h2><h4 id="json数据格式及json语法"><a href="#json数据格式及json语法" class="headerlink" title="json数据格式及json语法"></a>json数据格式及json语法</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">var json = &#123;name: &#x27;name&#x27;, age: 3&#125;;  //安全性差</span><br><span class="line">var json2 = &#123;&#x27;name&#x27;: &#x27;name&#x27;, &#x27;age&#x27;: 3&#125;;  //推荐格式</span><br><span class="line">var json3 = &#123;&#x27;name&#x27;:[&#x27;name1&#x27;,&#x27;name2&#x27;], &#x27;age&#x27;:[3, 30]&#125;;</span><br><span class="line">var arr = [&#123;&#x27;name&#x27;: &#x27;name1&#x27;, &#x27;age&#x27;: 3&#125;,&#123;&#x27;name&#x27;: &#x27;name2&#x27;, &#x27;age&#x27;: 30&#125;];</span><br><span class="line"></span><br><span class="line">alert(json2.name);  //name</span><br><span class="line">alert(json2[&#x27;name&#x27;]); //undefined</span><br><span class="line">alert(json2[&#x27;name&#x27;]); //name</span><br><span class="line">alert(arr[0].name + &#x27; &#x27; + arr[0][&#x27;age&#x27;]); //name1 3</span><br><span class="line"></span><br><span class="line">var json4 = &#123;&#x27;name&#x27;: &#x27;name&#x27;, &#x27;age&#x27;: 3, &#x27;fun&#x27;: &#x27;前端开发&#x27;&#125;;</span><br><span class="line">for(var attr in json4)&#123;</span><br><span class="line">  alert(attr);  //键名</span><br><span class="line">  alert(json4[attr]); //健值</span><br><span class="line">  alert(json4[&#x27;attr&#x27;]); //undefined 需要注意，加引号后会找json4的子集&#x27;attr&#x27;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var json5 = &#123;</span><br><span class="line">  &#x27;url&#x27;: [&#x27;url1&#x27;, &#x27;url2&#x27;],</span><br><span class="line">  &#x27;text&#x27;: [&#x27;text1&#x27;, &#x27;text2&#x27;]</span><br><span class="line">&#125;;</span><br><span class="line">for(var attr in json5)&#123;</span><br><span class="line">  for(var i = 0; i &lt; json5[attr].length; i++)&#123;</span><br><span class="line">    alert(json5[attr][i]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="for-in遍历json"><a href="#for-in遍历json" class="headerlink" title="for-in遍历json"></a>for-in遍历json</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var str = &#x27;&#x27;;</span><br><span class="line">var num = 0;  //统计属性个数</span><br><span class="line">for(var attr in window)&#123;</span><br><span class="line">  str += num + &#x27;. &#x27; + attr + &#x27;:&#x27; + window[attr] + &#x27;&lt;br&gt;&#x27;;</span><br><span class="line">  num ++;</span><br><span class="line">&#125;</span><br><span class="line">document.body.innerHTML = str;</span><br></pre></td></tr></table></figure>
+<p>json没有长度属性，无法使用for循环<br>数组也可以使用for in循环</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var json = &#123;&#x27;name&#x27;: &#x27;name&#x27;, &#x27;age&#x27;: 3&#125;;</span><br><span class="line">alert(json.length); //undefined</span><br><span class="line"></span><br><span class="line">var arr = [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;];</span><br><span class="line">for(var i in arr)&#123;</span><br><span class="line">  alert(i); //i为数组下标</span><br><span class="line">  alert(arr[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="数组定义及清空数组效率问题"><a href="#数组定义及清空数组效率问题" class="headerlink" title="数组定义及清空数组效率问题"></a>数组定义及清空数组效率问题</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 2, 3];</span><br><span class="line">//var arr = new Array(1, 2, 3);</span><br><span class="line">arr.length = 1;</span><br><span class="line">alert(arr); //1</span><br><span class="line"></span><br><span class="line">var arr = new Array(3); //接收参数为数字时默认为数组的长度</span><br><span class="line">var arr = new Array(&#x27;3&#x27;);</span><br><span class="line"></span><br><span class="line">arr.length = 0; //可以快速清空数组</span><br><span class="line">arr = []; //相当于重新赋值，数组中值比较多时，这种方法效率较高</span><br><span class="line"></span><br><span class="line">var str = &#x27;aaaaa&#x27;;</span><br><span class="line">str.length = 1;</span><br><span class="line">alert(str); //&#x27;aaaaa&#x27; 字符串的length属性是不可以写的</span><br></pre></td></tr></table></figure>
+<h4 id="数组的方法与技巧"><a href="#数组的方法与技巧" class="headerlink" title="数组的方法与技巧"></a>数组的方法与技巧</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 2, 3];</span><br><span class="line">arr.push(4);  //向数组的末尾添加一个或多个元素，并返回新的长度。</span><br><span class="line">arr.unshift(0); //向数组的开头添加一个或更多元素，并返回新的长度。IE 6、7不支持unshift返回值</span><br><span class="line">arr.pop();  //删除并返回数组的最后一个元素。</span><br><span class="line">arr.shift();  //把数组的第一个元素从其中删除，并返回第一个元素的值。</span><br><span class="line"></span><br><span class="line">arr.unshift(arr.pop);</span><br><span class="line">arr.push(arr.shift);</span><br><span class="line">//可以做轮播图效果</span><br></pre></td></tr></table></figure>
+<h4 id="splice-方法、数组去重"><a href="#splice-方法、数组去重" class="headerlink" title="splice 方法、数组去重"></a>splice 方法、数组去重</h4><p>splice() 方法向&#x2F;从数组中添加&#x2F;删除项目，然后返回被删除的项目。<br>注释：该方法会改变原始数组。<br>语法：arrayObject.splice(index,howmany,item1,…..,itemX)</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>index</td>
+<td>必需。整数，规定添加&#x2F;删除项目的位置，使用负数可从数组结尾处规定位置。</td>
+</tr>
+<tr>
+<td>howmany</td>
+<td>必需。要删除的项目数量。如果设置为 0，则不会删除项目。</td>
+</tr>
+<tr>
+<td>item1, …, itemX</td>
+<td>可选。向数组添加的新项目。</td>
+</tr>
+<tr>
+<td>返回值</td>
+<td></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Array</td>
+<td>包含被删除项目的新数组，如果有的话。</td>
+</tr>
+<tr>
+<td>说明</td>
+<td></td>
+</tr>
+<tr>
+<td>splice() 方法可删除从 index 处开始的零个或多个元素，并且用参数列表中声明的一个或多个值来替换那些被删除的元素。</td>
+<td></td>
+</tr>
+<tr>
+<td>如果从 arrayObject 中删除了元素，则返回的是含有被删除的元素的数组。</td>
+<td></td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 2, 3];</span><br><span class="line">//删除、替换、添加</span><br><span class="line">arr.splice(0, 1); //从数组第0位起，删除1个值</span><br><span class="line">arr.splice(0, 2, &#x27;one or two&#x27;);  //将数组第0位起的2个值替换为&#x27;one or two&#x27;</span><br><span class="line">arr.splice(1, 0, &#x27;1.5&#x27;, &#x27;1.8&#x27;); //将数组第1位后添加&#x27;1.5&#x27;, &#x27;1.8&#x27;</span><br><span class="line">//只有删除时有返回值，返回删除掉的值</span><br></pre></td></tr></table></figure>
+<p>数组去重</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 2, 2, 4, 2];</span><br><span class="line"></span><br><span class="line">for(var i = 0; i &lt; arr.length; i ++)&#123;</span><br><span class="line">  for(var j = i + 1; j &lt; arr.length; j ++)&#123;</span><br><span class="line">    if(arr[i] == arr[j])&#123;</span><br><span class="line">      arr.splice(j, 1);</span><br><span class="line">      j --;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="sort排序"><a href="#sort排序" class="headerlink" title="sort排序"></a>sort排序</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&#x27;c&#x27;, &#x27;d&#x27;, &#x27;a&#x27;, &#x27;e&#x27;];</span><br><span class="line">arr.sort();</span><br><span class="line">alert(arr); //[&#x27;a&#x27;, &#x27;c&#x27;, &#x27;d&#x27;, &#x27;e&#x27;]</span><br><span class="line"></span><br><span class="line">var arr2 = [4, 3, 5, 76, 2, 0, 8];</span><br><span class="line">arr2.sort();</span><br><span class="line">alert(arr2);  //[0, 2, 3, 4, 5, 76, 8] 默认会按照字符串方法排序</span><br><span class="line"></span><br><span class="line">//从小到大排序</span><br><span class="line">arr2.sort(function(a, b)&#123;</span><br><span class="line">  return a - b;</span><br><span class="line">&#125;);</span><br><span class="line">alert(arr2);  //[0, 2, 3, 4, 5, 8, 76]</span><br><span class="line"></span><br><span class="line">//从大到小排序</span><br><span class="line">arr2.sort(function(a, b)&#123;</span><br><span class="line">  return b - a;</span><br><span class="line">&#125;);</span><br><span class="line">alert(arr2);  //76,8,5,4,3,2,0</span><br><span class="line"></span><br><span class="line">//按照数字从小到大排序</span><br><span class="line">var arrWidth = [&#x27;345px&#x27;, &#x27;23px&#x27;, &#x27;10px&#x27;, &#x27;1000px&#x27;];</span><br><span class="line">arrWidth.sort(function(a, b)&#123;</span><br><span class="line">  return parseInt(a) - parseInt(b);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//随机排序</span><br><span class="line">var arr = [1, 2, 3, 4, 5, 6, 7, 8];</span><br><span class="line">arr.sort(function(a, b)&#123;</span><br><span class="line">  return Math.random() - 0.5;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<p>排序：快速、希尔、冒泡、归并、选择、插入…、</p>
+<h4 id="随机数及随机公式推理过程"><a href="#随机数及随机公式推理过程" class="headerlink" title="随机数及随机公式推理过程"></a>随机数及随机公式推理过程</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Math.random();  //返回介于 0 ~ 1 之间的一个随机数</span><br><span class="line">Math.round(); //把一个数字舍入为最接近的整数。</span><br><span class="line"></span><br><span class="line">Math.round(Math.random()*10); //返回介于 0 ~ 10 之间的一个随机整数</span><br><span class="line">Math.round(Math.random()*5 + 5); //返回介于 5 ~ 10 之间的一个随机整数</span><br><span class="line">Math.round(Math.random()*(y-x) + x); //返回介于 x ~ y 之间的一个随机整数</span><br><span class="line">Math.round(Math.random()*x); //返回介于 0 ~ x 之间的一个随机整数</span><br><span class="line">Math.ceil(Math.random()*x); //返回介于 1 ~ x 之间的一个随机整数</span><br></pre></td></tr></table></figure>
+<h4 id="concat、reverse、练习"><a href="#concat、reverse、练习" class="headerlink" title="concat、reverse、练习"></a>concat、reverse、练习</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var arr1 = [1, 2, 3];</span><br><span class="line">var arr2 = [4, 5, 6];</span><br><span class="line">var arr3 = [7, 8, 9];</span><br><span class="line"></span><br><span class="line">arr1.concat(arr2, arr3);  //[1, 2, 3, 4, 5, 6, 7, 8, 9]</span><br><span class="line">arr1.reverse();  //[3, 2, 1]</span><br><span class="line"></span><br><span class="line">var str = &#x27;abcdef&#x27;;</span><br><span class="line">str.split(&#x27;&#x27;).reverse().join(&#x27;&#x27;); //&#x27;fedcba&#x27;</span><br></pre></td></tr></table></figure>
+<p>练习：<br>1.随机产生 550 个从 0～1000 之间不重复的整数<br>2.为数组编写indexOf()方法：indexOf(‘img&#x2F;1.jpg’)<br>【示例：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/%E6%95%B0%E7%BB%84%E5%92%8C%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%BB%83%E4%B9%A0.html">点击查看</a>】</p>
+<p>练习：<br>1.人民网多图片滚动（随机图片滚动）<br>【示例：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/%E9%9A%8F%E6%9C%BA%E6%95%B0-%E4%BA%BA%E6%B0%91%E7%BD%91%E5%A4%9A%E5%9B%BE%E7%89%87%E6%BB%9A%E5%8A%A8%E7%BB%83%E4%B9%A0.html">点击查看</a>】<br>2.自定义字体形状（动画）<br>【示例：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E5%BD%A2%E7%8A%B6.html">点击查看</a>】<br>3.消除表情小游戏（掉QQ表情）<br>【示例：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/%E9%9A%8F%E6%9C%BA%E6%95%B0-%E6%B6%88%E9%99%A4%E8%A1%A8%E6%83%85%E5%B0%8F%E6%B8%B8%E6%88%8F.html">点击查看</a>】<br>4.排序<br>【示例：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C-%E6%8E%92%E5%BA%8F.html">点击查看</a>】</p>
+<p>参考：<br>1.<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/jsref_push.asp">JavaScript push() 方法</a><br>2.<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/jsref_unshift.asp">JavaScript unshift() 方法</a><br>3.<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/jsref_pop.asp">JavaScript pop() 方法</a><br>4.<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/jsref_shift.asp">JavaScript shift() 方法</a><br>5.<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/jsref_splice.asp">JavaScript splice() 方法</a><br>6.<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/jsref_sort.asp">JavaScript sort() 方法</a><br>6.<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/jsref_random.asp">JavaScript random() 方法</a><br>6.<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/jsref_round.asp">JavaScript round() 方法</a><br>6.<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/jsref_concat.asp">JavaScript concat() 方法</a><br>6.<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/jsref_reverse.asp">JavaScript reverse() 方法</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/09/19/JavaScript%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-7/" data-id="cuidQpeVf1z4uHtDBCXxsFCCr" data-title="JavaScript基础学习(7)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-JavaScript基础学习-6" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/09/12/JavaScript%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-6/" class="article-date">
+  <time class="dt-published" datetime="2018-09-12T10:07:38.000Z" itemprop="datePublished">2018-09-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/09/12/JavaScript%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-6/">JavaScript基础学习(6)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="字符串、查找高亮显示"><a href="#字符串、查找高亮显示" class="headerlink" title="字符串、查找高亮显示"></a>字符串、查找高亮显示</h4><p>字符串获取类、封装检测数字的方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str = new String;</span><br><span class="line">str.length; //字符串长度</span><br><span class="line">str.charAt(); //获取字符串中的字符</span><br><span class="line">str.charCodeAt();  //返回对应字符的编码 0～9 48～57 a~z 97~122 A~Z 65~90</span><br><span class="line">String.fromCharCode(); //根据字符编码返回字符</span><br></pre></td></tr></table></figure>
+
+<p>判断是否是数字<br><code>isNaN()</code> 无法判断空格</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function detectNum(str)&#123;</span><br><span class="line">  var n = 0;</span><br><span class="line">  for(var i = 0; i &lt; str.length; i++)&#123;</span><br><span class="line">    n = str.charCodeAt(i);</span><br><span class="line">    if(n &lt; 48 || n &gt; 57) return false;</span><br><span class="line">  &#125;</span><br><span class="line">  return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>formCharCode</code>返回字符串实例、字符串加密</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot;&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; value=&quot;加密&quot;&gt;</span><br><span class="line">&lt;div id=&quot;div1&quot;&gt;加密。。。&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var aInp = document.getElementsByTagName(&#x27;input&#x27;);</span><br><span class="line">var oDiv = document.getElementById(&#x27;div1&#x27;);</span><br><span class="line"></span><br><span class="line">aInp[1].onclick = function()&#123;</span><br><span class="line">  var str = aInp[0].value;</span><br><span class="line">  var str1 = &#x27;&#x27;;</span><br><span class="line">  for(var i = 0; i &lt; str.length; i++)&#123;</span><br><span class="line">    str1 += String.fromCharCode(str.charCodeAt(i) - 1000) + &#x27;:&#x27;;</span><br><span class="line">  &#125;</span><br><span class="line">  oDiv.innerHTML = str1;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>indexOf</code>、<code>lastIndexOf</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">function judgeI(str)&#123;</span><br><span class="line">  for(var i = 0; i &lt; str.length; i++)&#123;</span><br><span class="line">    if(str.charAt(i) === &#x27;i&#x27;)&#123;</span><br><span class="line">      alert(i);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var str = &#x27;string string string&#x27;;</span><br><span class="line">str.indexOf(&#x27;i&#x27;);</span><br><span class="line">str.indexOf(&#x27;i&#x27;, 7);  //第二个参数表示从第几个字符开始找, 如果为负数或超出字符串长度则默认为0</span><br><span class="line">str.indexOf(&#x27;X&#x27;); // -1 表示没有找到</span><br><span class="line"></span><br><span class="line">function judgeLocation(str, target)&#123;</span><br><span class="line">  //for(;str.indexOf(target, i) != -1;)&#123;</span><br><span class="line">  //  alert(str.indexOf(target, i));</span><br><span class="line">  //  i = str.indexOf(target, i) + s.length;</span><br><span class="line">  //&#125;</span><br><span class="line">  while(str.indexOf(target, i) != -1)&#123;</span><br><span class="line">    alert(str.indexOf(target, i));</span><br><span class="line">    i = str.indexOf(target, i) + s.length;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>比较类、截取类、<code>substring</code>应用实例<br>字符串比较大小：比较第一个字符的编码大小</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;p&gt;这是一段文字。这是一段文字。这是一段文字。这是一段文字。这是一段文字。这是一段文字。&lt;/p&gt;</span><br><span class="line">  &lt;span&gt;&lt;&lt;收起&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  window.onload = function()&#123;</span><br><span class="line">    var oP = document.getElementsByTagName(&#x27;p&#x27;)[0];</span><br><span class="line">    var oSpan = document.getElementsByTagName(&#x27;span&#x27;)[0];</span><br><span class="line">    var str = oP.innerHTML;</span><br><span class="line">    var onOff = true;</span><br><span class="line"></span><br><span class="line">    oSpan.onclick = function () &#123;</span><br><span class="line">      if(onOff)&#123;</span><br><span class="line">        oP.innerHTML = str.substring(0, 6);</span><br><span class="line">        oSpan.innerHTML = &#x27;&gt;&gt;展开&#x27;;</span><br><span class="line">      &#125;else&#123;</span><br><span class="line">        oP.innerHTML = str;</span><br><span class="line">        oSpan.innerHTML = &#x27;&lt;&lt;收起&#x27;;</span><br><span class="line">      &#125;</span><br><span class="line">      onOff = !onOff;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>【示例：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E7%BB%83%E4%B9%A0.html">点击查看</a>】</p>
+<p>大小写转换、split分割字符串<br>toUpperCase() &#x2F;&#x2F;转成大写<br>toLowerCase() &#x2F;&#x2F;转成小写<br>用来做判断</p>
+<p>string.split(‘’)  &#x2F;&#x2F;字符串拆分成数组<br>array.join(‘’)  &#x2F;&#x2F;数组连接成字符串<br>split彩色文字效果实例</p>
+<p>高亮显示关键字实例、替换搜索关键字实例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot;&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; value=&quot;按钮&quot;&gt;</span><br><span class="line">&lt;p&gt;这是一段文字。这是一段文字。这是一段文字。这是一段文字。这是一段文字。这是一段文字。&lt;/p&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"> var aInp = document.getElementsByTagName(&#x27;input&#x27;);</span><br><span class="line"> var oP = document.getElementsByTagName(&#x27;p&#x27;)[0];</span><br><span class="line"> aInp[1].onclick = function()&#123;</span><br><span class="line">   var str = aInp[0].value;</span><br><span class="line">   if(!str) return;</span><br><span class="line">   oP.innerHTML = oP.innerHTML.split(str).join(&#x27;&lt;span&gt;&#x27; + str + &#x27;&lt;/span&gt;&#x27;);</span><br><span class="line"> &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>【示例：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E7%BB%83%E4%B9%A0.html">点击查看</a>】</p>
+<p>字符串方法总结</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">var str = &#x27;String string&#x27;;</span><br><span class="line">str.charAt(1);  //&quot;t&quot;</span><br><span class="line">str.charCodeAt(0);  //83</span><br><span class="line">String.fromCharCode(83);  //&quot;S&quot;</span><br><span class="line"></span><br><span class="line">str.indexOf(&#x27;r&#x27;, 3);  //9</span><br><span class="line">str.lastIndexOf(&#x27;i&#x27;); //10</span><br><span class="line"></span><br><span class="line">&#x27;1000&#x27; &lt; &#x27;2&#x27;  //true</span><br><span class="line">&#x27;1000&#x27; &gt; 2  //true</span><br><span class="line"></span><br><span class="line">str.substring(0, 4);  //&quot;Stri&quot;</span><br><span class="line">str.slice(-3);  //&quot;ing&quot;</span><br><span class="line"></span><br><span class="line">str.toUpperCase();  //STRING STRING</span><br><span class="line">str.toLowerCase();  //string string</span><br><span class="line"></span><br><span class="line">str.split(&#x27;i&#x27;, 2);  //[&quot;Str&quot;, &quot;ng str&quot;]</span><br><span class="line"></span><br><span class="line">var arr = [&#x27;s&#x27;,&#x27;t&#x27;,&#x27;r&#x27;,&#x27;i&#x27;,&#x27;n&#x27;,&#x27;g&#x27;];</span><br><span class="line">str.join(&#x27;&#x27;); //&quot;string&quot;</span><br></pre></td></tr></table></figure>
+
+<p>练习：<br>1.查找、替换、删除<br>【示例：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C-%E6%9F%A5%E6%89%BE%E6%9B%BF%E6%8D%A2%E5%88%A0%E9%99%A4.html">点击查看</a>】<br>2.文字搬运工<br>【示例：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C-%E6%96%87%E5%AD%97%E6%90%AC%E8%BF%90%E5%B7%A5.html">点击查看</a>】</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/09/12/JavaScript%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-6/" data-id="cuidEquCctediYDRHZMRPgoE_" data-title="JavaScript基础学习(6)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-JavaScript基础学习-5" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/09/12/JavaScript%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-5/" class="article-date">
+  <time class="dt-published" datetime="2018-09-12T08:34:38.000Z" itemprop="datePublished">2018-09-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/09/12/JavaScript%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-5/">JavaScript基础学习(5)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="日期对象、时钟倒计时"><a href="#日期对象、时钟倒计时" class="headerlink" title="日期对象、时钟倒计时"></a>日期对象、时钟倒计时</h4><p>时间对象实例<br>  获取时间对象：<code>new Date()</code><br>    getFullYear()<br>    getMonth() &#x2F;&#x2F;从0开始计数<br>    getDate()<br>    getDay()  &#x2F;&#x2F;星期<br>    getHours()<br>    getMinutes()<br>    getSecends()<br>  实例：网站电子时钟</p>
+<p>练习：图片时钟扩展版 上下切换</p>
+<p>倒计时<br>  Date对象参数<br>    数字形式：<code>new Date(2018,9,12,17,01,35);  //需要注意月份是从0开始的</code><br>    字符串形式：<code>new Date(&#39;September 12,2018 17:01:35&#39;);</code><br>  月份取值<br>    January、February、March、April、May、June、July、August、September、October、November、December；<br>  时间转换公式<br>    天：<code>Math.floor(t/86400)</code><br>    时：<code>Math.floor(t%86400/3600)</code><br>    分：<code>Math.floor(t%86400%3600/60)</code><br>    秒：t%60<br>  时间戳：<code>getTime()</code><br>    返回从1970年1月1日0点0分0秒0毫秒<br>    &#x2F;&#x2F;时间戳是指格林威治时间1970年01月01日00时00分00秒(北京时间1970年01月01日08时00分00秒)起至现在的总秒数。<br>倒计时原理<br>现在的时间点（变）<br>未来的时间点（不变）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">距离：&lt;input type=&quot;text&quot;&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">还剩：&lt;input type=&quot;text&quot;&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; value=&quot;点击&quot;&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  window.onload = function()&#123;</span><br><span class="line">    var aInp = document.getElementsByTagName(&#x27;input&#x27;);</span><br><span class="line">    var iNow = null;</span><br><span class="line">    var iNew = null;</span><br><span class="line">    var t = 0;</span><br><span class="line">    var str = &#x27;&#x27;;</span><br><span class="line">    var timer = null;</span><br><span class="line"></span><br><span class="line">    aInp[2].onclick = function()&#123;</span><br><span class="line">      iNew = new Date(aInp[0].value);</span><br><span class="line">      clearInterval(timer);</span><br><span class="line"></span><br><span class="line">      setInterval(function()&#123;</span><br><span class="line">        iNow = new Date();</span><br><span class="line">        t = Math.floor((iNew - iNow)/1000); //单位：毫秒 -&gt; 秒</span><br><span class="line">        if(t &gt;= 0)&#123;</span><br><span class="line">          str = Math.floor(t/86400) + &#x27;天&#x27; + Math.floor(t%86400/3600) + &#x27;时&#x27; + Math.floor(t%86400%3600/60) + &#x27;分&#x27; + t%60 + &#x27;秒&#x27;;</span><br><span class="line">          &#125;, 1000);</span><br><span class="line">          aInp[1].value = str;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">          clearInterval(timer);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>时间戳<br><code>new Date().getTime();</code><br>一般用来检测性能，看一段程序运行花费的时间或者用来判断cookie值等</p>
+<p>练习：抢购商品练习（倒计时结束后下架商品抖动一下掉落并自动计算价格）<br>【示例：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/%E5%AE%9A%E6%97%B6%E5%99%A8-%E6%8A%A2%E8%B4%AD%E5%95%86%E5%93%81%E7%BB%83%E4%B9%A0.html">点击查看</a>】</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/09/12/JavaScript%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-5/" data-id="cuidwrgDc4yoYdMBc209SKhZ9" data-title="JavaScript基础学习(5)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-编辑器选择与配置" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/09/05/%E7%BC%96%E8%BE%91%E5%99%A8%E9%80%89%E6%8B%A9%E4%B8%8E%E9%85%8D%E7%BD%AE/" class="article-date">
+  <time class="dt-published" datetime="2018-09-05T10:37:07.000Z" itemprop="datePublished">2018-09-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%85%B6%E4%BB%96/">其他</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/09/05/%E7%BC%96%E8%BE%91%E5%99%A8%E9%80%89%E6%8B%A9%E4%B8%8E%E9%85%8D%E7%BD%AE/">编辑器选择与配置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="PhpStorm"><a href="#PhpStorm" class="headerlink" title="PhpStorm"></a>PhpStorm</h4><h4 id="Sublime"><a href="#Sublime" class="headerlink" title="Sublime"></a>Sublime</h4><h4 id="Atom"><a href="#Atom" class="headerlink" title="Atom"></a>Atom</h4><ul>
+<li>安装插件<br>file icons<br>emmet<br>docblockr</li>
+<li>设置微信小程序代码高亮<br>1、打开 config.cson 配置文件<br>Atom -&gt; Config</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;*&quot;:</span><br><span class="line">  core:</span><br><span class="line">    customFileTypes:</span><br><span class="line">      &#x27;text.html.basic&#x27;: [&#x27;wxml&#x27;]</span><br><span class="line">      &#x27;source.css&#x27;: [&#x27;wxss&#x27;]</span><br><span class="line">      &#x27;source.js&#x27;: [&#x27;wxs&#x27;]</span><br></pre></td></tr></table></figure>
+
+<p>参考：<br><a target="_blank" rel="noopener" href="http://www.okeydown.com/html/2018/06-16/545.html">http://www.okeydown.com/html/2018/06-16/545.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="http://example.com/2018/09/05/%E7%BC%96%E8%BE%91%E5%99%A8%E9%80%89%E6%8B%A9%E4%B8%8E%E9%85%8D%E7%BD%AE/" data-id="cuiddxQF8nf-LEJOYV2RyFjUt" data-title="编辑器选择与配置" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" rel="tag">编辑器</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/7/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/9/">下一页 &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/test/">test</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B9%A6%E7%AE%80/">书简</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/canvas/">canvas</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/svg/">svg</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%85%B6%E4%BB%96/">其他</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B5%8B%E8%AF%95/">测试</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%85%E5%8D%95/">清单</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/3d/" rel="tag">3d</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/" rel="tag">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/" rel="tag">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fiddler/" rel="tag">Fiddler</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MAC/" rel="tag">MAC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PhotoShop/" rel="tag">PhotoShop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wireshark/" rel="tag">Wireshark</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/" rel="tag">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/app/" rel="tag">app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/" rel="tag">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/" rel="tag">canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deeplink/" rel="tag">deeplink</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emmet/" rel="tag">emmet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/" rel="tag">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5/" rel="tag">h5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/less/" rel="tag">less</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/parallels-desktop/" rel="tag">parallels desktop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svg/" rel="tag">svg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/" rel="tag">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/textarea/" rel="tag">textarea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/todolist/" rel="tag">todolist</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/transform/" rel="tag">transform</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10/" rel="tag">win10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E8%AF%B4/" rel="tag">小说</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E7%AB%99/" rel="tag">建站</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" rel="tag">开发环境</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="tag">快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" rel="tag">思维导图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%93%E5%8C%85/" rel="tag">抓包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8F%92%E4%BB%B6/" rel="tag">插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E5%AD%A6/" rel="tag">文学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99/" rel="tag">标签嵌套规则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE/" rel="tag">百度脑图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/" rel="tag">移动开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" rel="tag">编辑器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%84%E8%8C%83/" rel="tag">规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1/" rel="tag">设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/3d/" style="font-size: 10px;">3d</a> <a href="/tags/Charles/" style="font-size: 10px;">Charles</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/JavaScript/" style="font-size: 18px;">JavaScript</a> <a href="/tags/MAC/" style="font-size: 11px;">MAC</a> <a href="/tags/PhotoShop/" style="font-size: 11px;">PhotoShop</a> <a href="/tags/Wireshark/" style="font-size: 10px;">Wireshark</a> <a href="/tags/ajax/" style="font-size: 14px;">ajax</a> <a href="/tags/app/" style="font-size: 11px;">app</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css/" style="font-size: 17px;">css</a> <a href="/tags/deeplink/" style="font-size: 10px;">deeplink</a> <a href="/tags/emmet/" style="font-size: 10px;">emmet</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/git/" style="font-size: 13px;">git</a> <a href="/tags/h5/" style="font-size: 13px;">h5</a> <a href="/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/less/" style="font-size: 10px;">less</a> <a href="/tags/parallels-desktop/" style="font-size: 10px;">parallels desktop</a> <a href="/tags/svg/" style="font-size: 16px;">svg</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/textarea/" style="font-size: 10px;">textarea</a> <a href="/tags/todolist/" style="font-size: 11px;">todolist</a> <a href="/tags/transform/" style="font-size: 11px;">transform</a> <a href="/tags/vue/" style="font-size: 12px;">vue</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 20px;">前端</a> <a href="/tags/%E5%B0%8F%E8%AF%B4/" style="font-size: 10px;">小说</a> <a href="/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 14px;">建站</a> <a href="/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" style="font-size: 10px;">开发环境</a> <a href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" style="font-size: 11px;">快捷键</a> <a href="/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" style="font-size: 10px;">思维导图</a> <a href="/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 19px;">技术</a> <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 10px;">抓包</a> <a href="/tags/%E6%8F%92%E4%BB%B6/" style="font-size: 10px;">插件</a> <a href="/tags/%E6%96%87%E5%AD%A6/" style="font-size: 10px;">文学</a> <a href="/tags/%E6%A0%87%E7%AD%BE%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99/" style="font-size: 10px;">标签嵌套规则</a> <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 10px;">正则表达式</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a> <a href="/tags/%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE/" style="font-size: 10px;">百度脑图</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/" style="font-size: 10px;">移动开发</a> <a href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 11px;">编辑器</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/tags/%E8%A7%84%E8%8C%83/" style="font-size: 13px;">规范</a> <a href="/tags/%E8%AE%BE%E8%AE%A1/" style="font-size: 11px;">设计</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">五月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">三月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/05/22/%E6%9C%AC%E5%9C%B0-git-%E9%A1%B9%E7%9B%AE%E5%90%8C%E6%97%B6%E5%85%B3%E8%81%94-github-%E5%92%8C-gitee/">本地 git 项目同时关联 github 和 gitee</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/12/git-clone-%E6%8A%A5%E9%94%99Permission-denied-publickey/">git clone 报错Permission denied (publickey)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/23/hexo%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99/">hexo部署报错</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/16/h5%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/">h5开发记录</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/24/Mac%E4%B8%8B%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE%E5%BF%AB%E6%8D%B7%E9%94%AE/">Mac下百度脑图快捷键</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 阿寻<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+<!-- 在 footer.ejs 中引入 JS -->
+<script src="/share/js/social-share.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+<!-- 搜索功能代码 -->
+<script src="/js/search.js"></script>
+  </div>
+</body>
+</html>
