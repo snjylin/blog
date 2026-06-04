@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- 眼睛轮廓（圆润杏仁形） -->
+  <path d="M22 32 C22 24 30 22 32 22 C34 22 42 24 42 32 C42 40 34 42 32 42 C30 42 22 40 22 32 Z" 
+        fill="none" stroke="#8b5a2b" stroke-width="2.5" />
+  <!-- 瞳孔（小圆点） -->
+  <circle cx="32" cy="32" r="2.5" fill="#8b5a2b" />
+  <!-- 下方波浪（柔和起伏） -->
+  <path d="M16 48 C24 44 28 52 32 48 C36 44 40 52 48 48" 
+        fill="none" stroke="#8b5a2b" stroke-width="2.5" stroke-linecap="round" />
+</svg>

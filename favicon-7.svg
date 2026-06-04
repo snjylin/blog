@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- 云朵身体 -->
+  <path d="M24 32 C24 24 32 20 38 24 C42 20 48 24 48 32 C50 36 46 40 40 40 L28 40 C22 40 20 36 24 32 Z" 
+        fill="none" stroke="#8b5a2b" stroke-width="2.8" stroke-linejoin="round" />
+  <!-- 眼睛 -->
+  <circle cx="34" cy="32" r="2.5" fill="#8b5a2b" />
+  <!-- 小脚印（两只） -->
+  <path d="M28 44 L26 40 L30 40 Z" fill="none" stroke="#8b5a2b" stroke-width="2" />
+  <circle cx="27" cy="46" r="1.5" fill="#8b5a2b" />
+  <circle cx="31" cy="46" r="1.5" fill="#8b5a2b" />
+  <path d="M36 44 L34 40 L38 40 Z" fill="none" stroke="#8b5a2b" stroke-width="2" />
+  <circle cx="35" cy="46" r="1.5" fill="#8b5a2b" />
+  <circle cx="39" cy="46" r="1.5" fill="#8b5a2b" />
+</svg>

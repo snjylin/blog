@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- 伞盖 -->
+  <path d="M20 28 C20 20 44 20 44 28 C44 32 40 34 32 34 C24 34 20 32 20 28 Z" fill="none" stroke="#8b5a2b" stroke-width="2.5"/>
+  <!-- 触须（波浪线） -->
+  <path d="M26 34 C24 42 28 48 26 54" fill="none" stroke="#8b5a2b" stroke-width="2" stroke-linecap="round"/>
+  <path d="M32 34 C32 44 30 50 34 56" fill="none" stroke="#8b5a2b" stroke-width="2" stroke-linecap="round"/>
+  <path d="M38 34 C40 42 36 48 38 54" fill="none" stroke="#8b5a2b" stroke-width="2" stroke-linecap="round"/>
+  <!-- 小星星点缀 -->
+  <path d="M28 24 L30 26 L34 24 L30 22 Z" fill="none" stroke="#8b5a2b" stroke-width="1.5"/>
+</svg>
