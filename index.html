@@ -120,7 +120,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2024/05/22/%E6%9C%AC%E5%9C%B0-git-%E9%A1%B9%E7%9B%AE%E5%90%8C%E6%97%B6%E5%85%B3%E8%81%94-github-%E5%92%8C-gitee/" data-id="cuidAlJlmNcNrDpK7807n0omo" data-title="本地 git 项目同时关联 github 和 gitee" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2024/05/22/%E6%9C%AC%E5%9C%B0-git-%E9%A1%B9%E7%9B%AE%E5%90%8C%E6%97%B6%E5%85%B3%E8%81%94-github-%E5%92%8C-gitee/" data-id="cuidN-VFutzqyiFRzIYB077xZ" data-title="本地 git 项目同时关联 github 和 gitee" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -163,15 +163,15 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><p>今天git push提交代码时被拒绝<br>提示 </p>
-<p>Cloning into ‘xxx’…<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>Permissions 0755 for ‘&#x2F;Users&#x2F;xxx&#x2F;.ssh&#x2F;id_rsa’ are too open.<br>It is required that your private key files are NOT accessible by others.<br>This private key will be ignored.<br>Load key “&#x2F;Users&#x2F;xxx&#x2F;.ssh&#x2F;id_rsa”: bad permissions<br><a href="mailto:&#103;&#105;&#x74;&#64;&#115;&#115;&#x68;&#46;&#x67;&#x69;&#116;&#104;&#117;&#98;&#x2e;&#99;&#111;&#x6d;">git@ssh.github.com</a>: Permission denied (publickey).<br>fatal: Could not read from remote repository.</p>
+<p>Cloning into ‘xxx’…<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>Permissions 0755 for ‘&#x2F;Users&#x2F;xxx&#x2F;.ssh&#x2F;id_rsa’ are too open.<br>It is required that your private key files are NOT accessible by others.<br>This private key will be ignored.<br>Load key “&#x2F;Users&#x2F;xxx&#x2F;.ssh&#x2F;id_rsa”: bad permissions<br><a href="mailto:&#x67;&#x69;&#116;&#64;&#115;&#115;&#104;&#x2e;&#103;&#105;&#x74;&#x68;&#117;&#x62;&#46;&#99;&#111;&#x6d;">git@ssh.github.com</a>: Permission denied (publickey).<br>fatal: Could not read from remote repository.</p>
 <p>Please make sure you have the correct access rights<br>and the repository exists.</p>
 <h2 id="问题排查"><a href="#问题排查" class="headerlink" title="问题排查"></a>问题排查</h2><p>搜索方案，大多数是说没有配置公钥，但我配置了</p>
-<p>没有配置的话可以使用以下命令<br>ssh-keygen -t rsa -C “<a href="mailto:&#101;&#x6d;&#97;&#x69;&#108;&#x40;&#120;&#120;&#120;&#x2e;&#x63;&#x6f;&#x6d;">email@xxx.com</a>“</p>
+<p>没有配置的话可以使用以下命令<br>ssh-keygen -t rsa -C “<a href="mailto:&#101;&#x6d;&#x61;&#x69;&#x6c;&#64;&#x78;&#x78;&#120;&#46;&#x63;&#x6f;&#x6d;">email@xxx.com</a>“</p>
 <p>cat ~&#x2F;.ssh&#x2F;id_rsa.pub </p>
-<p>命令行输入 ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#64;&#103;&#x69;&#x74;&#x68;&#117;&#x62;&#x2e;&#99;&#111;&#x6d;">git@github.com</a></p>
-<p>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>Permissions 0755 for ‘&#x2F;Users&#x2F;xxx&#x2F;.ssh&#x2F;id_rsa’ are too open.<br>It is required that your private key files are NOT accessible by others.<br>This private key will be ignored.<br>Load key “&#x2F;Users&#x2F;xxx&#x2F;.ssh&#x2F;id_rsa”: bad permissions<br><a href="mailto:&#x67;&#105;&#116;&#x40;&#x73;&#x73;&#104;&#46;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#46;&#x63;&#111;&#x6d;">git@ssh.github.com</a>: Permission denied (publickey).</p>
+<p>命令行输入 ssh -T <a href="mailto:&#103;&#x69;&#x74;&#64;&#103;&#105;&#x74;&#104;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;">git@github.com</a></p>
+<p>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>Permissions 0755 for ‘&#x2F;Users&#x2F;xxx&#x2F;.ssh&#x2F;id_rsa’ are too open.<br>It is required that your private key files are NOT accessible by others.<br>This private key will be ignored.<br>Load key “&#x2F;Users&#x2F;xxx&#x2F;.ssh&#x2F;id_rsa”: bad permissions<br><a href="mailto:&#103;&#105;&#116;&#64;&#x73;&#115;&#x68;&#x2e;&#x67;&#105;&#x74;&#104;&#117;&#x62;&#46;&#x63;&#111;&#109;">git@ssh.github.com</a>: Permission denied (publickey).</p>
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>修改 id_rsa 权限<br>chmod 700 ~&#x2F;.ssh&#x2F;id_rsa</p>
-<p>ssh -T <a href="mailto:&#x67;&#x69;&#116;&#64;&#103;&#105;&#x74;&#x68;&#x75;&#98;&#46;&#99;&#x6f;&#109;">git@github.com</a></p>
+<p>ssh -T <a href="mailto:&#x67;&#105;&#116;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#x62;&#x2e;&#99;&#111;&#x6d;">git@github.com</a></p>
 <p>Hi xxx! You’ve successfully authenticated, but GitHub does not provide shell access.</p>
 <p>问题解决参考：<br>1.<a target="_blank" rel="noopener" href="https://blog.csdn.net/Figure_hb/article/details/90754146">WARNING: UNPROTECTED PRIVATE KEY FILE！</a></p>
 
@@ -179,7 +179,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2024/03/12/git-clone-%E6%8A%A5%E9%94%99Permission-denied-publickey/" data-id="cuidTZonMh84WhozYOz0L4BRQ" data-title="git clone 报错Permission denied (publickey)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2024/03/12/git-clone-%E6%8A%A5%E9%94%99Permission-denied-publickey/" data-id="cuidJ045S7Fm7guLGOzUcBGuG" data-title="git clone 报错Permission denied (publickey)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -247,7 +247,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2022/05/23/hexo%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99/" data-id="cuidAO9G0-n0hkavFNv6XaLkd" data-title="hexo部署报错" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2022/05/23/hexo%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99/" data-id="cuidqlc46eYuMyGU8R8F9sTnI" data-title="hexo部署报错" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -300,7 +300,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2021/11/16/h5%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/" data-id="cuid1-TgLIgcbCuYcCEjAVycR" data-title="h5开发记录" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2021/11/16/h5%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/" data-id="cuidkdMz9iU5_5P8k-AsuN6lZ" data-title="h5开发记录" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -369,7 +369,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2020/02/24/Mac%E4%B8%8B%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE%E5%BF%AB%E6%8D%B7%E9%94%AE/" data-id="cuid8kUlYhLYSI4NWboNJc32b" data-title="Mac下百度脑图快捷键" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2020/02/24/Mac%E4%B8%8B%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE%E5%BF%AB%E6%8D%B7%E9%94%AE/" data-id="cuidRDdQPXKzstLrZSi8CAYkG" data-title="Mac下百度脑图快捷键" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -738,7 +738,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2020/02/24/Mac%E4%B8%8BChrome%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%A7%E5%85%A8/" data-id="cuidHIyewPy2_ZXQYPnAWkSfV" data-title="Mac下Chrome快捷键大全" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2020/02/24/Mac%E4%B8%8BChrome%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%A7%E5%85%A8/" data-id="cuidEdsGA7icWn-c8-A5fbWqz" data-title="Mac下Chrome快捷键大全" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -794,7 +794,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2020/01/15/atom-%E6%94%AF%E6%8C%81%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" data-id="cuid4QbHewPJOOxfvyEoW9fVg" data-title="atom 支持微信小程序开发环境" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2020/01/15/atom-%E6%94%AF%E6%8C%81%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" data-id="cuidmOK8elPXbgdFvb4UuHWG9" data-title="atom 支持微信小程序开发环境" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -849,7 +849,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2020/01/12/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7%E7%89%B9%E6%80%A7/" data-id="cuidppUJp8m6iIS3X6lY7Gf0P" data-title="对象的属性特性" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2020/01/12/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7%E7%89%B9%E6%80%A7/" data-id="cuidsuPz46t4m1c1JFgrdl72j" data-title="对象的属性特性" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -992,7 +992,7 @@ translate
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2019/11/01/HTML%E5%85%83%E7%B4%A0%E7%9A%84%E5%B1%9E%E6%80%A7/" data-id="cuid0vlwuQQpFlK0qePuZC6A7" data-title="HTML元素的属性" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2019/11/01/HTML%E5%85%83%E7%B4%A0%E7%9A%84%E5%B1%9E%E6%80%A7/" data-id="cuidYeD-on96XCxw01jdp6Dlx" data-title="HTML元素的属性" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -1040,7 +1040,7 @@ translate
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2019/10/30/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%B8%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6%E5%8F%8Ajs%E5%BA%93/" data-id="cuidIG4XZZFU3GYTdwVnEDLp6" data-title="移动端常用的工具软件及js库" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2019/10/30/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%B8%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6%E5%8F%8Ajs%E5%BA%93/" data-id="cuidwvqOuabN7SEuaOJBH0yzW" data-title="移动端常用的工具软件及js库" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
