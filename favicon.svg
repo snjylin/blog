@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- 云朵 -->
+  <path d="M20 28 C20 20 28 18 32 22 C36 18 44 20 44 28 C48 28 48 34 44 34 L24 34 C20 34 18 30 20 28 Z" 
+        fill="none" stroke="#8b5a2b" stroke-width="2.5" stroke-linejoin="round" />
+  <!-- 芽茎 -->
+  <path d="M32 34 L32 48" fill="none" stroke="#8b5a2b" stroke-width="2.5" stroke-linecap="round" />
+  <!-- 芽叶 -->
+  <path d="M32 44 L28 40 M32 44 L36 40" fill="none" stroke="#8b5a2b" stroke-width="2" stroke-linecap="round" />
+  <!-- 小脚印在芽旁 -->
+  <circle cx="40" cy="48" r="1.5" fill="#8b5a2b" />
+  <circle cx="43" cy="50" r="1.2" fill="#8b5a2b" />
+  <circle cx="37" cy="50" r="1.2" fill="#8b5a2b" />
+</svg>
