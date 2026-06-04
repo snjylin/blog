@@ -14,7 +14,7 @@
 <meta property="og:description" content="问题背景post请求时url参数中带有&amp;等特殊符号无法传递完整的url 解决方案javascript 实现方法avascript中的编码有三种方法:escape（不推荐，对ASCII符号正确编码）、encodeURI、encodeURIComponent escape简单来说，escape是对字符串(string)进行编码(而另外两种是对URL)，作用是让它们在所有电脑上可读。编码之后的效">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-11-06T03:58:59.000Z">
-<meta property="article:modified_time" content="2026-06-04T16:22:20.891Z">
+<meta property="article:modified_time" content="2026-06-04T16:56:01.652Z">
 <meta property="article:author" content="阿寻">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="ajax">
@@ -130,7 +130,7 @@
 <h6 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h6><p>已编码的 string 的副本。其中某些字符被替换成了十六进制的转义序列。<br>说明<br>该方法不会对 ASCII 字母和数字进行编码，也不会对下面这些 ASCII 标点符号进行编码： * @ _ + . &#x2F; 。其他所有的字符都会被转义序列替换。</p>
 <h6 id="提示和注释"><a href="#提示和注释" class="headerlink" title="提示和注释"></a>提示和注释</h6><p>提示：可以使用 <code>unescape()</code> 对 <code>escape()</code> 编码的字符串进行解码。<br>注释：ECMAScript v3 反对使用该方法，应用使用 <code>decodeURI()</code> 和 <code>decodeURIComponent()</code> 替代它。</p>
 <h4 id="encodeURI"><a href="#encodeURI" class="headerlink" title="encodeURI"></a>encodeURI</h4><p><code>encodeURI</code>：用于对网址编码(不包含参数)<br><code>encodeURI</code>不编码字符有82个：<code>!</code> ，<code>#</code> ，<code>$</code> ，<code>&amp;</code> ，<code>&#39;</code> ，<code>(</code> ，<code>)</code> ，<code>*</code> ，<code>+</code> ，<code>,</code> ，<code>-</code> ，<code>.</code> ，<code>/</code> ，<code>:</code> ，<code>;</code> ，<code>=</code> ，<code>?</code> ，<code>@</code> ，<code>_</code> ，<code>~</code> ，<code>0-9</code> ，<code>a-z</code> ，<code>A-Z</code><br><code>encodeURI</code>就是为这个而设计的。<code>encodeURI</code>不对URI中的特殊字符进行编码，如冒号(:)、斜杠(&#x2F;)。下面看个示例：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">encodeURI(&quot;https://www.secretbase.vip/ &quot;)  // https://www.secretbase.vip/%20</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">encodeURI(&quot;/ &quot;)  // /%20</span><br></pre></td></tr></table></figure>
 <p>可以看到仅仅把空格替换成了20%，所以此方法可用于对网址进行编码。<br>由于encodeURI不对冒号(:)、斜杠(&#x2F;)进行编码，所以如果参数(如把网址作为参数)中包含冒号(:)、斜杠(&#x2F;)，就会解析出错，所以此方法不能对参数进行编码。</p>
 <h6 id="定义和用法-1"><a href="#定义和用法-1" class="headerlink" title="定义和用法"></a>定义和用法</h6><p><code>encodeURI()</code> 函数可把字符串作为 URI 进行编码。</p>
 <h6 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">encodeURI(URIstring)</span><br></pre></td></tr></table></figure>
@@ -174,7 +174,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2018/11/06/AJAX%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/" data-id="cuidNbTXivfcFRRa4h0GHVSHB" data-title="AJAX编码问题" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2018/11/06/AJAX%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/" data-id="cuidYUPRGlwh_Yvq-2bbnQF77" data-title="AJAX编码问题" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
