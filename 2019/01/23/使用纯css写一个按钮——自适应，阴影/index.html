@@ -14,7 +14,7 @@
 <meta property="og:description" content="背景制作h5页面的自适应宽度按钮，开始使用背景图制作，把按钮两端切出来，中间区域单独切出来宽一像素图沿x轴重复，但在不同客户端浏览器表现不一致（遇到的是android的某款机型显示有问题，大概用图片仍可以调好，没做尝试），之后考虑直接用css写按钮效果 实现过程中遇到的问题关于阴影部分使用box-shadow属性设置内阴影、外阴影、内发光、外发光语法 1box-shadow: h-shadow(必">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-01-23T06:57:51.000Z">
-<meta property="article:modified_time" content="2023-05-31T11:54:22.000Z">
+<meta property="article:modified_time" content="2026-06-04T16:22:20.890Z">
 <meta property="article:author" content="阿寻">
 <meta property="article:tag" content="css">
 <meta property="article:tag" content="前端">
@@ -114,7 +114,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-shadow: h-shadow(必需) v-shadow(必需) blur(可选) spread(可选) color(可选) inset(可选);</span><br></pre></td></tr></table></figure>
 <p>可以用逗号分隔阴影列表设置多个阴影叠加效果，层级关系位置越靠前面的显示层级越高，例如：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-shadow:  0px 0px 0px 10px #f00, 0px 0px 0px 20px #fc0, 0px 0px 0px 30px #ff0, 0px 0px 0px 40px #0f0, 0px 0px 0px 50px #0fe, 0px 0px 0px 60px #00f, 0px 0px 0px 70px #f0f;</span><br></pre></td></tr></table></figure>
-<p><a target="_blank" rel="noopener" href="https://blog.secretbase.vip/Photoshop%E6%8A%95%E5%BD%B1%E4%B8%8ECSS%E4%B8%ADbox-shadow%E7%9A%84%E8%BD%AC%E6%8D%A2.html">Photoshop投影与CSS中box-shadow的转换</a></p>
+<p><a href="/blog/Photoshop%E6%8A%95%E5%BD%B1%E4%B8%8ECSS%E4%B8%ADbox-shadow%E7%9A%84%E8%BD%AC%E6%8D%A2.html">Photoshop投影与CSS中box-shadow的转换</a></p>
 <h4 id="关于阴影使用了混合模式，正片叠底和滤色等"><a href="#关于阴影使用了混合模式，正片叠底和滤色等" class="headerlink" title="关于阴影使用了混合模式，正片叠底和滤色等"></a>关于阴影使用了混合模式，正片叠底和滤色等</h4><p>阴影颜色使用了正片叠底，暂时是使用了叠完之后的颜色做为阴影颜色&#x3D;&#x3D;<br>如果是元素,可以使用CSS3新特性: mix-blend-mode<br>文档描述为：</p>
 <blockquote>
 <p>mix-blend-mode CSS 属性描述了元素的内容应该与元素的直系父元素的内容和元素的背景如何混合。</p>
@@ -128,7 +128,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2019/01/23/%E4%BD%BF%E7%94%A8%E7%BA%AFcss%E5%86%99%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE%E2%80%94%E2%80%94%E8%87%AA%E9%80%82%E5%BA%94%EF%BC%8C%E9%98%B4%E5%BD%B1/" data-id="cuid1H6W9BQJi2FZIMmPxQiQC" data-title="使用纯css写一个按钮——自适应，阴影" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2019/01/23/%E4%BD%BF%E7%94%A8%E7%BA%AFcss%E5%86%99%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE%E2%80%94%E2%80%94%E8%87%AA%E9%80%82%E5%BA%94%EF%BC%8C%E9%98%B4%E5%BD%B1/" data-id="cuidgUmIeKIvph9XWchI8AaXu" data-title="使用纯css写一个按钮——自适应，阴影" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       

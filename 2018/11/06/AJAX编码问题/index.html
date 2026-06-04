@@ -14,7 +14,7 @@
 <meta property="og:description" content="问题背景post请求时url参数中带有&amp;等特殊符号无法传递完整的url 解决方案javascript 实现方法avascript中的编码有三种方法:escape（不推荐，对ASCII符号正确编码）、encodeURI、encodeURIComponent escape简单来说，escape是对字符串(string)进行编码(而另外两种是对URL)，作用是让它们在所有电脑上可读。编码之后的效">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-11-06T03:58:59.000Z">
-<meta property="article:modified_time" content="2023-05-31T11:54:22.000Z">
+<meta property="article:modified_time" content="2026-06-04T16:22:20.891Z">
 <meta property="article:author" content="阿寻">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="ajax">
@@ -150,7 +150,7 @@
 <h6 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h6><p>该方法不会对 ASCII 字母和数字进行编码，也不会对这些 ASCII 标点符号进行编码： - _ . ! ~ * ‘ ( ) 。<br>该方法的目的是对 URI 进行完整的编码，因此对以下在 URI 中具有特殊含义的 ASCII 标点符号，<code>encodeURI()</code> 函数是不会进行转义的：;&#x2F;?:@&amp;&#x3D;+$,#</p>
 <h6 id="提示和注释-1"><a href="#提示和注释-1" class="headerlink" title="提示和注释"></a>提示和注释</h6><p>提示：如果 URI 组件中含有分隔符，比如 ? 和 #，则应当使用 encodeURIComponent() 方法分别对各组件进行编码。</p>
 <h4 id="encodeURIComponent"><a href="#encodeURIComponent" class="headerlink" title="encodeURIComponent"></a>encodeURIComponent</h4><p><code>encodeURIComponent</code>:用于对网址参数进行编码<br><code>encodeURIComponent</code>不编码字符有71个：<code>!</code> ，<code>&#39;</code> ，<code>(</code> ，<code>)</code> ，<code>*</code> ，<code>-</code> ，<code>.</code> ，<code>_</code> ，<code>~</code> ，<code>0-9</code> ，<code>a-z</code> ，<code>A-Z</code><br>可以看到此方法对:&#x2F;都进行了编码，所以不能用它来对网址进行编码。由于此方法对中文，空格，井号(#)，斜线(&#x2F;)，冒号(:)都进行了编码，所以适合对URI中的参数进行编码。看下面的示例：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var title=&quot;慢时光小栈&quot;;</span><br><span class="line">var url=&quot;https://blog.secretbase.vip/categories/学习笔记/?title=&quot; + title;</span><br><span class="line">console.log(encodeURIComponent(url)); // https%3A%2F%2Fblog.secretbase.vip%2Fcategories%2F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F%3Ftitle%3D%E6%85%A2%E6%97%B6%E5%85%89%E5%B0%8F%E6%A0%88</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var title=&quot;慢时光小栈&quot;;</span><br><span class="line">var url=&quot;/blog/categories/学习笔记/?title=&quot; + title;</span><br><span class="line">console.log(encodeURIComponent(url)); // https%3A%2F%2Fblog.secretbase.vip%2Fcategories%2F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F%3Ftitle%3D%E6%85%A2%E6%97%B6%E5%85%89%E5%B0%8F%E6%A0%88</span><br></pre></td></tr></table></figure>
 <h6 id="定义和用法-2"><a href="#定义和用法-2" class="headerlink" title="定义和用法"></a>定义和用法</h6><p><code>encodeURIComponent()</code> 函数可把字符串作为 URI 组件进行编码。</p>
 <h6 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">encodeURIComponent(URIstring)</span><br></pre></td></tr></table></figure>
 <table>
@@ -174,7 +174,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2018/11/06/AJAX%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/" data-id="cuidmb8p7fGuE7Fic4CyhRoSv" data-title="AJAX编码问题" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2018/11/06/AJAX%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/" data-id="cuid8EyYaQv6TNvI2b8_0qbrq" data-title="AJAX编码问题" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       

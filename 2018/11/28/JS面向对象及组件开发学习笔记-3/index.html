@@ -14,7 +14,7 @@
 <meta property="og:description" content="组件开发对象的多种表现形式提高对象的复用性如何配置参数和默认参数例子：拖拽例子：弹窗 例子：拖拽的组件开发例子：弹窗的组件开发 复杂组件开发之自定义事件组件  对面向对象的深入应用（UI组件，功能组件）  将配置参数、方法、事件，三者进行分离创建自定义事件    有利于多人协作开发代码    如何去挂载自定义事件与事件函数 自定义事件：让函数能够具备事件的某些特性（绑定事件互相不会覆盖） 1234">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-11-28T10:24:37.000Z">
-<meta property="article:modified_time" content="2023-05-31T11:54:22.000Z">
+<meta property="article:modified_time" content="2026-06-04T16:19:53.660Z">
 <meta property="article:author" content="阿寻">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="前端">
@@ -110,7 +110,7 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h4 id="组件开发"><a href="#组件开发" class="headerlink" title="组件开发"></a>组件开发</h4><p>对象的多种表现形式<br>提高对象的复用性<br>如何配置参数和默认参数<br>例子：拖拽<br>例子：弹窗</p>
-<p>例子：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91-%E6%8B%96%E6%8B%BD.html">拖拽的组件开发</a><br>例子：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91-%E5%BC%B9%E7%AA%97.html">弹窗的组件开发</a></p>
+<p>例子：<a href="/demo/view/%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91-%E6%8B%96%E6%8B%BD.html">拖拽的组件开发</a><br>例子：<a href="/demo/view/%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91-%E5%BC%B9%E7%AA%97.html">弹窗的组件开发</a></p>
 <h4 id="复杂组件开发之自定义事件"><a href="#复杂组件开发之自定义事件" class="headerlink" title="复杂组件开发之自定义事件"></a>复杂组件开发之自定义事件</h4><p>组件<br>  对面向对象的深入应用（UI组件，功能组件）<br>  将配置参数、方法、事件，三者进行分离<br>创建自定义事件<br>    有利于多人协作开发代码<br>    如何去挂载自定义事件与事件函数</p>
 <p>自定义事件：让函数能够具备事件的某些特性（绑定事件互相不会覆盖）</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&#x27;show&#x27;,function()&#123;</span><br><span class="line">  alert(1);</span><br><span class="line">&#125;,false);</span><br><span class="line">window.addEventListener(&#x27;show&#x27;,function()&#123;</span><br><span class="line">  alert(2);</span><br><span class="line">&#125;,false);</span><br><span class="line">window.addEventListener(&#x27;show&#x27;,function()&#123;</span><br><span class="line">  alert(3);</span><br><span class="line">&#125;,false);</span><br><span class="line"></span><br><span class="line">show(); //主动触发自定义事件</span><br></pre></td></tr></table></figure>
@@ -120,13 +120,13 @@
 <p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener">EventTarget.addEventListener()</a></p>
 <h4 id="JS综合应用"><a href="#JS综合应用" class="headerlink" title="JS综合应用"></a>JS综合应用</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;div1&quot;&gt;</span><br><span class="line">  &lt;div id=&quot;div2&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  var oDiv = document.getElementById(&#x27;div1&#x27;);</span><br><span class="line">  oDiv.onmouseover = function()&#123;&#125;;</span><br><span class="line">  oDiv.onmouseout = function()&#123;&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <p>子集影响父级的bug（在IE下使用onmouseover和onmouseout时）<br>解决方案：<br>  1.js：onmouseenter onmouseleave（子集不会影响父级）（最早IE支持，可能会有兼容性问题，做兼容非常麻烦）<br>  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function elContains(a, b)&#123; //判断两个元素是否是嵌套关系</span><br><span class="line">  return a.contains ? a != b &amp;&amp; a.contains(b) : !!(a.compareDocumentPosition(b) &amp; 16);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>  2.css：加一个层</p>
-<p>例子：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/%E5%9B%BE%E7%89%87%E6%94%BE%E5%A4%A7%E9%95%9C%E6%95%88%E6%9E%9C.html">图片放大镜效果</a><br>例子：<a target="_blank" rel="noopener" href="https://demo.secretbase.vip/view/%E8%8B%B9%E6%9E%9C%E8%8F%9C%E5%8D%95.html">苹果菜单</a></p>
+<p>例子：<a href="/demo/view/%E5%9B%BE%E7%89%87%E6%94%BE%E5%A4%A7%E9%95%9C%E6%95%88%E6%9E%9C.html">图片放大镜效果</a><br>例子：<a href="/demo/view/%E8%8B%B9%E6%9E%9C%E8%8F%9C%E5%8D%95.html">苹果菜单</a></p>
 
       
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2018/11/28/JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%8F%8A%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-3/" data-id="cuidihNPMxvhC1BSCHPIXyBUv" data-title="JS面向对象及组件开发学习笔记(3)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2018/11/28/JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%8F%8A%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-3/" data-id="cuidutz00fGJGaeWyyXLe0pZ6" data-title="JS面向对象及组件开发学习笔记(3)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
