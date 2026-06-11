@@ -6,15 +6,15 @@
   
   <title>MacOS 处理人事考试网照片方案/通过wine执行exe文件 | 一半在街头，一半在云端</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="1、安装wine，在终端输入 1brew install --cask wine-stable 安装成功 1提示:🍺  wine-stable was successfully installed! 运行 1wine 照片处理工具.exe  报错 1011c:err:module:import_dll Library MFC42.DLL not found 这是导致程序无法运行的主要原因。你尝试">
+  <meta name="description" content="1、安装wine，在终端输入brew install --cask wine-stable 安装成功提示:🍺  wine-stable was successfully installed! 运行wine 照片处理工具.exe  报错011c:err:module:import_dll Library MFC42.DLL not found 这是导致程序无法运行的主要原因。你尝试运行的那个 .e">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MacOS 处理人事考试网照片方案&#x2F;通过wine执行exe文件">
 <meta property="og:url" content="https://snjylin.github.io/blog/2026/06/10/MacOS-%E5%A4%84%E7%90%86%E4%BA%BA%E4%BA%8B%E8%80%83%E8%AF%95%E7%BD%91%E7%85%A7%E7%89%87%E6%96%B9%E6%A1%88-%E9%80%9A%E8%BF%87wine%E6%89%A7%E8%A1%8Cexe%E6%96%87%E4%BB%B6/index.html">
 <meta property="og:site_name" content="一半在街头，一半在云端">
-<meta property="og:description" content="1、安装wine，在终端输入 1brew install --cask wine-stable 安装成功 1提示:🍺  wine-stable was successfully installed! 运行 1wine 照片处理工具.exe  报错 1011c:err:module:import_dll Library MFC42.DLL not found 这是导致程序无法运行的主要原因。你尝试">
+<meta property="og:description" content="1、安装wine，在终端输入brew install --cask wine-stable 安装成功提示:🍺  wine-stable was successfully installed! 运行wine 照片处理工具.exe  报错011c:err:module:import_dll Library MFC42.DLL not found 这是导致程序无法运行的主要原因。你尝试运行的那个 .e">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-06-09T18:52:11.000Z">
-<meta property="article:modified_time" content="2026-06-11T12:41:10.961Z">
+<meta property="article:modified_time" content="2026-06-11T12:43:27.462Z">
 <meta property="article:author" content="阿寻">
 <meta property="article:tag" content="MAC">
 <meta property="article:tag" content="wine">
@@ -109,33 +109,24 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>1、安装wine，在终端输入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install --cask wine-stable</span><br></pre></td></tr></table></figure>
-<p>安装成功</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">提示:🍺  wine-stable was successfully installed!</span><br></pre></td></tr></table></figure>
-<p>运行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wine 照片处理工具.exe </span><br></pre></td></tr></table></figure>
-<p>报错</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">011c:err:module:import_dll Library MFC42.DLL not found</span><br></pre></td></tr></table></figure>
-<p>这是导致程序无法运行的主要原因。你尝试运行的那个 .exe 程序需要 MFC42.DLL（Microsoft Foundation Classes 库），但当前 Wine 环境中没有这个库。<br>安装缺失的 MFC42.DLL：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winetricks mfc42</span><br></pre></td></tr></table></figure>
-<p>报错</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zsh: command not found: winetricks</span><br></pre></td></tr></table></figure>
-<p>这个提示是说系统找不到 winetricks 这个命令。这通常意味着它还没安装，或者已经安装但系统找不到它的位置。<br>安装 Winetricks：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install winetricks</span><br></pre></td></tr></table></figure>
-<p>重新安装缺失的 MFC42.DLL：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winetricks mfc42</span><br></pre></td></tr></table></figure>
-<p>运行照片处理工具.exe</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wine 照片处理工具.exe</span><br></pre></td></tr></table></figure>
-
-
+        <p>1、安装wine，在终端输入<br><code>brew install --cask wine-stable</code></p>
+<p>安装成功<br><code>提示:🍺  wine-stable was successfully installed!</code></p>
+<p>运行<br><code>wine 照片处理工具.exe </code></p>
+<p>报错<br><code>011c:err:module:import_dll Library MFC42.DLL not found</code></p>
+<p>这是导致程序无法运行的主要原因。你尝试运行的那个 .exe 程序需要 MFC42.DLL（Microsoft Foundation Classes 库），但当前 Wine 环境中没有这个库。</p>
+<p>安装缺失的 MFC42.DLL：<br><code>winetricks mfc42</code></p>
+<p>报错<br><code>zsh: command not found: winetricks</code></p>
+<p>这个提示是说系统找不到 winetricks 这个命令。这通常意味着它还没安装，或者已经安装但系统找不到它的位置。</p>
+<p>安装 Winetricks：<br><code>brew install winetricks</code><br>重新安装缺失的 MFC42.DLL：</p>
+<p><code>winetricks mfc42</code></p>
+<p>运行照片处理工具.exe<br><code>wine 照片处理工具.exe</code></p>
 <p><a target="_blank" rel="noopener" href="https://xie.infoq.cn/article/0a9f4a3111aa20783cefb29b6">参考</a></p>
 
       
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2026/06/10/MacOS-%E5%A4%84%E7%90%86%E4%BA%BA%E4%BA%8B%E8%80%83%E8%AF%95%E7%BD%91%E7%85%A7%E7%89%87%E6%96%B9%E6%A1%88-%E9%80%9A%E8%BF%87wine%E6%89%A7%E8%A1%8Cexe%E6%96%87%E4%BB%B6/" data-id="cuidullWPTlaT3eyZmDu7Os_Q" data-title="MacOS 处理人事考试网照片方案/通过wine执行exe文件" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2026/06/10/MacOS-%E5%A4%84%E7%90%86%E4%BA%BA%E4%BA%8B%E8%80%83%E8%AF%95%E7%BD%91%E7%85%A7%E7%89%87%E6%96%B9%E6%A1%88-%E9%80%9A%E8%BF%87wine%E6%89%A7%E8%A1%8Cexe%E6%96%87%E4%BB%B6/" data-id="cuidrUhSbIvOV9b6q3F7yNBVP" data-title="MacOS 处理人事考试网照片方案/通过wine执行exe文件" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
