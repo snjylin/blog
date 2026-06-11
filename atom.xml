@@ -10,7 +10,50 @@
   <rights>All rights reserved 2026, 阿寻</rights>
   <subtitle>我是阿寻。一个田野调查者。一半在街头收集人间，一半在云端放牧想象。这里是我的赤脚漫游指南。</subtitle>
   <title>一半在街头，一半在云端</title>
-  <updated>2024-05-22T04:34:57.000Z</updated>
+  <updated>2026-06-11T12:31:44.327Z</updated>
+  <entry>
+    <author>
+      <name>阿寻</name>
+    </author>
+    <category term="学习笔记" scheme="https://snjylin.github.io/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="技术" scheme="https://snjylin.github.io/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/"/>
+    <category term="前端" scheme="https://snjylin.github.io/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://snjylin.github.io/blog/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="开发" scheme="https://snjylin.github.io/blog/tags/%E5%BC%80%E5%8F%91/"/>
+    <content>
+      <![CDATA[<p>扫码登录微信开发者工具，发现多年前开发过的的公司公众号账号居然还有开发者权限。<br>提示：调试过程中开发者可通过以下公众号获得你的相关信息。</p><p>解除绑定：</p><p>“调试过程中开发者可通过以下公众号获得你的相关信息”是微信开发者工具扫码登录时的正常授权提示，显示的是你当前绑定的、具有该小程序开发权限的公众号；若想取消，需在对应公众号后台解绑你的微信号。‌</p><p>打开微信，搜索并关注 ‌“公众平台安全助手”‌ 公众号；<br>进入后点击 ‌“绑定查询”‌ → 查看 ‌“微信号绑定账号”‌ 列表；<br>找到相关公众号，点击 ‌“解绑”‌ 即可；<br>解绑后，重新扫码登录开发者工具时该提示将不再出现（前提是该公众号已无你的开发权限）。‌‌<br>若已无法访问原公众号（如离职项目），‌解绑后仍可能因项目仍保留你的开发者身份而短暂显示提示‌，但不会泄露新项目数据；彻底清除需原公众号管理员在【公众号后台 → 开发者工具】中移除你的微信号。<br>注意：此提示‌仅用于说明调试权限关联，并非主动收集信息‌，解绑不影响你用其他公众号正常开发。‌‌</p>]]>
+    </content>
+    <id>https://snjylin.github.io/blog/2026/06/11/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7%E8%A7%A3%E7%BB%91%E5%85%AC%E4%BC%97%E5%8F%B7%E6%9D%83%E9%99%90/</id>
+    <link href="https://snjylin.github.io/blog/2026/06/11/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7%E8%A7%A3%E7%BB%91%E5%85%AC%E4%BC%97%E5%8F%B7%E6%9D%83%E9%99%90/"/>
+    <published>2026-06-11T12:27:15.000Z</published>
+    <summary>
+      <![CDATA[<p>扫码登录微信开发者工具，发现多年前开发过的的公司公众号账号居然还有开发者权限。<br>提示：调试过程中开发者可通过以下公众号获得你的相关信息。</p>
+<p>解除绑定：</p>
+<p>“调试过程中开发者可通过以下公众号获得你的相关信息”是微信开发者工具扫码登录时的正常授权提]]>
+    </summary>
+    <title>微信开发者工具解绑公众号权限</title>
+    <updated>2026-06-11T12:31:44.327Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>阿寻</name>
+    </author>
+    <category term="MAC" scheme="https://snjylin.github.io/blog/tags/MAC/"/>
+    <category term="考试" scheme="https://snjylin.github.io/blog/tags/%E8%80%83%E8%AF%95/"/>
+    <category term="wine" scheme="https://snjylin.github.io/blog/tags/wine/"/>
+    <content>
+      <![CDATA[<p>1、安装wine，在终端输入</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install --cask wine-stable</span><br></pre></td></tr></table></figure><p>安装成功</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">提示:🍺  wine-stable was successfully installed!</span><br></pre></td></tr></table></figure><p>运行</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wine 照片处理工具.exe </span><br></pre></td></tr></table></figure><p>报错</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">011c:err:module:import_dll Library MFC42.DLL not found</span><br></pre></td></tr></table></figure><p>这是导致程序无法运行的主要原因。你尝试运行的那个 .exe 程序需要 MFC42.DLL（Microsoft Foundation Classes 库），但当前 Wine 环境中没有这个库。<br>安装缺失的 MFC42.DLL：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winetricks mfc42</span><br></pre></td></tr></table></figure><p>报错</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zsh: command not found: winetricks</span><br></pre></td></tr></table></figure><p>这个提示是说系统找不到 winetricks 这个命令。这通常意味着它还没安装，或者已经安装但系统找不到它的位置。<br>安装 Winetricks：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install winetricks</span><br></pre></td></tr></table></figure><p>重新安装缺失的 MFC42.DLL：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winetricks mfc42</span><br></pre></td></tr></table></figure><p>运行照片处理工具.exe</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wine 照片处理工具.exe</span><br></pre></td></tr></table></figure><p><a href="https://xie.infoq.cn/article/0a9f4a3111aa20783cefb29b6">参考</a></p>]]>
+    </content>
+    <id>https://snjylin.github.io/blog/2026/06/10/MacOS-%E5%A4%84%E7%90%86%E4%BA%BA%E4%BA%8B%E8%80%83%E8%AF%95%E7%BD%91%E7%85%A7%E7%89%87%E6%96%B9%E6%A1%88-%E9%80%9A%E8%BF%87wine%E6%89%A7%E8%A1%8Cexe%E6%96%87%E4%BB%B6/</id>
+    <link href="https://snjylin.github.io/blog/2026/06/10/MacOS-%E5%A4%84%E7%90%86%E4%BA%BA%E4%BA%8B%E8%80%83%E8%AF%95%E7%BD%91%E7%85%A7%E7%89%87%E6%96%B9%E6%A1%88-%E9%80%9A%E8%BF%87wine%E6%89%A7%E8%A1%8Cexe%E6%96%87%E4%BB%B6/"/>
+    <published>2026-06-09T18:52:11.000Z</published>
+    <summary>
+      <![CDATA[<p>1、安装wine，在终端输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td c]]>
+    </summary>
+    <title>MacOS 处理人事考试网照片方案/通过wine执行exe文件</title>
+    <updated>2026-06-09T19:07:49.169Z</updated>
+  </entry>
   <entry>
     <author>
       <name>阿寻</name>
@@ -48,7 +91,7 @@
     <category term="前端" scheme="https://snjylin.github.io/blog/tags/%E5%89%8D%E7%AB%AF/"/>
     <category term="git" scheme="https://snjylin.github.io/blog/tags/git/"/>
     <content>
-      <![CDATA[<h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><p>今天git push提交代码时被拒绝<br>提示 </p><p>Cloning into ‘xxx’…<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>Permissions 0755 for ‘&#x2F;Users&#x2F;xxx&#x2F;.ssh&#x2F;id_rsa’ are too open.<br>It is required that your private key files are NOT accessible by others.<br>This private key will be ignored.<br>Load key “&#x2F;Users&#x2F;xxx&#x2F;.ssh&#x2F;id_rsa”: bad permissions<br><a href="mailto:&#x67;&#x69;&#x74;&#x40;&#x73;&#115;&#104;&#46;&#103;&#x69;&#116;&#x68;&#117;&#x62;&#x2e;&#x63;&#111;&#109;">git@ssh.github.com</a>: Permission denied (publickey).<br>fatal: Could not read from remote repository.</p><p>Please make sure you have the correct access rights<br>and the repository exists.</p><h2 id="问题排查"><a href="#问题排查" class="headerlink" title="问题排查"></a>问题排查</h2><p>搜索方案，大多数是说没有配置公钥，但我配置了</p><p>没有配置的话可以使用以下命令<br>ssh-keygen -t rsa -C “<a href="mailto:&#101;&#109;&#97;&#105;&#x6c;&#x40;&#120;&#120;&#x78;&#46;&#99;&#x6f;&#109;">email@xxx.com</a>“</p><p>cat ~&#x2F;.ssh&#x2F;id_rsa.pub </p><p>命令行输入 ssh -T <a href="mailto:&#x67;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#104;&#117;&#x62;&#46;&#x63;&#111;&#109;">git@github.com</a></p><p>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>Permissions 0755 for ‘&#x2F;Users&#x2F;xxx&#x2F;.ssh&#x2F;id_rsa’ are too open.<br>It is required that your private key files are NOT accessible by others.<br>This private key will be ignored.<br>Load key “&#x2F;Users&#x2F;xxx&#x2F;.ssh&#x2F;id_rsa”: bad permissions<br><a href="mailto:&#x67;&#x69;&#116;&#x40;&#x73;&#115;&#104;&#x2e;&#103;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#109;">git@ssh.github.com</a>: Permission denied (publickey).</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>修改 id_rsa 权限<br>chmod 700 ~&#x2F;.ssh&#x2F;id_rsa</p><p>ssh -T <a href="mailto:&#x67;&#105;&#x74;&#64;&#x67;&#105;&#116;&#x68;&#x75;&#x62;&#46;&#x63;&#111;&#x6d;">git@github.com</a></p><p>Hi xxx! You’ve successfully authenticated, but GitHub does not provide shell access.</p><p>问题解决参考：<br>1.<a href="https://blog.csdn.net/Figure_hb/article/details/90754146">WARNING: UNPROTECTED PRIVATE KEY FILE！</a></p>]]>
+      <![CDATA[<h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><p>今天git push提交代码时被拒绝<br>提示 </p><p>Cloning into ‘xxx’…<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>Permissions 0755 for ‘&#x2F;Users&#x2F;xxx&#x2F;.ssh&#x2F;id_rsa’ are too open.<br>It is required that your private key files are NOT accessible by others.<br>This private key will be ignored.<br>Load key “&#x2F;Users&#x2F;xxx&#x2F;.ssh&#x2F;id_rsa”: bad permissions<br><a href="mailto:&#x67;&#x69;&#116;&#64;&#x73;&#x73;&#104;&#46;&#x67;&#105;&#116;&#104;&#117;&#x62;&#46;&#x63;&#111;&#x6d;">git@ssh.github.com</a>: Permission denied (publickey).<br>fatal: Could not read from remote repository.</p><p>Please make sure you have the correct access rights<br>and the repository exists.</p><h2 id="问题排查"><a href="#问题排查" class="headerlink" title="问题排查"></a>问题排查</h2><p>搜索方案，大多数是说没有配置公钥，但我配置了</p><p>没有配置的话可以使用以下命令<br>ssh-keygen -t rsa -C “<a href="mailto:&#x65;&#109;&#x61;&#x69;&#108;&#x40;&#x78;&#120;&#x78;&#x2e;&#99;&#111;&#109;">email@xxx.com</a>“</p><p>cat ~&#x2F;.ssh&#x2F;id_rsa.pub </p><p>命令行输入 ssh -T <a href="mailto:&#x67;&#x69;&#116;&#64;&#103;&#105;&#116;&#x68;&#117;&#x62;&#x2e;&#x63;&#x6f;&#109;">git@github.com</a></p><p>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>Permissions 0755 for ‘&#x2F;Users&#x2F;xxx&#x2F;.ssh&#x2F;id_rsa’ are too open.<br>It is required that your private key files are NOT accessible by others.<br>This private key will be ignored.<br>Load key “&#x2F;Users&#x2F;xxx&#x2F;.ssh&#x2F;id_rsa”: bad permissions<br><a href="mailto:&#x67;&#105;&#116;&#64;&#x73;&#x73;&#x68;&#46;&#103;&#105;&#x74;&#104;&#117;&#x62;&#46;&#99;&#x6f;&#x6d;">git@ssh.github.com</a>: Permission denied (publickey).</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>修改 id_rsa 权限<br>chmod 700 ~&#x2F;.ssh&#x2F;id_rsa</p><p>ssh -T <a href="mailto:&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#104;&#117;&#98;&#46;&#x63;&#x6f;&#109;">git@github.com</a></p><p>Hi xxx! You’ve successfully authenticated, but GitHub does not provide shell access.</p><p>问题解决参考：<br>1.<a href="https://blog.csdn.net/Figure_hb/article/details/90754146">WARNING: UNPROTECTED PRIVATE KEY FILE！</a></p>]]>
     </content>
     <id>https://snjylin.github.io/blog/2024/03/12/git-clone-%E6%8A%A5%E9%94%99Permission-denied-publickey/</id>
     <link href="https://snjylin.github.io/blog/2024/03/12/git-clone-%E6%8A%A5%E9%94%99Permission-denied-publickey/"/>
@@ -102,9 +145,9 @@
       <name>阿寻</name>
     </author>
     <category term="MAC" scheme="https://snjylin.github.io/blog/tags/MAC/"/>
+    <category term="快捷键" scheme="https://snjylin.github.io/blog/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     <category term="百度脑图" scheme="https://snjylin.github.io/blog/tags/%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE/"/>
     <category term="思维导图" scheme="https://snjylin.github.io/blog/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
-    <category term="快捷键" scheme="https://snjylin.github.io/blog/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     <content>
       <![CDATA[<p>在MAC下无法使用F2快捷键编辑节点<br>解决方案：双击某个节点，可以修改节点内容时，点击回车，此时不要再用鼠标操作，就可以使用键盘快捷键了</p><p>节点操作</p><p>​       <kbd>Enter</kbd> 插入兄弟节点</p><p>​       <kbd>Tab</kbd>, <kbd>Insert</kbd> 插入子节点</p><p>​       <kbd>Shift</kbd>+<kbd>Tab</kbd> 插入父节点</p><p>​       <kbd>Delete</kbd> 册除节点</p><p>​       <kbd>Up</kbd>, <kbd>Down</kbd>, <kbd>Left</kbd>, <kbd>Right</kbd> 节点导航</p><p>​       <kbd>Alt</kbd>+<kbd>Up</kbd>, <kbd>Down</kbd> 向上&#x2F;向下调整顺序</p><p>​       <kbd>/</kbd> 展开&#x2F;收起节点</p><p>​       <kbd>/</kbd>F2 编辑节点</p><p>​       <kbd>Shift</kbd>+<kbd>Enter</kbd> 文本换行</p><p>​       <kbd>Ctrl</kbd>+<kbd>A</kbd> 全选节点</p><p>​       <kbd>Ctrl</kbd>+<kbd>C</kbd> 复制节点</p><p>​       <kbd>Ctrl</kbd>+<kbd>X</kbd> 剪切节点</p><p>​       <kbd>Ctrl</kbd>+<kbd>V</kbd> 粘贴节点 </p><p>​       <kbd>Ctrl</kbd>+<kbd>B</kbd> 加粗</p><p>​       <kbd>Ctrl</kbd>+<kbd>I</kbd> 斜体</p><p>​       <kbd>Ctrl</kbd>+<kbd>F</kbd> 查找节点</p><p>视野控制</p><p>​<kbd>Alt</kbd>+<kbd>拖动</kbd>，<kbd>右键拖动</kbd> 拖动视野</p><p>​<kbd>滚轮</kbd>，<kbd>触摸板</kbd> 移动视野</p><p>​<kbd>空白处双击</kbd>，<kbd>Ctrl</kbd> +<kbd>Enter</kbd> 居中根节点</p><p>​<kbd>Ctrl</kbd> + <kbd>+</kbd>，<kbd>-</kbd> 放大&#x2F;缩小视野</p><p>布局</p><p>​<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd> 整理布局</p><p>后悔药</p><p>​<kbd>Ctrl</kbd>+<kbd>Z</kbd> 撤销</p><p>​<kbd>Ctrl</kbd>+<kbd>Y</kbd> 重做</p>]]>
     </content>
@@ -125,8 +168,8 @@
       <name>阿寻</name>
     </author>
     <category term="MAC" scheme="https://snjylin.github.io/blog/tags/MAC/"/>
-    <category term="快捷键" scheme="https://snjylin.github.io/blog/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     <category term="Chrome" scheme="https://snjylin.github.io/blog/tags/Chrome/"/>
+    <category term="快捷键" scheme="https://snjylin.github.io/blog/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     <content>
       <![CDATA[<p>最近一直在使用 MAC 机器，感觉很不错，只是有很多操作不适应，找不到地方，特别是 Chrome 的快捷键操作，下午就详细的查询了下 Chrome 在 Mac 中的快捷键，做下备忘，并希望帮到更多的人。</p><h3 id="1-标签页和窗口快捷键"><a href="#1-标签页和窗口快捷键" class="headerlink" title="1. 标签页和窗口快捷键"></a>1. 标签页和窗口快捷键</h3><table><thead><tr><th><strong>⌘-N</strong></th><th>打开新窗口。</th></tr></thead><tbody><tr><td><strong>⌘-T</strong></td><td>打开新标签页。</td></tr><tr><td><strong>⌘-Shift-N</strong></td><td>在隐身模式下打开新窗口。</td></tr><tr><td>按 <strong>⌘-O</strong>，然后选择文件。</td><td>在 Chrome 浏览器中打开计算机中的文件。</td></tr><tr><td>按住 <strong>⌘</strong> 的同时点击链接。或用鼠标中键（或鼠标滚轮）点击链接。</td><td>从后台在新标签页中打开链接。</td></tr><tr><td>按住 <strong>⌘-Shift</strong> 的同时点击链接。或按住 <strong>Shift</strong> 键的同时用鼠标中键（或鼠标滚轮）点击链接。</td><td>在新标签页中打开链接并切换到刚打开的标签页。</td></tr><tr><td>按住 <strong>Shift</strong> 键的同时点击链接。</td><td>在新窗口中打开链接。</td></tr><tr><td><strong>⌘-Shift-T</strong></td><td>重新打开上次关闭的标签页。Chrome 浏览器可记住最近关闭的 10 个标签页。</td></tr><tr><td>将标签页拖出标签栏。</td><td>在新窗口中打开标签页。</td></tr><tr><td>将标签页从标签栏拖到现有窗口中。</td><td>在现有窗口中打开标签页。</td></tr><tr><td>同时按 <strong>⌘-Option</strong> 和向右箭头键。</td><td>切换到下一个标签页。</td></tr><tr><td>同时按 <strong>⌘-Option</strong> 和向左箭头键。</td><td>切换到上一个标签页。</td></tr><tr><td><strong>⌘-W</strong></td><td>关闭当前标签页或弹出窗口。</td></tr><tr><td><strong>⌘-Shift-W</strong></td><td>关闭当前窗口。</td></tr><tr><td>点击并按住浏览器工具栏中的后退或前进箭头。</td><td>在新标签页中显示浏览历史记录。</td></tr><tr><td>按 <strong>Delete</strong> 或 <strong>⌘-[</strong></td><td>转到当前标签页的上一页浏览历史记录。</td></tr><tr><td>按 <strong>Shift-Delete</strong> 或 <strong>⌘-]</strong></td><td>转到当前标签页的下一页浏览历史记录。</td></tr><tr><td>按住 <strong>Shift</strong> 键的同时点击窗口左上角的 + 按钮。</td><td>最大化窗口。</td></tr><tr><td><strong>⌘-M</strong></td><td>最小化窗口。</td></tr><tr><td><strong>⌘-H</strong></td><td>隐藏 Chrome 浏览器。</td></tr><tr><td><strong>⌘-Option-H</strong></td><td>隐藏其他所有窗口。</td></tr><tr><td><strong>⌘-Q</strong></td><td>关闭 Chrome 浏览器。</td></tr></tbody></table><h3 id="2-Chrome-浏览器功能快捷键"><a href="#2-Chrome-浏览器功能快捷键" class="headerlink" title="2. Chrome 浏览器功能快捷键"></a>2. Chrome 浏览器功能快捷键</h3><table><thead><tr><th><strong>⌘-Shift-B</strong></th><th>打开和关闭书签栏。</th></tr></thead><tbody><tr><td><strong>⌘-Option-B</strong></td><td>打开书签管理器。</td></tr><tr><td><strong>⌘-,</strong></td><td>打开“偏好设置”对话框。</td></tr><tr><td><strong>⌘-Y</strong></td><td>打开“历史记录”页。</td></tr><tr><td><strong>⌘-Shift-J</strong></td><td>打开“下载内容”页。</td></tr><tr><td><strong>⌘-Shift-Delete</strong></td><td>打开“清除浏览数据”对话框。</td></tr></tbody></table><h3 id="3-地址栏快捷键"><a href="#3-地址栏快捷键" class="headerlink" title="3. 地址栏快捷键"></a>3. 地址栏快捷键</h3><table><thead><tr><th>键入搜索字词，然后按 <strong>Enter</strong> 键。</th><th>使用默认搜索引擎进行搜索。</th></tr></thead><tbody><tr><td>键入搜索引擎关键字，按<strong>空格键</strong>，然后键入搜索字词，再按 <strong>Enter</strong> 键。</td><td>使用与关键字相关联的搜索引擎进行搜索。</td></tr><tr><td>首先键入搜索引擎网址，然后在系统提示时按 <strong>Tab</strong> 键，键入搜索字词，再按 <strong>Enter</strong> 键。</td><td>使用与网址相关联的搜索引擎进行搜索。</td></tr><tr><td>键入网址，然后按 <strong>⌘-Enter</strong>。</td><td>在新后台标签页中打开网址。</td></tr><tr><td><strong>⌘-L</strong></td><td>突出显示网址。</td></tr><tr><td><strong>⌘-Option-F</strong></td><td>在地址栏中输入“?”。在问号后键入搜索字词可用默认搜索引擎执行搜索。</td></tr><tr><td>同时按 <strong>Option</strong> 和向左箭头键。</td><td>将光标移到地址栏中的前一个关键字词</td></tr><tr><td>同时按 <strong>Option</strong> 和向右箭头键。</td><td>在地址栏中将光标移到下一个关键字词</td></tr><tr><td>同时按 <strong>Shift-Option</strong> 和向左箭头键。</td><td>在地址栏中突出显示上一关键字词</td></tr><tr><td>同时按 <strong>Shift-Option</strong> 和向右箭头键。</td><td>在地址栏中突出显示下一关键字词</td></tr><tr><td><strong>⌘-Delete</strong></td><td>在地址栏中删除光标前的字词</td></tr><tr><td>在地址栏菜单中按 <strong>Page Up</strong> 或 <strong>Page Down</strong>。</td><td>在菜单中选择上一条目或下一条目。</td></tr></tbody></table><h3 id="4-网页快捷键"><a href="#4-网页快捷键" class="headerlink" title="4. 网页快捷键"></a>4. 网页快捷键</h3><table><thead><tr><th><strong>⌘-P</strong></th><th>打印当前网页。</th></tr></thead><tbody><tr><td><strong>⌘-Shift-P</strong></td><td>打开“网页设置”对话框。</td></tr><tr><td><strong>⌘-S</strong></td><td>保存当前网页。</td></tr><tr><td><strong>⌘-Shift-I</strong></td><td>通过电子邮件发送当前网页。</td></tr><tr><td><strong>⌘-R</strong></td><td>重新载入当前网页。</td></tr><tr><td><strong>⌘-,</strong></td><td>停止载入当前网页。</td></tr><tr><td><strong>⌘-F</strong></td><td>打开查找栏。</td></tr><tr><td><strong>⌘-G</strong></td><td>在查找栏中查找下一条与输入内容相匹配的内容。</td></tr><tr><td><strong>⌘-Shift-G</strong> 或 <strong>Shift-Enter</strong></td><td>在查找栏中查找上一条与输入内容相匹配的内容。</td></tr><tr><td><strong>⌘-E</strong></td><td>使用所选内容查找。</td></tr><tr><td><strong>⌘-J</strong></td><td>跳到所选内容。</td></tr><tr><td><strong>⌘-Option-I</strong></td><td>打开“开发人员工具”。</td></tr><tr><td><strong>⌘-Option-J</strong></td><td>打开“JavaScript 控制台”。</td></tr><tr><td><strong>⌘-Option-U</strong></td><td>打开当前网页的源代码。</td></tr><tr><td>按住 <strong>Option</strong> 键，然后点击链接。</td><td>下载链接目标。</td></tr><tr><td>将链接拖到书签栏中。</td><td>将链接保存为书签。</td></tr><tr><td><strong>⌘-D</strong></td><td>将当前网页保存为书签。</td></tr><tr><td><strong>⌘-Shift-D</strong></td><td>将所有打开的标签页以书签的形式保存在新文件夹中。</td></tr><tr><td><strong>⌘-Shift-F</strong></td><td>在全屏模式下打开网页。再按一次 <strong>⌘-Shift-F</strong> 可退出全屏模式。</td></tr><tr><td><strong>⌘-+</strong></td><td>放大网页上的所有内容。</td></tr><tr><td><strong>⌘ 和 -</strong></td><td>缩小网页上的所有内容。</td></tr><tr><td><strong>⌘-0</strong></td><td>将网页上的所有内容恢复到正常大小。</td></tr><tr><td><strong>⌘-Shift-H</strong></td><td>在当前标签页中打开主页。</td></tr><tr><td><strong>空格键</strong></td><td>向下滚动网页。</td></tr><tr><td><strong>⌘-Option-F</strong></td><td>搜索网页。</td></tr></tbody></table><h3 id="5-文本快捷键"><a href="#5-文本快捷键" class="headerlink" title="5. 文本快捷键"></a>5. 文本快捷键</h3><table><thead><tr><th><strong>⌘-C</strong></th><th>将突出显示的内容复制到剪贴板中。</th></tr></thead><tbody><tr><td><strong>⌘-Option-C</strong></td><td>将您正在查看的网页的网址复制到剪贴板中。</td></tr><tr><td><strong>⌘-V</strong></td><td>从剪贴板中粘贴内容。</td></tr><tr><td><strong>⌘-Shift-Option-V</strong></td><td>粘贴内容并应用周围文本的格式。</td></tr><tr><td><strong>⌘-X</strong> 或 <strong>Shift-Delete</strong></td><td>删除突出显示的内容并将其复制到剪贴板中。</td></tr><tr><td><strong>⌘-Z</strong></td><td>撤消最后一步操作。</td></tr><tr><td><strong>⌘-Shift-Z</strong></td><td>重复最后一步操作。</td></tr><tr><td><strong>⌘-X</strong></td><td>删除突出显示的内容并将其保存到剪贴板中（剪切）。</td></tr><tr><td><strong>⌘-A</strong></td><td>选择当前网页上的所有文本。</td></tr><tr><td><strong>⌘-:</strong></td><td>打开“拼写和语法”对话框。</td></tr><tr><td><strong>⌘-;</strong></td><td>检查当前网页上的拼写和语法。</td></tr></tbody></table><p>原文首发博客园： <a href="http://www.cnblogs.com/xunziji/archive/2012/08/23/2652530.html">Mac 下 Chrome 快捷键大全 </a> <a href="http://www.cnblogs.com/xunziji/archive/2012/08/23/2652530.html">http://www.cnblogs.com/xunziji/archive/2012/08/23/2652530.html</a></p>]]>
     </content>
@@ -378,54 +421,6 @@
 <li><input disable]]>
     </summary>
     <title>书单</title>
-    <updated>2023-05-31T11:54:22.000Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>阿寻</name>
-    </author>
-    <category term="学习笔记" scheme="https://snjylin.github.io/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <category term="技术" scheme="https://snjylin.github.io/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/"/>
-    <category term="前端" scheme="https://snjylin.github.io/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/"/>
-    <category term="技术" scheme="https://snjylin.github.io/blog/tags/%E6%8A%80%E6%9C%AF/"/>
-    <category term="前端" scheme="https://snjylin.github.io/blog/tags/%E5%89%8D%E7%AB%AF/"/>
-    <category term="css" scheme="https://snjylin.github.io/blog/tags/css/"/>
-    <category term="规范" scheme="https://snjylin.github.io/blog/tags/%E8%A7%84%E8%8C%83/"/>
-    <content>
-      <![CDATA[<p>建议遵循以下顺序：</p><ol><li>布局定位属性：display &#x2F; position &#x2F; float &#x2F; clear &#x2F; visibility &#x2F; overflow （建议display第一个写，关系到模式）</li><li>自身属性：width &#x2F; height &#x2F; margin &#x2F; padding &#x2F; border &#x2F; background</li><li>文本属性：color &#x2F; font &#x2F; text-decoration &#x2F; text-align &#x2F; vertical-align &#x2F; white-space &#x2F; break-word</li><li>其他属性（css3）：content &#x2F; cursor &#x2F; border-radius &#x2F; box-shadow &#x2F; text-shadow &#x2F; background: linear-gradient …</li></ol>]]>
-    </content>
-    <id>https://snjylin.github.io/blog/2019/07/16/css%E5%B1%9E%E6%80%A7%E4%B9%A6%E5%86%99%E9%A1%BA%E5%BA%8F%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89/</id>
-    <link href="https://snjylin.github.io/blog/2019/07/16/css%E5%B1%9E%E6%80%A7%E4%B9%A6%E5%86%99%E9%A1%BA%E5%BA%8F%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89/"/>
-    <published>2019-07-16T02:53:09.000Z</published>
-    <summary>
-      <![CDATA[<p>建议遵循以下顺序：</p>
-<ol>
-<li>布局定位属性：display &#x2F; position &#x2F; float &#x2F; clear &#x2F; visibility &#x2F; overflow （建议display第一个写，关系到模式）</]]>
-    </summary>
-    <title>css属性书写顺序（重点）</title>
-    <updated>2023-05-31T11:54:22.000Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>阿寻</name>
-    </author>
-    <category term="学习笔记" scheme="https://snjylin.github.io/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <category term="技术" scheme="https://snjylin.github.io/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/"/>
-    <category term="前端" scheme="https://snjylin.github.io/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/"/>
-    <category term="技术" scheme="https://snjylin.github.io/blog/tags/%E6%8A%80%E6%9C%AF/"/>
-    <category term="前端" scheme="https://snjylin.github.io/blog/tags/%E5%89%8D%E7%AB%AF/"/>
-    <category term="PhotoShop" scheme="https://snjylin.github.io/blog/tags/PhotoShop/"/>
-    <category term="设计" scheme="https://snjylin.github.io/blog/tags/%E8%AE%BE%E8%AE%A1/"/>
-    <content>
-      <![CDATA[<h4 id="常见图片格式"><a href="#常见图片格式" class="headerlink" title="常见图片格式"></a>常见图片格式</h4><h4 id="ps切片工具使用"><a href="#ps切片工具使用" class="headerlink" title="ps切片工具使用"></a>ps切片工具使用</h4><h4 id="利用图层切图"><a href="#利用图层切图" class="headerlink" title="利用图层切图"></a>利用图层切图</h4><h4 id="利用辅助线切图"><a href="#利用辅助线切图" class="headerlink" title="利用辅助线切图"></a>利用辅助线切图</h4><h4 id="cutterman插件安装使用"><a href="#cutterman插件安装使用" class="headerlink" title="cutterman插件安装使用"></a>cutterman插件安装使用</h4><p>官网：<a href="http://www.cutterman.cn/zh/cutterman">http://www.cutterman.cn/zh/cutterman</a></p>]]>
-    </content>
-    <id>https://snjylin.github.io/blog/2019/07/11/PS%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%8F%8Acutterman%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8/</id>
-    <link href="https://snjylin.github.io/blog/2019/07/11/PS%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%8F%8Acutterman%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8/"/>
-    <published>2019-07-11T11:15:15.000Z</published>
-    <summary>
-      <![CDATA[<h4 id="常见图片格式"><a href="#常见图片格式" class="headerlink" title="常见图片格式"></a>常见图片格式</h4><h4 id="ps切片工具使用"><a href="#ps切片工具使用" class="headerlink"]]>
-    </summary>
-    <title>PS常用操作及cutterman插件使用</title>
     <updated>2023-05-31T11:54:22.000Z</updated>
   </entry>
 </feed>

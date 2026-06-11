@@ -78,6 +78,267 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-css选择器" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2019/07/10/css%E9%80%89%E6%8B%A9%E5%99%A8/" class="article-date">
+  <time class="dt-published" datetime="2019-07-10T07:13:31.000Z" itemprop="datePublished">2019-07-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2019/07/10/css%E9%80%89%E6%8B%A9%E5%99%A8/">css选择器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>链接伪类选择器</p>
+<p>注意：</p>
+<ul>
+<li>写的时候顺序尽量不要颠倒，按照lvha的顺序。否则可能引起错误</li>
+<li>记忆法<br>  love hate 爱上了讨厌<br>  lv 包包 非常 hao</li>
+<li>因为叫链接伪类，所以都是利用交集选择器 a:link a:hover</li>
+<li>因为a链接浏览器具有默认样式，所以我们实际工作中都需要给链接单独指定样式</li>
+<li>实际工作开发中，我们很少写全四个状态，一般写法如下：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a &#123; /* a是标签选择器 所有的链接 */</span><br><span class="line">    font-weight: 700;</span><br><span class="line">    font-size: 16px;</span><br><span class="line">    color: gray;</span><br><span class="line">&#125;</span><br><span class="line">a:hover &#123; /* :hover 是链接伪类选择器 鼠标经过 */</span><br><span class="line">    color: red; /* 鼠标经过的时候，由原来的灰色变成了红色 */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>复合选择器总结</p>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>作用</th>
+<th>特征</th>
+<th>使用情况</th>
+<th>隔开符号及用法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>后代选择器</td>
+<td>用来选择元素后代</td>
+<td>是选择所有的子孙后代</td>
+<td>较多</td>
+<td>符号是空格 .nav a</td>
+</tr>
+<tr>
+<td>子代选择器</td>
+<td>选择最近一级元素</td>
+<td>只选亲儿子</td>
+<td>较少</td>
+<td>符号是&gt; .nav&gt;p</td>
+</tr>
+<tr>
+<td>交集选择器</td>
+<td>选择两个标签交集的部分</td>
+<td>既是 又是</td>
+<td>较少</td>
+<td>没有符号 p.one</td>
+</tr>
+<tr>
+<td>并集选择器</td>
+<td>选择某些相同样式的选择器</td>
+<td>可以用于集体声明</td>
+<td>较多</td>
+<td>符号是逗号 .nav,header</td>
+</tr>
+<tr>
+<td>链接伪类选择器</td>
+<td>给链接更改状态</td>
+<td></td>
+<td>较多</td>
+<td>重点记住 a{} 和 a:hover 实际开发的写法</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2019/07/10/css%E9%80%89%E6%8B%A9%E5%99%A8/" data-id="cuid1XmN8ayWDX2RqD6fAPfwz" data-title="css选择器" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/" rel="tag">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-css字体" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2019/07/10/css%E5%AD%97%E4%BD%93/" class="article-date">
+  <time class="dt-published" datetime="2019-07-10T03:22:55.000Z" itemprop="datePublished">2019-07-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2019/07/10/css%E5%AD%97%E4%BD%93/">css字体</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="font-size"><a href="#font-size" class="headerlink" title="font-size"></a>font-size</h2><h2 id="font-family"><a href="#font-family" class="headerlink" title="font-family"></a>font-family</h2><h2 id="css字体特殊写法（Unicode）"><a href="#css字体特殊写法（Unicode）" class="headerlink" title="css字体特殊写法（Unicode）"></a>css字体特殊写法（Unicode）</h2><h4 id="为什么使用Unicode字体"><a href="#为什么使用Unicode字体" class="headerlink" title="为什么使用Unicode字体"></a>为什么使用Unicode字体</h4><p>在css中设置字体名称，直接写中文是可以的。但是在文件编码（GB2312，UTF-8等）不匹配时会产生乱码的错误。<br>xp系统不支持类似微软雅黑的中文</p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>方案一：可以使用英文来代替。比如：font-family:“Microsoft Yahei”。<br>方案二：在css直接使用Unicode编码来写字体名称可以避免这些错误。使用Unicode写中文字体名称，浏览器是可以正确的解析的。<br>font-family: “\5FAE\8F6F\96C5\9ED1”; 表示设置字体为微软雅黑</p>
+<table>
+<thead>
+<tr>
+<th>字体名称</th>
+<th>英文名称</th>
+<th>Unicode编码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>宋体</td>
+<td>SimSun</td>
+<td>\5B8B\4F53</td>
+</tr>
+<tr>
+<td>新宋体</td>
+<td>NSimSun</td>
+<td>\65b0\5b8b\4f53</td>
+</tr>
+<tr>
+<td>黑体</td>
+<td>SimHei</td>
+<td>\9ed1\4f53</td>
+</tr>
+<tr>
+<td>微软雅黑</td>
+<td>Microsoft YaHei</td>
+<td>\5fae\8f6f\96c5\9ed1</td>
+</tr>
+<tr>
+<td>楷体_GB2312</td>
+<td>KaiTi_GB2312</td>
+<td>\6977\4f53_GB2312</td>
+</tr>
+<tr>
+<td>隶书</td>
+<td>LiSu</td>
+<td>\96b6\4e66</td>
+</tr>
+<tr>
+<td>幼圆</td>
+<td>YouYuan</td>
+<td>\5e7c\5706</td>
+</tr>
+<tr>
+<td>华文黑细</td>
+<td>STXiHei</td>
+<td>\534e\6587\9ed1\7ec6</td>
+</tr>
+<tr>
+<td>细明体</td>
+<td>MingLiU</td>
+<td>\7ec6\660e\4f53</td>
+</tr>
+<tr>
+<td>新细明体</td>
+<td>PMingLiU</td>
+<td>\65b0\7ec6\660e\4f53</td>
+</tr>
+</tbody></table>
+<p>为照顾不同电脑的字体安装问题，我们尽量只使用宋体和微软雅黑中文字体</p>
+<h2 id="font-weight"><a href="#font-weight" class="headerlink" title="font-weight"></a>font-weight</h2><p>normal : 正常的字体。相当于number为400。声明此值将取消之前任何设置<br>bold : 粗体。相当于number为700。也相当于b对象的作用<br>bolder : IE5+　特粗体<br>lighter : IE5+　细体<br>number : IE5+　100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900</p>
+<p>提倡：<br>    我们平时更喜欢用数字来表示加粗和不加粗。（实际开发中用数字来表示会更好）</p>
+<h2 id="font-style"><a href="#font-style" class="headerlink" title="font-style"></a>font-style</h2><p>normal : 正常的字体<br>italic : 斜体。对于没有斜体变量的特殊字体，将应用oblique<br>oblique : 倾斜的字体</p>
+<h2 id="字体综合写法"><a href="#字体综合写法" class="headerlink" title="字体综合写法"></a>字体综合写法</h2><p>font: 综合设置字体样式（重点）<br>基本语法：<br><code>选择器{ font: font-style font-weight font-size/line-height font-family; }</code><br>使用font属性时，必须严格按上面语法格式中的顺序书写，不能更换顺序，各个属性以空格隔开。<br>其中不需要设置的属性可以省略（取默认值），但必须保留font-size和font-family属性，否则font属性将不起作用。</p>
+<p>font总结</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>表示</th>
+<th>注意点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>font-size</td>
+<td>字号</td>
+<td>我们通常用的单位是px像素，一定要跟上单位</td>
+</tr>
+<tr>
+<td>font-family</td>
+<td>字体</td>
+<td>实际工作中按照团队约定来写字体</td>
+</tr>
+<tr>
+<td>font-weight</td>
+<td>字体粗细</td>
+<td>记住加粗是700或bold 不加粗是normal或者400 机组数字不要跟单位</td>
+</tr>
+<tr>
+<td>font-style</td>
+<td>字体样式</td>
+<td>记住倾斜是italic 不倾斜是normal 工作中最常用normal</td>
+</tr>
+<tr>
+<td>font</td>
+<td>字体连写</td>
+<td>1.连写是有顺序的 不能随意换位置 2.其中字号和字体必须同时出现</td>
+</tr>
+</tbody></table>
+<h2 id="行高-line-height"><a href="#行高-line-height" class="headerlink" title="行高 line-height"></a>行高 line-height</h2><p>顶线 中线 基线 底线<br>行高测量方法：基线和基线的距离为行高</p>
+<p>行高利用最多的地方：单行文本垂直居中<br>行高 &#x3D; 上距离 + 内容高度 + 下距离<br>上距离和下距离总是相等的，因此文字看上去是垂直居中的</p>
+<p>行高和高度的三种关系</p>
+<ul>
+<li>行高 等 高度 文字会垂直居中</li>
+<li>行高 大于 高度 文字会偏下</li>
+<li>行高 小于 高度 文字会偏上</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2019/07/10/css%E5%AD%97%E4%BD%93/" data-id="cuidO0pbiDCguIuiP0JFlwdj-" data-title="css字体" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/" rel="tag">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-git使用（ssh key创建和GitHub使用）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/blog/2019/07/02/git%E4%BD%BF%E7%94%A8%EF%BC%88ssh%20key%E5%88%9B%E5%BB%BA%E5%92%8CGitHub%E4%BD%BF%E7%94%A8%EF%BC%89/" class="article-date">
@@ -106,7 +367,7 @@
       
         <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>换电脑重装git，遇到一些坑</p>
 <h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>1.查看是否已经有了ssh密钥：cd ~&#x2F;.ssh<br>如果没有密钥（<code>No such file or directory</code>）则不会有此文件夹，有则备份删除</p>
-<p>2.生成SSH密钥<br><code>$ ssh-keygen -t rsa -C &quot;your_email@yourmail.com&quot;</code><br>后面的<a href="mailto:&#121;&#111;&#x75;&#114;&#x5f;&#101;&#x6d;&#x61;&#x69;&#108;&#x40;&#121;&#111;&#x75;&#114;&#x65;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;">your_email@youremail.com</a>改为你的邮箱。<br>直接点回车，说明会在默认文件id_rsa上生成ssh key<br>然后系统要求输入密码，直接按回车表示不设密码<br>重复密码时也是直接回车，之后提示你shh key已经生成成功<br>最后得到了两个文件：id_rsa和id_rsa.pub</p>
+<p>2.生成SSH密钥<br><code>$ ssh-keygen -t rsa -C &quot;your_email@yourmail.com&quot;</code><br>后面的<a href="mailto:&#121;&#x6f;&#117;&#x72;&#x5f;&#x65;&#109;&#97;&#x69;&#x6c;&#x40;&#x79;&#111;&#x75;&#114;&#101;&#x6d;&#x61;&#x69;&#108;&#46;&#99;&#111;&#109;">your_email@youremail.com</a>改为你的邮箱。<br>直接点回车，说明会在默认文件id_rsa上生成ssh key<br>然后系统要求输入密码，直接按回车表示不设密码<br>重复密码时也是直接回车，之后提示你shh key已经生成成功<br>最后得到了两个文件：id_rsa和id_rsa.pub</p>
 <p>3.在github上添加ssh密钥，这要添加的是“id_rsa.pub”里面的公钥<br>github右上角个人中心-&gt;settings-&gt;SSH and GPG keys-&gt;New SSH key<br>title随便填，一般填写方便区分的名字，比如使用这个公钥的那台机器名，key粘贴刚才复制的公钥</p>
 <p>4.验证是否成功<br><code>$ ssh -T git@github.com</code><br>The authenticity of host ‘github.com (207.97.227.239)’ can’t be established.<br>RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.<br>Are you sure you want to continue connecting (yes&#x2F;no)? yes<br>Warning: Permanently added ‘github.com,207.97.227.239′ (RSA) to the list of known hosts.<br>ERROR: Hi tekkub! You’ve successfully authenticated, but GitHub does not provide shell access<br>Connection to github.com closed.</p>
 <p>5.使用GitHub<br>1）获取源码</p>
@@ -133,7 +394,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2019/07/02/git%E4%BD%BF%E7%94%A8%EF%BC%88ssh%20key%E5%88%9B%E5%BB%BA%E5%92%8CGitHub%E4%BD%BF%E7%94%A8%EF%BC%89/" data-id="cuidV6a7YTzQ2jjMCIhjIQget" data-title="git使用" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2019/07/02/git%E4%BD%BF%E7%94%A8%EF%BC%88ssh%20key%E5%88%9B%E5%BB%BA%E5%92%8CGitHub%E4%BD%BF%E7%94%A8%EF%BC%89/" data-id="cuidG5zF_GInJJCcAwrlE3lgU" data-title="git使用" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -181,7 +442,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2019/06/26/Vue-Webpack%E6%89%93%E9%80%A0TODO%E5%BA%94%E7%94%A8/" data-id="cuidS1YhGNcpqJ1Gk0jaz2td1" data-title="Vue+Webpack打造TODO应用" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2019/06/26/Vue-Webpack%E6%89%93%E9%80%A0TODO%E5%BA%94%E7%94%A8/" data-id="cuidjfxwrjLeDEu61PEwHNAlc" data-title="Vue+Webpack打造TODO应用" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -224,7 +485,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2019/06/04/%E8%A7%86%E9%A2%91%E8%A7%A3%E6%9E%90/" data-id="cuid5iaYd1TftFjKD_SwKGhAJ" data-title="视频解析" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2019/06/04/%E8%A7%86%E9%A2%91%E8%A7%A3%E6%9E%90/" data-id="cuidh-Fg7XouhOrLqRzXBp_3g" data-title="视频解析" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -290,7 +551,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2019/05/08/%20%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%AC%A6%E5%8F%B7%E7%9A%84%E8%8B%B1%E6%96%87%E8%A1%A8%E7%A4%BA/" data-id="cuidDQYAeO97gMBy1uf4_mtuY" data-title="一些常用符号的英文表示" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2019/05/08/%20%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%AC%A6%E5%8F%B7%E7%9A%84%E8%8B%B1%E6%96%87%E8%A1%A8%E7%A4%BA/" data-id="cuidAamw93RglI0_A1cCsEwoP" data-title="一些常用符号的英文表示" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -360,7 +621,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2019/05/08/vue%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A2%B3%E7%90%86/" data-id="cuid2pwjGSblPhNLHqEr5R4T6" data-title="vue知识点梳理" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2019/05/08/vue%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A2%B3%E7%90%86/" data-id="cuidsn7Me-yKD8l3IrRMw2SoN" data-title="vue知识点梳理" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -414,7 +675,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2019/05/07/win10%E4%B8%8B%E6%90%AD%E5%BB%BAvue%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" data-id="cuidIfZJ0jukBuvJZYpEVl7eT" data-title="win10下搭建vue开发环境" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2019/05/07/win10%E4%B8%8B%E6%90%AD%E5%BB%BAvue%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" data-id="cuidQWmFBR-yePS8m2JQuSR_P" data-title="win10下搭建vue开发环境" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -478,7 +739,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2019/04/09/HTML%E5%A4%B4%E9%83%A8%E9%83%A8%E5%88%86%E7%94%A8%E6%B3%95/" data-id="cuidSkYXe6K4_-1LibolCuY7k" data-title="HTML头部部分用法" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2019/04/09/HTML%E5%A4%B4%E9%83%A8%E9%83%A8%E5%88%86%E7%94%A8%E6%B3%95/" data-id="cuidWf2xlERawCtx-9UiJ5279" data-title="HTML头部部分用法" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -527,124 +788,11 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2019/04/02/hexo%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/" data-id="cuidzvTsqwnYTpE9CMlknJUOw" data-title="hexo使用过程中遇到的坑" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2019/04/02/hexo%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/" data-id="cuidiID5-mAnwW-7x8ahagjGD" data-title="hexo使用过程中遇到的坑" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/hexo/" rel="tag">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E5%BB%BA%E7%AB%99/" rel="tag">建站</a></li></ul>
-
-      <!-- 新分享按钮 by lin -->
-      <div class="social-share" data-sites="weibo,qq,wechat"></div>
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-ECMAScript6" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/2019/02/27/ECMAScript6/" class="article-date">
-  <time class="dt-published" datetime="2019-02-27T13:23:29.000Z" itemprop="datePublished">2019-02-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/2019/02/27/ECMAScript6/">ECMAScript6</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>es3 es5 es6<br>常量 作用域 箭头函数 默认参数 对象代理</p>
-<h2 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h2><p>es5:<br>var<br>es6新增:<br>let<br>const</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2019/02/27/ECMAScript6/" data-id="cuidrXkTqADbG02ON1jofmPpD" data-title="ECMAScript6" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
-
-      <!-- 新分享按钮 by lin -->
-      <div class="social-share" data-sites="weibo,qq,wechat"></div>
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-h5唤醒app解决方案" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/2019/02/19/h5%E5%94%A4%E9%86%92app%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="article-date">
-  <time class="dt-published" datetime="2019-02-19T10:45:03.000Z" itemprop="datePublished">2019-02-19</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/2019/02/19/h5%E5%94%A4%E9%86%92app%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">h5唤醒app解决方案</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><ul>
-<li>产品需求：h5页面唤醒app，如果app有h5页面对应的页面，则打开对应的页面，否则打开app首页</li>
-<li>如果本地安装了app那么直接打开，否则ios要跳转到app-store，android则要跳到对应的市场</li>
-</ul>
-<h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><ol>
-<li>魔窗：开始收费了，弃用</li>
-<li>js实现：</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 判断浏览器类型</span><br><span class="line"> * @return &#123;Object:&#123;key[sting]:value[boolean]&#125;&#125; key:浏览器名；value:true/false</span><br><span class="line"> */</span><br><span class="line">var browser = (function()&#123;</span><br><span class="line">    var u = navigator.userAgent;</span><br><span class="line">    return &#123;</span><br><span class="line">        trident: u.indexOf(&#x27;Trident&#x27;) &gt; -1, //IE内核</span><br><span class="line">        presto: u.indexOf(&#x27;Presto&#x27;) &gt; -1, //opera内核</span><br><span class="line">        webKit: u.indexOf(&#x27;AppleWebKit&#x27;) &gt; -1, //苹果、谷歌内核</span><br><span class="line">        gecko: u.indexOf(&#x27;Gecko&#x27;) &gt; -1 &amp;&amp; u.indexOf(&#x27;KHTML&#x27;) == -1,//火狐内核</span><br><span class="line">        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端</span><br><span class="line">        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端</span><br><span class="line">        android: u.indexOf(&#x27;Android&#x27;) &gt; -1 || u.indexOf(&#x27;Linux&#x27;) &gt; -1, //android终端或者uc浏览器</span><br><span class="line">        iPhone: u.indexOf(&#x27;iPhone&#x27;) &gt; -1 , //是否为iPhone或者QQHD浏览器</span><br><span class="line">        iPad: u.indexOf(&#x27;iPad&#x27;) &gt; -1, //是否iPad</span><br><span class="line">        webApp: u.indexOf(&#x27;Safari&#x27;) == -1, //是否web应该程序，没有头部与底部</span><br><span class="line">        weixin: u.indexOf(&#x27;MicroMessenger&#x27;) &gt; -1, //是否微信 （2015-01-22新增）</span><br><span class="line">        qq: u.match(/\sQQ/i) == &quot; qq&quot; //是否QQ</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;)();</span><br><span class="line">/**</span><br><span class="line"> * 本地已安装app时调起，未安装时下载</span><br><span class="line"> * @param  &#123;Object&#125; button 点击操作的对象</span><br><span class="line"> * @param  &#123;Object&#125; params 对象参数</span><br><span class="line"> * @return &#123;[type]&#125;        [description]</span><br><span class="line"> */</span><br><span class="line">function open_or_download_app(button, params)&#123;</span><br><span class="line">    $(button).click(function(e)&#123;</span><br><span class="line">        if (browser.ios) &#123;</span><br><span class="line">            window.setTimeout(function()&#123;</span><br><span class="line">                window.location = ios_applink;</span><br><span class="line">            &#125;, 50);</span><br><span class="line">            window.setTimeout(function() &#123;</span><br><span class="line">                window.location.reload();</span><br><span class="line">            &#125;, 500);</span><br><span class="line">            window.location = params.scheme;</span><br><span class="line">        &#125; else if (browser.android) &#123;</span><br><span class="line">            window.setTimeout(function()&#123;</span><br><span class="line">                window.location = android_applink;</span><br><span class="line">            &#125;, 50);</span><br><span class="line">            window.setTimeout(function() &#123;</span><br><span class="line">                window.location.reload();</span><br><span class="line">            &#125;, 500);</span><br><span class="line">            window.location = params.scheme;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="相关（摘录自参考内容）"><a href="#相关（摘录自参考内容）" class="headerlink" title="相关（摘录自参考内容）"></a>相关（摘录自参考内容）</h2><h4 id="什么是Deeplink"><a href="#什么是Deeplink" class="headerlink" title="什么是Deeplink?"></a>什么是Deeplink?</h4><p>Deeplink是App应用中的深度链接，如果把App看做一个网站，那么Deeplink就是网站中的一个页面，比如产品页面，活动促销页面等。Deeplink在App市场推广运营中有很好的意义:</p>
-<p>使用Deeplink的广告商可以在用户点击广告后直接进入指定的Appp, 而没有使用Deeplink的App广告只能在点击后将用户跳转到App首页上。<br>为了更好的解释Deeplink，请见下面的图片：<br><img src="http://image.woshipm.com/wp-files/2016/02/Deeplinkingv3.jpg" alt="Deeplinkingv3"></p>
-<h4 id="Deeplink在App运营中的作用"><a href="#Deeplink在App运营中的作用" class="headerlink" title="Deeplink在App运营中的作用"></a>Deeplink在App运营中的作用</h4><p>Deeplink在App运营中的重要作用在于提升转换率，好比是网站推广运营中的Landing Page (广告进入页面），App运营者可用独立制作出适合广告投放人群的Deeplink, 在用户点击广告后转移至App中的Deeplink页面，而不是无论什么用户都转移到App首页上。</p>
-<p>例如：如果在一款汽车资讯类App推广中使用Deeplink, 我们可以针对中档汽车做一个Deeplink，在App页面中展现中档价位汽车，偏重价格与促销做活动宣传图片。</p>
-<p>针对高档汽车做另外一个Deeplink，展现高档价位汽车，针对品众与座驾享受做宣传。</p>
-<p>然后在投放时，我们可以选择DSP投放，将不同收入人群做不同的定向广告，针对中等收入人群的App广告中链接到中档价位汽车Deeplink中，针对高收入人群的App广告中链接到高档价位汽车的Deeplink中，提升广告效果与转化率。<br><img src="http://image.woshipm.com/wp-files/2016/02/Deeplinkingv4-512x1024.jpg" alt="Deeplinkingv4"></p>
-<p>参考：<br>1.<a target="_blank" rel="noopener" href="http://www.woshipm.com/operate/287961.html">你知道App推广神技“Deferred Deeplink”吗?</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2019/02/19/h5%E5%94%A4%E9%86%92app%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" data-id="cuidN2FN4SzhgbNK1m7gl0nGg" data-title="h5唤醒app解决方案" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/app/" rel="tag">app</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/deeplink/" rel="tag">deeplink</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/h5/" rel="tag">h5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
 
       <!-- 新分享按钮 by lin -->
       <div class="social-share" data-sites="weibo,qq,wechat"></div>
@@ -681,7 +829,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/3d/" rel="tag">3d</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Charles/" rel="tag">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Chrome/" rel="tag">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Fiddler/" rel="tag">Fiddler</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MAC/" rel="tag">MAC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/PhotoShop/" rel="tag">PhotoShop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Wireshark/" rel="tag">Wireshark</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ajax/" rel="tag">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/app/" rel="tag">app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/bootstrap/" rel="tag">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/canvas/" rel="tag">canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/deeplink/" rel="tag">deeplink</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/emmet/" rel="tag">emmet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/h5/" rel="tag">h5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/less/" rel="tag">less</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/parallels-desktop/" rel="tag">parallels desktop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/svg/" rel="tag">svg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/test/" rel="tag">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/textarea/" rel="tag">textarea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/todolist/" rel="tag">todolist</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/transform/" rel="tag">transform</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/win10/" rel="tag">win10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%B0%8F%E8%AF%B4/" rel="tag">小说</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BB%BA%E7%AB%99/" rel="tag">建站</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" rel="tag">开发环境</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="tag">快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" rel="tag">思维导图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%8A%93%E5%8C%85/" rel="tag">抓包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%8F%92%E4%BB%B6/" rel="tag">插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%96%87%E5%AD%A6/" rel="tag">文学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%A0%87%E7%AD%BE%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99/" rel="tag">标签嵌套规则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE/" rel="tag">百度脑图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/" rel="tag">移动开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" rel="tag">编辑器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%A7%84%E8%8C%83/" rel="tag">规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%AE%BE%E8%AE%A1/" rel="tag">设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/3d/" rel="tag">3d</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Charles/" rel="tag">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Chrome/" rel="tag">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Fiddler/" rel="tag">Fiddler</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MAC/" rel="tag">MAC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/PhotoShop/" rel="tag">PhotoShop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Wireshark/" rel="tag">Wireshark</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ajax/" rel="tag">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/app/" rel="tag">app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/bootstrap/" rel="tag">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/canvas/" rel="tag">canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/deeplink/" rel="tag">deeplink</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/emmet/" rel="tag">emmet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/h5/" rel="tag">h5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/less/" rel="tag">less</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/parallels-desktop/" rel="tag">parallels desktop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/svg/" rel="tag">svg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/test/" rel="tag">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/textarea/" rel="tag">textarea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/todolist/" rel="tag">todolist</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/transform/" rel="tag">transform</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/win10/" rel="tag">win10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/wine/" rel="tag">wine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%B0%8F%E8%AF%B4/" rel="tag">小说</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BB%BA%E7%AB%99/" rel="tag">建站</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BC%80%E5%8F%91/" rel="tag">开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" rel="tag">开发环境</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="tag">快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" rel="tag">思维导图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%8A%93%E5%8C%85/" rel="tag">抓包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%8F%92%E4%BB%B6/" rel="tag">插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%96%87%E5%AD%A6/" rel="tag">文学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%A0%87%E7%AD%BE%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99/" rel="tag">标签嵌套规则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE/" rel="tag">百度脑图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/" rel="tag">移动开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" rel="tag">编辑器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%80%83%E8%AF%95/" rel="tag">考试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%A7%84%E8%8C%83/" rel="tag">规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%AE%BE%E8%AE%A1/" rel="tag">设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li></ul>
     </div>
   </div>
 
@@ -691,7 +839,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/blog/tags/3d/" style="font-size: 10px;">3d</a> <a href="/blog/tags/Charles/" style="font-size: 10px;">Charles</a> <a href="/blog/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/blog/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/blog/tags/JavaScript/" style="font-size: 18px;">JavaScript</a> <a href="/blog/tags/MAC/" style="font-size: 11px;">MAC</a> <a href="/blog/tags/PhotoShop/" style="font-size: 11px;">PhotoShop</a> <a href="/blog/tags/Wireshark/" style="font-size: 10px;">Wireshark</a> <a href="/blog/tags/ajax/" style="font-size: 14px;">ajax</a> <a href="/blog/tags/app/" style="font-size: 11px;">app</a> <a href="/blog/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/blog/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/blog/tags/css/" style="font-size: 17px;">css</a> <a href="/blog/tags/deeplink/" style="font-size: 10px;">deeplink</a> <a href="/blog/tags/emmet/" style="font-size: 10px;">emmet</a> <a href="/blog/tags/es6/" style="font-size: 10px;">es6</a> <a href="/blog/tags/git/" style="font-size: 13px;">git</a> <a href="/blog/tags/h5/" style="font-size: 13px;">h5</a> <a href="/blog/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/blog/tags/html/" style="font-size: 15px;">html</a> <a href="/blog/tags/less/" style="font-size: 10px;">less</a> <a href="/blog/tags/parallels-desktop/" style="font-size: 10px;">parallels desktop</a> <a href="/blog/tags/svg/" style="font-size: 16px;">svg</a> <a href="/blog/tags/test/" style="font-size: 10px;">test</a> <a href="/blog/tags/textarea/" style="font-size: 10px;">textarea</a> <a href="/blog/tags/todolist/" style="font-size: 11px;">todolist</a> <a href="/blog/tags/transform/" style="font-size: 11px;">transform</a> <a href="/blog/tags/vue/" style="font-size: 12px;">vue</a> <a href="/blog/tags/win10/" style="font-size: 10px;">win10</a> <a href="/blog/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 20px;">前端</a> <a href="/blog/tags/%E5%B0%8F%E8%AF%B4/" style="font-size: 10px;">小说</a> <a href="/blog/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 14px;">建站</a> <a href="/blog/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" style="font-size: 10px;">开发环境</a> <a href="/blog/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" style="font-size: 11px;">快捷键</a> <a href="/blog/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" style="font-size: 10px;">思维导图</a> <a href="/blog/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 19px;">技术</a> <a href="/blog/tags/%E6%8A%93%E5%8C%85/" style="font-size: 10px;">抓包</a> <a href="/blog/tags/%E6%8F%92%E4%BB%B6/" style="font-size: 10px;">插件</a> <a href="/blog/tags/%E6%96%87%E5%AD%A6/" style="font-size: 10px;">文学</a> <a href="/blog/tags/%E6%A0%87%E7%AD%BE%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99/" style="font-size: 10px;">标签嵌套规则</a> <a href="/blog/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 10px;">正则表达式</a> <a href="/blog/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a> <a href="/blog/tags/%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE/" style="font-size: 10px;">百度脑图</a> <a href="/blog/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/" style="font-size: 10px;">移动开发</a> <a href="/blog/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 11px;">编辑器</a> <a href="/blog/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/blog/tags/%E8%A7%84%E8%8C%83/" style="font-size: 13px;">规范</a> <a href="/blog/tags/%E8%AE%BE%E8%AE%A1/" style="font-size: 11px;">设计</a> <a href="/blog/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a>
+      <a href="/blog/tags/3d/" style="font-size: 10px;">3d</a> <a href="/blog/tags/Charles/" style="font-size: 10px;">Charles</a> <a href="/blog/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/blog/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/blog/tags/JavaScript/" style="font-size: 18px;">JavaScript</a> <a href="/blog/tags/MAC/" style="font-size: 12px;">MAC</a> <a href="/blog/tags/PhotoShop/" style="font-size: 11px;">PhotoShop</a> <a href="/blog/tags/Wireshark/" style="font-size: 10px;">Wireshark</a> <a href="/blog/tags/ajax/" style="font-size: 14px;">ajax</a> <a href="/blog/tags/app/" style="font-size: 11px;">app</a> <a href="/blog/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/blog/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/blog/tags/css/" style="font-size: 17px;">css</a> <a href="/blog/tags/deeplink/" style="font-size: 10px;">deeplink</a> <a href="/blog/tags/emmet/" style="font-size: 10px;">emmet</a> <a href="/blog/tags/es6/" style="font-size: 10px;">es6</a> <a href="/blog/tags/git/" style="font-size: 13px;">git</a> <a href="/blog/tags/h5/" style="font-size: 13px;">h5</a> <a href="/blog/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/blog/tags/html/" style="font-size: 15px;">html</a> <a href="/blog/tags/less/" style="font-size: 10px;">less</a> <a href="/blog/tags/parallels-desktop/" style="font-size: 10px;">parallels desktop</a> <a href="/blog/tags/svg/" style="font-size: 16px;">svg</a> <a href="/blog/tags/test/" style="font-size: 10px;">test</a> <a href="/blog/tags/textarea/" style="font-size: 10px;">textarea</a> <a href="/blog/tags/todolist/" style="font-size: 11px;">todolist</a> <a href="/blog/tags/transform/" style="font-size: 11px;">transform</a> <a href="/blog/tags/vue/" style="font-size: 12px;">vue</a> <a href="/blog/tags/win10/" style="font-size: 10px;">win10</a> <a href="/blog/tags/wine/" style="font-size: 10px;">wine</a> <a href="/blog/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 20px;">前端</a> <a href="/blog/tags/%E5%B0%8F%E8%AF%B4/" style="font-size: 10px;">小说</a> <a href="/blog/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 14px;">建站</a> <a href="/blog/tags/%E5%BC%80%E5%8F%91/" style="font-size: 10px;">开发</a> <a href="/blog/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" style="font-size: 10px;">开发环境</a> <a href="/blog/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" style="font-size: 11px;">快捷键</a> <a href="/blog/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" style="font-size: 10px;">思维导图</a> <a href="/blog/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 19px;">技术</a> <a href="/blog/tags/%E6%8A%93%E5%8C%85/" style="font-size: 10px;">抓包</a> <a href="/blog/tags/%E6%8F%92%E4%BB%B6/" style="font-size: 10px;">插件</a> <a href="/blog/tags/%E6%96%87%E5%AD%A6/" style="font-size: 10px;">文学</a> <a href="/blog/tags/%E6%A0%87%E7%AD%BE%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99/" style="font-size: 10px;">标签嵌套规则</a> <a href="/blog/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 10px;">正则表达式</a> <a href="/blog/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a> <a href="/blog/tags/%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE/" style="font-size: 10px;">百度脑图</a> <a href="/blog/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/" style="font-size: 10px;">移动开发</a> <a href="/blog/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 11px;">编辑器</a> <a href="/blog/tags/%E8%80%83%E8%AF%95/" style="font-size: 10px;">考试</a> <a href="/blog/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/blog/tags/%E8%A7%84%E8%8C%83/" style="font-size: 13px;">规范</a> <a href="/blog/tags/%E8%AE%BE%E8%AE%A1/" style="font-size: 11px;">设计</a> <a href="/blog/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a>
     </div>
   </div>
 
@@ -700,7 +848,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/05/">五月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/03/">三月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">三月 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2026/06/">六月 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/05/">五月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/03/">三月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">三月 2017</a></li></ul>
     </div>
   </div>
 
@@ -713,6 +861,14 @@
       <ul>
         
           <li>
+            <a href="/blog/2026/06/11/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7%E8%A7%A3%E7%BB%91%E5%85%AC%E4%BC%97%E5%8F%B7%E6%9D%83%E9%99%90/">微信开发者工具解绑公众号权限</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2026/06/10/MacOS-%E5%A4%84%E7%90%86%E4%BA%BA%E4%BA%8B%E8%80%83%E8%AF%95%E7%BD%91%E7%85%A7%E7%89%87%E6%96%B9%E6%A1%88-%E9%80%9A%E8%BF%87wine%E6%89%A7%E8%A1%8Cexe%E6%96%87%E4%BB%B6/">MacOS 处理人事考试网照片方案/通过wine执行exe文件</a>
+          </li>
+        
+          <li>
             <a href="/blog/2024/05/22/%E6%9C%AC%E5%9C%B0-git-%E9%A1%B9%E7%9B%AE%E5%90%8C%E6%97%B6%E5%85%B3%E8%81%94-github-%E5%92%8C-gitee/">本地 git 项目同时关联 github 和 gitee</a>
           </li>
         
@@ -722,14 +878,6 @@
         
           <li>
             <a href="/blog/2022/05/23/hexo%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99/">hexo部署报错</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2021/11/16/h5%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/">h5开发记录</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2020/02/24/Mac%E4%B8%8B%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE%E5%BF%AB%E6%8D%B7%E9%94%AE/">Mac下百度脑图快捷键</a>
           </li>
         
       </ul>

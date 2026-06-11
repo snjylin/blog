@@ -78,6 +78,113 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JavaScript基础学习-5" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2018/09/12/JavaScript%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-5/" class="article-date">
+  <time class="dt-published" datetime="2018-09-12T08:34:38.000Z" itemprop="datePublished">2018-09-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2018/09/12/JavaScript%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-5/">JavaScript基础学习(5)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="日期对象、时钟倒计时"><a href="#日期对象、时钟倒计时" class="headerlink" title="日期对象、时钟倒计时"></a>日期对象、时钟倒计时</h4><p>时间对象实例<br>  获取时间对象：<code>new Date()</code><br>    getFullYear()<br>    getMonth() &#x2F;&#x2F;从0开始计数<br>    getDate()<br>    getDay()  &#x2F;&#x2F;星期<br>    getHours()<br>    getMinutes()<br>    getSecends()<br>  实例：网站电子时钟</p>
+<p>练习：图片时钟扩展版 上下切换</p>
+<p>倒计时<br>  Date对象参数<br>    数字形式：<code>new Date(2018,9,12,17,01,35);  //需要注意月份是从0开始的</code><br>    字符串形式：<code>new Date(&#39;September 12,2018 17:01:35&#39;);</code><br>  月份取值<br>    January、February、March、April、May、June、July、August、September、October、November、December；<br>  时间转换公式<br>    天：<code>Math.floor(t/86400)</code><br>    时：<code>Math.floor(t%86400/3600)</code><br>    分：<code>Math.floor(t%86400%3600/60)</code><br>    秒：t%60<br>  时间戳：<code>getTime()</code><br>    返回从1970年1月1日0点0分0秒0毫秒<br>    &#x2F;&#x2F;时间戳是指格林威治时间1970年01月01日00时00分00秒(北京时间1970年01月01日08时00分00秒)起至现在的总秒数。<br>倒计时原理<br>现在的时间点（变）<br>未来的时间点（不变）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">距离：&lt;input type=&quot;text&quot;&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">还剩：&lt;input type=&quot;text&quot;&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; value=&quot;点击&quot;&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  window.onload = function()&#123;</span><br><span class="line">    var aInp = document.getElementsByTagName(&#x27;input&#x27;);</span><br><span class="line">    var iNow = null;</span><br><span class="line">    var iNew = null;</span><br><span class="line">    var t = 0;</span><br><span class="line">    var str = &#x27;&#x27;;</span><br><span class="line">    var timer = null;</span><br><span class="line"></span><br><span class="line">    aInp[2].onclick = function()&#123;</span><br><span class="line">      iNew = new Date(aInp[0].value);</span><br><span class="line">      clearInterval(timer);</span><br><span class="line"></span><br><span class="line">      setInterval(function()&#123;</span><br><span class="line">        iNow = new Date();</span><br><span class="line">        t = Math.floor((iNew - iNow)/1000); //单位：毫秒 -&gt; 秒</span><br><span class="line">        if(t &gt;= 0)&#123;</span><br><span class="line">          str = Math.floor(t/86400) + &#x27;天&#x27; + Math.floor(t%86400/3600) + &#x27;时&#x27; + Math.floor(t%86400%3600/60) + &#x27;分&#x27; + t%60 + &#x27;秒&#x27;;</span><br><span class="line">          &#125;, 1000);</span><br><span class="line">          aInp[1].value = str;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">          clearInterval(timer);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>时间戳<br><code>new Date().getTime();</code><br>一般用来检测性能，看一段程序运行花费的时间或者用来判断cookie值等</p>
+<p>练习：抢购商品练习（倒计时结束后下架商品抖动一下掉落并自动计算价格）<br>示例：<a href="/demo/view/%E5%AE%9A%E6%97%B6%E5%99%A8-%E6%8A%A2%E8%B4%AD%E5%95%86%E5%93%81%E7%BB%83%E4%B9%A0.html" target="_blank">点击查看</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2018/09/12/JavaScript%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-5/" data-id="cuidyCxE4hc6FWt3V2IXrckPv" data-title="JavaScript基础学习(5)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-编辑器选择与配置" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2018/09/05/%E7%BC%96%E8%BE%91%E5%99%A8%E9%80%89%E6%8B%A9%E4%B8%8E%E9%85%8D%E7%BD%AE/" class="article-date">
+  <time class="dt-published" datetime="2018-09-05T10:37:07.000Z" itemprop="datePublished">2018-09-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%85%B6%E4%BB%96/">其他</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2018/09/05/%E7%BC%96%E8%BE%91%E5%99%A8%E9%80%89%E6%8B%A9%E4%B8%8E%E9%85%8D%E7%BD%AE/">编辑器选择与配置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="PhpStorm"><a href="#PhpStorm" class="headerlink" title="PhpStorm"></a>PhpStorm</h4><h4 id="Sublime"><a href="#Sublime" class="headerlink" title="Sublime"></a>Sublime</h4><h4 id="Atom"><a href="#Atom" class="headerlink" title="Atom"></a>Atom</h4><ul>
+<li>安装插件<br>file icons<br>emmet<br>docblockr</li>
+<li>设置微信小程序代码高亮<br>1、打开 config.cson 配置文件<br>Atom -&gt; Config</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;*&quot;:</span><br><span class="line">  core:</span><br><span class="line">    customFileTypes:</span><br><span class="line">      &#x27;text.html.basic&#x27;: [&#x27;wxml&#x27;]</span><br><span class="line">      &#x27;source.css&#x27;: [&#x27;wxss&#x27;]</span><br><span class="line">      &#x27;source.js&#x27;: [&#x27;wxs&#x27;]</span><br></pre></td></tr></table></figure>
+
+<p>参考：<br><a target="_blank" rel="noopener" href="http://www.okeydown.com/html/2018/06-16/545.html">http://www.okeydown.com/html/2018/06-16/545.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2018/09/05/%E7%BC%96%E8%BE%91%E5%99%A8%E9%80%89%E6%8B%A9%E4%B8%8E%E9%85%8D%E7%BD%AE/" data-id="cuidK6xlPQ5nNYnYekosd_nOI" data-title="编辑器选择与配置" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" rel="tag">编辑器</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-JavaScript基础学习-4" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/blog/2018/08/30/JavaScript%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-4/" class="article-date">
@@ -129,7 +236,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2018/08/30/JavaScript%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-4/" data-id="cuidZ_gL8If5gjGCMwqjvRcoo" data-title="JavaScript基础学习(4)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2018/08/30/JavaScript%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-4/" data-id="cuid8GemqE9hcEdbCO1vPK9UG" data-title="JavaScript基础学习(4)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -255,7 +362,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2018/08/28/JavaScript%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-3/" data-id="cuidaU-whKcqO1lTJCAIBnGRr" data-title="JavaScript基础学习(3)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2018/08/28/JavaScript%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-3/" data-id="cuidRAD1bg5GeEQqemnxl7WZl" data-title="JavaScript基础学习(3)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -322,7 +429,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2018/08/28/JavaScript%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-2/" data-id="cuidYyUMy0YYNhet930dNUxoZ" data-title="JavaScript基础学习(2)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2018/08/28/JavaScript%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-2/" data-id="cuidFcLVoM3BG9xLgJrnlFdcz" data-title="JavaScript基础学习(2)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -422,7 +529,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2018/08/23/JavaScript%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-1/" data-id="cuidb_c_Zx0hWNhKJ-0lq-w8C" data-title="JavaScript基础学习(1)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2018/08/23/JavaScript%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-1/" data-id="cuidrLsQRv5X2uzebkr4vxk-8" data-title="JavaScript基础学习(1)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -524,7 +631,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2018/08/17/bootstrap%E5%AD%A6%E4%B9%A0/" data-id="cuidfGFTz585gpeTGrQk5PPsD" data-title="bootstrap学习" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2018/08/17/bootstrap%E5%AD%A6%E4%B9%A0/" data-id="cuidH0ARNuPNE-nn5Se6ATFg2" data-title="bootstrap学习" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -573,7 +680,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2018/08/16/SVG%E5%AD%A6%E4%B9%A0-8/" data-id="cuide7MCk9Bkn1SdfBGOYYMyW" data-title="SVG学习(8)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2018/08/16/SVG%E5%AD%A6%E4%B9%A0-8/" data-id="cuidjIAIoFxWlVfxnPJDRr9LO" data-title="SVG学习(8)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -672,7 +779,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2018/08/15/SVG%E5%AD%A6%E4%B9%A0-7/" data-id="cuidgOVFXVaDkvglsbggAo-52" data-title="SVG学习(7)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2018/08/15/SVG%E5%AD%A6%E4%B9%A0-7/" data-id="cuidEF-RlHSs7cYEra8t0saV0" data-title="SVG学习(7)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -730,253 +837,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2018/08/14/SVG%E5%AD%A6%E4%B9%A0-6/" data-id="cuidtaOQTqlgu1zQNZQB-2ENs" data-title="SVG学习(6)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/svg/" rel="tag">svg</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
-
-      <!-- 新分享按钮 by lin -->
-      <div class="social-share" data-sites="weibo,qq,wechat"></div>
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-SVG学习-5" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/2018/08/09/SVG%E5%AD%A6%E4%B9%A0-5/" class="article-date">
-  <time class="dt-published" datetime="2018-08-09T10:56:20.000Z" itemprop="datePublished">2018-08-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/svg/">svg</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/2018/08/09/SVG%E5%AD%A6%E4%B9%A0-5/">SVG学习(5)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="SVG文本"><a href="#SVG文本" class="headerlink" title="SVG文本"></a>SVG文本</h1><h2 id="和创建文本"><a href="#和创建文本" class="headerlink" title="&lt;text&gt;和&lt;tspan&gt;创建文本"></a><code>&lt;text&gt;</code>和<code>&lt;tspan&gt;</code>创建文本</h2><ul>
-<li>x和y属性 - 定位标准</li>
-<li>dx和dy属性 - 字形偏移</li>
-<li>style属性 - 设置样式</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100%&quot; height=&quot;100%&quot;&gt;</span><br><span class="line">	&lt;defs&gt;</span><br><span class="line">		&lt;pattern id=&quot;grid&quot; x=&quot;0&quot; y=&quot;0&quot; width=&quot;20&quot; height=&quot;20&quot; patternUnits=&quot;userSpaceOnUse&quot;&gt;</span><br><span class="line">			&lt;path stroke=&quot;#F0F0F0&quot;  fill=&quot;none&quot; d=&quot;M0,0H20V20&quot;&gt;&lt;/path&gt;</span><br><span class="line">		&lt;/pattern&gt;</span><br><span class="line">	&lt;/defs&gt;</span><br><span class="line">	&lt;rect   width=&quot;1200&quot; height=&quot;1000&quot; fill=&quot;url(#grid)&quot;&gt;&lt;/rect&gt;</span><br><span class="line">	&lt;text id=&quot;sintext&quot; x=&quot;100&quot; y=&quot;150&quot;&gt;&lt;/text&gt;</span><br><span class="line">	&lt;text x=&quot;100&quot; y=&quot;150&quot;&gt;</span><br><span class="line">		&lt;tspan fill=&quot;red&quot; dy=&quot;-20 20&quot;&gt;AB&lt;/tspan&gt;</span><br><span class="line">		&lt;tspan stroke=&quot;green&quot; fill=&quot;none&quot; dy=&quot;-40 20&quot;&gt;CDE&lt;/tspan&gt;</span><br><span class="line">	&lt;/text&gt;</span><br><span class="line">	&lt;path d=&quot;M100,0V200M0,100H200&quot; stroke=&quot;red&quot; fill=&quot;none&quot;&gt;&lt;/path&gt;</span><br><span class="line">&lt;/svg&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	// y = s * sin(w * x + t)</span><br><span class="line">	// x = [20, 20, 20...]</span><br><span class="line"></span><br><span class="line">	var NS = &#x27;http://www.w3.org/2000/svg&#x27;;</span><br><span class="line">	var text = &#x27;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#x27;;</span><br><span class="line">	var n = text.length;</span><br><span class="line">	var x = [];</span><br><span class="line">	var y = null;</span><br><span class="line">	var i = n;</span><br><span class="line">	var s = 100;</span><br><span class="line">	var w = 0.02;</span><br><span class="line">	var t = 0;</span><br><span class="line"></span><br><span class="line">	while(i--) &#123;</span><br><span class="line">		x.push(10);</span><br><span class="line">		var tspan = document.createElementNS(NS, &#x27;tspan&#x27;);</span><br><span class="line">		tspan.textContent = text[n - i - 1];</span><br><span class="line">		sintext.appendChild(tspan);</span><br><span class="line">		var h = Math.round(360 / 26 * i);</span><br><span class="line">		tspan.setAttribute(&#x27;fill&#x27;, &#x27;hsl(&#x27; + h + &#x27;, 100%, 80%)&#x27;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function arrange(t)&#123;</span><br><span class="line">		y = [];</span><br><span class="line">		var ly = 0, cy;</span><br><span class="line">		for(var i = 0; i &lt; n; ++i)&#123;</span><br><span class="line">			cy = -s * Math.sin(w * i * 20 + t);</span><br><span class="line">			y.push(cy - ly);</span><br><span class="line">			ly = cy;</span><br><span class="line">		&#125;</span><br><span class="line">		// y = x.map(function(x)&#123;</span><br><span class="line">		// 	return s * Math.sin(w * x + t);</span><br><span class="line">		// &#125;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function render()&#123;</span><br><span class="line">		sintext.setAttribute(&quot;dx&quot;, x.join(&#x27; &#x27;));</span><br><span class="line">		sintext.setAttribute(&quot;dy&quot;, y.join(&#x27; &#x27;));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function frame()&#123;</span><br><span class="line">		t += 0.01;</span><br><span class="line">		arrange(t);</span><br><span class="line">		render();</span><br><span class="line">		requestAnimationFrame(frame);</span><br><span class="line">	&#125;</span><br><span class="line">	frame();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p><code>&lt;tspan&gt;</code>中dy是向下传递的<br>text和tspan中同时设置dy时，text中的dy属性会被覆盖</p>
-<h2 id="垂直居中问题"><a href="#垂直居中问题" class="headerlink" title="垂直居中问题"></a>垂直居中问题</h2><ul>
-<li>text-anchor - 水平居中属性</li>
-<li>dominant-baseline 属性(<a target="_blank" rel="noopener" href="http://www.w3.org/TR/SVG/text.html#DomainantBaselineProperty">http://www.w3.org/TR/SVG/text.html#DomainantBaselineProperty</a>)</li>
-<li>自己模拟</li>
-</ul>
-<p>模拟<br>var box &#x3D; text.getBBox(); 渲染的盒子<br>顶线: box.y<br>中线: box.y + box.height &#x2F; 2<br>底线: box.y + box.height<br>文本基线: y</p>
-<h2 id="让文本在指定路径上排列"><a href="#让文本在指定路径上排列" class="headerlink" title="&lt;textPath&gt; 让文本在指定路径上排列"></a><code>&lt;textPath&gt;</code> 让文本在指定路径上排列</h2><h4 id="路径文本"><a href="#路径文本" class="headerlink" title="路径文本"></a>路径文本</h4><ul>
-<li>使用方法</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;path id=&quot;path1&quot; d=&quot;M 100 200 Q 200 100 300 200 T 500 200&quot; stroke=&quot;rgb(0,255,0)&quot; fill=&quot;none&quot; /&gt;</span><br><span class="line">&lt;text style=&quot;font-size: 24px;&quot;&gt;</span><br><span class="line">	&lt;textPath xlink:href=&quot;#path1&quot;&gt;</span><br><span class="line">		这个文字先上去，又下来了。Upside down in english!</span><br><span class="line">	&lt;/textPath&gt;</span><br><span class="line">&lt;/text&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>布局原理</li>
-</ul>
-<p>渲染原理<br>浏览器会把字符从字体表中查到这个字符要占的宽度charWidth，然后从路径最开始的位置找到了一个点，根据这个宽度，在这个路径经过多少长度之后找到另一个点，这两个点将作为计算的基点，通过这两个基点算出来一个点是这个点到这两个基点的位置在路径上的长度都是一样的，最终算出中间的点将会作一条切线以及法线，在这条法线上会把这个文字对齐到文字中央并且把文字的基线位置对齐到切线的位置，这样就完成了第一个文字的排列。上一个文字排列的时候算出来的三个点中的最后一个点会作为下一次计算的开始的点。</p>
-<ul>
-<li>定位属性 x,y,dx,dy的作用</li>
-</ul>
-<p>x、text-anchor和startOffset属性<br>	- 确定排列起始位置<br>dx、dy属性<br>	- 切线和法线方向的偏移</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;path id=&quot;path1&quot; d=&quot;M 100 200 Q 200 100 300 200 T 500 200&quot; stroke=&quot;rgb(0,255,0)&quot; fill=&quot;none&quot; /&gt;</span><br><span class="line">&lt;text style=&quot;font-size: 24px;&quot;&gt;</span><br><span class="line">	&lt;textPath xlink:href=&quot;#path1&quot;&gt;</span><br><span class="line">        &lt;tspan&gt;这个文字先&lt;/tspan&gt;</span><br><span class="line">        &lt;tspan fill=&quot;blue&quot; dy=&quot;-30&quot;&gt;上去&lt;/tspan&gt;</span><br><span class="line">        &lt;tspan dy=&quot;30&quot;&gt;，又&lt;/tspan&gt;</span><br><span class="line">        &lt;tspan fill=&quot;red&quot; dy=&quot;30&quot;&gt;下来&lt;/tspan&gt;</span><br><span class="line">        &lt;tspan dy=&quot;-30&quot;&gt;了。Upside down in english!&lt;/tspan&gt;</span><br><span class="line">	&lt;/textPath&gt;</span><br><span class="line">&lt;/text&gt;</span><br></pre></td></tr></table></figure>
-<p>示例：<a href="/demo/view/SVG%E7%BB%83%E4%B9%A01.html" target="_blank">点击查看</a></p>
-<ul>
-<li>脚本控制<br>  setAttributeNS()方法设置xlink:href属性<br>  把文本节点替换为<textpath>节点</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">&lt;form&gt;</span><br><span class="line">	&lt;label&gt;Path:&lt;/label&gt;</span><br><span class="line">	&lt;select id=&quot;text-path-select&quot;&gt;</span><br><span class="line">		&lt;option value=&quot;none&quot;&gt;none&lt;/option&gt;</span><br><span class="line">		&lt;option value=&quot;#path1&quot;&gt;path1&lt;/option&gt;</span><br><span class="line">		&lt;option value=&quot;#path2&quot;&gt;path2&lt;/option&gt;</span><br><span class="line">		&lt;option value=&quot;#path3&quot;&gt;path3&lt;/option&gt;</span><br><span class="line">	&lt;/select&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;800&quot; height=&quot;600&quot;&gt;</span><br><span class="line">	&lt;path id=&quot;path1&quot; d=&quot;M 100 200 Q 200 100 300 200 T 500 200&quot; stroke=&quot;rgb(0,255,0)&quot; fill=&quot;none&quot; /&gt;</span><br><span class="line">	&lt;path id=&quot;path2&quot; d=&quot;M100,300l100-50,200,100,100,-50&quot; stroke=&quot;rgb(255,0,0)&quot; fill=&quot;none&quot; /&gt;</span><br><span class="line">	&lt;path id=&quot;path3&quot; d=&quot;M100,400A400,300,0,0,0,500,400&quot; stroke=&quot;blue&quot; fill=&quot;none&quot; /&gt;</span><br><span class="line">	&lt;text id=&quot;text&quot; x=&quot;100&quot; y=&quot;100&quot; style=&quot;font-size: 20px;&quot;&gt;</span><br><span class="line">		Text path scripting.&lt;tspan id=&quot;tspan&quot;&gt;动态使用路径文本&lt;/tspan&gt;</span><br><span class="line">	&lt;/text&gt;</span><br><span class="line">&lt;/svg&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	var SVG_NS = &#x27;http://www.w3.org/2000/svg&#x27;;</span><br><span class="line">	var XLINK_NS = &#x27;http://www.w3.org/1999/xlink&#x27;;</span><br><span class="line"></span><br><span class="line">	var select = document.getElementById(&#x27;text-path-select&#x27;);</span><br><span class="line">	var text = document.getElementById(&#x27;text&#x27;);</span><br><span class="line">	var tspan = document.getElementById(&#x27;tspan&#x27;);</span><br><span class="line"></span><br><span class="line">	function addTextPath() &#123;</span><br><span class="line">		var textPath = document.createElementNS(SVG_NS, &#x27;textPath&#x27;);</span><br><span class="line">		while (text.firstChild) &#123;</span><br><span class="line">			textPath.appendChild(text.firstChild);</span><br><span class="line">		&#125;</span><br><span class="line">		text.appendChild(textPath);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function setTextPath(path) &#123;</span><br><span class="line">		var textPath = text.firstChild;</span><br><span class="line">		textPath.setAttributeNS(XLINK_NS, &#x27;xlink:href&#x27;, path);</span><br><span class="line"></span><br><span class="line">		var pathElement = document.querySelector(path);</span><br><span class="line">		tspan.setAttribute(&#x27;fill&#x27;, pathElement.getAttribute(&#x27;stroke&#x27;));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function removeTextPath() &#123;</span><br><span class="line">		var textPath = text.firstChild;</span><br><span class="line">		while (textPath.firstChild) &#123;</span><br><span class="line">			text.appendChild(textPath.firstChild);</span><br><span class="line">		&#125;</span><br><span class="line">		text.removeChild(textPath);</span><br><span class="line">		tspan.removeAttribute(&#x27;fill&#x27;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    select.addEventListener(&#x27;input&#x27;, function() &#123;</span><br><span class="line">        var value = select.value;</span><br><span class="line">        if (text.firstChild.tagName &amp;&amp; text.firstChild.tagName.toLowerCase() == &#x27;textpath&#x27;) &#123;</span><br><span class="line">            if (value == &#x27;none&#x27;) &#123;</span><br><span class="line">            	removeTextPath();</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">            	removeTextPath();</span><br><span class="line">                addTextPath();</span><br><span class="line">                setTextPath(value);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            if (value != &#x27;none&#x27;) &#123;</span><br><span class="line">                addTextPath();</span><br><span class="line">                setTextPath(value);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>示例：<a href="/demo/view/SVG%E7%BB%83%E4%B9%A02.html" target="_blank">点击查看</a></p>
-<h2 id="插入超链接"><a href="#插入超链接" class="headerlink" title="&lt;a&gt;插入超链接"></a><code>&lt;a&gt;</code>插入超链接</h2><ul>
-<li>可以添加到任意的图形上</li>
-<li>xlink:href 指定链接地址</li>
-<li>xlink:title 指定链接提示</li>
-<li>target 指定打开目标</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;800&quot; height=&quot;600&quot;&gt;</span><br><span class="line">	&lt;a xlink:href=&quot;http://baike.baidu.com/search/word?word=正方形&quot; xlink:title=&quot;正方形&quot; target=&quot;_blank&quot;&gt;</span><br><span class="line">		&lt;rect x=&quot;100&quot; y=&quot;100&quot; width=&quot;100&quot; height=&quot;100&quot; fill=&quot;rgba(255,0,0,.5)&quot; stroke=&quot;rgb(200,0,0)&quot; stroke-width=&quot;2&quot;&gt;&lt;/rect&gt;</span><br><span class="line">	&lt;/a&gt;</span><br><span class="line">	&lt;a xlink:href=&quot;http://baike.baidu.com/search/word?word=圆形&quot; xlink:title=&quot;圆形&quot; target=&quot;_blank&quot;&gt;</span><br><span class="line">		&lt;circle cx=&quot;300&quot; cy=&quot;150&quot; r=&quot;50&quot; fill=&quot;rgba(0,255,0,.5)&quot; stroke=&quot;rgb(200,0,0)&quot; stroke-width=&quot;2&quot;&gt;&lt;/circle&gt;</span><br><span class="line">	&lt;/a&gt;</span><br><span class="line">	&lt;a xlink:href=&quot;http://baike.baidu.com/search/word?word=三角形&quot; xlink:title=&quot;三角形&quot; target=&quot;_blank&quot;&gt;</span><br><span class="line">		&lt;polygon points=&quot;150 250 200 350 100 350&quot; fill=&quot;rgba(0,0,255,.5)&quot; stroke=&quot;rgb(200,0,0)&quot; stroke-width=&quot;2&quot;&gt;&lt;/polygon&gt;</span><br><span class="line">	&lt;/a&gt;</span><br><span class="line">	&lt;a xlink:href=&quot;http://baike.baidu.com/search/word?word=平行四边形&quot; xlink:title=&quot;平行四边形&quot; target=&quot;_blank&quot;&gt;</span><br><span class="line">		&lt;polygon points=&quot;300 250 350 250 300 350 250 350&quot; fill=&quot;rgba(255,255,0,.5)&quot; stroke=&quot;rgb(200,0,0)&quot; stroke-width=&quot;2&quot;&gt;&lt;/polygon&gt;</span><br><span class="line">	&lt;/a&gt;</span><br><span class="line">&lt;/svg&gt;</span><br></pre></td></tr></table></figure>
-<p>示例：<a href="/demo/view/SVG%E7%BB%83%E4%B9%A03.html" target="_blank">点击查看</a></p>
-<p>根据<a target="_blank" rel="noopener" href="https://www.imooc.com/video/2612">慕课网课程</a>整理</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2018/08/09/SVG%E5%AD%A6%E4%B9%A0-5/" data-id="cuidhJ_4-JFeiLiWL48hAM1tf" data-title="SVG学习(5)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/svg/" rel="tag">svg</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
-
-      <!-- 新分享按钮 by lin -->
-      <div class="social-share" data-sites="weibo,qq,wechat"></div>
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-SVG学习-4" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/2018/08/09/SVG%E5%AD%A6%E4%B9%A0-4/" class="article-date">
-  <time class="dt-published" datetime="2018-08-09T08:41:53.000Z" itemprop="datePublished">2018-08-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/svg/">svg</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/2018/08/09/SVG%E5%AD%A6%E4%B9%A0-4/">SVG学习(4)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Path"><a href="#Path" class="headerlink" title="Path"></a>Path</h1><h2 id="Path概述"><a href="#Path概述" class="headerlink" title="Path概述"></a>Path概述</h2><ul>
-<li>强大的绘图工具</li>
-<li>规范:<a target="_blank" rel="noopener" href="http://www.w3.org/TR/SVG11/paths.html">http://www.w3.org/TR/SVG11/paths.html</a></li>
-<li>由命令及其参数组组成的字符串，如：<br><code>&lt;path d=&quot;M0,0L10,20C30-10,40,20,100,100&quot; stroke=&quot;red&quot;&gt;</code><br>tiger.svg</li>
-</ul>
-<h4 id="Path字符串"><a href="#Path字符串" class="headerlink" title="Path字符串"></a>Path字符串</h4><p><code>&lt;path d=&quot;M0,0L10,20C30-10,40,20,100,100&quot; stroke=&quot;red&quot;&gt;</code><br>L(命令)10(参数),(参数之间可以用空格或逗号隔开，有一种情况例外，就是下一个字符是负数[负号可以表示上一参数的结束])20(参数)</p>
-<h4 id="命令汇总"><a href="#命令汇总" class="headerlink" title="命令汇总"></a>命令汇总</h4><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>M&#x2F;m (x,y)+</td>
-<td>移动当前位置</td>
-</tr>
-<tr>
-<td>L&#x2F;l (x,y)+</td>
-<td>从当前位置绘制线段到指定位置</td>
-</tr>
-<tr>
-<td>H&#x2F;h (x)+</td>
-<td>从当前位置绘制水平线到达指定的x坐标</td>
-</tr>
-<tr>
-<td>V&#x2F;v (x)+</td>
-<td>从当前位置绘制竖直线到达指定的y坐标</td>
-</tr>
-<tr>
-<td>Z&#x2F;z</td>
-<td>闭合当前路径</td>
-</tr>
-<tr>
-<td>C&#x2F;c (x1,y1,x2,y2,x,y)+</td>
-<td>从当前位置绘制三次贝塞尔曲线到指定位置</td>
-</tr>
-<tr>
-<td>S&#x2F;s (x2,y2,x,y)+</td>
-<td>从当前位置光滑绘制三次贝塞尔曲线到指定位置</td>
-</tr>
-<tr>
-<td>Q&#x2F;q (x1,y1,x,y)+</td>
-<td>从当前位置绘制二次贝塞尔曲线到指定位置</td>
-</tr>
-<tr>
-<td>T&#x2F;t (x,y)+</td>
-<td>从当前位置光滑绘制二次贝塞尔曲线到指定位置</td>
-</tr>
-<tr>
-<td>A&#x2F;a (rx,ry,xr,laf,sf,x,y)</td>
-<td>从当前位置绘制弧线到指定位置</td>
-</tr>
-</tbody></table>
-<h4 id="命令基本规律"><a href="#命令基本规律" class="headerlink" title="命令基本规律"></a>命令基本规律</h4><ul>
-<li>区分大小写：大写表示坐标参数为绝对值，小写则为相对位置（相对上一个命令结束后画笔停留的位置）</li>
-<li>最后的参数表示最终要到达的位置</li>
-<li>上一个命令结束的位置就是下一个命令开始的位置</li>
-<li>命令可以重复参数表示重复执行同一条命令</li>
-</ul>
-<h2 id="移动和直线命令"><a href="#移动和直线命令" class="headerlink" title="移动和直线命令"></a>移动和直线命令</h2><ul>
-<li>M(x,y)+ 移动画笔，后面如果有重复参数，会当作是L命令处理</li>
-<li>L(x,y)+ 绘制直线到指定位置</li>
-<li>H(x)+ 绘制水平线到指定的x位置</li>
-<li>V(y)+ 绘制竖直线到指定的y位置</li>
-<li>m,l,h,v使用相对位置绘制</li>
-</ul>
-<h2 id="弧线命令"><a href="#弧线命令" class="headerlink" title="弧线命令"></a>弧线命令</h2><ul>
-<li>A(rx,ry,xr,laf,sf,x,y) - 绘制弧线</li>
-<li>最复杂的命令<br>rx - (radius-x) 弧线所在椭圆的x半轴长<br>ry - (radius-y) 弧线所在椭圆的y半轴长<br>xr - (xAxis-rotation) 弧线所在椭圆的长轴角度<br>laf - (large-arc-flag) 是否选择弧长较长的那一段弧<ul>
-<li>laf&#x3D;0 弧长较短的那段</li>
-<li>laf&#x3D;1 弧长较长的那段<br>sf - (sweep-flag) 是否选择逆时针方向的那一段弧</li>
-<li>sf&#x3D;0 逆时针</li>
-<li>sf&#x3D;1 顺时针<br>x,y - 弧的终点位置</li>
-</ul>
-</li>
-</ul>
-<h2 id="贝塞尔曲线命令"><a href="#贝塞尔曲线命令" class="headerlink" title="贝塞尔曲线命令"></a>贝塞尔曲线命令</h2><ul>
-<li>贝塞尔曲线概念</li>
-<li>四条贝塞尔曲线的命令</li>
-</ul>
-<h4 id="贝塞尔曲线"><a href="#贝塞尔曲线" class="headerlink" title="贝塞尔曲线"></a>贝塞尔曲线</h4><p>P0 P1 t&#x3D;0</p>
-<p>二次贝塞尔曲线命令<br>起始点 结束点 控制点 控制线<br>P0 P1 P2 t&#x3D;0<br>P0(x0,y0)起始点 C1(x1,y1)控制点 P(x,y)结束点<br>M x0 y0 Q x1 y1 x y</p>
-<p>Q是quadratic的第一个字母<br>起始点的位置是path的当前位置，可以通过move或者直线或者弧线命令修改到当前的位置，Q后跟的是控制点的坐标以及结束点的坐标，由于二次贝塞尔曲线之需要一个控制点所以Q的命令有四个参数，分别是控制点坐标和结束位置坐标</p>
-<p>三次贝塞尔曲线命令<br>起始点 结束点 控制点 控制线<br>P0 P1 P2 P3 t&#x3D;0<br>P0(x0,y0)起始点 C1(x1,y1)控制点 C2(x2,y2)控制点 P(x,y)结束点<br>M x0 y0 Q x1 y1 x2 y2 x y</p>
-<p>四次贝塞尔曲线命令<br>起始点 结束点 控制点 控制线<br>P0 P1 P2 P3 P4 t&#x3D;0</p>
-<p>贝塞尔曲线通项公式</p>
-<h4 id="光滑曲线"><a href="#光滑曲线" class="headerlink" title="光滑曲线"></a>光滑曲线</h4><ul>
-<li>T:Q的光滑版本（二次贝塞尔曲线）<br>C1是上一段曲线的控制点关于当前曲线起始点的镜像位置</li>
-<li>S:C的简化版本（三次贝塞尔曲线，第一个控制点的位置可以省略）<br>C1是上一段曲线的控制点2关于当前曲线起始点的镜像位置</li>
-</ul>
-<p>M100,200 C100,100 250,100 250,200 S400,300 400,200</p>
-<h4 id="回顾思考"><a href="#回顾思考" class="headerlink" title="回顾思考"></a>回顾思考</h4><ul>
-<li>Path命令的作用是什么，Path字符串的格式是什么</li>
-<li>一共有多少个Path命令，它们分别的参数是什么</li>
-<li><ul>
-<li>如何求贝塞尔曲线的长度，如何求整个Path的长度</li>
-</ul>
-</li>
-<li><ul>
-<li>如何求一个Path的子路径</li>
-</ul>
-</li>
-<li><ul>
-<li>如何求两个Path的补间</li>
-</ul>
-</li>
-</ul>
-<p>Raphael 矢量图形库</p>
-<p>根据<a target="_blank" rel="noopener" href="https://www.imooc.com/video/2612">慕课网课程</a>整理</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2018/08/09/SVG%E5%AD%A6%E4%B9%A0-4/" data-id="cuidGyIeHrcOEuKuBiSwhWQ52" data-title="SVG学习(4)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2018/08/14/SVG%E5%AD%A6%E4%B9%A0-6/" data-id="cuidFmpgmOb85sTdSoSamD2VA" data-title="SVG学习(6)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -1017,7 +878,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/3d/" rel="tag">3d</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Charles/" rel="tag">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Chrome/" rel="tag">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Fiddler/" rel="tag">Fiddler</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MAC/" rel="tag">MAC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/PhotoShop/" rel="tag">PhotoShop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Wireshark/" rel="tag">Wireshark</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ajax/" rel="tag">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/app/" rel="tag">app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/bootstrap/" rel="tag">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/canvas/" rel="tag">canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/deeplink/" rel="tag">deeplink</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/emmet/" rel="tag">emmet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/h5/" rel="tag">h5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/less/" rel="tag">less</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/parallels-desktop/" rel="tag">parallels desktop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/svg/" rel="tag">svg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/test/" rel="tag">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/textarea/" rel="tag">textarea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/todolist/" rel="tag">todolist</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/transform/" rel="tag">transform</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/win10/" rel="tag">win10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%B0%8F%E8%AF%B4/" rel="tag">小说</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BB%BA%E7%AB%99/" rel="tag">建站</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" rel="tag">开发环境</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="tag">快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" rel="tag">思维导图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%8A%93%E5%8C%85/" rel="tag">抓包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%8F%92%E4%BB%B6/" rel="tag">插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%96%87%E5%AD%A6/" rel="tag">文学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%A0%87%E7%AD%BE%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99/" rel="tag">标签嵌套规则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE/" rel="tag">百度脑图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/" rel="tag">移动开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" rel="tag">编辑器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%A7%84%E8%8C%83/" rel="tag">规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%AE%BE%E8%AE%A1/" rel="tag">设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/3d/" rel="tag">3d</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Charles/" rel="tag">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Chrome/" rel="tag">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Fiddler/" rel="tag">Fiddler</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MAC/" rel="tag">MAC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/PhotoShop/" rel="tag">PhotoShop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Wireshark/" rel="tag">Wireshark</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ajax/" rel="tag">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/app/" rel="tag">app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/bootstrap/" rel="tag">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/canvas/" rel="tag">canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/deeplink/" rel="tag">deeplink</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/emmet/" rel="tag">emmet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/h5/" rel="tag">h5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/less/" rel="tag">less</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/parallels-desktop/" rel="tag">parallels desktop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/svg/" rel="tag">svg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/test/" rel="tag">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/textarea/" rel="tag">textarea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/todolist/" rel="tag">todolist</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/transform/" rel="tag">transform</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/win10/" rel="tag">win10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/wine/" rel="tag">wine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%B0%8F%E8%AF%B4/" rel="tag">小说</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BB%BA%E7%AB%99/" rel="tag">建站</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BC%80%E5%8F%91/" rel="tag">开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" rel="tag">开发环境</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="tag">快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" rel="tag">思维导图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%8A%93%E5%8C%85/" rel="tag">抓包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%8F%92%E4%BB%B6/" rel="tag">插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%96%87%E5%AD%A6/" rel="tag">文学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%A0%87%E7%AD%BE%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99/" rel="tag">标签嵌套规则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE/" rel="tag">百度脑图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/" rel="tag">移动开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" rel="tag">编辑器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%80%83%E8%AF%95/" rel="tag">考试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%A7%84%E8%8C%83/" rel="tag">规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%AE%BE%E8%AE%A1/" rel="tag">设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li></ul>
     </div>
   </div>
 
@@ -1027,7 +888,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/blog/tags/3d/" style="font-size: 10px;">3d</a> <a href="/blog/tags/Charles/" style="font-size: 10px;">Charles</a> <a href="/blog/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/blog/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/blog/tags/JavaScript/" style="font-size: 18px;">JavaScript</a> <a href="/blog/tags/MAC/" style="font-size: 11px;">MAC</a> <a href="/blog/tags/PhotoShop/" style="font-size: 11px;">PhotoShop</a> <a href="/blog/tags/Wireshark/" style="font-size: 10px;">Wireshark</a> <a href="/blog/tags/ajax/" style="font-size: 14px;">ajax</a> <a href="/blog/tags/app/" style="font-size: 11px;">app</a> <a href="/blog/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/blog/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/blog/tags/css/" style="font-size: 17px;">css</a> <a href="/blog/tags/deeplink/" style="font-size: 10px;">deeplink</a> <a href="/blog/tags/emmet/" style="font-size: 10px;">emmet</a> <a href="/blog/tags/es6/" style="font-size: 10px;">es6</a> <a href="/blog/tags/git/" style="font-size: 13px;">git</a> <a href="/blog/tags/h5/" style="font-size: 13px;">h5</a> <a href="/blog/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/blog/tags/html/" style="font-size: 15px;">html</a> <a href="/blog/tags/less/" style="font-size: 10px;">less</a> <a href="/blog/tags/parallels-desktop/" style="font-size: 10px;">parallels desktop</a> <a href="/blog/tags/svg/" style="font-size: 16px;">svg</a> <a href="/blog/tags/test/" style="font-size: 10px;">test</a> <a href="/blog/tags/textarea/" style="font-size: 10px;">textarea</a> <a href="/blog/tags/todolist/" style="font-size: 11px;">todolist</a> <a href="/blog/tags/transform/" style="font-size: 11px;">transform</a> <a href="/blog/tags/vue/" style="font-size: 12px;">vue</a> <a href="/blog/tags/win10/" style="font-size: 10px;">win10</a> <a href="/blog/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 20px;">前端</a> <a href="/blog/tags/%E5%B0%8F%E8%AF%B4/" style="font-size: 10px;">小说</a> <a href="/blog/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 14px;">建站</a> <a href="/blog/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" style="font-size: 10px;">开发环境</a> <a href="/blog/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" style="font-size: 11px;">快捷键</a> <a href="/blog/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" style="font-size: 10px;">思维导图</a> <a href="/blog/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 19px;">技术</a> <a href="/blog/tags/%E6%8A%93%E5%8C%85/" style="font-size: 10px;">抓包</a> <a href="/blog/tags/%E6%8F%92%E4%BB%B6/" style="font-size: 10px;">插件</a> <a href="/blog/tags/%E6%96%87%E5%AD%A6/" style="font-size: 10px;">文学</a> <a href="/blog/tags/%E6%A0%87%E7%AD%BE%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99/" style="font-size: 10px;">标签嵌套规则</a> <a href="/blog/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 10px;">正则表达式</a> <a href="/blog/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a> <a href="/blog/tags/%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE/" style="font-size: 10px;">百度脑图</a> <a href="/blog/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/" style="font-size: 10px;">移动开发</a> <a href="/blog/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 11px;">编辑器</a> <a href="/blog/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/blog/tags/%E8%A7%84%E8%8C%83/" style="font-size: 13px;">规范</a> <a href="/blog/tags/%E8%AE%BE%E8%AE%A1/" style="font-size: 11px;">设计</a> <a href="/blog/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a>
+      <a href="/blog/tags/3d/" style="font-size: 10px;">3d</a> <a href="/blog/tags/Charles/" style="font-size: 10px;">Charles</a> <a href="/blog/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/blog/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/blog/tags/JavaScript/" style="font-size: 18px;">JavaScript</a> <a href="/blog/tags/MAC/" style="font-size: 12px;">MAC</a> <a href="/blog/tags/PhotoShop/" style="font-size: 11px;">PhotoShop</a> <a href="/blog/tags/Wireshark/" style="font-size: 10px;">Wireshark</a> <a href="/blog/tags/ajax/" style="font-size: 14px;">ajax</a> <a href="/blog/tags/app/" style="font-size: 11px;">app</a> <a href="/blog/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/blog/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/blog/tags/css/" style="font-size: 17px;">css</a> <a href="/blog/tags/deeplink/" style="font-size: 10px;">deeplink</a> <a href="/blog/tags/emmet/" style="font-size: 10px;">emmet</a> <a href="/blog/tags/es6/" style="font-size: 10px;">es6</a> <a href="/blog/tags/git/" style="font-size: 13px;">git</a> <a href="/blog/tags/h5/" style="font-size: 13px;">h5</a> <a href="/blog/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/blog/tags/html/" style="font-size: 15px;">html</a> <a href="/blog/tags/less/" style="font-size: 10px;">less</a> <a href="/blog/tags/parallels-desktop/" style="font-size: 10px;">parallels desktop</a> <a href="/blog/tags/svg/" style="font-size: 16px;">svg</a> <a href="/blog/tags/test/" style="font-size: 10px;">test</a> <a href="/blog/tags/textarea/" style="font-size: 10px;">textarea</a> <a href="/blog/tags/todolist/" style="font-size: 11px;">todolist</a> <a href="/blog/tags/transform/" style="font-size: 11px;">transform</a> <a href="/blog/tags/vue/" style="font-size: 12px;">vue</a> <a href="/blog/tags/win10/" style="font-size: 10px;">win10</a> <a href="/blog/tags/wine/" style="font-size: 10px;">wine</a> <a href="/blog/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 20px;">前端</a> <a href="/blog/tags/%E5%B0%8F%E8%AF%B4/" style="font-size: 10px;">小说</a> <a href="/blog/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 14px;">建站</a> <a href="/blog/tags/%E5%BC%80%E5%8F%91/" style="font-size: 10px;">开发</a> <a href="/blog/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" style="font-size: 10px;">开发环境</a> <a href="/blog/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" style="font-size: 11px;">快捷键</a> <a href="/blog/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" style="font-size: 10px;">思维导图</a> <a href="/blog/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 19px;">技术</a> <a href="/blog/tags/%E6%8A%93%E5%8C%85/" style="font-size: 10px;">抓包</a> <a href="/blog/tags/%E6%8F%92%E4%BB%B6/" style="font-size: 10px;">插件</a> <a href="/blog/tags/%E6%96%87%E5%AD%A6/" style="font-size: 10px;">文学</a> <a href="/blog/tags/%E6%A0%87%E7%AD%BE%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99/" style="font-size: 10px;">标签嵌套规则</a> <a href="/blog/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 10px;">正则表达式</a> <a href="/blog/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a> <a href="/blog/tags/%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE/" style="font-size: 10px;">百度脑图</a> <a href="/blog/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/" style="font-size: 10px;">移动开发</a> <a href="/blog/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 11px;">编辑器</a> <a href="/blog/tags/%E8%80%83%E8%AF%95/" style="font-size: 10px;">考试</a> <a href="/blog/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/blog/tags/%E8%A7%84%E8%8C%83/" style="font-size: 13px;">规范</a> <a href="/blog/tags/%E8%AE%BE%E8%AE%A1/" style="font-size: 11px;">设计</a> <a href="/blog/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a>
     </div>
   </div>
 
@@ -1036,7 +897,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/05/">五月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/03/">三月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">三月 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2026/06/">六月 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/05/">五月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/03/">三月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">三月 2017</a></li></ul>
     </div>
   </div>
 
@@ -1049,6 +910,14 @@
       <ul>
         
           <li>
+            <a href="/blog/2026/06/11/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7%E8%A7%A3%E7%BB%91%E5%85%AC%E4%BC%97%E5%8F%B7%E6%9D%83%E9%99%90/">微信开发者工具解绑公众号权限</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2026/06/10/MacOS-%E5%A4%84%E7%90%86%E4%BA%BA%E4%BA%8B%E8%80%83%E8%AF%95%E7%BD%91%E7%85%A7%E7%89%87%E6%96%B9%E6%A1%88-%E9%80%9A%E8%BF%87wine%E6%89%A7%E8%A1%8Cexe%E6%96%87%E4%BB%B6/">MacOS 处理人事考试网照片方案/通过wine执行exe文件</a>
+          </li>
+        
+          <li>
             <a href="/blog/2024/05/22/%E6%9C%AC%E5%9C%B0-git-%E9%A1%B9%E7%9B%AE%E5%90%8C%E6%97%B6%E5%85%B3%E8%81%94-github-%E5%92%8C-gitee/">本地 git 项目同时关联 github 和 gitee</a>
           </li>
         
@@ -1058,14 +927,6 @@
         
           <li>
             <a href="/blog/2022/05/23/hexo%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99/">hexo部署报错</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2021/11/16/h5%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/">h5开发记录</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2020/02/24/Mac%E4%B8%8B%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE%E5%BF%AB%E6%8D%B7%E9%94%AE/">Mac下百度脑图快捷键</a>
           </li>
         
       </ul>

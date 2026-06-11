@@ -78,6 +78,119 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-ECMAScript6" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2019/02/27/ECMAScript6/" class="article-date">
+  <time class="dt-published" datetime="2019-02-27T13:23:29.000Z" itemprop="datePublished">2019-02-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2019/02/27/ECMAScript6/">ECMAScript6</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>es3 es5 es6<br>常量 作用域 箭头函数 默认参数 对象代理</p>
+<h2 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h2><p>es5:<br>var<br>es6新增:<br>let<br>const</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2019/02/27/ECMAScript6/" data-id="cuidz0SXIPWh14QUgiDIZWohf" data-title="ECMAScript6" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-h5唤醒app解决方案" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2019/02/19/h5%E5%94%A4%E9%86%92app%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="article-date">
+  <time class="dt-published" datetime="2019-02-19T10:45:03.000Z" itemprop="datePublished">2019-02-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2019/02/19/h5%E5%94%A4%E9%86%92app%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">h5唤醒app解决方案</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><ul>
+<li>产品需求：h5页面唤醒app，如果app有h5页面对应的页面，则打开对应的页面，否则打开app首页</li>
+<li>如果本地安装了app那么直接打开，否则ios要跳转到app-store，android则要跳到对应的市场</li>
+</ul>
+<h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><ol>
+<li>魔窗：开始收费了，弃用</li>
+<li>js实现：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 判断浏览器类型</span><br><span class="line"> * @return &#123;Object:&#123;key[sting]:value[boolean]&#125;&#125; key:浏览器名；value:true/false</span><br><span class="line"> */</span><br><span class="line">var browser = (function()&#123;</span><br><span class="line">    var u = navigator.userAgent;</span><br><span class="line">    return &#123;</span><br><span class="line">        trident: u.indexOf(&#x27;Trident&#x27;) &gt; -1, //IE内核</span><br><span class="line">        presto: u.indexOf(&#x27;Presto&#x27;) &gt; -1, //opera内核</span><br><span class="line">        webKit: u.indexOf(&#x27;AppleWebKit&#x27;) &gt; -1, //苹果、谷歌内核</span><br><span class="line">        gecko: u.indexOf(&#x27;Gecko&#x27;) &gt; -1 &amp;&amp; u.indexOf(&#x27;KHTML&#x27;) == -1,//火狐内核</span><br><span class="line">        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端</span><br><span class="line">        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端</span><br><span class="line">        android: u.indexOf(&#x27;Android&#x27;) &gt; -1 || u.indexOf(&#x27;Linux&#x27;) &gt; -1, //android终端或者uc浏览器</span><br><span class="line">        iPhone: u.indexOf(&#x27;iPhone&#x27;) &gt; -1 , //是否为iPhone或者QQHD浏览器</span><br><span class="line">        iPad: u.indexOf(&#x27;iPad&#x27;) &gt; -1, //是否iPad</span><br><span class="line">        webApp: u.indexOf(&#x27;Safari&#x27;) == -1, //是否web应该程序，没有头部与底部</span><br><span class="line">        weixin: u.indexOf(&#x27;MicroMessenger&#x27;) &gt; -1, //是否微信 （2015-01-22新增）</span><br><span class="line">        qq: u.match(/\sQQ/i) == &quot; qq&quot; //是否QQ</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;)();</span><br><span class="line">/**</span><br><span class="line"> * 本地已安装app时调起，未安装时下载</span><br><span class="line"> * @param  &#123;Object&#125; button 点击操作的对象</span><br><span class="line"> * @param  &#123;Object&#125; params 对象参数</span><br><span class="line"> * @return &#123;[type]&#125;        [description]</span><br><span class="line"> */</span><br><span class="line">function open_or_download_app(button, params)&#123;</span><br><span class="line">    $(button).click(function(e)&#123;</span><br><span class="line">        if (browser.ios) &#123;</span><br><span class="line">            window.setTimeout(function()&#123;</span><br><span class="line">                window.location = ios_applink;</span><br><span class="line">            &#125;, 50);</span><br><span class="line">            window.setTimeout(function() &#123;</span><br><span class="line">                window.location.reload();</span><br><span class="line">            &#125;, 500);</span><br><span class="line">            window.location = params.scheme;</span><br><span class="line">        &#125; else if (browser.android) &#123;</span><br><span class="line">            window.setTimeout(function()&#123;</span><br><span class="line">                window.location = android_applink;</span><br><span class="line">            &#125;, 50);</span><br><span class="line">            window.setTimeout(function() &#123;</span><br><span class="line">                window.location.reload();</span><br><span class="line">            &#125;, 500);</span><br><span class="line">            window.location = params.scheme;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="相关（摘录自参考内容）"><a href="#相关（摘录自参考内容）" class="headerlink" title="相关（摘录自参考内容）"></a>相关（摘录自参考内容）</h2><h4 id="什么是Deeplink"><a href="#什么是Deeplink" class="headerlink" title="什么是Deeplink?"></a>什么是Deeplink?</h4><p>Deeplink是App应用中的深度链接，如果把App看做一个网站，那么Deeplink就是网站中的一个页面，比如产品页面，活动促销页面等。Deeplink在App市场推广运营中有很好的意义:</p>
+<p>使用Deeplink的广告商可以在用户点击广告后直接进入指定的Appp, 而没有使用Deeplink的App广告只能在点击后将用户跳转到App首页上。<br>为了更好的解释Deeplink，请见下面的图片：<br><img src="http://image.woshipm.com/wp-files/2016/02/Deeplinkingv3.jpg" alt="Deeplinkingv3"></p>
+<h4 id="Deeplink在App运营中的作用"><a href="#Deeplink在App运营中的作用" class="headerlink" title="Deeplink在App运营中的作用"></a>Deeplink在App运营中的作用</h4><p>Deeplink在App运营中的重要作用在于提升转换率，好比是网站推广运营中的Landing Page (广告进入页面），App运营者可用独立制作出适合广告投放人群的Deeplink, 在用户点击广告后转移至App中的Deeplink页面，而不是无论什么用户都转移到App首页上。</p>
+<p>例如：如果在一款汽车资讯类App推广中使用Deeplink, 我们可以针对中档汽车做一个Deeplink，在App页面中展现中档价位汽车，偏重价格与促销做活动宣传图片。</p>
+<p>针对高档汽车做另外一个Deeplink，展现高档价位汽车，针对品众与座驾享受做宣传。</p>
+<p>然后在投放时，我们可以选择DSP投放，将不同收入人群做不同的定向广告，针对中等收入人群的App广告中链接到中档价位汽车Deeplink中，针对高收入人群的App广告中链接到高档价位汽车的Deeplink中，提升广告效果与转化率。<br><img src="http://image.woshipm.com/wp-files/2016/02/Deeplinkingv4-512x1024.jpg" alt="Deeplinkingv4"></p>
+<p>参考：<br>1.<a target="_blank" rel="noopener" href="http://www.woshipm.com/operate/287961.html">你知道App推广神技“Deferred Deeplink”吗?</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- 旧的分享链接（可选，可以删除） by lin -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2019/02/19/h5%E5%94%A4%E9%86%92app%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" data-id="cuid5I9M3w5L_0AQtRl2JVdNj" data-title="h5唤醒app解决方案" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/app/" rel="tag">app</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/deeplink/" rel="tag">deeplink</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/h5/" rel="tag">h5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+
+      <!-- 新分享按钮 by lin -->
+      <div class="social-share" data-sites="weibo,qq,wechat"></div>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-微信页面打开链接-引导在其他浏览器打开的引导页实现" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/blog/2019/02/19/%E5%BE%AE%E4%BF%A1%E9%A1%B5%E9%9D%A2%E6%89%93%E5%BC%80%E9%93%BE%E6%8E%A5-%E5%BC%95%E5%AF%BC%E5%9C%A8%E5%85%B6%E4%BB%96%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E7%9A%84%E5%BC%95%E5%AF%BC%E9%A1%B5%E5%AE%9E%E7%8E%B0/" class="article-date">
@@ -113,7 +226,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2019/02/19/%E5%BE%AE%E4%BF%A1%E9%A1%B5%E9%9D%A2%E6%89%93%E5%BC%80%E9%93%BE%E6%8E%A5-%E5%BC%95%E5%AF%BC%E5%9C%A8%E5%85%B6%E4%BB%96%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E7%9A%84%E5%BC%95%E5%AF%BC%E9%A1%B5%E5%AE%9E%E7%8E%B0/" data-id="cuidGg8387D2tPVuAsu0xaJF5" data-title="微信页面打开链接,引导在其他浏览器打开的引导页实现" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2019/02/19/%E5%BE%AE%E4%BF%A1%E9%A1%B5%E9%9D%A2%E6%89%93%E5%BC%80%E9%93%BE%E6%8E%A5-%E5%BC%95%E5%AF%BC%E5%9C%A8%E5%85%B6%E4%BB%96%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E7%9A%84%E5%BC%95%E5%AF%BC%E9%A1%B5%E5%AE%9E%E7%8E%B0/" data-id="cuidxsxMsqYueTmC4NwAKEG5Y" data-title="微信页面打开链接,引导在其他浏览器打开的引导页实现" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -166,7 +279,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2019/01/26/%E6%8A%93%E5%8C%85%E8%BD%AF%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" data-id="cuidVQ3DCncZsopn0eNVDEiUV" data-title="抓包软件的使用记录" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2019/01/26/%E6%8A%93%E5%8C%85%E8%BD%AF%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" data-id="cuidp_vTmmjZSkSkkFPNO6xSQ" data-title="抓包软件的使用记录" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -226,7 +339,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2019/01/25/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98/" data-id="cuidGbQ4HP4-KU57Fp21o4dgO" data-title="移动开发中需要注意的问题" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2019/01/25/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98/" data-id="cuidZFBAlG6x_cQaKYG382J4g" data-title="移动开发中需要注意的问题" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -287,7 +400,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2019/01/23/%E4%BD%BF%E7%94%A8%E7%BA%AFcss%E5%86%99%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE%E2%80%94%E2%80%94%E8%87%AA%E9%80%82%E5%BA%94%EF%BC%8C%E9%98%B4%E5%BD%B1/" data-id="cuid25eijv5Xqwc0RDew0SyqG" data-title="使用纯css写一个按钮——自适应，阴影" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2019/01/23/%E4%BD%BF%E7%94%A8%E7%BA%AFcss%E5%86%99%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE%E2%80%94%E2%80%94%E8%87%AA%E9%80%82%E5%BA%94%EF%BC%8C%E9%98%B4%E5%BD%B1/" data-id="cuidqaBHjzPh9P4HtgqpvV5KW" data-title="使用纯css写一个按钮——自适应，阴影" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -362,7 +475,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2019/01/19/less%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" data-id="cuid5556tDDipx_btGG5JGxQs" data-title="less使用记录" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2019/01/19/less%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" data-id="cuidkuVMMakaWiT-AcZforW0o" data-title="less使用记录" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -419,7 +532,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2019/01/18/h5%E9%A1%B5%E9%9D%A2%E4%B8%8Eapp%E5%8E%9F%E7%94%9F%E9%A1%B5%E9%9D%A2%E9%80%9A%E4%BF%A1%E2%80%94%E2%80%94postMessage%E6%96%B9%E6%B3%95/" data-id="cuid_Aq-CB-SPLRqMOcf6jNqL" data-title="h5页面与app原生页面通信——postMessage方法" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2019/01/18/h5%E9%A1%B5%E9%9D%A2%E4%B8%8Eapp%E5%8E%9F%E7%94%9F%E9%A1%B5%E9%9D%A2%E9%80%9A%E4%BF%A1%E2%80%94%E2%80%94postMessage%E6%96%B9%E6%B3%95/" data-id="cuid8COqGhGmu8f0KKEHuQ7LP" data-title="h5页面与app原生页面通信——postMessage方法" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -468,7 +581,7 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2019/01/17/js%E5%88%A4%E6%96%ADh5%E9%A1%B5%E9%9D%A2%E6%BB%91%E5%8A%A8%E6%96%B9%E5%90%91/" data-id="cuids9WPH5GOuOnmkSDozowU2" data-title="js判断h5页面滑动方向" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2019/01/17/js%E5%88%A4%E6%96%ADh5%E9%A1%B5%E9%9D%A2%E6%BB%91%E5%8A%A8%E6%96%B9%E5%90%91/" data-id="cuidGU02GK7JaKZ3Z4gzS5F3B" data-title="js判断h5页面滑动方向" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
@@ -518,105 +631,11 @@
     </div>
     <footer class="article-footer">
       <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2019/01/07/CSS-3D%E8%BD%AC%E6%8D%A2/" data-id="cuidRB2GYPXtxImqvMrKFPbk6" data-title="CSS 3D转换" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
+      <!-- <a data-url="https://snjylin.github.io/blog/2019/01/07/CSS-3D%E8%BD%AC%E6%8D%A2/" data-id="cuidkTOdDGDKAfWcNBe9RNeF3" data-title="CSS 3D转换" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/3d/" rel="tag">3d</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/" rel="tag">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/transform/" rel="tag">transform</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
-
-      <!-- 新分享按钮 by lin -->
-      <div class="social-share" data-sites="weibo,qq,wechat"></div>
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-canvas学习-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/2018/12/29/canvas%E5%AD%A6%E4%B9%A0-1/" class="article-date">
-  <time class="dt-published" datetime="2018-12-29T06:33:57.000Z" itemprop="datePublished">2018-12-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/canvas/">canvas</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/2018/12/29/canvas%E5%AD%A6%E4%B9%A0-1/">canvas学习(1)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2018/12/29/canvas%E5%AD%A6%E4%B9%A0-1/" data-id="cuidZM14ZjicF9Fq4Kxb6vvnc" data-title="canvas学习(1)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/canvas/" rel="tag">canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
-
-      <!-- 新分享按钮 by lin -->
-      <div class="social-share" data-sites="weibo,qq,wechat"></div>
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-HTML5详解学习笔记-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/2018/12/07/HTML5%E8%AF%A6%E8%A7%A3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/" class="article-date">
-  <time class="dt-published" datetime="2018-12-07T06:50:14.000Z" itemprop="datePublished">2018-12-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>►<a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/2018/12/07/HTML5%E8%AF%A6%E8%A7%A3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/">HTML5详解学习笔记(1)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="HTML5新增语义化标签"><a href="#HTML5新增语义化标签" class="headerlink" title="HTML5新增语义化标签"></a>HTML5新增语义化标签</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <!-- 旧的分享链接（可选，可以删除） by lin -->
-      <!-- <a data-url="https://snjylin.github.io/blog/2018/12/07/HTML5%E8%AF%A6%E8%A7%A3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/" data-id="cuidJGqWbXEmugIZOlu5svqFz" data-title="HTML5详解学习笔记(1)" class="article-share-link"><span class="fa fa-share">分享</span></a> -->
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/html/" rel="tag">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
 
       <!-- 新分享按钮 by lin -->
       <div class="social-share" data-sites="weibo,qq,wechat"></div>
@@ -653,7 +672,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/3d/" rel="tag">3d</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Charles/" rel="tag">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Chrome/" rel="tag">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Fiddler/" rel="tag">Fiddler</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MAC/" rel="tag">MAC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/PhotoShop/" rel="tag">PhotoShop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Wireshark/" rel="tag">Wireshark</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ajax/" rel="tag">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/app/" rel="tag">app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/bootstrap/" rel="tag">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/canvas/" rel="tag">canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/deeplink/" rel="tag">deeplink</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/emmet/" rel="tag">emmet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/h5/" rel="tag">h5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/less/" rel="tag">less</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/parallels-desktop/" rel="tag">parallels desktop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/svg/" rel="tag">svg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/test/" rel="tag">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/textarea/" rel="tag">textarea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/todolist/" rel="tag">todolist</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/transform/" rel="tag">transform</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/win10/" rel="tag">win10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%B0%8F%E8%AF%B4/" rel="tag">小说</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BB%BA%E7%AB%99/" rel="tag">建站</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" rel="tag">开发环境</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="tag">快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" rel="tag">思维导图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%8A%93%E5%8C%85/" rel="tag">抓包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%8F%92%E4%BB%B6/" rel="tag">插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%96%87%E5%AD%A6/" rel="tag">文学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%A0%87%E7%AD%BE%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99/" rel="tag">标签嵌套规则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE/" rel="tag">百度脑图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/" rel="tag">移动开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" rel="tag">编辑器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%A7%84%E8%8C%83/" rel="tag">规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%AE%BE%E8%AE%A1/" rel="tag">设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/3d/" rel="tag">3d</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Charles/" rel="tag">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Chrome/" rel="tag">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Fiddler/" rel="tag">Fiddler</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MAC/" rel="tag">MAC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/PhotoShop/" rel="tag">PhotoShop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Wireshark/" rel="tag">Wireshark</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ajax/" rel="tag">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/app/" rel="tag">app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/bootstrap/" rel="tag">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/canvas/" rel="tag">canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/deeplink/" rel="tag">deeplink</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/emmet/" rel="tag">emmet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/h5/" rel="tag">h5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/less/" rel="tag">less</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/parallels-desktop/" rel="tag">parallels desktop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/svg/" rel="tag">svg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/test/" rel="tag">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/textarea/" rel="tag">textarea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/todolist/" rel="tag">todolist</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/transform/" rel="tag">transform</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/win10/" rel="tag">win10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/wine/" rel="tag">wine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%B0%8F%E8%AF%B4/" rel="tag">小说</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BB%BA%E7%AB%99/" rel="tag">建站</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BC%80%E5%8F%91/" rel="tag">开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" rel="tag">开发环境</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="tag">快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" rel="tag">思维导图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%8A%93%E5%8C%85/" rel="tag">抓包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%8F%92%E4%BB%B6/" rel="tag">插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%96%87%E5%AD%A6/" rel="tag">文学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%A0%87%E7%AD%BE%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99/" rel="tag">标签嵌套规则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE/" rel="tag">百度脑图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/" rel="tag">移动开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" rel="tag">编辑器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%80%83%E8%AF%95/" rel="tag">考试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%A7%84%E8%8C%83/" rel="tag">规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%AE%BE%E8%AE%A1/" rel="tag">设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li></ul>
     </div>
   </div>
 
@@ -663,7 +682,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/blog/tags/3d/" style="font-size: 10px;">3d</a> <a href="/blog/tags/Charles/" style="font-size: 10px;">Charles</a> <a href="/blog/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/blog/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/blog/tags/JavaScript/" style="font-size: 18px;">JavaScript</a> <a href="/blog/tags/MAC/" style="font-size: 11px;">MAC</a> <a href="/blog/tags/PhotoShop/" style="font-size: 11px;">PhotoShop</a> <a href="/blog/tags/Wireshark/" style="font-size: 10px;">Wireshark</a> <a href="/blog/tags/ajax/" style="font-size: 14px;">ajax</a> <a href="/blog/tags/app/" style="font-size: 11px;">app</a> <a href="/blog/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/blog/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/blog/tags/css/" style="font-size: 17px;">css</a> <a href="/blog/tags/deeplink/" style="font-size: 10px;">deeplink</a> <a href="/blog/tags/emmet/" style="font-size: 10px;">emmet</a> <a href="/blog/tags/es6/" style="font-size: 10px;">es6</a> <a href="/blog/tags/git/" style="font-size: 13px;">git</a> <a href="/blog/tags/h5/" style="font-size: 13px;">h5</a> <a href="/blog/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/blog/tags/html/" style="font-size: 15px;">html</a> <a href="/blog/tags/less/" style="font-size: 10px;">less</a> <a href="/blog/tags/parallels-desktop/" style="font-size: 10px;">parallels desktop</a> <a href="/blog/tags/svg/" style="font-size: 16px;">svg</a> <a href="/blog/tags/test/" style="font-size: 10px;">test</a> <a href="/blog/tags/textarea/" style="font-size: 10px;">textarea</a> <a href="/blog/tags/todolist/" style="font-size: 11px;">todolist</a> <a href="/blog/tags/transform/" style="font-size: 11px;">transform</a> <a href="/blog/tags/vue/" style="font-size: 12px;">vue</a> <a href="/blog/tags/win10/" style="font-size: 10px;">win10</a> <a href="/blog/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 20px;">前端</a> <a href="/blog/tags/%E5%B0%8F%E8%AF%B4/" style="font-size: 10px;">小说</a> <a href="/blog/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 14px;">建站</a> <a href="/blog/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" style="font-size: 10px;">开发环境</a> <a href="/blog/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" style="font-size: 11px;">快捷键</a> <a href="/blog/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" style="font-size: 10px;">思维导图</a> <a href="/blog/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 19px;">技术</a> <a href="/blog/tags/%E6%8A%93%E5%8C%85/" style="font-size: 10px;">抓包</a> <a href="/blog/tags/%E6%8F%92%E4%BB%B6/" style="font-size: 10px;">插件</a> <a href="/blog/tags/%E6%96%87%E5%AD%A6/" style="font-size: 10px;">文学</a> <a href="/blog/tags/%E6%A0%87%E7%AD%BE%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99/" style="font-size: 10px;">标签嵌套规则</a> <a href="/blog/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 10px;">正则表达式</a> <a href="/blog/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a> <a href="/blog/tags/%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE/" style="font-size: 10px;">百度脑图</a> <a href="/blog/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/" style="font-size: 10px;">移动开发</a> <a href="/blog/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 11px;">编辑器</a> <a href="/blog/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/blog/tags/%E8%A7%84%E8%8C%83/" style="font-size: 13px;">规范</a> <a href="/blog/tags/%E8%AE%BE%E8%AE%A1/" style="font-size: 11px;">设计</a> <a href="/blog/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a>
+      <a href="/blog/tags/3d/" style="font-size: 10px;">3d</a> <a href="/blog/tags/Charles/" style="font-size: 10px;">Charles</a> <a href="/blog/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/blog/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/blog/tags/JavaScript/" style="font-size: 18px;">JavaScript</a> <a href="/blog/tags/MAC/" style="font-size: 12px;">MAC</a> <a href="/blog/tags/PhotoShop/" style="font-size: 11px;">PhotoShop</a> <a href="/blog/tags/Wireshark/" style="font-size: 10px;">Wireshark</a> <a href="/blog/tags/ajax/" style="font-size: 14px;">ajax</a> <a href="/blog/tags/app/" style="font-size: 11px;">app</a> <a href="/blog/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/blog/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/blog/tags/css/" style="font-size: 17px;">css</a> <a href="/blog/tags/deeplink/" style="font-size: 10px;">deeplink</a> <a href="/blog/tags/emmet/" style="font-size: 10px;">emmet</a> <a href="/blog/tags/es6/" style="font-size: 10px;">es6</a> <a href="/blog/tags/git/" style="font-size: 13px;">git</a> <a href="/blog/tags/h5/" style="font-size: 13px;">h5</a> <a href="/blog/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/blog/tags/html/" style="font-size: 15px;">html</a> <a href="/blog/tags/less/" style="font-size: 10px;">less</a> <a href="/blog/tags/parallels-desktop/" style="font-size: 10px;">parallels desktop</a> <a href="/blog/tags/svg/" style="font-size: 16px;">svg</a> <a href="/blog/tags/test/" style="font-size: 10px;">test</a> <a href="/blog/tags/textarea/" style="font-size: 10px;">textarea</a> <a href="/blog/tags/todolist/" style="font-size: 11px;">todolist</a> <a href="/blog/tags/transform/" style="font-size: 11px;">transform</a> <a href="/blog/tags/vue/" style="font-size: 12px;">vue</a> <a href="/blog/tags/win10/" style="font-size: 10px;">win10</a> <a href="/blog/tags/wine/" style="font-size: 10px;">wine</a> <a href="/blog/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 20px;">前端</a> <a href="/blog/tags/%E5%B0%8F%E8%AF%B4/" style="font-size: 10px;">小说</a> <a href="/blog/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 14px;">建站</a> <a href="/blog/tags/%E5%BC%80%E5%8F%91/" style="font-size: 10px;">开发</a> <a href="/blog/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" style="font-size: 10px;">开发环境</a> <a href="/blog/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" style="font-size: 11px;">快捷键</a> <a href="/blog/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" style="font-size: 10px;">思维导图</a> <a href="/blog/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 19px;">技术</a> <a href="/blog/tags/%E6%8A%93%E5%8C%85/" style="font-size: 10px;">抓包</a> <a href="/blog/tags/%E6%8F%92%E4%BB%B6/" style="font-size: 10px;">插件</a> <a href="/blog/tags/%E6%96%87%E5%AD%A6/" style="font-size: 10px;">文学</a> <a href="/blog/tags/%E6%A0%87%E7%AD%BE%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99/" style="font-size: 10px;">标签嵌套规则</a> <a href="/blog/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 10px;">正则表达式</a> <a href="/blog/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a> <a href="/blog/tags/%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE/" style="font-size: 10px;">百度脑图</a> <a href="/blog/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/" style="font-size: 10px;">移动开发</a> <a href="/blog/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 11px;">编辑器</a> <a href="/blog/tags/%E8%80%83%E8%AF%95/" style="font-size: 10px;">考试</a> <a href="/blog/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/blog/tags/%E8%A7%84%E8%8C%83/" style="font-size: 13px;">规范</a> <a href="/blog/tags/%E8%AE%BE%E8%AE%A1/" style="font-size: 11px;">设计</a> <a href="/blog/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a>
     </div>
   </div>
 
@@ -672,7 +691,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/05/">五月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/03/">三月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">三月 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2026/06/">六月 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/05/">五月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/03/">三月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">三月 2017</a></li></ul>
     </div>
   </div>
 
@@ -685,6 +704,14 @@
       <ul>
         
           <li>
+            <a href="/blog/2026/06/11/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7%E8%A7%A3%E7%BB%91%E5%85%AC%E4%BC%97%E5%8F%B7%E6%9D%83%E9%99%90/">微信开发者工具解绑公众号权限</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2026/06/10/MacOS-%E5%A4%84%E7%90%86%E4%BA%BA%E4%BA%8B%E8%80%83%E8%AF%95%E7%BD%91%E7%85%A7%E7%89%87%E6%96%B9%E6%A1%88-%E9%80%9A%E8%BF%87wine%E6%89%A7%E8%A1%8Cexe%E6%96%87%E4%BB%B6/">MacOS 处理人事考试网照片方案/通过wine执行exe文件</a>
+          </li>
+        
+          <li>
             <a href="/blog/2024/05/22/%E6%9C%AC%E5%9C%B0-git-%E9%A1%B9%E7%9B%AE%E5%90%8C%E6%97%B6%E5%85%B3%E8%81%94-github-%E5%92%8C-gitee/">本地 git 项目同时关联 github 和 gitee</a>
           </li>
         
@@ -694,14 +721,6 @@
         
           <li>
             <a href="/blog/2022/05/23/hexo%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99/">hexo部署报错</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2021/11/16/h5%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/">h5开发记录</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2020/02/24/Mac%E4%B8%8B%E7%99%BE%E5%BA%A6%E8%84%91%E5%9B%BE%E5%BF%AB%E6%8D%B7%E9%94%AE/">Mac下百度脑图快捷键</a>
           </li>
         
       </ul>
